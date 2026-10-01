@@ -33,18 +33,20 @@
 
 <div class="lab-layout">
   <section class="lab-map">
-    <div class="lab-intro">
-      <h1>The course on the map</h1>
-      <p>Each coloured box is a concept taught on learn.sematlas.com, placed on Wikipedia's map
-        of knowledge and grouped left to right in the order the course teaches it. Dashed boxes are
-        what lies just beyond: foundations the course rests on (to the left of the ideas that need
-        them) and where it leads (to the right). Hover to see connections; click a concept to open
-        its lesson, or anything beyond to explore it.</p>
+    <div class="lab-intro" id="intro">
+      <button class="modal-x" id="introX" type="button" aria-label="Hide">×</button>
+      <h1>The course as a tree</h1>
+      <p>Each coloured box is a concept taught on learn.sematlas.com. Arrows run from what a
+        concept needs to the concept, so the basics sit on the left and each column builds on the
+        ones before it; rows are the parts of the course. Dashed boxes are Wikipedia articles just
+        beyond the course. Hover to trace a concept back to its basics and forward to where it
+        leads; click for its lesson and its place on the map.</p>
       <p id="stats" class="lab-stats"></p>
     </div>
     <svg id="tree"></svg>
     <div class="lab-legend" id="legend"></div>
     <div class="graph-tools">
+      <button id="planBtn" type="button" title="Mark what you know and see what is ready to learn">Plan my path</button>
       <button id="fitBtn" type="button">Fit</button>
       <label class="beyond-count">Beyond:
         <select id="beyondN">
@@ -58,6 +60,19 @@
   </section>
 
   <aside class="lab-side">
+    <section id="planSide" hidden>
+      <h2>Your path</h2>
+      <p class="side-sub">Click the concepts you already know (or a part of the course in the
+        legend to mark all of it). Ready means everything it needs is known. Saved in this
+        browser only.</p>
+      <p id="planStats" class="plan-stats"></p>
+      <h3>Ready to learn next</h3>
+      <ol id="readyList" class="beyond-list"></ol>
+      <h3>Beyond the course, within reach</h3>
+      <ol id="reachList" class="beyond-list"></ol>
+      <button id="clearKnown" class="link-btn" type="button">Clear what I marked</button>
+    </section>
+    <section id="beyondSide">
     <h2>Beyond the course</h2>
     <p class="side-sub">Wikipedia articles next to what the course teaches, ranked by how many taught
       concepts point to them. The list of lessons that could be written next.</p>
@@ -69,6 +84,7 @@
     </div>
     <ol id="beyondList" class="beyond-list"></ol>
     <p class="side-note" id="method"></p>
+    </section>
   </aside>
 </div>
 

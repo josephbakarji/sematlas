@@ -125,10 +125,12 @@ def jev_via(jev):
     return "TypeSafe API" if jev and jev[0] == TYPESAFE_URL else "OpenRouter"
 
 
-def models_event(ranking_model, ranking_via, generation_model, provider, note=None):
+def models_event(ranking_model, ranking_via, generation_model, provider, note=None,
+                 links_model=None):
     """What is ranking and what is writing, by exact model id."""
     return event("models",
-                 ranking={"model": ranking_model, "via": ranking_via, "note": note},
+                 ranking={"model": ranking_model, "via": ranking_via, "note": note,
+                          "links_model": links_model},
                  generation={"model": generation_model, "via": VIA[provider]})
 
 

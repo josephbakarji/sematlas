@@ -1,0 +1,1884 @@
+{
+ "source": "learnslides services/concept_graph.build(), branch deck/intro-flagship, exported read-only 2026-10-02; replace with the course's published export when it exists",
+ "order": [
+  "what_is_a_model",
+  "intro_python",
+  "intro_ml_01",
+  "intro_ml_01n",
+  "intro_ml_02",
+  "intro_ml_02n",
+  "ps0",
+  "intro_ml_03n",
+  "ps1",
+  "intro_ps2",
+  "intro_ml_04",
+  "intro_ml_04n",
+  "intro_ml_05",
+  "intro_ml_05n",
+  "intro_ml_06",
+  "intro_ml_06n",
+  "intro_ml_07n",
+  "intro_ml_08n",
+  "intro_ml_10n",
+  "intro_ml_11n",
+  "01_brief_history",
+  "ml4sci_01_data",
+  "04_scientific_modeling",
+  "05_numerical_computing",
+  "06_complex_systems",
+  "07_time_series",
+  "09_svd_pca",
+  "10_dmd",
+  "08_sindy",
+  "11_deep_learning",
+  "dl_time_series",
+  "12_symbolic_regression",
+  "20_pinns",
+  "operator_learning",
+  "agentic_science",
+  "ai_ethics",
+  "ps2",
+  "ds_intro_language",
+  "rope_as_instrument"
+ ],
+ "titles": {
+  "what_is_a_model": "What is a Model?",
+  "intro_python": "Say Exactly What You Mean: A First Look at Python",
+  "intro_ml_01": "Introduction & the Ethics of AI (snapshot)",
+  "intro_ml_01n": "Introduction and Logistics",
+  "intro_ml_02": "Learning, Examples, and Data (snapshot)",
+  "intro_ml_02n": "Learning, Examples, and Data",
+  "ps0": "Problem Set 0",
+  "intro_ml_03n": "Math and Python: Your Computational Toolkit",
+  "ps1": "Problem Set 1",
+  "intro_ps2": "Problem Set 2",
+  "intro_ml_04": "Supervised Learning & Linear Regression (snapshot)",
+  "intro_ml_04n": "Supervised Learning & Linear Regression",
+  "intro_ml_05": "Generalization and Feature Engineering",
+  "intro_ml_05n": "Feature Engineering and Generalization (archived)",
+  "intro_ml_06": "Classification & Logistic Regression (snapshot)",
+  "intro_ml_06n": "Classification & Logistic Regression",
+  "intro_ml_07n": "MLE and Generalized Linear Models",
+  "intro_ml_08n": "Generative Learning and Language",
+  "intro_ml_10n": "Introduction to Neural Networks",
+  "intro_ml_11n": "Backpropagation, Hands On",
+  "01_brief_history": "A Brief History of Empirical Modeling",
+  "ml4sci_01_data": "From Data to Learning",
+  "04_scientific_modeling": "Scientific Modeling Principles and Differential Equations",
+  "05_numerical_computing": "Numerical Computing and Differential Equations",
+  "06_complex_systems": "Complex Systems and Probabilistic Modeling",
+  "07_time_series": "Time Series Analysis: Starting from Data",
+  "09_svd_pca": "SVD & PCA: Dimensionality Reduction",
+  "10_dmd": "Linear Dynamical Systems & DMD",
+  "08_sindy": "SINDy: Learning Equations from Data",
+  "11_deep_learning": "Introduction to Deep Learning",
+  "dl_time_series": "Deep Learning for Time Series",
+  "12_symbolic_regression": "Symbolic Regression",
+  "20_pinns": "Physics-Informed Neural Networks",
+  "operator_learning": "Operator Learning & Neural Operators",
+  "agentic_science": "Foundation Models & Agentic Science",
+  "ai_ethics": "Ethics, Uncertainty, and the Art of Engineering",
+  "ps2": "Problem Set 2",
+  "ds_intro_language": "Language and Data",
+  "rope_as_instrument": "The Rope: a Musical Instrument"
+ },
+ "concepts": {
+  "notation-and-code": {
+   "title": "Every Idea, Written Twice",
+   "deck": "intro_ml_03n",
+   "slide": "two-languages",
+   "url": "/slides/intro_ml_03n#/two-languages",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "iteration": {
+   "title": "The loop that predicts the future",
+   "deck": "intro_ml_03n",
+   "slide": "loop-future",
+   "url": "/slides/intro_ml_03n#/loop-future",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "vectors": {
+   "title": "Vectors",
+   "deck": "intro_ml_03n",
+   "slide": "vectors",
+   "url": "/slides/intro_ml_03n#/vectors",
+   "prereqs": [],
+   "leads_to": [
+    "feature",
+    "inner-product",
+    "intercept",
+    "linear-model",
+    "matrix",
+    "target",
+    "training-example"
+   ]
+  },
+  "inner-product": {
+   "title": "Vector Operations",
+   "deck": "intro_ml_03n",
+   "slide": "vector-ops",
+   "url": "/slides/intro_ml_03n#/vector-ops",
+   "prereqs": [
+    "vectors"
+   ],
+   "leads_to": [
+    "cosine-similarity",
+    "norm"
+   ]
+  },
+  "norm": {
+   "title": "How Long, How Far, How Similar",
+   "deck": "intro_ml_03n",
+   "slide": "norms",
+   "url": "/slides/intro_ml_03n#/norms",
+   "prereqs": [
+    "inner-product"
+   ],
+   "leads_to": [
+    "l1-regularization",
+    "l2-regularization"
+   ]
+  },
+  "cosine-similarity": {
+   "title": "How Long, How Far, How Similar",
+   "deck": "intro_ml_03n",
+   "slide": "norms",
+   "url": "/slides/intro_ml_03n#/norms",
+   "prereqs": [
+    "inner-product"
+   ],
+   "leads_to": []
+  },
+  "matrix": {
+   "title": "Matrices",
+   "deck": "intro_ml_03n",
+   "slide": "matrices",
+   "url": "/slides/intro_ml_03n#/matrices",
+   "prereqs": [
+    "vectors"
+   ],
+   "leads_to": [
+    "design-matrix",
+    "determinant",
+    "eigenvector",
+    "linear-transformation",
+    "matrix-product"
+   ]
+  },
+  "matrix-product": {
+   "title": "Matrices in NumPy",
+   "deck": "intro_ml_03n",
+   "slide": "matrix-code",
+   "url": "/slides/intro_ml_03n#/matrix-code",
+   "prereqs": [
+    "matrix"
+   ],
+   "leads_to": [
+    "composition",
+    "correlation",
+    "layer"
+   ]
+  },
+  "linear-transformation": {
+   "title": "A matrix is a machine that moves space",
+   "deck": "intro_ml_03n",
+   "slide": "matrix-machine",
+   "url": "/slides/intro_ml_03n#/matrix-machine",
+   "prereqs": [
+    "matrix"
+   ],
+   "leads_to": [
+    "column-space",
+    "composition"
+   ]
+  },
+  "determinant": {
+   "title": "A matrix is a machine that moves space",
+   "deck": "intro_ml_03n",
+   "slide": "matrix-machine",
+   "url": "/slides/intro_ml_03n#/matrix-machine",
+   "prereqs": [
+    "matrix"
+   ],
+   "leads_to": [
+    "inverse"
+   ]
+  },
+  "eigenvector": {
+   "title": "A matrix is a machine that moves space",
+   "deck": "intro_ml_03n",
+   "slide": "matrix-machine",
+   "url": "/slides/intro_ml_03n#/matrix-machine",
+   "prereqs": [
+    "matrix"
+   ],
+   "leads_to": []
+  },
+  "composition": {
+   "title": "Two machines in a row are one machine",
+   "deck": "intro_ml_03n",
+   "slide": "composition",
+   "url": "/slides/intro_ml_03n#/composition",
+   "prereqs": [
+    "linear-transformation",
+    "matrix-product"
+   ],
+   "leads_to": [
+    "deep-network",
+    "hidden-layer",
+    "neural-network"
+   ]
+  },
+  "column-space": {
+   "title": "Two Ways to Read Ax",
+   "deck": "intro_ml_03n",
+   "slide": "colpicture",
+   "url": "/slides/intro_ml_03n#/colpicture",
+   "prereqs": [
+    "linear-transformation"
+   ],
+   "leads_to": [
+    "projection",
+    "rank",
+    "span"
+   ]
+  },
+  "span": {
+   "title": "Span, Independence, Rank",
+   "deck": "intro_ml_03n",
+   "slide": "span-rank",
+   "url": "/slides/intro_ml_03n#/span-rank",
+   "prereqs": [
+    "column-space"
+   ],
+   "leads_to": []
+  },
+  "rank": {
+   "title": "Span, Independence, Rank",
+   "deck": "intro_ml_03n",
+   "slide": "span-rank",
+   "url": "/slides/intro_ml_03n#/span-rank",
+   "prereqs": [
+    "column-space"
+   ],
+   "leads_to": [
+    "condition-number",
+    "inverse"
+   ]
+  },
+  "inverse": {
+   "title": "Inverse, Determinant, and When Things Break",
+   "deck": "intro_ml_03n",
+   "slide": "inverse",
+   "url": "/slides/intro_ml_03n#/inverse",
+   "prereqs": [
+    "determinant",
+    "rank"
+   ],
+   "leads_to": [
+    "condition-number"
+   ]
+  },
+  "condition-number": {
+   "title": "When the Inverse Quietly Lies",
+   "deck": "intro_ml_03n",
+   "slide": "rank-real",
+   "url": "/slides/intro_ml_03n#/rank-real",
+   "prereqs": [
+    "inverse",
+    "rank"
+   ],
+   "leads_to": [
+    "centering"
+   ]
+  },
+  "derivative": {
+   "title": "A derivative is what a curve looks like up close",
+   "deck": "intro_ml_03n",
+   "slide": "derivative-zoom",
+   "url": "/slides/intro_ml_03n#/derivative-zoom",
+   "prereqs": [],
+   "leads_to": [
+    "computation-graph",
+    "gradient",
+    "integral",
+    "relu"
+   ]
+  },
+  "integral": {
+   "title": "A rate and its total",
+   "deck": "intro_ml_03n",
+   "slide": "rain-integral",
+   "url": "/slides/intro_ml_03n#/rain-integral",
+   "prereqs": [
+    "derivative"
+   ],
+   "leads_to": []
+  },
+  "gradient": {
+   "title": "The Calculus You Actually Need",
+   "deck": "intro_ml_03n",
+   "slide": "calculus",
+   "url": "/slides/intro_ml_03n#/calculus",
+   "prereqs": [
+    "derivative"
+   ],
+   "leads_to": [
+    "backpropagation",
+    "chain-rule",
+    "gradient-descent",
+    "learning-rate",
+    "normal-equations"
+   ]
+  },
+  "normal-equations": {
+   "title": "The One Gradient You Will Use All Semester",
+   "deck": "intro_ml_03n",
+   "slide": "grad-worked",
+   "url": "/slides/intro_ml_03n#/grad-worked",
+   "prereqs": [
+    "gradient"
+   ],
+   "leads_to": [
+    "projection"
+   ]
+  },
+  "projection": {
+   "title": "Least Squares Is a Projection",
+   "deck": "intro_ml_03n",
+   "slide": "projection",
+   "url": "/slides/intro_ml_03n#/projection",
+   "prereqs": [
+    "column-space",
+    "normal-equations"
+   ],
+   "leads_to": []
+  },
+  "chain-rule": {
+   "title": "The chain rule, as a picture",
+   "deck": "intro_ml_03n",
+   "slide": "chain-rule-graph",
+   "url": "/slides/intro_ml_03n#/chain-rule-graph",
+   "prereqs": [
+    "gradient"
+   ],
+   "leads_to": [
+    "computation-graph"
+   ]
+  },
+  "backpropagation": {
+   "title": "The chain rule, as a picture",
+   "deck": "intro_ml_03n",
+   "slide": "chain-rule-graph",
+   "url": "/slides/intro_ml_03n#/chain-rule-graph",
+   "prereqs": [
+    "gradient"
+   ],
+   "leads_to": []
+  },
+  "aliasing": {
+   "title": "A variable is a label, not a box",
+   "deck": "intro_ml_03n",
+   "slide": "names-objects",
+   "url": "/slides/intro_ml_03n#/names-objects",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "broadcasting": {
+   "title": "Broadcasting, and the Bug It Causes",
+   "deck": "intro_ml_03n",
+   "slide": "broadcasting",
+   "url": "/slides/intro_ml_03n#/broadcasting",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "vectorization": {
+   "title": "Avoid Loops if You Can! Vectorize.",
+   "deck": "intro_ml_03n",
+   "slide": "vectorize",
+   "url": "/slides/intro_ml_03n#/vectorize",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "dataframe": {
+   "title": "Reading and Exploring Data",
+   "deck": "intro_ml_03n",
+   "slide": "data-code",
+   "url": "/slides/intro_ml_03n#/data-code",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "design-matrix": {
+   "title": "The Design Matrix",
+   "deck": "intro_ml_03n",
+   "slide": "design-matrix",
+   "url": "/slides/intro_ml_03n#/design-matrix",
+   "prereqs": [
+    "matrix"
+   ],
+   "leads_to": [
+    "correlation"
+   ]
+  },
+  "correlation": {
+   "title": "Statistics Is Linear Algebra",
+   "deck": "intro_ml_03n",
+   "slide": "penguins-real",
+   "url": "/slides/intro_ml_03n#/penguins-real",
+   "prereqs": [
+    "design-matrix",
+    "matrix-product"
+   ],
+   "leads_to": [
+    "missing-variable",
+    "r-squared"
+   ]
+  },
+  "missing-variable": {
+   "title": "The Same Data, Two Answers",
+   "deck": "intro_ml_03n",
+   "slide": "simpson",
+   "url": "/slides/intro_ml_03n#/simpson",
+   "prereqs": [
+    "correlation"
+   ],
+   "leads_to": [
+    "holding-fixed"
+   ]
+  },
+  "dataset": {
+   "title": "Data",
+   "deck": "intro_ml_04n",
+   "slide": "data",
+   "url": "/slides/intro_ml_04n#/data",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "feature": {
+   "title": "Inputs and Outputs",
+   "deck": "intro_ml_04n",
+   "slide": "inputs-outputs",
+   "url": "/slides/intro_ml_04n#/inputs-outputs",
+   "prereqs": [
+    "vectors"
+   ],
+   "leads_to": []
+  },
+  "target": {
+   "title": "Inputs and Outputs",
+   "deck": "intro_ml_04n",
+   "slide": "inputs-outputs",
+   "url": "/slides/intro_ml_04n#/inputs-outputs",
+   "prereqs": [
+    "vectors"
+   ],
+   "leads_to": []
+  },
+  "training-example": {
+   "title": "Inputs and Outputs",
+   "deck": "intro_ml_04n",
+   "slide": "inputs-outputs",
+   "url": "/slides/intro_ml_04n#/inputs-outputs",
+   "prereqs": [
+    "vectors"
+   ],
+   "leads_to": []
+  },
+  "hypothesis": {
+   "title": "The Hypothesis",
+   "deck": "intro_ml_04n",
+   "slide": "hypothesis",
+   "url": "/slides/intro_ml_04n#/hypothesis",
+   "prereqs": [],
+   "leads_to": [
+    "hypothesis-choice"
+   ]
+  },
+  "parameters": {
+   "title": "The Hypothesis",
+   "deck": "intro_ml_04n",
+   "slide": "hypothesis",
+   "url": "/slides/intro_ml_04n#/hypothesis",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "model-class": {
+   "title": "The Hypothesis",
+   "deck": "intro_ml_04n",
+   "slide": "hypothesis",
+   "url": "/slides/intro_ml_04n#/hypothesis",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "linear-model": {
+   "title": "The Linear Hypothesis",
+   "deck": "intro_ml_04n",
+   "slide": "linear-hypothesis",
+   "url": "/slides/intro_ml_04n#/linear-hypothesis",
+   "prereqs": [
+    "vectors"
+   ],
+   "leads_to": [
+    "cost-function",
+    "gaussian-noise",
+    "multiple-regression",
+    "regression-to-the-mean",
+    "residual",
+    "threshold-unit"
+   ]
+  },
+  "intercept": {
+   "title": "The Linear Hypothesis",
+   "deck": "intro_ml_04n",
+   "slide": "linear-hypothesis",
+   "url": "/slides/intro_ml_04n#/linear-hypothesis",
+   "prereqs": [
+    "vectors"
+   ],
+   "leads_to": []
+  },
+  "residual": {
+   "title": "The Cost Function",
+   "deck": "intro_ml_04n",
+   "slide": "cost-function",
+   "url": "/slides/intro_ml_04n#/cost-function",
+   "prereqs": [
+    "linear-model"
+   ],
+   "leads_to": []
+  },
+  "cost-function": {
+   "title": "The Cost Function",
+   "deck": "intro_ml_04n",
+   "slide": "cost-function",
+   "url": "/slides/intro_ml_04n#/cost-function",
+   "prereqs": [
+    "linear-model"
+   ],
+   "leads_to": [
+    "loss-landscape",
+    "maximum-likelihood",
+    "poisson-regression"
+   ]
+  },
+  "loss-landscape": {
+   "title": "The Loss Landscape",
+   "deck": "intro_ml_04n",
+   "slide": "loss-landscape",
+   "url": "/slides/intro_ml_04n#/loss-landscape",
+   "prereqs": [
+    "cost-function"
+   ],
+   "leads_to": [
+    "centering",
+    "gradient-descent",
+    "learning-rate"
+   ]
+  },
+  "gradient-descent": {
+   "title": "Gradient Descent",
+   "deck": "intro_ml_04n",
+   "slide": "gradient-descent",
+   "url": "/slides/intro_ml_04n#/gradient-descent",
+   "prereqs": [
+    "gradient",
+    "loss-landscape"
+   ],
+   "leads_to": [
+    "centering",
+    "lms-rule",
+    "sgd"
+   ]
+  },
+  "learning-rate": {
+   "title": "Gradient Descent",
+   "deck": "intro_ml_04n",
+   "slide": "gradient-descent",
+   "url": "/slides/intro_ml_04n#/gradient-descent",
+   "prereqs": [
+    "gradient",
+    "loss-landscape"
+   ],
+   "leads_to": [
+    "hyperparameter",
+    "sgd"
+   ]
+  },
+  "lms-rule": {
+   "title": "Computing the Gradient",
+   "deck": "intro_ml_04n",
+   "slide": "computing-the-gradient",
+   "url": "/slides/intro_ml_04n#/computing-the-gradient",
+   "prereqs": [
+    "gradient-descent"
+   ],
+   "leads_to": [
+    "generalized-linear-model"
+   ]
+  },
+  "sgd": {
+   "title": "Watch It Learn",
+   "deck": "intro_ml_04n",
+   "slide": "watch-it-learn",
+   "url": "/slides/intro_ml_04n#/watch-it-learn",
+   "prereqs": [
+    "gradient-descent",
+    "learning-rate"
+   ],
+   "leads_to": []
+  },
+  "centering": {
+   "title": "Why we measure from the average house",
+   "deck": "intro_ml_04n",
+   "slide": "centering",
+   "url": "/slides/intro_ml_04n#/centering",
+   "prereqs": [
+    "condition-number",
+    "gradient-descent",
+    "loss-landscape"
+   ],
+   "leads_to": []
+  },
+  "multiple-regression": {
+   "title": "What is a bedroom worth?",
+   "deck": "intro_ml_04n",
+   "slide": "bedrooms",
+   "url": "/slides/intro_ml_04n#/bedrooms",
+   "prereqs": [
+    "linear-model"
+   ],
+   "leads_to": [
+    "holding-fixed"
+   ]
+  },
+  "holding-fixed": {
+   "title": "θj answers one question at a time",
+   "deck": "intro_ml_04n",
+   "slide": "holding-fixed",
+   "url": "/slides/intro_ml_04n#/holding-fixed",
+   "prereqs": [
+    "missing-variable",
+    "multiple-regression"
+   ],
+   "leads_to": [
+    "l1-regularization"
+   ]
+  },
+  "gaussian-noise": {
+   "title": "Why Least Squares? A Probabilistic View",
+   "deck": "intro_ml_04n",
+   "slide": "probabilistic-view",
+   "url": "/slides/intro_ml_04n#/probabilistic-view",
+   "prereqs": [
+    "linear-model"
+   ],
+   "leads_to": [
+    "covariance",
+    "exponential-family",
+    "log-partition-function",
+    "multivariate-gaussian",
+    "natural-parameter"
+   ]
+  },
+  "likelihood": {
+   "title": "The Likelihood of the Data",
+   "deck": "intro_ml_04n",
+   "slide": "likelihood-setup",
+   "url": "/slides/intro_ml_04n#/likelihood-setup",
+   "prereqs": [],
+   "leads_to": [
+    "maximum-likelihood"
+   ]
+  },
+  "maximum-likelihood": {
+   "title": "Least Squares Is Maximum Likelihood",
+   "deck": "intro_ml_04n",
+   "slide": "max-likelihood",
+   "url": "/slides/intro_ml_04n#/max-likelihood",
+   "prereqs": [
+    "cost-function",
+    "likelihood"
+   ],
+   "leads_to": [
+    "gda",
+    "l1-loss",
+    "laplace-smoothing",
+    "naive-bayes",
+    "outlier"
+   ]
+  },
+  "outlier": {
+   "title": "Five strange sales",
+   "deck": "intro_ml_04n",
+   "slide": "five-strange-sales",
+   "url": "/slides/intro_ml_04n#/five-strange-sales",
+   "prereqs": [
+    "maximum-likelihood"
+   ],
+   "leads_to": []
+  },
+  "l1-loss": {
+   "title": "Five strange sales",
+   "deck": "intro_ml_04n",
+   "slide": "five-strange-sales",
+   "url": "/slides/intro_ml_04n#/five-strange-sales",
+   "prereqs": [
+    "maximum-likelihood"
+   ],
+   "leads_to": []
+  },
+  "k-nearest-neighbours": {
+   "title": "Given a new input, what’s the output?",
+   "deck": "intro_ml_05",
+   "slide": "interp-knn",
+   "url": "/slides/intro_ml_05#/interp-knn",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "hypothesis-choice": {
+   "title": "How do you choose the hypothesis?",
+   "deck": "intro_ml_05",
+   "slide": "choose-hyp",
+   "url": "/slides/intro_ml_05#/choose-hyp",
+   "prereqs": [
+    "hypothesis"
+   ],
+   "leads_to": []
+  },
+  "feature-map": {
+   "title": "A Feature Built in 1885",
+   "deck": "intro_ml_05",
+   "slide": "galton-feature",
+   "url": "/slides/intro_ml_05#/galton-feature",
+   "prereqs": [],
+   "leads_to": [
+    "hidden-layer",
+    "neural-network",
+    "overfitting",
+    "underfitting"
+   ]
+  },
+  "regression-to-the-mean": {
+   "title": "Where the Word Comes From",
+   "deck": "intro_ml_05",
+   "slide": "galton-name",
+   "url": "/slides/intro_ml_05#/galton-name",
+   "prereqs": [
+    "linear-model"
+   ],
+   "leads_to": []
+  },
+  "r-squared": {
+   "title": "A Fifth of the Variance, and a Whole Discipline",
+   "deck": "intro_ml_05",
+   "slide": "galton-r2",
+   "url": "/slides/intro_ml_05#/galton-r2",
+   "prereqs": [
+    "correlation"
+   ],
+   "leads_to": []
+  },
+  "overfitting": {
+   "title": "How to choose φ(x)? How to optimize over φ(x)",
+   "deck": "intro_ml_05",
+   "slide": "under-over",
+   "url": "/slides/intro_ml_05#/under-over",
+   "prereqs": [
+    "feature-map"
+   ],
+   "leads_to": [
+    "bias-variance",
+    "regularization"
+   ]
+  },
+  "underfitting": {
+   "title": "How to choose φ(x)? How to optimize over φ(x)",
+   "deck": "intro_ml_05",
+   "slide": "under-over",
+   "url": "/slides/intro_ml_05#/under-over",
+   "prereqs": [
+    "feature-map"
+   ],
+   "leads_to": []
+  },
+  "generalization": {
+   "title": "How can we tell if φ(·) is good?",
+   "deck": "intro_ml_05",
+   "slide": "holdout",
+   "url": "/slides/intro_ml_05#/holdout",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "test-set": {
+   "title": "How can we tell if φ(·) is good?",
+   "deck": "intro_ml_05",
+   "slide": "holdout",
+   "url": "/slides/intro_ml_05#/holdout",
+   "prereqs": [],
+   "leads_to": [
+    "validation-set"
+   ]
+  },
+  "bias-variance": {
+   "title": "Variance Bias Trade-off",
+   "deck": "intro_ml_05",
+   "slide": "tradeoff",
+   "url": "/slides/intro_ml_05#/tradeoff",
+   "prereqs": [
+    "overfitting"
+   ],
+   "leads_to": []
+  },
+  "hyperparameter": {
+   "title": "Other Hyperparameters",
+   "deck": "intro_ml_05",
+   "slide": "hyperparams",
+   "url": "/slides/intro_ml_05#/hyperparams",
+   "prereqs": [
+    "learning-rate"
+   ],
+   "leads_to": []
+  },
+  "validation-set": {
+   "title": "Optimize over φ and other hyperparameters",
+   "deck": "intro_ml_05",
+   "slide": "three-way-split",
+   "url": "/slides/intro_ml_05#/three-way-split",
+   "prereqs": [
+    "test-set"
+   ],
+   "leads_to": [
+    "cross-validation"
+   ]
+  },
+  "cross-validation": {
+   "title": "Cross validation: every house takes a turn being new",
+   "deck": "intro_ml_05",
+   "slide": "kfold",
+   "url": "/slides/intro_ml_05#/kfold",
+   "prereqs": [
+    "validation-set"
+   ],
+   "leads_to": []
+  },
+  "regularization": {
+   "title": "Regularization",
+   "deck": "intro_ml_05",
+   "slide": "regularization",
+   "url": "/slides/intro_ml_05#/regularization",
+   "prereqs": [
+    "overfitting"
+   ],
+   "leads_to": [
+    "l1-regularization",
+    "l2-regularization"
+   ]
+  },
+  "l2-regularization": {
+   "title": "L2 regularization",
+   "deck": "intro_ml_05",
+   "slide": "l2-ball",
+   "url": "/slides/intro_ml_05#/l2-ball",
+   "prereqs": [
+    "norm",
+    "regularization"
+   ],
+   "leads_to": []
+  },
+  "l1-regularization": {
+   "title": "L1 regularization",
+   "deck": "intro_ml_05",
+   "slide": "l1-ball",
+   "url": "/slides/intro_ml_05#/l1-ball",
+   "prereqs": [
+    "holding-fixed",
+    "norm",
+    "regularization"
+   ],
+   "leads_to": []
+  },
+  "bernoulli": {
+   "title": "The Bernoulli Distribution",
+   "deck": "intro_ml_07n",
+   "slide": "bernoulli",
+   "url": "/slides/intro_ml_07n#/bernoulli",
+   "prereqs": [],
+   "leads_to": [
+    "event-model",
+    "exponential-family",
+    "log-partition-function",
+    "natural-parameter"
+   ]
+  },
+  "exponential-family": {
+   "title": "The Exponential Family",
+   "deck": "intro_ml_07n",
+   "slide": "exp-family",
+   "url": "/slides/intro_ml_07n#/exp-family",
+   "prereqs": [
+    "bernoulli",
+    "gaussian-noise"
+   ],
+   "leads_to": [
+    "poisson-distribution"
+   ]
+  },
+  "natural-parameter": {
+   "title": "The Exponential Family",
+   "deck": "intro_ml_07n",
+   "slide": "exp-family",
+   "url": "/slides/intro_ml_07n#/exp-family",
+   "prereqs": [
+    "bernoulli",
+    "gaussian-noise"
+   ],
+   "leads_to": [
+    "link-function",
+    "poisson-distribution"
+   ]
+  },
+  "log-partition-function": {
+   "title": "The Exponential Family",
+   "deck": "intro_ml_07n",
+   "slide": "exp-family",
+   "url": "/slides/intro_ml_07n#/exp-family",
+   "prereqs": [
+    "bernoulli",
+    "gaussian-noise"
+   ],
+   "leads_to": []
+  },
+  "poisson-distribution": {
+   "title": "Example 3: Poisson Becomes Log-Linear Regression",
+   "deck": "intro_ml_07n",
+   "slide": "ex-poisson",
+   "url": "/slides/intro_ml_07n#/ex-poisson",
+   "prereqs": [
+    "exponential-family",
+    "natural-parameter"
+   ],
+   "leads_to": [
+    "poisson-regression"
+   ]
+  },
+  "poisson-regression": {
+   "title": "How many earthquakes of each size?",
+   "deck": "intro_ml_07n",
+   "slide": "quakes",
+   "url": "/slides/intro_ml_07n#/quakes",
+   "prereqs": [
+    "cost-function",
+    "poisson-distribution"
+   ],
+   "leads_to": [
+    "generalized-linear-model"
+   ]
+  },
+  "generalized-linear-model": {
+   "title": "Same loop, three models",
+   "deck": "intro_ml_07n",
+   "slide": "same-loop",
+   "url": "/slides/intro_ml_07n#/same-loop",
+   "prereqs": [
+    "lms-rule",
+    "logistic-regression",
+    "poisson-regression"
+   ],
+   "leads_to": [
+    "link-function"
+   ]
+  },
+  "link-function": {
+   "title": "Terminology",
+   "deck": "intro_ml_07n",
+   "slide": "terminology",
+   "url": "/slides/intro_ml_07n#/terminology",
+   "prereqs": [
+    "generalized-linear-model",
+    "natural-parameter"
+   ],
+   "leads_to": []
+  },
+  "one-hot": {
+   "title": "Language: One-Hot Word Representation",
+   "deck": "intro_ml_08n",
+   "slide": "one-hot8",
+   "url": "/slides/intro_ml_08n#/one-hot8",
+   "prereqs": [],
+   "leads_to": [
+    "bag-of-words"
+   ]
+  },
+  "bag-of-words": {
+   "title": "Bag of Words",
+   "deck": "intro_ml_08n",
+   "slide": "bag-of-words",
+   "url": "/slides/intro_ml_08n#/bag-of-words",
+   "prereqs": [
+    "one-hot"
+   ],
+   "leads_to": [
+    "class-conditional"
+   ]
+  },
+  "class-conditional": {
+   "title": "What Are the Relevant Probabilities?",
+   "deck": "intro_ml_08n",
+   "slide": "relevant-probs",
+   "url": "/slides/intro_ml_08n#/relevant-probs",
+   "prereqs": [
+    "bag-of-words"
+   ],
+   "leads_to": [
+    "bayes-rule",
+    "naive-bayes-assumption",
+    "prior"
+   ]
+  },
+  "naive-bayes-assumption": {
+   "title": "The Naive Assumption",
+   "deck": "intro_ml_08n",
+   "slide": "naive-assumption",
+   "url": "/slides/intro_ml_08n#/naive-assumption",
+   "prereqs": [
+    "class-conditional"
+   ],
+   "leads_to": [
+    "naive-bayes"
+   ]
+  },
+  "bayes-rule": {
+   "title": "Bayes Rule Turns It Around",
+   "deck": "intro_ml_08n",
+   "slide": "bayes-rule",
+   "url": "/slides/intro_ml_08n#/bayes-rule",
+   "prereqs": [
+    "class-conditional"
+   ],
+   "leads_to": [
+    "discriminative-model",
+    "generative-model",
+    "language-model",
+    "n-gram",
+    "naive-bayes"
+   ]
+  },
+  "prior": {
+   "title": "Bayes Rule Turns It Around",
+   "deck": "intro_ml_08n",
+   "slide": "bayes-rule",
+   "url": "/slides/intro_ml_08n#/bayes-rule",
+   "prereqs": [
+    "class-conditional"
+   ],
+   "leads_to": []
+  },
+  "naive-bayes": {
+   "title": "For a Given Dataset",
+   "deck": "intro_ml_08n",
+   "slide": "estimating",
+   "url": "/slides/intro_ml_08n#/estimating",
+   "prereqs": [
+    "bayes-rule",
+    "maximum-likelihood",
+    "naive-bayes-assumption"
+   ],
+   "leads_to": [
+    "event-model",
+    "laplace-smoothing"
+   ]
+  },
+  "laplace-smoothing": {
+   "title": "The word it never saw",
+   "deck": "intro_ml_08n",
+   "slide": "laplace",
+   "url": "/slides/intro_ml_08n#/laplace",
+   "prereqs": [
+    "maximum-likelihood",
+    "naive-bayes"
+   ],
+   "leads_to": []
+  },
+  "event-model": {
+   "title": "Two ways to generate an email",
+   "deck": "intro_ml_08n",
+   "slide": "event-models",
+   "url": "/slides/intro_ml_08n#/event-models",
+   "prereqs": [
+    "bernoulli",
+    "naive-bayes"
+   ],
+   "leads_to": []
+  },
+  "generative-model": {
+   "title": "Generative and Discriminative",
+   "deck": "intro_ml_08n",
+   "slide": "generative-vs",
+   "url": "/slides/intro_ml_08n#/generative-vs",
+   "prereqs": [
+    "bayes-rule",
+    "logistic-regression"
+   ],
+   "leads_to": [
+    "gda"
+   ]
+  },
+  "discriminative-model": {
+   "title": "Generative and Discriminative",
+   "deck": "intro_ml_08n",
+   "slide": "generative-vs",
+   "url": "/slides/intro_ml_08n#/generative-vs",
+   "prereqs": [
+    "bayes-rule",
+    "logistic-regression"
+   ],
+   "leads_to": []
+  },
+  "multivariate-gaussian": {
+   "title": "A Gaussian in two dimensions",
+   "deck": "intro_ml_08n",
+   "slide": "gauss-2d",
+   "url": "/slides/intro_ml_08n#/gauss-2d",
+   "prereqs": [
+    "gaussian-noise"
+   ],
+   "leads_to": [
+    "gda"
+   ]
+  },
+  "covariance": {
+   "title": "A Gaussian in two dimensions",
+   "deck": "intro_ml_08n",
+   "slide": "gauss-2d",
+   "url": "/slides/intro_ml_08n#/gauss-2d",
+   "prereqs": [
+    "gaussian-noise"
+   ],
+   "leads_to": []
+  },
+  "gda": {
+   "title": "Gaussian discriminant analysis, on penguins",
+   "deck": "intro_ml_08n",
+   "slide": "gda-penguins",
+   "url": "/slides/intro_ml_08n#/gda-penguins",
+   "prereqs": [
+    "generative-model",
+    "maximum-likelihood",
+    "multivariate-gaussian"
+   ],
+   "leads_to": []
+  },
+  "language-model": {
+   "title": "Auto-Regressive Language Models",
+   "deck": "intro_ml_08n",
+   "slide": "autoregressive",
+   "url": "/slides/intro_ml_08n#/autoregressive",
+   "prereqs": [
+    "bayes-rule"
+   ],
+   "leads_to": []
+  },
+  "n-gram": {
+   "title": "Auto-Regressive Language Models",
+   "deck": "intro_ml_08n",
+   "slide": "autoregressive",
+   "url": "/slides/intro_ml_08n#/autoregressive",
+   "prereqs": [
+    "bayes-rule"
+   ],
+   "leads_to": []
+  },
+  "threshold-unit": {
+   "title": "The McCulloch-Pitts neuron (1943)",
+   "deck": "intro_ml_10n",
+   "slide": "mp-neuron",
+   "url": "/slides/intro_ml_10n#/mp-neuron",
+   "prereqs": [
+    "linear-model"
+   ],
+   "leads_to": []
+  },
+  "layer": {
+   "title": "Two Outputs Make a Matrix",
+   "deck": "intro_ml_10n",
+   "slide": "sec-nd-matrix",
+   "url": "/slides/intro_ml_10n#/sec-nd-matrix",
+   "prereqs": [
+    "matrix-product"
+   ],
+   "leads_to": [
+    "activation-function",
+    "hidden-layer",
+    "neural-network"
+   ]
+  },
+  "activation-function": {
+   "title": "The Nonlinear Predictor",
+   "deck": "intro_ml_10n",
+   "slide": "sec-nd-sigma",
+   "url": "/slides/intro_ml_10n#/sec-nd-sigma",
+   "prereqs": [
+    "layer",
+    "logistic-regression"
+   ],
+   "leads_to": [
+    "hidden-layer",
+    "neural-network",
+    "relu"
+   ]
+  },
+  "relu": {
+   "title": "The Activation Menu",
+   "deck": "intro_ml_10n",
+   "slide": "activations",
+   "url": "/slides/intro_ml_10n#/activations",
+   "prereqs": [
+    "activation-function",
+    "derivative"
+   ],
+   "leads_to": []
+  },
+  "neural-network": {
+   "title": "Neural Network",
+   "deck": "intro_ml_10n",
+   "slide": "sec-nd-deep",
+   "url": "/slides/intro_ml_10n#/sec-nd-deep",
+   "prereqs": [
+    "activation-function",
+    "composition",
+    "feature-map",
+    "layer"
+   ],
+   "leads_to": [
+    "autoencoder",
+    "convolution",
+    "deep-network",
+    "recurrent-network",
+    "universal-approximation"
+   ]
+  },
+  "hidden-layer": {
+   "title": "Neural Network",
+   "deck": "intro_ml_10n",
+   "slide": "sec-nd-deep",
+   "url": "/slides/intro_ml_10n#/sec-nd-deep",
+   "prereqs": [
+    "activation-function",
+    "composition",
+    "feature-map",
+    "layer"
+   ],
+   "leads_to": [
+    "deep-network"
+   ]
+  },
+  "deep-network": {
+   "title": "Going deep",
+   "deck": "intro_ml_10n",
+   "slide": "going-deep",
+   "url": "/slides/intro_ml_10n#/going-deep",
+   "prereqs": [
+    "composition",
+    "hidden-layer",
+    "neural-network"
+   ],
+   "leads_to": []
+  },
+  "universal-approximation": {
+   "title": "How Expressive Is One Hidden Layer?",
+   "deck": "intro_ml_10n",
+   "slide": "universal",
+   "url": "/slides/intro_ml_10n#/universal",
+   "prereqs": [
+    "neural-network"
+   ],
+   "leads_to": []
+  },
+  "convolution": {
+   "title": "Convolutional networks",
+   "deck": "intro_ml_10n",
+   "slide": "cnn",
+   "url": "/slides/intro_ml_10n#/cnn",
+   "prereqs": [
+    "neural-network"
+   ],
+   "leads_to": []
+  },
+  "autoencoder": {
+   "title": "Auto-encoders",
+   "deck": "intro_ml_10n",
+   "slide": "autoencoder",
+   "url": "/slides/intro_ml_10n#/autoencoder",
+   "prereqs": [
+    "neural-network"
+   ],
+   "leads_to": []
+  },
+  "recurrent-network": {
+   "title": "Recurrent networks",
+   "deck": "intro_ml_10n",
+   "slide": "rnn",
+   "url": "/slides/intro_ml_10n#/rnn",
+   "prereqs": [
+    "neural-network"
+   ],
+   "leads_to": []
+  },
+  "computation-graph": {
+   "title": "Computation graphs",
+   "deck": "intro_ml_10n",
+   "slide": "comp-graphs",
+   "url": "/slides/intro_ml_10n#/comp-graphs",
+   "prereqs": [
+    "chain-rule",
+    "derivative"
+   ],
+   "leads_to": []
+  },
+  "cross-entropy": {
+   "title": "Binary Cross-Entropy",
+   "deck": "intro_ml_06n",
+   "slide": "cross-entropy",
+   "url": "/slides/intro_ml_06n#/cross-entropy",
+   "prereqs": [],
+   "leads_to": []
+  },
+  "logistic-regression": {
+   "title": "What if y is a label?",
+   "deck": "intro_ml_06n",
+   "slide": "logistic-1d",
+   "url": "/slides/intro_ml_06n#/logistic-1d",
+   "prereqs": [],
+   "leads_to": [
+    "activation-function",
+    "discriminative-model",
+    "generalized-linear-model",
+    "generative-model"
+   ]
+  }
+ },
+ "edges": [
+  [
+   "activation-function",
+   "hidden-layer"
+  ],
+  [
+   "activation-function",
+   "neural-network"
+  ],
+  [
+   "activation-function",
+   "relu"
+  ],
+  [
+   "bag-of-words",
+   "class-conditional"
+  ],
+  [
+   "bayes-rule",
+   "discriminative-model"
+  ],
+  [
+   "bayes-rule",
+   "generative-model"
+  ],
+  [
+   "bayes-rule",
+   "language-model"
+  ],
+  [
+   "bayes-rule",
+   "n-gram"
+  ],
+  [
+   "bayes-rule",
+   "naive-bayes"
+  ],
+  [
+   "bernoulli",
+   "event-model"
+  ],
+  [
+   "bernoulli",
+   "exponential-family"
+  ],
+  [
+   "bernoulli",
+   "log-partition-function"
+  ],
+  [
+   "bernoulli",
+   "natural-parameter"
+  ],
+  [
+   "chain-rule",
+   "computation-graph"
+  ],
+  [
+   "class-conditional",
+   "bayes-rule"
+  ],
+  [
+   "class-conditional",
+   "naive-bayes-assumption"
+  ],
+  [
+   "class-conditional",
+   "prior"
+  ],
+  [
+   "column-space",
+   "projection"
+  ],
+  [
+   "column-space",
+   "rank"
+  ],
+  [
+   "column-space",
+   "span"
+  ],
+  [
+   "composition",
+   "deep-network"
+  ],
+  [
+   "composition",
+   "hidden-layer"
+  ],
+  [
+   "composition",
+   "neural-network"
+  ],
+  [
+   "condition-number",
+   "centering"
+  ],
+  [
+   "correlation",
+   "missing-variable"
+  ],
+  [
+   "correlation",
+   "r-squared"
+  ],
+  [
+   "cost-function",
+   "loss-landscape"
+  ],
+  [
+   "cost-function",
+   "maximum-likelihood"
+  ],
+  [
+   "cost-function",
+   "poisson-regression"
+  ],
+  [
+   "derivative",
+   "computation-graph"
+  ],
+  [
+   "derivative",
+   "gradient"
+  ],
+  [
+   "derivative",
+   "integral"
+  ],
+  [
+   "derivative",
+   "relu"
+  ],
+  [
+   "design-matrix",
+   "correlation"
+  ],
+  [
+   "determinant",
+   "inverse"
+  ],
+  [
+   "exponential-family",
+   "poisson-distribution"
+  ],
+  [
+   "feature-map",
+   "hidden-layer"
+  ],
+  [
+   "feature-map",
+   "neural-network"
+  ],
+  [
+   "feature-map",
+   "overfitting"
+  ],
+  [
+   "feature-map",
+   "underfitting"
+  ],
+  [
+   "gaussian-noise",
+   "covariance"
+  ],
+  [
+   "gaussian-noise",
+   "exponential-family"
+  ],
+  [
+   "gaussian-noise",
+   "log-partition-function"
+  ],
+  [
+   "gaussian-noise",
+   "multivariate-gaussian"
+  ],
+  [
+   "gaussian-noise",
+   "natural-parameter"
+  ],
+  [
+   "generalized-linear-model",
+   "link-function"
+  ],
+  [
+   "generative-model",
+   "gda"
+  ],
+  [
+   "gradient",
+   "backpropagation"
+  ],
+  [
+   "gradient",
+   "chain-rule"
+  ],
+  [
+   "gradient",
+   "gradient-descent"
+  ],
+  [
+   "gradient",
+   "learning-rate"
+  ],
+  [
+   "gradient",
+   "normal-equations"
+  ],
+  [
+   "gradient-descent",
+   "centering"
+  ],
+  [
+   "gradient-descent",
+   "lms-rule"
+  ],
+  [
+   "gradient-descent",
+   "sgd"
+  ],
+  [
+   "hidden-layer",
+   "deep-network"
+  ],
+  [
+   "holding-fixed",
+   "l1-regularization"
+  ],
+  [
+   "hypothesis",
+   "hypothesis-choice"
+  ],
+  [
+   "inner-product",
+   "cosine-similarity"
+  ],
+  [
+   "inner-product",
+   "norm"
+  ],
+  [
+   "inverse",
+   "condition-number"
+  ],
+  [
+   "layer",
+   "activation-function"
+  ],
+  [
+   "layer",
+   "hidden-layer"
+  ],
+  [
+   "layer",
+   "neural-network"
+  ],
+  [
+   "learning-rate",
+   "hyperparameter"
+  ],
+  [
+   "learning-rate",
+   "sgd"
+  ],
+  [
+   "likelihood",
+   "maximum-likelihood"
+  ],
+  [
+   "linear-model",
+   "cost-function"
+  ],
+  [
+   "linear-model",
+   "gaussian-noise"
+  ],
+  [
+   "linear-model",
+   "multiple-regression"
+  ],
+  [
+   "linear-model",
+   "regression-to-the-mean"
+  ],
+  [
+   "linear-model",
+   "residual"
+  ],
+  [
+   "linear-model",
+   "threshold-unit"
+  ],
+  [
+   "linear-transformation",
+   "column-space"
+  ],
+  [
+   "linear-transformation",
+   "composition"
+  ],
+  [
+   "lms-rule",
+   "generalized-linear-model"
+  ],
+  [
+   "logistic-regression",
+   "activation-function"
+  ],
+  [
+   "logistic-regression",
+   "discriminative-model"
+  ],
+  [
+   "logistic-regression",
+   "generalized-linear-model"
+  ],
+  [
+   "logistic-regression",
+   "generative-model"
+  ],
+  [
+   "loss-landscape",
+   "centering"
+  ],
+  [
+   "loss-landscape",
+   "gradient-descent"
+  ],
+  [
+   "loss-landscape",
+   "learning-rate"
+  ],
+  [
+   "matrix",
+   "design-matrix"
+  ],
+  [
+   "matrix",
+   "determinant"
+  ],
+  [
+   "matrix",
+   "eigenvector"
+  ],
+  [
+   "matrix",
+   "linear-transformation"
+  ],
+  [
+   "matrix",
+   "matrix-product"
+  ],
+  [
+   "matrix-product",
+   "composition"
+  ],
+  [
+   "matrix-product",
+   "correlation"
+  ],
+  [
+   "matrix-product",
+   "layer"
+  ],
+  [
+   "maximum-likelihood",
+   "gda"
+  ],
+  [
+   "maximum-likelihood",
+   "l1-loss"
+  ],
+  [
+   "maximum-likelihood",
+   "laplace-smoothing"
+  ],
+  [
+   "maximum-likelihood",
+   "naive-bayes"
+  ],
+  [
+   "maximum-likelihood",
+   "outlier"
+  ],
+  [
+   "missing-variable",
+   "holding-fixed"
+  ],
+  [
+   "multiple-regression",
+   "holding-fixed"
+  ],
+  [
+   "multivariate-gaussian",
+   "gda"
+  ],
+  [
+   "naive-bayes",
+   "event-model"
+  ],
+  [
+   "naive-bayes",
+   "laplace-smoothing"
+  ],
+  [
+   "naive-bayes-assumption",
+   "naive-bayes"
+  ],
+  [
+   "natural-parameter",
+   "link-function"
+  ],
+  [
+   "natural-parameter",
+   "poisson-distribution"
+  ],
+  [
+   "neural-network",
+   "autoencoder"
+  ],
+  [
+   "neural-network",
+   "convolution"
+  ],
+  [
+   "neural-network",
+   "deep-network"
+  ],
+  [
+   "neural-network",
+   "recurrent-network"
+  ],
+  [
+   "neural-network",
+   "universal-approximation"
+  ],
+  [
+   "norm",
+   "l1-regularization"
+  ],
+  [
+   "norm",
+   "l2-regularization"
+  ],
+  [
+   "normal-equations",
+   "projection"
+  ],
+  [
+   "one-hot",
+   "bag-of-words"
+  ],
+  [
+   "overfitting",
+   "bias-variance"
+  ],
+  [
+   "overfitting",
+   "regularization"
+  ],
+  [
+   "poisson-distribution",
+   "poisson-regression"
+  ],
+  [
+   "poisson-regression",
+   "generalized-linear-model"
+  ],
+  [
+   "rank",
+   "condition-number"
+  ],
+  [
+   "rank",
+   "inverse"
+  ],
+  [
+   "regularization",
+   "l1-regularization"
+  ],
+  [
+   "regularization",
+   "l2-regularization"
+  ],
+  [
+   "test-set",
+   "validation-set"
+  ],
+  [
+   "validation-set",
+   "cross-validation"
+  ],
+  [
+   "vectors",
+   "feature"
+  ],
+  [
+   "vectors",
+   "inner-product"
+  ],
+  [
+   "vectors",
+   "intercept"
+  ],
+  [
+   "vectors",
+   "linear-model"
+  ],
+  [
+   "vectors",
+   "matrix"
+  ],
+  [
+   "vectors",
+   "target"
+  ],
+  [
+   "vectors",
+   "training-example"
+  ]
+ ]
+}

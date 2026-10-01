@@ -49,7 +49,32 @@ function score(d) {
 // that the course teaches is marked, shift-click opens its lesson, and every
 // answer ends with the taught concepts it touched, in course order.
 
-const learn = { concepts: {}, byWiki: {}, decks: {}, decksByConcept: {}, ready: null };
+const learn = { concepts: {}, byWiki: {}, decks: {}, decksByConcept: {}, pre: {}, ready: null };
+// prerequisite edges of the course (/learn/graph.json): the practise list
+// follows them, so a lesson never comes before one it needs
+fetch("/learn/graph.json").then((r) => r.json()).then((g) => {
+  (g.edges || []).filter((e) => e.type === "prereq").forEach((e) => {
+    const a = e.source.slice(2), b = e.target.slice(2);
+    (learn.pre[b] ||= []).push(a);
+  });
+}).catch(() => {});
+
+// order keys so prerequisites come first; ties keep course order
+function prereqOrder(items) {
+  const keys = new Set(items.map((c) => c.key));
+  const byKey = new Map(items.map((c) => [c.key, c]));
+  const out = [], done = new Set();
+  const visit = (k, stack = new Set()) => {
+    if (done.has(k) || stack.has(k)) return;
+    stack.add(k);
+    (learn.pre[k] || []).filter((p) => keys.has(p))
+      .sort((x, y) => cmpOrder(byKey.get(x), byKey.get(y))).forEach((p) => visit(p, stack));
+    done.add(k); out.push(byKey.get(k));
+  };
+  items.slice().sort(cmpOrder).forEach((c) => visit(c.key));
+  return out;
+}
+function cmpOrder(x, y) { return x.order[0] - y.order[0] || x.order[1] - y.order[1]; }
 learn.ready = fetch("/learn/bridge.json").then((r) => r.json()).then((d) => {
   learn.concepts = d.concepts || {};
   learn.byWiki = d.by_wiki || {};
@@ -557,15 +582,14 @@ function renderPractise(a) {
       if (!seen.has(c.key)) seen.set(c.key, { ...c, cited: cited.has(n.id), ev });
     });
   });
-  const items = [...seen.values()]
-    .sort((x, y) => x.order[0] - y.order[0] || x.order[1] - y.order[1])
-    .slice(0, 10);
+  const items = prereqOrder([...seen.values()]).slice(0, 10);
   a.practise.innerHTML = items.map((c) => `
     <li>
       <a href="${esc(c.url)}" target="_blank" rel="noopener" data-key="${esc(c.key)}">${esc(conceptName(c))}</a>
       <span class="lesson">${esc(c.title)}</span>
       <span class="deck">${esc(c.deck_title)}</span>
       ${c.cited ? '<span class="cited-tag">cited above</span>' : ""}
+      <a class="tree-link" href="/lab#c=${encodeURIComponent(c.key)}" target="_blank" rel="noopener">in the course tree</a>
     </li>`).join("");
   a.practise.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => track("open_lesson"));
@@ -605,6 +629,24 @@ function renderBody(a) {
     c.addEventListener("mouseleave", hideTip);
     c.addEventListener("click", () => { hideTip(); track("cite_click"); focusRef(a, +c.dataset.n); });
   });
+  scheduleMath(a);
+}
+
+// Formulas arrive as LaTeX between \( \) or \[ \]. Rendering is throttled
+// while the answer streams in, since the body is rebuilt on every chunk.
+const MATH = { delimiters: [
+  { left: "\\[", right: "\\]", display: true },
+  { left: "\\(", right: "\\)", display: false },
+  { left: "$$", right: "$$", display: true },
+], throwOnError: false, strict: false };
+function typeset(el) {
+  if (window.renderMathInElement) {
+    try { renderMathInElement(el, MATH); } catch (e) {}
+  }
+}
+function scheduleMath(a, now) {
+  clearTimeout(a.mathTimer);
+  a.mathTimer = setTimeout(() => typeset(a.body), now ? 0 : 350);
 }
 
 function focusRef(a, n) {
@@ -629,6 +671,7 @@ function renderRefs(a) {
       <p class="ref-excerpt">${esc(s.excerpt)}…</p>
     </li>`).join("");
   a.refsWrap.hidden = !a.sources.length;
+  typeset(a.refs);
   [...a.refs.children].forEach((li, i) =>
     li.addEventListener("mouseenter", () => pulseNode(a.sources[i].name)));
 }
@@ -659,14 +702,16 @@ function addTrace(a, ev) {
 function setModels(a, ev) {
   const fmt = (m) => `${esc(m.model)} <span class="via">via ${esc(m.via)}</span>` +
     (m.note ? ` <span class="note">(${esc(m.note)})</span>` : "");
-  a.rank.innerHTML = fmt(ev.ranking);
+  a.rank.innerHTML = fmt(ev.ranking) + (ev.ranking.links_model
+    ? ` <span class="via">and, for links,</span> ${esc(ev.ranking.links_model)}` : "");
   a.gen.innerHTML = fmt(ev.generation);
 }
 
 function setCost(a, ev, label) {
   const r = ev.ranking || {}, w = ev.writing || {};
-  const rank = r.calls
-    ? `ranking ${money(r.cost)} (${r.calls} Jev calls, ${(r.input_tokens || 0).toLocaleString()} input tokens)`
+  const rank = r.calls || r.pick_calls
+    ? `ranking ${money(r.cost)} (${r.calls || 0} Jev calls, ${(r.input_tokens || 0).toLocaleString()} input tokens` +
+      (r.pick_calls ? `; ${r.pick_calls} link picks by ${esc(r.pick_model)}, ${money(r.pick_cost)}` : "") + ")"
     : "no ranking";
   const write = w.prompt_tokens != null
     ? `writing ${money(w.cost)} (${w.prompt_tokens.toLocaleString()} tokens in, ` +
@@ -850,7 +895,7 @@ function handleArticleEvent(a, ev, costLabel) {
       renderBody(a);
       break;
     case "cost": setCost(a, ev, costLabel); break;
-    case "done": a.done = true; learn.ready.then(() => renderPractise(a)); break;
+    case "done": a.done = true; scheduleMath(a, true); learn.ready.then(() => renderPractise(a)); break;
     case "error": setStatus(ev.message); a.done = true; break;
   }
 }

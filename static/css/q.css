@@ -360,3 +360,10 @@ html[data-theme="dark"] { --learn: #4fd8bd; }
   text-decoration: none; border-bottom: 1px solid var(--ink-dim);
 }
 .deck-card .deck-teaches { display: block; font-size: 13px; color: var(--ink-dim); margin-top: 6px; }
+.practise .tree-link { font-size: 11.5px; color: var(--ink-dim); margin-left: 8px; border: none; font-weight: 400; }
+.practise .tree-link:hover { color: var(--ink); text-decoration: underline; }
+
+/* formulas */
+.article-body .katex { font-size: 1.04em; }
+.article-body .katex-display { margin: 0.8em 0; overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+.ref-excerpt .katex { font-size: 1em; }

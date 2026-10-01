@@ -7,5 +7,7 @@ data/*
 !data/learn_bridge.json
 !data/learn_bridge_overrides.json
 !data/frontier.json
+!data/course_graph.json
+!data/graph.json
 frontend/node_modules/
 frontend/build/

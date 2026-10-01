@@ -494,6 +494,22 @@ async def learn_frontier():
     return resp
 
 
+@app.route('/learn/graph.json')
+async def learn_graph():
+    """
+    The map and the course as one graph: concepts with their lessons and
+    prerequisites, Wikipedia's links between them, the articles just beyond,
+    and story decks. Built by scripts/build_graph.py; see its docstring.
+    """
+    from pathlib import Path
+    p = Path(__file__).parent / "data" / "graph.json"
+    if not p.exists():
+        return jsonify({"nodes": [], "edges": []})
+    resp = Response(p.read_text(), content_type="application/json")
+    resp.headers["Access-Control-Allow-Origin"] = "*"
+    return resp
+
+
 @app.route('/learn/bridge.json')
 async def learn_bridge():
     """
