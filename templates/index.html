@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!-- Outside the sidebar on purpose: the sidebar collapses once a graph is up,
+     and the theme has to stay reachable while you are looking at the graph. -->
+<button id="themeToggle" type="button" class="theme-toggle"
+        title="Switch between the dark and light map">Light mode</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="mySidebar">
+  <a class="closebtn" href="javascript:void(0)" onclick="shrinkSearchBox()"><</a>
+
+  <div class="header-container">
+    <form action="{{ url_for('visualize') }}" id="searchbar" method="POST">
+      <div class="input-container">
+        <p class="feature-title" id="pick-topic">Pick a Topic</p>
+        <input autocomplete="off" id="searchBox" name="article_name" placeholder="Ex: Philosophy" required type="text"/>
+      </div>
+
+      <div class="source-buttons">
+        <p class="feature-title" id="search_source">Source</p>
+        <input class="hidden-radio" id="wikipedia" name="search_source" type="radio" value="wikipedia" checked/>
+        <label class="branch" for="wikipedia">Wikipedia</label>
+      </div>
+
+      <div class="depth-control">
+        <p class="feature-title" id="depth">Tree Depth</p>
+        <div id="branch-buttons">
+          <input class="hidden-radio" id="depth1" name="depth" type="radio" value="1"/>
+          <label class="branch" for="depth1">1</label>
+          <input class="hidden-radio" id="depth2" name="depth" type="radio" value="2"/>
+          <label class="branch" for="depth2">2</label>
+          <input class="hidden-radio" id="depth3" name="depth" type="radio" value="3" checked/>
+          <label class="branch" for="depth3">3</label>
+        </div>
+      </div>
+
+      <button id="submit" type="submit">Visualize</button>
+      <button id="stopButton" type="button" style="display: none;">Stop Stream</button>
+    </form>
+
+    <!-- More Options section -->
+    <div class="more-options-container" style="margin-top: 20px; display: none;">
+      <button id="toggle-graph-controls" class="toggle-controls" style="width: 100%; padding: 8px; background-color: #2196F3; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
+        Customize Graph
+      </button>
+      <div id="graph-controls" class="graph-controls-panel" style="display: none; margin-top: 10px; background: rgba(245,245,245,0.9); padding: 10px; border-radius: 8px;">
+        <!-- Graph Controls Header: Label and Highlight Prompt -->
+        <div id="graph-header">
+          <div class="force-slider-title" style="font-weight: bold; margin-bottom: 10px;">Graph Controls</div>
+          
+          <!-- The highlight-by-prompt panel was removed: it scored nodes against a
+           phrase and recoloured them, which never answered a real question. -->
+        </div>
+        
+        <!-- Container for the slider controls (populated dynamically) -->
+        <div id="slider-controls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main content -->
+<div id="main">
+  <header>
+    <div class="wordmap-title">SemAtlas <span style="font-size: 12px; opacity: 0.6;">v{{ version }}</span></div>
+  </header>
+
+  <div id="loading-spinner" style="display: none;">
+    <div class="spinner"></div>
+  </div>
+
+  <svg id="visualization"></svg>
+
+  <!-- Ask the graph: appears once a graph is drawn (see ask.js) -->
+  <form id="askForm" class="ask-bar" autocomplete="off">
+    <div id="askBar" class="ask-bar-inner">
+      <input id="askInput" type="text" maxlength="500"
+             placeholder="Ask this graph a question" required/>
+      <button id="askSubmit" type="submit">Ask</button>
+    </div>
+  </form>
+
+
+</div>
+
+<!-- Info Panel (slides from right) -->
+<div id="infoPanel" class="info-panel">
+  <div class="info-panel-header">
+    <h3 class="info-panel-title" id="infoPanelTitle">Article Title</h3>
+    <button class="info-panel-collapse" onclick="toggleInfoPanel()"
+            title="Collapse or expand the article">&#8212;</button>
+    <button class="info-panel-close" onclick="closeInfoPanel()">&times;</button>
+  </div>
+  <div class="info-panel-content">
+    <div class="info-panel-meta">
+      <span class="info-panel-badge" id="infoPanelLevel">Level 0</span>
+    </div>
+    <div id="infoPanelAbstract" class="info-panel-abstract">
+      <div class="info-panel-loading">Loading article information...</div>
+    </div>
+    <a id="infoPanelLink" href="#" target="_blank" class="info-panel-link">Read Full Article</a>
+  </div>
+</div>
+
+<!-- Answer panel (slides from left) -->
+<div id="answerPanel" class="answer-panel">
+  <div class="answer-panel-header">
+    <h3 class="answer-question" id="answerQuestion"></h3>
+    <button class="info-panel-close" onclick="closeAnswerPanel()"
+            title="Close the answer and clear the highlights">&times;</button>
+  </div>
+  <div class="answer-panel-content">
+    <div id="answerStatus" class="answer-status" hidden></div>
+    <div id="answerText" class="answer-text"></div>
+    <div id="answerSourcesWrap" hidden>
+      <p class="answer-sources-title">Sources, by relevance</p>
+      <ol id="answerSources" class="answer-sources"></ol>
+    </div>
+    <p id="answerMeta" class="answer-meta"></p>
+  </div>
+</div>
+
+<!-- Context Menu (right-click menu) -->
+<div id="contextMenu" class="context-menu" style="display: none;">
+  <div class="context-menu-item" onclick="expandNodeChildren()">
+    <span>🌱</span> Expand Children
+  </div>
+  <div class="context-menu-item" onclick="toggleNodeFixed()">
+    <span>📌</span> Toggle Pin
+  </div>
+  <div class="context-menu-item" onclick="showNodeInfo()">
+    <span>ℹ️</span> Show Info
+  </div>
+  <div class="context-menu-divider"></div>
+  <div class="context-menu-item danger" onclick="deleteNode()">
+    <span>🗑️</span> Remove Node
+  </div>
+</div>
+
+<script src="static/js/script.js" type="text/javascript"></script>
+<script src="static/js/ask.js" type="text/javascript"></script>
+{% endblock %}
+<body>

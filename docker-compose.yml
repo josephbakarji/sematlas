@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: ["hypercorn", "main:app", "--bind", "0.0.0.0:5000", "--reload"]

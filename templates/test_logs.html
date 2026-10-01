@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SemAtlas Test - Live Logs</title>
+    <style>
+        body {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #4ec9b0;
+            border-bottom: 2px solid #4ec9b0;
+            padding-bottom: 10px;
+        }
+        .test-section {
+            background: #252526;
+            border: 1px solid #3e3e42;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .log-container {
+            background: #1e1e1e;
+            border: 1px solid #3e3e42;
+            border-radius: 3px;
+            padding: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-left: 3px solid transparent;
+        }
+        .log-entry.info { border-left-color: #4ec9b0; }
+        .log-entry.success { border-left-color: #4caf50; color: #4caf50; }
+        .log-entry.warning { border-left-color: #ff9800; color: #ff9800; }
+        .log-entry.error { border-left-color: #f44336; color: #f44336; }
+        .log-entry .timestamp { color: #858585; font-size: 11px; }
+        button {
+            background: #0e639c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #1177bb;
+        }
+        button:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status.running { background: #ff9800; color: #1e1e1e; }
+        .status.complete { background: #4caf50; color: #1e1e1e; }
+        .status.error { background: #f44336; }
+        .stats {
+            background: #2d2d30;
+            padding: 10px;
+            border-radius: 3px;
+            margin: 10px 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4ec9b0;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #858585;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 SemAtlas Live Test & Logs</h1>
+
+    <div class="test-section">
+        <h2>Wikipedia Search Test
+            <span id="status" class="status">Ready</span>
+        </h2>
+
+        <div>
+            <label>Article: <input type="text" id="query" value="Philosophy" style="padding: 5px; width: 200px;"></label>
+            <label>Depth:
+                <select id="depth" style="padding: 5px;">
+                    <option value="0">0 (root only)</option>
+                    <option value="1" selected>1 (root + children)</option>
+                    <option value="2">2 (root + children + grandchildren)</option>
+                </select>
+            </label>
+            <button onclick="runTest()">Run Test</button>
+            <button onclick="clearLogs()">Clear Logs</button>
+        </div>
+
+        <div class="stats" id="stats" style="display: none;">
+            <div class="stat">
+                <div class="stat-value" id="nodes-count">0</div>
+                <div class="stat-label">Nodes</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="links-count">0</div>
+                <div class="stat-label">Links</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="updates-count">0</div>
+                <div class="stat-label">Updates</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="elapsed-time">0s</div>
+                <div class="stat-label">Elapsed</div>
+            </div>
+        </div>
+
+        <h3>Live Logs:</h3>
+        <div class="log-container" id="logs"></div>
+
+        <h3>Sample Data (First Update):</h3>
+        <div class="log-container" id="data-sample" style="max-height: 300px;">
+            <em>Will show sample data after first graph update...</em>
+        </div>
+    </div>
+
+    <script>
+        let startTime;
+        let updateInterval;
+
+        function log(message, type = 'info') {
+            const logs = document.getElementById('logs');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+
+            const timestamp = new Date().toLocaleTimeString();
+            entry.innerHTML = `<span class="timestamp">[${timestamp}]</span> ${message}`;
+
+            logs.appendChild(entry);
+            logs.scrollTop = logs.scrollHeight;
+        }
+
+        function clearLogs() {
+            document.getElementById('logs').innerHTML = '';
+            document.getElementById('stats').style.display = 'none';
+        }
+
+        function updateStatus(status) {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = status;
+            statusEl.className = 'status';
+
+            if (status.includes('Running')) {
+                statusEl.classList.add('running');
+            } else if (status.includes('Complete')) {
+                statusEl.classList.add('complete');
+            } else if (status.includes('Error')) {
+                statusEl.classList.add('error');
+            }
+        }
+
+        function updateStats(nodes, links, updates) {
+            document.getElementById('stats').style.display = 'grid';
+            document.getElementById('nodes-count').textContent = nodes;
+            document.getElementById('links-count').textContent = links;
+            document.getElementById('updates-count').textContent = updates;
+
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            document.getElementById('elapsed-time').textContent = elapsed + 's';
+        }
+
+        async function runTest() {
+            clearLogs();
+
+            const query = document.getElementById('query').value;
+            const depth = document.getElementById('depth').value;
+
+            log(`Starting test: "${query}" with depth=${depth}`, 'info');
+            updateStatus('Running...');
+
+            startTime = Date.now();
+            let updateCount = 0;
+
+            updateInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                document.getElementById('elapsed-time').textContent = elapsed + 's';
+            }, 1000);
+
+            try {
+                const response = await fetch('/visualize', {
+                    method: 'POST',
+                    body: new URLSearchParams({
+                        article_name: query,
+                        search_source: 'wikipedia',
+                        depth: depth
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                log('✅ Connection established', 'success');
+
+                const reader = response.body.getReader();
+                let buffer = '';
+
+                while (true) {
+                    const {value, done} = await reader.read();
+
+                    if (done) {
+                        log('Stream completed', 'success');
+                        break;
+                    }
+
+                    const text = new TextDecoder().decode(value);
+                    buffer += text;
+
+                    const chunks = buffer.split('\n\n');
+                    buffer = chunks.pop();
+
+                    for (const chunk of chunks) {
+                        if (!chunk.trim()) continue;
+
+                        try {
+                            const data = JSON.parse(chunk);
+
+                            if (data.stream_id) {
+                                log(`📡 Stream ID: ${data.stream_id}`, 'info');
+                            } else if (data.nodes && data.nodes.length > 0) {
+                                // This is graph data (with or without _debug)
+                                updateCount++;
+                                log(`📊 Received graph: ${data.nodes.length} nodes, ${data.links.length} links`, 'success');
+                                updateStats(data.nodes.length, data.links.length, updateCount);
+
+                                // Log debug info if present
+                                if (data._debug) {
+                                    log(`🔍 [${data._debug.step}] ${data._debug.message}`, 'info');
+                                }
+
+                                // Show sample data on first update
+                                if (updateCount === 1) {
+                                    const sample = document.getElementById('data-sample');
+                                    sample.innerHTML = `
+                                        <div style="margin-bottom: 10px;">
+                                            <strong>First 3 Nodes:</strong>
+                                            <pre style="background: #1e1e1e; padding: 10px; overflow-x: auto; font-size: 11px;">${JSON.stringify(data.nodes.slice(0, 3), null, 2)}</pre>
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <strong>First 3 Links:</strong>
+                                            <pre style="background: #1e1e1e; padding: 10px; overflow-x: auto; font-size: 11px;">${JSON.stringify(data.links.slice(0, 3), null, 2)}</pre>
+                                        </div>
+                                        <div style="padding: 10px; background: #2d2d30; margin: 5px 0;">
+                                            <strong>✓ Checks:</strong><br>
+                                            Nodes have 'index' property? ${data.nodes[0]?.index !== undefined ? '<span style="color: #4caf50;">✅ YES</span>' : '<span style="color: #f44336;">❌ NO</span>'}<br>
+                                            Links format correct? ${typeof data.links[0]?.source === 'number' ? '<span style="color: #4caf50;">✅ YES (numeric)</span>' : '<span style="color: #f44336;">❌ NO (not numeric)</span>'}
+                                        </div>
+                                        <div style="padding: 10px; background: #2d2d30; margin: 5px 0;">
+                                            <strong>📋 All Data Fields:</strong><br>
+                                            <code style="font-size: 11px;">${Object.keys(data).join(', ')}</code>
+                                        </div>
+                                    `;
+                                }
+                            }
+                        } catch (e) {
+                            log(`⚠️ Parse error: ${e.message}`, 'warning');
+                        }
+                    }
+                }
+
+                clearInterval(updateInterval);
+                updateStatus('Complete ✓');
+                log('🎉 Test completed successfully!', 'success');
+
+            } catch (error) {
+                clearInterval(updateInterval);
+                log(`❌ Error: ${error.message}`, 'error');
+                updateStatus('Error ✗');
+            }
+        }
+    </script>
+</body>
+</html>

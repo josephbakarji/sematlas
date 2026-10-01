@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SemAtlas: ask Wikipedia</title>
+  <script>
+    // same theme rule as the main page: dark by default, remembered choice wins
+    (function () {
+      var p = new URLSearchParams(location.search).get("theme");
+      var saved = null;
+      try { saved = localStorage.getItem("sa-theme"); } catch (e) {}
+      var theme = (p === "light" || p === "dark") ? p : (saved || "dark");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/q.css') }}">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body class="landing">
+
+<header id="topbar" class="topbar">
+  <a class="wordmark" href="/q">SemAtlas</a>
+  <form id="qForm" class="qform" autocomplete="off">
+    <input id="qInput" type="text" maxlength="500" placeholder="Ask a question" required>
+    <button id="qGo" type="submit">Ask</button>
+  </form>
+  <button id="acctBtn" class="acct" type="button" title="Who pays for your questions"></button>
+  <button id="themeBtn" class="ghost" type="button" title="Switch theme">◐</button>
+</header>
+
+<div id="keyPanel" class="modal" hidden>
+  <div class="modal-card" role="dialog" aria-labelledby="keyTitle">
+    <button id="keyClose" class="modal-x" type="button" aria-label="Close">×</button>
+    <h2 id="keyTitle">Who pays for the questions</h2>
+    <p id="keyReason" class="key-reason" hidden></p>
+    <p>Each question runs two AI models: Jev ranks the Wikipedia articles and GPT writes the
+      answer. It costs about <b>1.5 cents</b>. SemAtlas pays for a few free questions a day
+      for everyone; beyond that, connect your own <a href="https://openrouter.ai" target="_blank"
+      rel="noopener">OpenRouter</a> account and your questions are billed to it.</p>
+    <div id="keyDisconnected">
+      <button id="connectBtn" class="primary" type="button">Connect OpenRouter</button>
+      <p class="fine">You approve on OpenRouter and come straight back. The key it issues stays
+        in this browser and is sent only with your own questions; SemAtlas never stores it.</p>
+      <details>
+        <summary>Or paste an OpenRouter key</summary>
+        <form id="pasteForm" class="qform paste">
+          <input id="pasteKey" type="password" placeholder="sk-or-v1-…" autocomplete="off" required>
+          <button type="submit">Use key</button>
+        </form>
+      </details>
+    </div>
+    <div id="keyConnected" hidden>
+      <p class="connected">✓ Using your OpenRouter account in this browser.</p>
+      <button id="disconnectBtn" type="button">Disconnect</button>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <h1>Ask a question.<br>Watch Wikipedia answer it.</h1>
+  <p class="hero-sub">SemAtlas searches Wikipedia, follows the links most likely to lead to
+    an answer, and writes a short article from what it finds, citing every article it used.</p>
+  <form id="heroForm" class="qform" autocomplete="off">
+    <input id="heroInput" type="text" maxlength="500" placeholder="Ask a question" required autofocus>
+    <button type="submit">Ask</button>
+  </form>
+  <div class="examples">
+    <button class="example">Why did the Bronze Age collapse happen?</button>
+    <button class="example">How do birds navigate during migration?</button>
+    <button class="example">Why does entropy give time a direction?</button>
+    <button class="example">What caused the fall of the Western Roman Empire?</button>
+  </div>
+</section>
+
+<section id="graphWrap" class="graph-wrap" hidden>
+  <svg id="graph"></svg>
+  <div class="graph-tools">
+    <button id="fitBtn" type="button" title="Show the whole graph again">Fit</button>
+    <button id="fullBtn" type="button" title="Explore the graph full screen (Esc to leave)">⤢ Full view</button>
+    <button id="collapseBtn" type="button" title="Hide the graph">Hide ▴</button>
+  </div>
+  <div class="legend">
+    <div id="legendSeeds" class="legend-seeds"></div>
+    <div class="legend-keys">
+      <span>brighter = more relevant</span>
+      <span class="cand-key">not followed</span>
+      <span class="ctx-key">in the answer</span>
+    </div>
+  </div>
+  <div id="graphStatus" class="graph-status"></div>
+  <div id="contextBar" class="context-bar" hidden>
+    <span id="contextText"></span>
+    <button id="resetCtx" class="link-btn" type="button">Undo</button>
+    <button id="rewriteBtn" type="button">Rewrite the answer</button>
+  </div>
+</section>
+
+<button id="expandBtn" class="expand-btn" type="button" hidden>Show graph ▾</button>
+
+<main id="page" class="page" hidden>
+  <div id="answers"></div>
+
+  <form id="fuForm" class="followup" autocomplete="off" hidden>
+    <label for="fuInput">Ask a follow-up. The graph grows from here.</label>
+    <div class="qform">
+      <input id="fuInput" type="text" maxlength="500" placeholder="What would you like to know next?" required>
+      <button type="submit">Ask</button>
+    </div>
+  </form>
+</main>
+
+<footer id="footer" class="footer">
+  <p>Answers are written by AI from Wikipedia. Wikipedia text is by
+    <a href="https://en.wikipedia.org/wiki/Wikipedia:Copyrights" target="_blank" rel="noopener">Wikipedia
+    contributors</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"
+    rel="noopener">CC BY-SA 4.0</a>, and each answer is shared under the same licence.
+    SemAtlas is open source: <a href="{{ repo_url }}" target="_blank" rel="noopener">{{ repo_url.split('//')[-1] }}</a>.
+    Usage counts are anonymous; question text is kept only in server logs.</p>
+</footer>
+
+<template id="answerTpl">
+  <article class="article">
+    <p class="followup-of" hidden></p>
+    <h1 class="article-title"></h1>
+    <p class="article-from">From SemAtlas, written by AI from the Wikipedia articles cited
+      below. It can make mistakes; the references are the ground truth.</p>
+    <dl class="models">
+      <div><dt>Ranking</dt><dd class="m-rank">…</dd></div>
+      <div><dt>Writing</dt><dd class="m-gen">…</dd></div>
+    </dl>
+    <p class="cost-line" hidden></p>
+    <p class="hint">Click any box in the graph to add it to this answer's sources or take it
+      out, then rewrite. Double-click opens it on Wikipedia. Ctrl + scroll (or pinch) zooms;
+      drag the background to pan.</p>
+    <p class="status"></p>
+    <div class="article-body"></div>
+    <section class="refs" hidden>
+      <h2>References</h2>
+      <ol></ol>
+    </section>
+    <section class="trace" hidden>
+      <h2>How this was found</h2>
+      <ol></ol>
+    </section>
+  </article>
+</template>
+
+<div id="tip" class="tip" hidden></div>
+
+<script src="{{ url_for('static', filename='js/q.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+openapi: 3.0.0
+info:
+  title: SemAtlas API
+  description: |
+    API for SemAtlas knowledge graph visualization service. 
+    Provides endpoints for generating interactive visualizations from Wikipedia articles 
+    and web search results using Bing Search API and GPT-powered topic categorization.
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+    description: Development server
+
+paths:
+  /:
+    get:
+      summary: Main Application Interface
+      description: Renders the main SemAtlas visualization interface
+      responses:
+        '200':
+          description: Successfully rendered main page
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /visualize:
+    post:
+      summary: Generate Knowledge Graph Visualization
+      description: |
+        Generates and streams an interactive knowledge graph visualization based on the input query.
+        Uses either Wikipedia article mapping or Bing search results with GPT topic clustering.
+        
+        The response is streamed as Server-Sent Events (SSE), with the first chunk containing 
+        a stream ID that can be used to cancel the visualization process.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                article_name:
+                  type: string
+                  description: Topic or article name to visualize
+                  example: "Philosophy"
+                search_source:
+                  type: string
+                  enum: [wikipedia, bing]
+                  default: wikipedia
+                  description: Source for knowledge graph generation
+                depth:
+                  type: integer
+                  minimum: 1
+                  maximum: 2
+                  default: 1
+                  description: Depth of the knowledge graph tree
+      responses:
+        '200':
+          description: |
+            Stream of graph visualization data.
+            First chunk contains stream ID, followed by graph update chunks.
+          content:
+            text/event-stream:
+              schema:
+                type: object
+                properties:
+                  stream_id:
+                    type: string
+                    description: Unique identifier for the visualization stream
+                  nodes:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Node'
+                  links:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Link'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Please Enter an Article Name"
+
+  /stop/{stream_id}:
+    post:
+      summary: Stop Visualization Stream
+      description: |
+        Stops an ongoing visualization stream. 
+        Used to cancel long-running visualizations, especially for depth=2 queries.
+      parameters:
+        - name: stream_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: UUID of the visualization stream to stop
+      responses:
+        '200':
+          description: Stream stopping confirmation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Stream abc-123 is stopping"
+        '400':
+          description: Invalid or inactive stream ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid or inactive stream ID"
+
+  /dsc:
+    get:
+      summary: DSC Graph Visualization
+      description: |
+        Renders the DSC (Domain-Specific Concept) graph visualization page.
+        Parses and visualizes concept relationships from a structured text file.
+      responses:
+        '200':
+          description: Successfully rendered DSC visualization page
+          content:
+            text/html:
+              schema:
+                type: string
+
+components:
+  schemas:
+    Node:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Node title/label
+        level:
+          type: integer
+          description: Depth level in the graph (0 = root)
+        url:
+          type: string
+          description: Source URL for the node
+        group:
+          type: integer
+          description: Group ID for color coding
+        color:
+          type: string
+          description: Node color in hex format
+        width:
+          type: number
+          description: Node width for rendering
+        height:
+          type: number
+          description: Node height for rendering
+
+    Link:
+      type: object
+      properties:
+        source:
+          type: string
+          description: Source node name
+        target:
+          type: string
+          description: Target node name
+        value:
+          type: number
+          description: Link strength/weight
+
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key for Bing Search and OpenAI GPT services
+
+security:
+  - ApiKeyAuth: []

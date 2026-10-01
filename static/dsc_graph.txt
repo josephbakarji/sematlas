@@ -1,0 +1,53 @@
+TOPIC_COURSE
+Calculus: Derivatives, Integrals, Series, Vector Calculus, Gradient Descent
+Linear Algebra: Matrices, Matrix Multiplication, Eigenvalues, SVD (Singular Value Decomposition), Vector Spaces
+Probability and Statistics: Distributions, Bayesian Inference, Sampling, Noise Modeling, Uncertainty Quantification
+Machine Learning: Supervised Learning, Unsupervised Learning, Neural Networks, Clustering, Optimization
+Ethics: Data Privacy, Bias in AI, Philosophical Reasoning, Surveillance Concerns, Human-Centered Design
+Programming and Algorithms: Data Structures, Algorithm Design, Computational Complexity, Big-O Notation, Software Engineering
+
+QUESTION_SKILL
+Environmental and Ecological Questions: Data Analysis, Remote Sensing, Climate Modeling, Predictive Analytics, Resource Optimization
+Ethical Use of Data: Bias Detection, Privacy Safeguards, Policy Design, Surveillance Analysis, Security Protocols
+Data in the Sciences: Experimental Design, Model Validation, Cross-disciplinary Communication, Hypothesis Testing, Complex System Modeling
+Data on Social Media: Sentiment Analysis, Network Effects, Behavioral Modeling, Algorithmic Fairness, Policy Implications
+Large Language Models: Bias Mitigation, Interaction Design, Cultural Analysis, Model Evaluation, Personalized Learning Design
+Data and Model Scaling: Energy Efficiency, Infrastructure Design, Scalability, GPU Optimization, Carbon Footprint Analysis
+Data in Medicine: Privacy-Preserving Techniques, Personalized Treatment Plans, Medical Imaging Analysis, Predictive Diagnostics, Healthcare Policy Design
+
+SKILL_TOPIC
+Data Analysis: Sampling, Distributions, Uncertainty Quantification, Data Structures
+Remote Sensing: Noise Modeling, Vector Calculus, Matrices, Eigenvalues
+Climate Modeling: Series, Vector Calculus, Optimization, Gradient Descent
+Predictive Analytics: Supervised Learning, Neural Networks, Optimization, Sampling, Distributions
+Resource Optimization: Optimization, Gradient Descent, Matrices, Eigenvalues
+Bias Detection: Bias in AI, Algorithm Design, Data Privacy, Unsupervised Learning
+Privacy Safeguards: Data Privacy, Software Engineering, Algorithm Design
+Policy Design: Philosophical Reasoning, Human-Centered Design, Data Privacy, Bias in AI
+Surveillance Analysis: Surveillance Concerns, Data Privacy
+Security Protocols: Algorithm Design, Computational Complexity, Software Engineering
+Experimental Design: Sampling, Bayesian Inference, Uncertainty Quantification
+Model Validation: Bayesian Inference, Uncertainty Quantification
+Cross-disciplinary Communication: Human-Centered Design, Philosophical Reasoning
+Hypothesis Testing: Bayesian Inference, Sampling, Distributions
+Complex System Modeling: Optimization, Series, Neural Networks
+Sentiment Analysis: Supervised Learning, Unsupervised Learning, Neural Networks
+Network Effects: Algorithm Design, Data Structures
+Behavioral Modeling: Supervised Learning, Unsupervised Learning, Optimization
+Algorithmic Fairness: Bias in AI, Algorithm Design, Computational Complexity
+Policy Implications: Philosophical Reasoning, Ethics, Human-Centered Design
+Bias Mitigation: Bias in AI, Algorithm Design, Unsupervised Learning
+Interaction Design: Human-Centered Design, Software Engineering
+Cultural Analysis: Philosophical Reasoning, Human-Centered Design
+Model Evaluation: Bayesian Inference, Uncertainty Quantification
+Personalized Learning Design: Human-Centered Design, Supervised Learning, Unsupervised Learning
+Energy Efficiency: Optimization, Computational Complexity, Algorithm Design
+Infrastructure Design: Software Engineering, Algorithm Design, Computational Complexity
+Scalability: Big-O Notation, Computational Complexity, Algorithm Design
+GPU Optimization: Optimization, Matrix Multiplication
+Carbon Footprint Analysis: Optimization, Uncertainty Quantification
+Privacy-Preserving Techniques: Data Privacy, Algorithm Design, Software Engineering
+Personalized Treatment Plans: Optimization, Neural Networks, Supervised Learning
+Medical Imaging Analysis: Neural Networks, Matrices, SVD (Singular Value Decomposition)
+Predictive Diagnostics: Supervised Learning, Bayesian Inference, Distributions
+Healthcare Policy Design: Ethics, Human-Centered Design, Philosophical Reasoning

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFS Debug Test</title>
+    <style>
+        body {
+            font-family: monospace;
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        h1 { color: #569cd6; }
+        .controls {
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        input, select {
+            padding: 8px;
+            font-size: 14px;
+            background: #3c3c3c;
+            color: #d4d4d4;
+            border: 1px solid #555;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #0e639c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover { background: #1177bb; }
+        #log {
+            background: #1e1e1e;
+            border: 1px solid #444;
+            padding: 15px;
+            height: 600px;
+            overflow-y: auto;
+            border-radius: 8px;
+        }
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-left: 3px solid #444;
+            padding-left: 10px;
+        }
+        .root { border-color: #569cd6; color: #569cd6; }
+        .expand { border-color: #4ec9b0; color: #4ec9b0; }
+        .complete { border-color: #b5cea8; color: #b5cea8; }
+        .error { border-color: #f14c4c; color: #f14c4c; }
+        .stats {
+            background: #2d2d2d;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .level-0 { color: #dcdcaa; font-weight: bold; }
+        .level-1 { color: #9cdcfe; }
+        .level-2 { color: #ce9178; }
+    </style>
+</head>
+<body>
+    <h1>🔍 BFS Debug Test - See Exactly What's Happening</h1>
+
+    <div class="controls">
+        <input type="text" id="query" value="Philosophy" placeholder="Search term" style="width: 200px;">
+        <select id="depth">
+            <option value="1">Depth 1 (root + children)</option>
+            <option value="2" selected>Depth 2 (root + children + grandchildren)</option>
+            <option value="3">Depth 3 (three levels)</option>
+        </select>
+        <button onclick="runBFS()">Run BFS</button>
+        <button onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <div class="stats" id="stats">
+        Status: Ready
+    </div>
+
+    <div id="log">Waiting for test...</div>
+
+    <script>
+        let logDiv = document.getElementById('log');
+        let statsDiv = document.getElementById('stats');
+
+        function clearLog() {
+            logDiv.innerHTML = 'Waiting for test...';
+            statsDiv.innerHTML = 'Status: Ready';
+        }
+
+        function log(msg, className = '') {
+            const entry = document.createElement('div');
+            entry.className = 'log-entry ' + className;
+            entry.innerHTML = msg;
+            logDiv.appendChild(entry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        async function runBFS() {
+            const query = document.getElementById('query').value;
+            const depth = document.getElementById('depth').value;
+
+            clearLog();
+            log(`🚀 Starting BFS for "${query}" with depth=${depth}`, 'root');
+            statsDiv.innerHTML = 'Status: <span style="color: #dcdcaa;">Running...</span>';
+
+            const formData = new FormData();
+            formData.append('article_name', query);
+            formData.append('search_source', 'wikipedia');
+            formData.append('depth', depth);
+
+            try {
+                const response = await fetch('/visualize', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const reader = response.body.getReader();
+                let done = false;
+                let incompleteChunk = '';
+                let updateCount = 0;
+                let lastData = null;
+
+                while (!done) {
+                    const { value, done: isDone } = await reader.read();
+                    if (!value) {
+                        done = isDone;
+                        continue;
+                    }
+
+                    const text = new TextDecoder().decode(value).trim();
+                    const chunks = text.split('\n\n');
+
+                    for (const chunk of chunks) {
+                        if (!chunk) continue;
+
+                        try {
+                            const data = JSON.parse(incompleteChunk + chunk);
+                            incompleteChunk = '';
+
+                            if (data.stream_id) {
+                                log(`📡 Stream ID: ${data.stream_id}`, 'root');
+                            } else if (data._debug) {
+                                updateCount++;
+                                lastData = data;
+                                const debug = data._debug;
+
+                                // Count nodes by level
+                                const levelCounts = {};
+                                data.nodes.forEach(n => {
+                                    levelCounts[n.level] = (levelCounts[n.level] || 0) + 1;
+                                });
+
+                                let levelInfo = '';
+                                for (let l = 0; l <= 3; l++) {
+                                    if (levelCounts[l]) {
+                                        levelInfo += `<span class="level-${l}">L${l}:${levelCounts[l]}</span> `;
+                                    }
+                                }
+
+                                const className = debug.step;
+                                let msg = `[${debug.step.toUpperCase()}] ${debug.message}`;
+                                msg += `<br>&nbsp;&nbsp;&nbsp;Nodes: ${data.nodes.length} (${levelInfo.trim()})`;
+                                msg += ` | Links: ${data.links.length}`;
+
+                                if (debug.queue_size !== undefined) {
+                                    msg += ` | Queue: ${debug.queue_size}`;
+                                }
+                                if (debug.expansion_number !== undefined) {
+                                    msg += ` | Expansion #${debug.expansion_number}`;
+                                }
+
+                                log(msg, className);
+
+                                // Update stats
+                                statsDiv.innerHTML = `Status: <span style="color: #4ec9b0;">Processing</span> | ` +
+                                    `Updates: ${updateCount} | Nodes: ${data.nodes.length} | Links: ${data.links.length}`;
+                            }
+                        } catch (e) {
+                            incompleteChunk += chunk;
+                        }
+                    }
+
+                    done = isDone;
+                }
+
+                // Final summary
+                if (lastData) {
+                    const levelCounts = {};
+                    lastData.nodes.forEach(n => {
+                        levelCounts[n.level] = (levelCounts[n.level] || 0) + 1;
+                    });
+
+                    log('', '');
+                    log('=' .repeat(60), '');
+                    log('📊 FINAL SUMMARY', 'complete');
+                    log(`Total nodes: ${lastData.nodes.length}`, 'complete');
+                    log(`Total links: ${lastData.links.length}`, 'complete');
+                    log(`Level breakdown:`, 'complete');
+                    for (let l = 0; l <= 3; l++) {
+                        if (levelCounts[l]) {
+                            log(`&nbsp;&nbsp;Level ${l}: ${levelCounts[l]} nodes`, `level-${l}`);
+                        }
+                    }
+
+                    statsDiv.innerHTML = `Status: <span style="color: #b5cea8;">Complete</span> | ` +
+                        `Updates: ${updateCount} | Total Nodes: ${lastData.nodes.length} | Links: ${lastData.links.length}`;
+                }
+
+            } catch (error) {
+                log(`❌ Error: ${error.message}`, 'error');
+                statsDiv.innerHTML = `Status: <span style="color: #f14c4c;">Error</span>`;
+            }
+        }
+    </script>
+</body>
+</html>

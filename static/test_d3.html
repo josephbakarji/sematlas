@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3 Graph Test - Minimal</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { margin: 0; background: #f5f5f5; font-family: Arial, sans-serif; }
+        #visualization { width: 100vw; height: 100vh; }
+        #debug { position: absolute; top: 10px; right: 10px; background: white; padding: 15px; border: 1px solid #ccc; max-width: 300px; }
+        .node rect { cursor: pointer; }
+        .link { stroke: black; stroke-opacity: 0.2; stroke-width: 5px; }
+    </style>
+</head>
+<body>
+    <div id="debug">
+        <h3>Debug Info</h3>
+        <div id="status">Loading...</div>
+    </div>
+    <svg id="visualization"></svg>
+
+    <script>
+        // Test data - exactly what backend should send
+        const testData = {
+            "nodes": [
+                {
+                    "name": "Philosophy",
+                    "url": "https://en.wikipedia.org/wiki/Philosophy",
+                    "level": 0,
+                    "group": 0,
+                    "color": "#000000",
+                    "index": 0
+                },
+                {
+                    "name": "Logic",
+                    "url": "https://en.wikipedia.org/wiki/Logic",
+                    "level": 1,
+                    "group": 1,
+                    "color": "#4ec9b0",
+                    "index": 1
+                },
+                {
+                    "name": "Reason",
+                    "url": "https://en.wikipedia.org/wiki/Reason",
+                    "level": 1,
+                    "group": 1,
+                    "color": "#569cd6",
+                    "index": 2
+                }
+            ],
+            "links": [
+                {"source": 0, "target": 1},
+                {"source": 0, "target": 2}
+            ]
+        };
+
+        console.log("Test data:", testData);
+
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        const svg = d3.select("#visualization")
+            .attr("width", width)
+            .attr("height", height);
+
+        const g = svg.append("g");
+
+        const simulation = d3.forceSimulation(testData.nodes)
+            .force("link", d3.forceLink(testData.links).id(d => d.index).distance(200))
+            .force("charge", d3.forceManyBody().strength(-1000))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("x", d3.forceX(width / 2).strength(0.1))
+            .force("y", d3.forceY(height / 2).strength(0.1));
+
+        // Links
+        const link = g.append("g")
+            .selectAll("line")
+            .data(testData.links)
+            .join("line")
+            .attr("class", "link");
+
+        // Nodes
+        const node = g.append("g")
+            .selectAll("g")
+            .data(testData.nodes)
+            .join("g");
+
+        node.append("rect")
+            .attr("width", 120)
+            .attr("height", 40)
+            .attr("fill", d => d.color)
+            .attr("rx", 5);
+
+        node.append("text")
+            .text(d => d.name)
+            .attr("x", 60)
+            .attr("y", 25)
+            .attr("text-anchor", "middle")
+            .attr("fill", d => d.level === 0 ? "white" : "black")
+            .attr("font-size", "14px");
+
+        simulation.on("tick", () => {
+            link
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            node.attr("transform", d => `translate(${d.x - 60}, ${d.y - 20})`);
+        });
+
+        // Update debug info
+        document.getElementById("status").innerHTML = `
+            <strong>Status:</strong> Rendering<br>
+            <strong>Nodes:</strong> ${testData.nodes.length}<br>
+            <strong>Links:</strong> ${testData.links.length}<br>
+            <strong>Simulation:</strong> Running<br>
+            <br>
+            <em>If you see 3 boxes connected by lines, D3 is working!</em>
+        `;
+
+        setTimeout(() => {
+            document.getElementById("status").innerHTML += `<br><br><strong style="color: green;">✓ Test Complete</strong>`;
+        }, 2000);
+    </script>
+</body>
+</html>
