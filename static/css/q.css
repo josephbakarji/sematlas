@@ -342,3 +342,21 @@ html[data-theme="dark"] { --learn: #4fd8bd; }
   font-size: 11px; color: var(--learn); border: 1px solid var(--learn);
   border-radius: 10px; padding: 0 6px; margin-left: 6px;
 }
+
+/* ---------------------------------------------------------------- story decks */
+.g-node.deck rect { stroke: var(--ink); stroke-width: 2; stroke-dasharray: none; }
+.g-node.deck text { font-style: italic; font-weight: 600; }
+.g-link.deck { stroke: var(--ink); stroke-opacity: 0.35; stroke-dasharray: 1 5; stroke-width: 1.6; }
+.deck-card {
+  display: block; margin: 0 0 22px; padding: 14px 16px; border-radius: 10px;
+  border: 1px solid var(--ink-dim); background: var(--panel);
+}
+.deck-card .deck-kicker {
+  display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--ink-dim); margin-bottom: 4px;
+}
+.deck-card a {
+  font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--ink);
+  text-decoration: none; border-bottom: 1px solid var(--ink-dim);
+}
+.deck-card .deck-teaches { display: block; font-size: 13px; color: var(--ink-dim); margin-top: 6px; }

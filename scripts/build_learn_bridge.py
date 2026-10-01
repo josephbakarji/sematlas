@@ -15,6 +15,11 @@ is listed for a person to decide. Write overrides in data/learn_bridge_overrides
 to say there is no good article.
 
     python scripts/build_learn_bridge.py            # writes data/learn_bridge.json
+    python scripts/build_learn_bridge.py --fresh    # re-match every concept
+
+A rebuild keeps every match already in data/learn_bridge.json and only asks
+Jev about concepts it has not seen, so adding a deck costs about a cent per
+new concept and matches do not drift between runs.
 """
 
 import asyncio
@@ -35,7 +40,10 @@ from backend.ask import jev_endpoint, jev_rank          # noqa: E402
 from backend.explore import describe, search             # noqa: E402
 
 LEARN = os.getenv("SEMATLAS_LEARN_URL", "https://learn.sematlas.com")
-OUT = ROOT / "data" / "learn_bridge.json"
+# Story decks (sematlas-learn): each answers one question and lists the concepts
+# it teaches and needs. A URL, or a local path while the index is unpublished.
+DECKS = os.getenv("SEMATLAS_DECKS", "https://josephbakarji.github.io/sematlas-learn/decks.json")
+OUT = Path(os.getenv("SEMATLAS_BRIDGE_OUT", ROOT / "data" / "learn_bridge.json"))
 OVERRIDES = ROOT / "data" / "learn_bridge_overrides.json"
 MATCH = 0.6
 CONCURRENCY = 2      # Wikipedia rate-limits bursts
@@ -77,6 +85,21 @@ async def match(session, jev, sem, key, c, usage):
     return key, best, top
 
 
+async def load_decks(session):
+    """The story-deck index, or None when it is not published yet."""
+    try:
+        if DECKS.startswith("http"):
+            async with session.get(DECKS) as r:
+                if r.status != 200:
+                    print(f"decks: {DECKS} returned HTTP {r.status}; building without decks")
+                    return None
+                return await r.json(content_type=None)
+        return json.loads(Path(DECKS).expanduser().read_text())
+    except Exception as e:
+        print(f"decks: could not read {DECKS} ({e}); building without decks")
+        return None
+
+
 async def main():
     jev = jev_endpoint()
     if not jev:
@@ -85,11 +108,34 @@ async def main():
     async with aiohttp.ClientSession() as session:
         async with session.get(f"{LEARN}/static/data/concepts.json") as r:
             course = await r.json(content_type=None)
-        concepts = course["concepts"]
+        concepts = dict(course["concepts"])
+        index = await load_decks(session)
+        decks = (index or {}).get("decks", [])
+        moves = (index or {}).get("moves", {})
+        # a key only a deck uses still gets matched to Wikipedia
+        for d in decks:
+            for key in d.get("teaches", []) + d.get("needs", []):
+                key = moves.get(key, key)
+                if key not in concepts:
+                    concepts[key] = {"deck": d["id"], "slide": "", "title": key.replace("-", " "),
+                                     "lecture": d["question"], "external": d["url"]}
         usage, sem = {}, asyncio.Semaphore(CONCURRENCY)
         t = time.time()
-        results = await asyncio.gather(*(match(session, jev, sem, k, c, usage)
-                                         for k, c in concepts.items()))
+        known = {}
+        if "--fresh" not in sys.argv and OUT.exists():
+            known = json.loads(OUT.read_text()).get("concepts", {})
+
+        async def one(k, c):
+            if k in overrides:                 # a person decided; nothing to ask
+                return k, None, (known.get(k) or {}).get("candidates", [])
+            if k in known and known[k].get("match") == "jev":
+                prev = known[k]
+                return k, {"title": prev["wiki"], "p": prev["p"]}, prev.get("candidates", [])
+            if k in known and known[k].get("match") is None and known[k].get("candidates"):
+                return k, None, known[k]["candidates"]
+            return await match(session, jev, sem, k, c, usage)
+
+        results = await asyncio.gather(*(one(k, c) for k, c in concepts.items()))
     deck_order = {d: i for i, d in enumerate(course.get("order", []))}
     out, by_wiki, unmatched = {}, {}, []
     for pos, (key, best, top) in enumerate(results):
@@ -99,7 +145,7 @@ async def main():
         out[key] = {
             "title": c.get("title"), "deck": c["deck"], "slide": c["slide"],
             "deck_title": course.get("titles", {}).get(c["deck"], c.get("lecture")),
-            "url": f"{LEARN}/slides/{c['deck']}#/{c['slide']}",
+            "url": c.get("external") or f"{LEARN}/slides/{c['deck']}#/{c['slide']}",
             "order": [deck_order.get(c["deck"], 999), pos],
             "wiki": wiki, "match": how, "p": best["p"] if best else None,
             "candidates": top,
@@ -109,11 +155,24 @@ async def main():
         else:
             unmatched.append(key)
     OUT.parent.mkdir(exist_ok=True)
+    deck_out, by_concept = {}, {}
+    for d in decks:
+        teaches = [moves.get(k, k) for k in d.get("teaches", [])]
+        needs = [moves.get(k, k) for k in d.get("needs", [])]
+        deck_out[d["id"]] = {"question": d["question"], "answer": d.get("answer"),
+                             "url": d["url"], "teaches": teaches, "needs": needs,
+                             "spine": d.get("spine", [])}
+        for role, keys in (("teaches", teaches), ("needs", needs)):
+            for k in keys:
+                by_concept.setdefault(k, {"teaches": [], "needs": []})[role].append(d["id"])
     OUT.write_text(json.dumps({
         "source": f"{LEARN}/static/data/concepts.json",
+        "decks_source": DECKS if index else None,
         "built": time.strftime("%Y-%m-%d"),
         "concepts": out, "by_wiki": by_wiki,
+        "decks": deck_out, "decks_by_concept": by_concept, "moves": moves,
     }, indent=1, ensure_ascii=False))
+    print(f"decks: {len(deck_out)} from {DECKS if index else 'nowhere'}")
     print(f"{len(out)} concepts, {len(out) - len(unmatched)} matched, "
           f"{len(unmatched)} unmatched, {time.time() - t:.0f}s, "
           f"Jev {usage.get('calls')} calls ${usage.get('cost', 0):.4f}")

@@ -49,10 +49,12 @@ function score(d) {
 // that the course teaches is marked, shift-click opens its lesson, and every
 // answer ends with the taught concepts it touched, in course order.
 
-const learn = { concepts: {}, byWiki: {}, ready: null };
+const learn = { concepts: {}, byWiki: {}, decks: {}, decksByConcept: {}, ready: null };
 learn.ready = fetch("/learn/bridge.json").then((r) => r.json()).then((d) => {
   learn.concepts = d.concepts || {};
   learn.byWiki = d.by_wiki || {};
+  learn.decks = d.decks || {};
+  learn.decksByConcept = d.decks_by_concept || {};
   if (state.nodes.size) restyle();
 }).catch(() => {});
 
@@ -65,6 +67,53 @@ function conceptName(c) {
   const wiki = c.wiki || learn.concepts[c.key]?.wiki;
   if (wiki) return wiki.replace(/ \(.*\)$/, "");
   return c.key.replace(/-/g, " ").replace(/^./, (x) => x.toUpperCase());
+}
+
+// Story decks (sematlas-learn) answer one question each. When one answers the
+// reader's question it joins the graph as a question node, linked to the
+// concepts it teaches, and the answer opens with a card pointing to it.
+const decks = new Map();   // id -> deck
+
+function deckLinks() {
+  const out = [];
+  decks.forEach((d, id) => {
+    const here = (d.wiki || []).filter((w) => w && state.nodes.has(w));
+    const targets = here.length ? here : state.seedOrder.slice(0, 1);
+    targets.forEach((t) => out.push({ source: "deck:" + id, target: t, kind: "deck" }));
+  });
+  return out;
+}
+
+function addDecks(list) {
+  list.forEach((d) => {
+    decks.set(d.id, d);
+    const id = "deck:" + d.id;
+    if (!state.nodes.has(id)) {
+      state.nodes.set(id, { id, label: "Story deck: " + d.question, status: "deck", deck: d,
+                            level: 0, route: d.p, w: 120, h: 24,
+                            x: (Math.random() - 0.5) * 80, y: (Math.random() - 0.5) * 40 });
+    }
+  });
+  state.links = state.links.filter((l) => l.kind !== "deck").concat(deckLinks());
+  draw();
+  sim.alpha(0.6).restart();
+}
+
+function openDeck(d) {
+  track("open_deck");
+  window.open(d.url, "_blank", "noopener");
+}
+
+function renderDeckCard(a, list) {
+  const d = list[0];
+  if (!d) return;
+  const names = (d.wiki || []).filter(Boolean).map((w) => w.replace(/ \(.*\)$/, ""));
+  a.deckCard.innerHTML = `<span class="deck-kicker">There is a story deck for this</span>
+    <a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.question)}</a>
+    <span class="deck-teaches">A lesson built on real data that works the question through.
+    It teaches ${esc(names.join(", "))}.</span>`;
+  a.deckCard.querySelector("a").addEventListener("click", () => track("open_deck"));
+  a.deckCard.hidden = false;
 }
 
 function openLesson(c) {
@@ -95,6 +144,7 @@ function hueOf(d) {
 
 function fill(d) {
   if (d.status === "candidate") return css("--bg");
+  if (d.status === "deck") return css("--panel");
   const s = score(d);
   // before scoring, a gentle tint by link ranking; after, relevance sets brightness
   const t = s === null ? 0.3 + 0.35 * (d.route || 0) : 0.1 + 0.9 * Math.pow(s, 0.9);
@@ -103,6 +153,7 @@ function fill(d) {
 
 function textColor(d) {
   if (d.status === "candidate") return css("--ink-dim");
+  if (d.status === "deck") return css("--ink");
   return d3.lab(fill(d)).l > 60 ? "#12151b" : "#f4f6f9";
 }
 
@@ -200,7 +251,7 @@ function updateGraph(snapshot) {
     }
     if (n.seed && !state.seedOrder.includes(n.id)) state.seedOrder.push(n.id);
   });
-  state.links = snapshot.links.map((l) => ({ ...l }));
+  state.links = snapshot.links.map((l) => ({ ...l })).concat(deckLinks());
   draw();
   updateLegend();
   sim.alpha(0.9).restart();
@@ -222,17 +273,21 @@ function draw() {
       const e = enter.append("g").attr("class", "g-node new");
       e.append("rect").attr("rx", 5);
       e.append("text").attr("text-anchor", "middle").attr("dy", "0.35em")
-        .text((d) => d.id);
+        .text((d) => d.label || d.id);
       e.append("circle").attr("class", "learn-dot").attr("r", 6);
       e.on("mouseenter", (ev, d) => showTip(ev, nodeTip(d)))
         .on("mousemove", moveTip)
         .on("mouseleave", hideTip)
         .on("click", (ev, d) => {
+          if (d.status === "deck") return openDeck(d.deck);
           const lessons = lessonsFor(d.id);
           if (ev.shiftKey && lessons.length) openLesson(lessons[0]);
           else toggleContext(ev, d);
         })
-        .on("dblclick", (ev, d) => { track("open_wikipedia"); window.open(d.url, "_blank", "noopener"); })
+        .on("dblclick", (ev, d) => {
+          if (d.status === "deck") return;
+          track("open_wikipedia"); window.open(d.url, "_blank", "noopener");
+        })
         .call(d3.drag()
           .on("start", (ev, d) => { if (!ev.active) sim.alphaTarget(0.2).restart(); d.fx = d.x; d.fy = d.y; })
           .on("drag", (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
@@ -246,6 +301,7 @@ function draw() {
 function restyle() {
   const g = nodeLayer.selectAll("g.g-node");
   g.classed("seed", (d) => d.seed)
+    .classed("deck", (d) => d.status === "deck")
     .classed("learnable", (d) => lessonsFor(d.id).length > 0)
     .classed("candidate", (d) => d.status === "candidate")
     .classed("in-context", (d) => state.context.has(d.id));
@@ -318,7 +374,8 @@ function updateFocus() {
     (document.body.classList.contains("compact") || el.clientWidth < 700);
   const k = Math.max(viewBox[2] / el.clientWidth, viewBox[3] / el.clientHeight) / zoomK;
   coreScale = tight ? Math.min(el.clientWidth < 700 ? 2.2 : 3.2, Math.max(1, k * 0.9)) : 1;
-  const inCore = (d) => d.seed || state.context.has(d.id) || (state.evidence?.[d.id] ?? 0) >= 0.6;
+  const inCore = (d) => d.seed || d.status === "deck" || state.context.has(d.id) ||
+    (state.evidence?.[d.id] ?? 0) >= 0.6;
   const core = [];
   nodeLayer.selectAll("g.g-node").each((d) => {
     d.core = tight && inCore(d);
@@ -383,6 +440,12 @@ function resetZoom() {
 }
 
 function nodeTip(d) {
+  if (d.status === "deck") {
+    const names = (d.deck.wiki || []).filter(Boolean).join(", ");
+    return `<b>Story deck</b><i>${esc(d.deck.question)}</i><br>` +
+      `A lesson on real data that works this question through. Teaches ${esc(names)}.<br>` +
+      `Click to open the deck.`;
+  }
   const s = score(d);
   const lines = [`<b>${esc(d.id)}</b>`];
   if (d.about) lines.push(`<i>${esc(d.about)}</i>`);
@@ -467,7 +530,7 @@ function newAnswer(question, followupOf) {
     title: q(".article-title"), rank: q(".m-rank"), gen: q(".m-gen"),
     cost: q(".cost-line"), status: q(".status"), body: q(".article-body"),
     refsWrap: q(".refs"), refs: q(".refs ol"), traceWrap: q(".trace"), trace: q(".trace ol"),
-    practiseWrap: q(".practise"), practise: q(".practise ol"),
+    practiseWrap: q(".practise"), practise: q(".practise ol"), deckCard: q(".deck-card"),
   };
   a.title.textContent = question;
   if (followupOf) {
@@ -797,6 +860,7 @@ function exploreHandler(a, label) {
     if (ev.type === "turn") addTrace(a, ev);
     else if (ev.type === "graph") updateGraph(ev);
     else if (ev.type === "scores") { state.evidence = ev.scores; restyle(); }
+    else if (ev.type === "decks") { addDecks(ev.decks); renderDeckCard(a, ev.decks); }
     else handleArticleEvent(a, ev, label);
   };
 }
@@ -804,6 +868,7 @@ function exploreHandler(a, label) {
 function resetAll() {
   state.nodes.clear(); state.links = []; state.evidence = null;
   state.answers = []; state.context.clear(); state.seedOrder = [];
+  decks.clear();
   viewBox = null;
   svg.call(zoomer.transform, d3.zoomIdentity);
   linkLayer.selectAll("*").remove(); nodeLayer.selectAll("*").remove();
@@ -832,6 +897,12 @@ async function run(question, opts = {}) {
     p.innerHTML = `Opened from the lesson <a href="${esc(opts.from.url)}" target="_blank" rel="noopener">` +
       `${esc(opts.from.title)}</a> (${esc(opts.from.deck_title)}) on learn.sematlas.com. ` +
       `This map shows where the idea comes from and where it leads.`;
+    const dk = (learn.decksByConcept[opts.concept] || {}).teaches || [];
+    const ds = dk.map((id) => learn.decks[id]).filter(Boolean);
+    if (ds.length) {
+      p.innerHTML += ` It is also taught as a story: ` + ds.map((d) =>
+        `<a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.question)}</a>`).join(", ") + ".";
+    }
     p.hidden = false;
   }
   pending = { kind: "question", question };
@@ -854,11 +925,11 @@ async function runConcept(key) {
 
 function graphPayload() {
   return {
-    nodes: [...state.nodes.values()].map((n) => ({
+    nodes: [...state.nodes.values()].filter((n) => n.status !== "deck").map((n) => ({
       id: n.id, level: n.level, route: n.route, parent: n.parent, seed: n.seed,
       status: n.status, about: n.about, expanded: n.expanded, round: n.round,
     })),
-    links: state.links.map((l) => ({
+    links: state.links.filter((l) => l.kind !== "deck").map((l) => ({
       source: l.source.id || l.source, target: l.target.id || l.target, kind: l.kind,
     })),
   };

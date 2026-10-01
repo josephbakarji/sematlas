@@ -1,0 +1,6359 @@
+{
+ "built": "2026-10-02",
+ "model": "google/gemini-3.1-flash-lite",
+ "method": "lead-section links of each taught concept's article; the model names up to 6 worth learning next; score = sum of rank weights across concepts",
+ "cost_usd": 0.0465,
+ "frontier": [
+  {
+   "article": "Linear regression",
+   "about": "Statistical modeling method",
+   "score": 8.92,
+   "near": [
+    "design-matrix",
+    "l2-regularization",
+    "l1-regularization",
+    "generalized-linear-model",
+    "link-function",
+    "logistic-regression",
+    "linear-model",
+    "missing-variable",
+    "r-squared",
+    "hidden-layer",
+    "intercept"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "Example 3: Poisson Becomes Log-Linear Regression",
+    "Supervised Learning & Linear Regression"
+   ]
+  },
+  {
+   "article": "Regression analysis",
+   "about": "Set of statistical processes for estimating the relationships among variables",
+   "score": 8.08,
+   "near": [
+    "normal-equations",
+    "holding-fixed",
+    "missing-variable",
+    "target",
+    "residual",
+    "discriminative-model",
+    "k-nearest-neighbours",
+    "r-squared",
+    "design-matrix"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Feedforward neural network",
+   "about": "Type of artificial neural network",
+   "score": 7.58,
+   "near": [
+    "hidden-layer",
+    "recurrent-network",
+    "neural-network",
+    "backpropagation",
+    "activation-function",
+    "relu",
+    "autoencoder",
+    "gradient-descent",
+    "universal-approximation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Mathematical optimization",
+   "about": "Study of mathematical algorithms for optimization problems",
+   "score": 6.58,
+   "near": [
+    "cost-function",
+    "learning-rate",
+    "gradient-descent",
+    "maximum-likelihood",
+    "hyperparameter",
+    "computation-graph",
+    "gradient",
+    "l1-loss"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Random variable",
+   "about": "Variable representing a random phenomenon",
+   "score": 6.42,
+   "near": [
+    "correlation",
+    "covariance",
+    "model-class",
+    "regression-to-the-mean",
+    "bernoulli",
+    "class-conditional",
+    "multivariate-gaussian"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Differentiable function",
+   "about": "Mathematical function whose derivative exists",
+   "score": 6.25,
+   "near": [
+    "chain-rule",
+    "gradient-descent",
+    "sgd",
+    "layer",
+    "maximum-likelihood",
+    "computation-graph",
+    "threshold-unit"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Goodness of fit",
+   "about": "Metric for fit of statistical models",
+   "score": 5.5,
+   "near": [
+    "residual",
+    "multiple-regression",
+    "cross-validation",
+    "poisson-regression",
+    "generalized-linear-model",
+    "link-function",
+    "normal-equations",
+    "linear-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Least squares",
+   "about": "Approximation method in statistics",
+   "score": 5.42,
+   "near": [
+    "residual",
+    "l1-loss",
+    "multiple-regression",
+    "l2-regularization",
+    "linear-model",
+    "lms-rule"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "Least Squares Is Maximum Likelihood",
+    "Least Squares Is a Projection",
+    "Why Least Squares? A Probabilistic View"
+   ]
+  },
+  {
+   "article": "Probability distribution",
+   "about": "Mathematical function for the probability a given outcome occurs in an experiment",
+   "score": 5.42,
+   "near": [
+    "maximum-likelihood",
+    "parameters",
+    "cross-entropy",
+    "linear-model",
+    "exponential-family",
+    "natural-parameter",
+    "log-partition-function",
+    "prior",
+    "model-class"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Vector space",
+   "about": "Algebraic structure in linear algebra",
+   "score": 5.42,
+   "near": [
+    "linear-transformation",
+    "norm",
+    "projection",
+    "vectors",
+    "span",
+    "inner-product"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Bayesian inference",
+   "about": "Method of statistical inference",
+   "score": 4.83,
+   "near": [
+    "likelihood",
+    "naive-bayes-assumption",
+    "naive-bayes",
+    "bayes-rule",
+    "laplace-smoothing",
+    "maximum-likelihood",
+    "prior"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Empirical risk minimization",
+   "about": "Principle in statistical learning theory",
+   "score": 4.75,
+   "near": [
+    "backpropagation",
+    "overfitting",
+    "underfitting",
+    "sgd",
+    "gradient-descent",
+    "training-example",
+    "test-set",
+    "validation-set",
+    "learning-rate"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Convolutional neural network",
+   "about": "Type of feedforward neural network",
+   "score": 4.58,
+   "near": [
+    "neural-network",
+    "backpropagation",
+    "activation-function",
+    "layer",
+    "relu",
+    "deep-network"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Expected value",
+   "about": "Average value of a random variable",
+   "score": 4.42,
+   "near": [
+    "poisson-distribution",
+    "bias-variance",
+    "bernoulli",
+    "poisson-regression",
+    "lms-rule",
+    "generalization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Partial derivative",
+   "about": "Derivative of a function with multiple variables",
+   "score": 4.33,
+   "near": [
+    "gradient",
+    "computation-graph",
+    "chain-rule",
+    "holding-fixed",
+    "derivative"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Normal distribution",
+   "about": "Probability distribution",
+   "score": 4.17,
+   "near": [
+    "gaussian-noise",
+    "gda",
+    "multivariate-gaussian",
+    "outlier",
+    "parameters"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Representation learning",
+   "about": "Set of learning techniques in machine learning",
+   "score": 4.17,
+   "near": [
+    "feature",
+    "deep-network",
+    "relu",
+    "activation-function",
+    "neural-network",
+    "autoencoder"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Function (mathematics)",
+   "about": "Association of one output to each input",
+   "score": 4.0,
+   "near": [
+    "composition",
+    "target",
+    "intercept",
+    "convolution"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "The Cost Function"
+   ]
+  },
+  {
+   "article": "Perceptron",
+   "about": "Algorithm for supervised learning of binary classifiers",
+   "score": 3.92,
+   "near": [
+    "backpropagation",
+    "activation-function",
+    "neural-network",
+    "relu"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Linear combination",
+   "about": "Sum of terms, each multiplied with a scalar",
+   "score": 3.83,
+   "near": [
+    "column-space",
+    "span",
+    "determinant",
+    "gda"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Statistical classification",
+   "about": "Categorization of data using statistics",
+   "score": 3.75,
+   "near": [
+    "training-example",
+    "test-set",
+    "validation-set",
+    "k-nearest-neighbours",
+    "gda",
+    "feature",
+    "generative-model"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Linear algebra",
+   "about": "Branch of mathematics",
+   "score": 3.58,
+   "near": [
+    "matrix",
+    "matrix-product",
+    "eigenvector",
+    "design-matrix"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "Statistics Is Linear Algebra"
+   ]
+  },
+  {
+   "article": "Transformer (deep learning)",
+   "about": "Algorithm for modelling sequential data",
+   "score": 3.33,
+   "near": [
+    "language-model",
+    "deep-network",
+    "neural-network",
+    "backpropagation",
+    "recurrent-network"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Dimension (vector space)",
+   "about": "Number of vectors in any basis of the vector space",
+   "score": 3.25,
+   "near": [
+    "linear-transformation",
+    "rank",
+    "column-space",
+    "span"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Dimensionality reduction",
+   "about": "Process of reducing the number of random variables under consideration",
+   "score": 3.25,
+   "near": [
+    "autoencoder",
+    "feature",
+    "gda",
+    "cosine-similarity"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Euclidean vector",
+   "about": "Geometric object that has length and direction",
+   "score": 3.25,
+   "near": [
+    "inner-product",
+    "vectors",
+    "vectorization",
+    "eigenvector"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Inner product space",
+   "about": "Vector space with generalized dot product",
+   "score": 3.25,
+   "near": [
+    "cosine-similarity",
+    "inner-product",
+    "norm",
+    "projection"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Maximum a posteriori estimation",
+   "about": "Method of estimating the parameters of a statistical model",
+   "score": 3.25,
+   "near": [
+    "likelihood",
+    "maximum-likelihood",
+    "prior",
+    "bayes-rule"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Variance",
+   "about": "Statistical measure of how far values spread from their average",
+   "score": 3.25,
+   "near": [
+    "bias-variance",
+    "poisson-distribution",
+    "covariance",
+    "bernoulli"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "A Fifth of the Variance, and a Whole Discipline",
+    "Variance Bias Trade-off"
+   ]
+  },
+  {
+   "article": "Linear subspace",
+   "about": "In mathematics, vector subspace",
+   "score": 3.08,
+   "near": [
+    "column-space",
+    "projection",
+    "span",
+    "linear-transformation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Jacobian matrix and determinant",
+   "about": "Matrix of partial derivatives of a vector-valued function",
+   "score": 2.92,
+   "near": [
+    "computation-graph",
+    "chain-rule",
+    "gradient",
+    "determinant"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Conditional probability",
+   "about": "Probability of an event occurring, given that another event has already occurred",
+   "score": 2.83,
+   "near": [
+    "class-conditional",
+    "bayes-rule",
+    "discriminative-model"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Long short-term memory",
+   "about": "Recurrent neural network architecture",
+   "score": 2.83,
+   "near": [
+    "recurrent-network",
+    "neural-network",
+    "backpropagation",
+    "relu"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Learning curve (machine learning)",
+   "about": "Plot of machine learning model performance over time or experience",
+   "score": 2.75,
+   "near": [
+    "generalization",
+    "training-example",
+    "test-set",
+    "validation-set",
+    "overfitting",
+    "underfitting",
+    "bias-variance"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Supervised learning",
+   "about": "Machine learning paradigm",
+   "score": 2.75,
+   "near": [
+    "k-nearest-neighbours",
+    "deep-network",
+    "regularization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "Supervised Learning & Linear Regression"
+   ]
+  },
+  {
+   "article": "Iterative method",
+   "about": "Numerical approximation algorithm",
+   "score": 2.58,
+   "near": [
+    "sgd",
+    "iteration",
+    "gradient-descent"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Square matrix",
+   "about": "Matrix with the same number of rows and columns",
+   "score": 2.58,
+   "near": [
+    "determinant",
+    "inverse",
+    "matrix"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Posterior probability",
+   "about": "Conditional probability used in Bayesian statistics",
+   "score": 2.5,
+   "near": [
+    "prior",
+    "bayes-rule",
+    "laplace-smoothing"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Statistical learning theory",
+   "about": "Framework for machine learning",
+   "score": 2.5,
+   "near": [
+    "generalization",
+    "overfitting",
+    "underfitting",
+    "bias-variance"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Entropy (information theory)",
+   "about": "Average uncertainty in variable's states",
+   "score": 2.25,
+   "near": [
+    "cross-entropy",
+    "multivariate-gaussian",
+    "bernoulli"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": [
+    "Binary Cross-Entropy"
+   ]
+  },
+  {
+   "article": "Sampling (statistics)",
+   "about": "Selection of data points in statistics",
+   "score": 2.17,
+   "near": [
+    "dataset",
+    "parameters",
+    "cross-validation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Average",
+   "about": "Number taken as representative of a list of numbers",
+   "score": 2.0,
+   "near": [
+    "centering",
+    "regression-to-the-mean"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "Why we measure from the average house"
+   ]
+  },
+  {
+   "article": "Data",
+   "about": "Unit of information",
+   "score": 2.0,
+   "near": [
+    "dataset",
+    "training-example",
+    "test-set",
+    "validation-set"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "Data",
+    "Reading and Exploring Data",
+    "The Likelihood of the Data",
+    "The Same Data, Two Answers"
+   ]
+  },
+  {
+   "article": "Independence (probability theory)",
+   "about": "When the occurrence of one event does not affect the likelihood of another",
+   "score": 2.0,
+   "near": [
+    "poisson-distribution",
+    "correlation",
+    "class-conditional"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": [
+    "Span, Independence, Rank"
+   ]
+  },
+  {
+   "article": "Sample mean and covariance",
+   "about": "Statistics computed from a sample of data",
+   "score": 2.0,
+   "near": [
+    "parameters",
+    "centering",
+    "covariance"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Word n-gram language model",
+   "about": "Purely statistical model of language",
+   "score": 2.0,
+   "near": [
+    "n-gram",
+    "language-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Confounding",
+   "about": "Bias in causal inference",
+   "score": 1.92,
+   "near": [
+    "missing-variable",
+    "holding-fixed"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Continuous function",
+   "about": "Mathematical function with no sudden changes",
+   "score": 1.92,
+   "near": [
+    "universal-approximation",
+    "derivative"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Hessian matrix",
+   "about": "Matrix of second derivatives",
+   "score": 1.92,
+   "near": [
+    "gradient",
+    "derivative",
+    "likelihood"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Linear independence",
+   "about": "Vectors whose linear combinations are nonzero",
+   "score": 1.92,
+   "near": [
+    "rank",
+    "span"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Scalar (mathematics)",
+   "about": "Elements of a field, e.g. real numbers, in the context of linear algebra",
+   "score": 1.92,
+   "near": [
+    "vectors",
+    "inner-product"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Covariance matrix",
+   "about": "Measure of covariance of components of a random vector",
+   "score": 1.83,
+   "near": [
+    "multivariate-gaussian",
+    "centering"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Dummy variable (statistics)",
+   "about": "Numeric stand-ins in regression analysis",
+   "score": 1.83,
+   "near": [
+    "design-matrix",
+    "one-hot"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Joint probability distribution",
+   "about": "Type of probability distribution",
+   "score": 1.83,
+   "near": [
+    "class-conditional",
+    "covariance"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Mean squared error",
+   "about": "Measure of the error of an estimator",
+   "score": 1.83,
+   "near": [
+    "lms-rule",
+    "r-squared"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Neural network",
+   "about": "Structure in biology and artificial intelligence",
+   "score": 1.83,
+   "near": [
+    "threshold-unit",
+    "layer"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": [
+    "Neural Network"
+   ]
+  },
+  {
+   "article": "Statistical population",
+   "about": "Complete set of items that share at least one property in common",
+   "score": 1.83,
+   "near": [
+    "parameters",
+    "dataset"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Fundamental theorem of calculus",
+   "about": "Relationship between derivatives and integrals",
+   "score": 1.75,
+   "near": [
+    "integral",
+    "derivative"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Model selection",
+   "about": "Task of selecting a statistical model from a set of candidate models",
+   "score": 1.75,
+   "near": [
+    "overfitting",
+    "underfitting",
+    "model-class"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Pearson correlation coefficient",
+   "about": "Measure of linear correlation",
+   "score": 1.75,
+   "near": [
+    "r-squared",
+    "covariance"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Characteristic polynomial",
+   "about": "Polynomial whose roots are the eigenvalues of a matrix",
+   "score": 1.67,
+   "near": [
+    "matrix",
+    "determinant"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Independent and identically distributed random variables",
+   "about": "Concept in probability and statistics",
+   "score": 1.67,
+   "near": [
+    "gaussian-noise",
+    "regression-to-the-mean"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Kullback–Leibler divergence",
+   "about": "Mathematical statistics distance measure",
+   "score": 1.67,
+   "near": [
+    "cross-entropy",
+    "multivariate-gaussian"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Sigmoid function",
+   "about": "Mathematical function having a characteristic S-shaped curve or sigmoid curve",
+   "score": 1.67,
+   "near": [
+    "activation-function",
+    "threshold-unit"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Gaussian elimination",
+   "about": "Algorithm for solving systems of linear equations",
+   "score": 1.58,
+   "near": [
+    "rank",
+    "inverse"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Gauss–Markov theorem",
+   "about": "Theorem related to ordinary least squares",
+   "score": 1.58,
+   "near": [
+    "normal-equations",
+    "residual"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Iteratively reweighted least squares",
+   "about": "Method for solving certain optimization problems",
+   "score": 1.58,
+   "near": [
+    "generalized-linear-model",
+    "link-function",
+    "l1-loss"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Machine learning",
+   "about": "Subset of artificial intelligence",
+   "score": 1.58,
+   "near": [
+    "deep-network",
+    "one-hot"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Multivariate statistics",
+   "about": "Simultaneous observation and analysis of more than one outcome variable",
+   "score": 1.58,
+   "near": [
+    "centering",
+    "target"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Natural language processing",
+   "about": "Processing of natural language by a computer",
+   "score": 1.58,
+   "near": [
+    "one-hot",
+    "n-gram"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Statistic",
+   "about": "Single measure of some attribute of a sample",
+   "score": 1.58,
+   "near": [
+    "parameters",
+    "exponential-family",
+    "natural-parameter",
+    "log-partition-function"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Confusion matrix",
+   "about": "Table layout for visualizing performance; also called an error matrix",
+   "score": 1.5,
+   "near": [
+    "training-example",
+    "test-set",
+    "validation-set",
+    "logistic-regression"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Conjugate prior",
+   "about": "Concept in probability theory",
+   "score": 1.5,
+   "near": [
+    "prior",
+    "bayes-rule"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "General linear model",
+   "about": "Statistical linear model",
+   "score": 1.5,
+   "near": [
+    "design-matrix",
+    "linear-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Inverse problem",
+   "about": "Process of calculating the causal factors that produced a set of observations",
+   "score": 1.5,
+   "near": [
+    "regularization",
+    "l2-regularization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Multinomial logistic regression",
+   "about": "Regression for more than two discrete outcomes",
+   "score": 1.5,
+   "near": [
+    "generalized-linear-model",
+    "link-function",
+    "logistic-regression"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Scalar multiplication",
+   "about": "Algebraic operation",
+   "score": 1.5,
+   "near": [
+    "linear-transformation",
+    "vectors"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Estimation theory",
+   "about": "Branch of statistics to estimate models based on measured data",
+   "score": 1.42,
+   "near": [
+    "cost-function",
+    "covariance"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Fisher information",
+   "about": "Notion in statistics",
+   "score": 1.42,
+   "near": [
+    "likelihood",
+    "poisson-distribution"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Principal component analysis",
+   "about": "Method of data analysis",
+   "score": 1.42,
+   "near": [
+    "autoencoder",
+    "gda"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Data cleansing",
+   "about": "Correcting inaccurate computer records",
+   "score": 1.33,
+   "near": [
+    "feature",
+    "training-example",
+    "test-set",
+    "validation-set"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Ensemble learning",
+   "about": "Statistics and machine learning technique",
+   "score": 1.33,
+   "near": [
+    "bias-variance",
+    "regularization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Generative adversarial network",
+   "about": "Machine learning framework",
+   "score": 1.33,
+   "near": [
+    "generative-model",
+    "deep-network"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Mean absolute error",
+   "about": "Statistical error measure",
+   "score": 1.33,
+   "near": [
+    "cost-function",
+    "r-squared"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Mutual information",
+   "about": "Measure of dependence between two variables",
+   "score": 1.33,
+   "near": [
+    "cross-entropy",
+    "correlation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Generalized estimating equation",
+   "about": "Estimation procedure for correlated data",
+   "score": 1.25,
+   "near": [
+    "poisson-regression",
+    "generalized-linear-model",
+    "link-function"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Point estimation",
+   "about": "Parameter estimation via sample statistics",
+   "score": 1.25,
+   "near": [
+    "likelihood",
+    "maximum-likelihood"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Regularized least squares",
+   "about": "Concept in regression analysis mathematics",
+   "score": 1.17,
+   "near": [
+    "normal-equations",
+    "multiple-regression"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Selection bias",
+   "about": "Bias in a statistical analysis due to non-random selection",
+   "score": 1.17,
+   "near": [
+    "missing-variable",
+    "cross-validation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Array (data structure)",
+   "about": "Type of data structure",
+   "score": 1.0,
+   "near": [
+    "vectorization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Bernoulli trial",
+   "about": "Any experiment with two possible random outcomes",
+   "score": 1.0,
+   "near": [
+    "bernoulli"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Bias of an estimator",
+   "about": "Statistical property",
+   "score": 1.0,
+   "near": [
+    "bias-variance"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Categorical variable",
+   "about": "Variable capable of taking on a limited number of possible values",
+   "score": 1.0,
+   "near": [
+    "one-hot"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Classification",
+   "about": "Putting things into categories",
+   "score": 1.0,
+   "near": [
+    "discriminative-model"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "Classification & Logistic Regression"
+   ]
+  },
+  {
+   "article": "Conditional independence",
+   "about": "Probability theory concept",
+   "score": 1.0,
+   "near": [
+    "naive-bayes-assumption",
+    "naive-bayes"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Control flow",
+   "about": "How software progresses through its implementation",
+   "score": 1.0,
+   "near": [
+    "iteration"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Count data",
+   "about": "Statistical data type",
+   "score": 1.0,
+   "near": [
+    "poisson-regression"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Delta rule",
+   "about": "Gradient descent learning rule in machine learning",
+   "score": 1.0,
+   "near": [
+    "lms-rule"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Density estimation",
+   "about": "Estimate of an unobservable underlying probability density function",
+   "score": 1.0,
+   "near": [
+    "generative-model"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Empirical probability",
+   "about": "Probability estimate",
+   "score": 1.0,
+   "near": [
+    "laplace-smoothing"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Feature engineering",
+   "about": "Extracting features from raw data for machine learning",
+   "score": 1.0,
+   "near": [
+    "feature"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": [
+    "Generalization and Feature Engineering"
+   ]
+  },
+  {
+   "article": "Hyperparameter optimization",
+   "about": "Process of finding the optimal set of variables for a machine learning algorithm",
+   "score": 1.0,
+   "near": [
+    "hyperparameter"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Inductive bias",
+   "about": "Assumptions for inference in machine learning",
+   "score": 1.0,
+   "near": [
+    "generalization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Limit of a function",
+   "about": "Point to which functions converge in analysis",
+   "score": 1.0,
+   "near": [
+    "derivative"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Linearity",
+   "about": "Properties of mathematical relationships",
+   "score": 1.0,
+   "near": [
+    "linear-model"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Multiset",
+   "about": "Mathematical set with repetitions allowed",
+   "score": 1.0,
+   "near": [
+    "bag-of-words"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Numerical stability",
+   "about": "Ability of numerical algorithms to remain accurate under small changes of inputs",
+   "score": 1.0,
+   "near": [
+    "condition-number"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Pandas (software)",
+   "about": "Python library for data analysis",
+   "score": 1.0,
+   "near": [
+    "dataframe"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Pointer (computer programming)",
+   "about": "Object which stores memory addresses in a computer program",
+   "score": 1.0,
+   "near": [
+    "aliasing"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Probability",
+   "about": "Number measuring the chance an event occurs",
+   "score": 1.0,
+   "near": [
+    "model-class"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Probability mass function",
+   "about": "Discrete-variable probability distribution",
+   "score": 1.0,
+   "near": [
+    "poisson-distribution"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Ramp function",
+   "about": "Piecewise function that clamps its input to be non-negative",
+   "score": 1.0,
+   "near": [
+    "relu"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Robust statistics",
+   "about": "Type of statistics",
+   "score": 1.0,
+   "near": [
+    "outlier"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Scaling (geometry)",
+   "about": "Geometric transformation",
+   "score": 1.0,
+   "near": [
+    "eigenvector"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Scientific method",
+   "about": "Interplay between observation, experiment, and theory in science",
+   "score": 1.0,
+   "near": [
+    "hypothesis"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Simple linear regression",
+   "about": "Linear regression model with a single explanatory variable",
+   "score": 1.0,
+   "near": [
+    "multiple-regression"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Statistical model validation",
+   "about": "Evaluating whether a chosen statistical model is appropriate or not",
+   "score": 1.0,
+   "near": [
+    "cross-validation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Sufficient statistic",
+   "about": "Statistical principle",
+   "score": 1.0,
+   "near": [
+    "exponential-family",
+    "natural-parameter",
+    "log-partition-function"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Synaptic weight",
+   "about": "Aspect of an artificial neural network",
+   "score": 1.0,
+   "near": [
+    "threshold-unit"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Unsupervised learning",
+   "about": "Paradigm in machine learning that uses no classification labels",
+   "score": 1.0,
+   "near": [
+    "autoencoder"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Well-posed problem",
+   "about": "Property of differential equations describing physical phenomena",
+   "score": 1.0,
+   "near": [
+    "regularization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Algorithm",
+   "about": "Sequence of operations for a task",
+   "score": 0.92,
+   "near": [
+    "iteration"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Bigram",
+   "about": "Case of an n-gram, where n is 2",
+   "score": 0.92,
+   "near": [
+    "n-gram"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Binary operation",
+   "about": "Mathematical operation with two operands",
+   "score": 0.92,
+   "near": [
+    "matrix-product"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Bivariate data",
+   "about": "Statistical term of data on each of two paired variables",
+   "score": 0.92,
+   "near": [
+    "correlation"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Computer memory",
+   "about": "Component that stores information",
+   "score": 0.92,
+   "near": [
+    "aliasing"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Convex analysis",
+   "about": "Mathematics of convex functions and sets",
+   "score": 0.92,
+   "near": [
+    "l1-regularization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Coordinate system",
+   "about": "Method for specifying point positions",
+   "score": 0.92,
+   "near": [
+    "intercept"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Dense set",
+   "about": "Subset whose closure is the whole space",
+   "score": 0.92,
+   "near": [
+    "universal-approximation"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Descent direction",
+   "about": "",
+   "score": 0.92,
+   "near": [
+    "learning-rate"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Differential calculus",
+   "about": "Study of rates of change",
+   "score": 0.92,
+   "near": [
+    "integral"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Differentiation rules",
+   "about": "Rules for computing derivatives of functions",
+   "score": 0.92,
+   "near": [
+    "chain-rule"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Document-term matrix",
+   "about": "Table of terms in a collection of documents",
+   "score": 0.92,
+   "near": [
+    "bag-of-words"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Function application",
+   "about": "Evaluation of a function on its argument",
+   "score": 0.92,
+   "near": [
+    "composition"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Hidden Markov model",
+   "about": "Statistical Markov model",
+   "score": 0.92,
+   "near": [
+    "recurrent-network"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Identity matrix",
+   "about": "Square matrix with ones on the main diagonal and zeros elsewhere",
+   "score": 0.92,
+   "near": [
+    "inverse"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Level of measurement",
+   "about": "Distinction between nominal, ordinal, interval and ratio variables",
+   "score": 0.92,
+   "near": [
+    "dataset"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Library (computing)",
+   "about": "Collection of resources used to develop a computer program",
+   "score": 0.92,
+   "near": [
+    "dataframe"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Likelihood principle",
+   "about": "Proposition in statistics",
+   "score": 0.92,
+   "near": [
+    "prior"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Log-linear model",
+   "about": "Mathematical model",
+   "score": 0.92,
+   "near": [
+    "poisson-regression"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Logistic function",
+   "about": "S-shaped curve",
+   "score": 0.92,
+   "near": [
+    "logistic-regression"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Matrix norm",
+   "about": "Norm on a vector space of matrices",
+   "score": 0.92,
+   "near": [
+    "condition-number"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Multinomial distribution",
+   "about": "Generalization of the binomial distribution",
+   "score": 0.92,
+   "near": [
+    "laplace-smoothing"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Natural language",
+   "about": "Language as naturally spoken by humans",
+   "score": 0.92,
+   "near": [
+    "language-model"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Nonlinear system",
+   "about": "System where changes of output are not proportional to changes of input",
+   "score": 0.92,
+   "near": [
+    "hidden-layer"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Observational error",
+   "about": "Difference between a measured value of a quantity and its true value",
+   "score": 0.92,
+   "near": [
+    "outlier"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Optimization problem",
+   "about": "Problem of finding the best feasible solution",
+   "score": 0.92,
+   "near": [
+    "cost-function"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Parameter",
+   "about": "Variable used for specification",
+   "score": 0.92,
+   "near": [
+    "hyperparameter"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Parametric model",
+   "about": "Type of statistical model",
+   "score": 0.92,
+   "near": [
+    "exponential-family",
+    "natural-parameter",
+    "log-partition-function"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Prediction",
+   "about": "Statement about a future event",
+   "score": 0.92,
+   "near": [
+    "hypothesis"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Probability density function",
+   "about": "Description of continuous random distribution",
+   "score": 0.92,
+   "near": [
+    "gaussian-noise"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Resampling (statistics)",
+   "about": "Family of statistical methods based on sampling of available data",
+   "score": 0.92,
+   "near": [
+    "cross-validation"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Robust regression",
+   "about": "Specialized form of regression analysis, in statistics",
+   "score": 0.92,
+   "near": [
+    "l1-loss"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Sample space",
+   "about": "Set of all possible outcomes or results of a statistical trial or experiment",
+   "score": 0.92,
+   "near": [
+    "generative-model"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Scalar field",
+   "about": "Assignment of numbers to points in space",
+   "score": 0.92,
+   "near": [
+    "gradient"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Signal processing",
+   "about": "Field of electrical engineering",
+   "score": 0.92,
+   "near": [
+    "convolution"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Sine and cosine",
+   "about": "Fundamental trigonometric functions",
+   "score": 0.92,
+   "near": [
+    "cosine-similarity"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Triangle inequality",
+   "about": "Property of geometry, also used to generalize the notion of \"distance\" in metric spaces",
+   "score": 0.92,
+   "near": [
+    "norm"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Vector processor",
+   "about": "Computer processor which works on arrays of several numbers at once",
+   "score": 0.92,
+   "near": [
+    "vectorization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Adaptive filter",
+   "about": "System with self-optimizing transfer function",
+   "score": 0.83,
+   "near": [
+    "lms-rule"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Antiderivative",
+   "about": "Indefinite integral",
+   "score": 0.83,
+   "near": [
+    "derivative"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Arg max",
+   "about": "Inputs at which function values are highest",
+   "score": 0.83,
+   "near": [
+    "likelihood"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Binary classification",
+   "about": "Dividing things between two categories",
+   "score": 0.83,
+   "near": [
+    "logistic-regression"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Binomial distribution",
+   "about": "Probability distribution",
+   "score": 0.83,
+   "near": [
+    "bernoulli"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Cluster analysis",
+   "about": "Grouping a set of objects by similarity",
+   "score": 0.83,
+   "near": [
+    "cosine-similarity"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Collinearity",
+   "about": "Property of points all lying on a single line",
+   "score": 0.83,
+   "near": [
+    "l1-regularization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Correlation coefficient",
+   "about": "Numerical measure of a statistical relationship between variables",
+   "score": 0.83,
+   "near": [
+    "correlation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Curve fitting",
+   "about": "Process of constructing a curve that has the best fit to a series of data points",
+   "score": 0.83,
+   "near": [
+    "target"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Digital image processing",
+   "about": "Algorithmic processing of digitally-represented images",
+   "score": 0.83,
+   "near": [
+    "convolution"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Directional derivative",
+   "about": "Instantaneous rate of change of the function",
+   "score": 0.83,
+   "near": [
+    "gradient"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Geometric transformation",
+   "about": "Bijection of a set using properties of shapes in space",
+   "score": 0.83,
+   "near": [
+    "matrix"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Heavy-tailed distribution",
+   "about": "Probability distribution",
+   "score": 0.83,
+   "near": [
+    "outlier"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Higher-order function",
+   "about": "Function that takes one or more functions as an input or that outputs a function",
+   "score": 0.83,
+   "near": [
+    "composition"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Homoscedasticity and heteroscedasticity",
+   "about": "Statistical property",
+   "score": 0.83,
+   "near": [
+    "normal-equations"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Integration by substitution",
+   "about": "Technique in integral evaluation",
+   "score": 0.83,
+   "near": [
+    "integral"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Line search",
+   "about": "Optimization algorithm",
+   "score": 0.83,
+   "near": [
+    "learning-rate"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Linear function",
+   "about": "Linear map or polynomial function of degree one",
+   "score": 0.83,
+   "near": [
+    "intercept"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Logic gate",
+   "about": "Device performing a Boolean function",
+   "score": 0.83,
+   "near": [
+    "threshold-unit"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Mixture model",
+   "about": "Statistical concept",
+   "score": 0.83,
+   "near": [
+    "generative-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Multicollinearity",
+   "about": "Linear dependency situation in a regression model",
+   "score": 0.83,
+   "near": [
+    "l2-regularization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Multilayer perceptron",
+   "about": "Type of feedforward neural network",
+   "score": 0.83,
+   "near": [
+    "layer"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Normed vector space",
+   "about": "Vector space on which a distance is defined",
+   "score": 0.83,
+   "near": [
+    "norm"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Optimizing compiler",
+   "about": "Compiler that optimizes generated code",
+   "score": 0.83,
+   "near": [
+    "aliasing"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Orthogonal complement",
+   "about": "Concept in linear algebra",
+   "score": 0.83,
+   "near": [
+    "projection"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Parametric family",
+   "about": "",
+   "score": 0.83,
+   "near": [
+    "exponential-family",
+    "natural-parameter",
+    "log-partition-function"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Probabilistic classification",
+   "about": "Machine learning problem",
+   "score": 0.83,
+   "near": [
+    "naive-bayes-assumption",
+    "naive-bayes"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Quantile regression",
+   "about": "Statistical modeling technique",
+   "score": 0.83,
+   "near": [
+    "l1-loss"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Sensitivity analysis",
+   "about": "Study of uncertainty in the output of a mathematical model or system",
+   "score": 0.83,
+   "near": [
+    "condition-number"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Singular matrix",
+   "about": "Square matrix without an inverse",
+   "score": 0.83,
+   "near": [
+    "inverse"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Statistical inference",
+   "about": "Process of using data analysis for predicting population data from sample data",
+   "score": 0.83,
+   "near": [
+    "model-class"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Statistics",
+   "about": "Study of collection and analysis of data",
+   "score": 0.83,
+   "near": [
+    "matrix-product"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": [
+    "Statistics Is Linear Algebra"
+   ]
+  },
+  {
+   "article": "Stone–Weierstrass theorem",
+   "about": "Mathematical theorem in the study of analysis",
+   "score": 0.83,
+   "near": [
+    "universal-approximation"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Stop word",
+   "about": "Common word that search engines avoid indexing to save time and space",
+   "score": 0.83,
+   "near": [
+    "bag-of-words"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Testability",
+   "about": "Ability to examine a theory by experimentation",
+   "score": 0.83,
+   "near": [
+    "hypothesis"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Text corpus",
+   "about": "Digital collections of natural language data",
+   "score": 0.83,
+   "near": [
+    "n-gram"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Volume",
+   "about": "Quantity of a three-dimensional space",
+   "score": 0.83,
+   "near": [
+    "determinant"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Weight initialization",
+   "about": "Technique for setting initial values of trainable parameters in a neural network",
+   "score": 0.83,
+   "near": [
+    "hidden-layer"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Additive white Gaussian noise",
+   "about": "Basic noise model used in information theory",
+   "score": 0.75,
+   "near": [
+    "gaussian-noise"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Applied mathematics",
+   "about": "Application of mathematical methods to other fields",
+   "score": 0.75,
+   "near": [
+    "matrix-product"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Basis (linear algebra)",
+   "about": "Set of vectors used to define coordinates",
+   "score": 0.75,
+   "near": [
+    "span"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Bayesian linear regression",
+   "about": "Method of statistical analysis",
+   "score": 0.75,
+   "near": [
+    "l2-regularization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Bayesian network",
+   "about": "Probabilistic graphical representation of causal relationships",
+   "score": 0.75,
+   "near": [
+    "naive-bayes-assumption",
+    "naive-bayes"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Bayesian statistics",
+   "about": "Theory and paradigm of statistics",
+   "score": 0.75,
+   "near": [
+    "regularization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Bias (statistics)",
+   "about": "Systemic inaccuracy",
+   "score": 0.75,
+   "near": [
+    "missing-variable"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "Variance Bias Trade-off"
+   ]
+  },
+  {
+   "article": "Change of basis",
+   "about": "Coordinate change in linear algebra",
+   "score": 0.75,
+   "near": [
+    "matrix"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Conditional expectation",
+   "about": "Expected value of a random variable given that certain conditions are known to occur",
+   "score": 0.75,
+   "near": [
+    "class-conditional"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Control variable",
+   "about": "Experimental element which is not changed throughout the experiment",
+   "score": 0.75,
+   "near": [
+    "target"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Correlation does not imply causation",
+   "about": "Refutation of a logical fallacy",
+   "score": 0.75,
+   "near": [
+    "correlation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Cross product",
+   "about": "Mathematical operation on vectors in 3D space",
+   "score": 0.75,
+   "near": [
+    "inner-product"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Dirichlet distribution",
+   "about": "Probability distribution",
+   "score": 0.75,
+   "near": [
+    "laplace-smoothing"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Discrete-time Fourier transform",
+   "about": "Fourier analysis technique applied to sequences",
+   "score": 0.75,
+   "near": [
+    "convolution"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Early stopping",
+   "about": "Method in machine learning",
+   "score": 0.75,
+   "near": [
+    "overfitting",
+    "underfitting"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Estimation",
+   "about": "Process of finding an approximation",
+   "score": 0.75,
+   "near": [
+    "residual"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Feature selection",
+   "about": "Process in machine learning and statistics",
+   "score": 0.75,
+   "near": [
+    "l1-regularization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Floating-point arithmetic",
+   "about": "Computer approximation for real numbers",
+   "score": 0.75,
+   "near": [
+    "condition-number"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Gated recurrent unit",
+   "about": "Memory unit used in neural networks",
+   "score": 0.75,
+   "near": [
+    "recurrent-network"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Gram–Schmidt process",
+   "about": "Orthonormalization of a set of vectors",
+   "score": 0.75,
+   "near": [
+    "projection"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Graphical model",
+   "about": "Probabilistic model",
+   "score": 0.75,
+   "near": [
+    "discriminative-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Homomorphism",
+   "about": "Structure-preserving map between two algebraic structures of the same type",
+   "score": 0.75,
+   "near": [
+    "linear-transformation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Hyperparameter (Bayesian statistics)",
+   "about": "Parameter of a prior distribution in Bayesian statistics",
+   "score": 0.75,
+   "near": [
+    "hyperparameter"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Image (mathematics)",
+   "about": "Set of the values of a function",
+   "score": 0.75,
+   "near": [
+    "column-space"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Information retrieval",
+   "about": "Finding information for an information need",
+   "score": 0.75,
+   "near": [
+    "cosine-similarity"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Integration by parts",
+   "about": "Mathematical method in calculus",
+   "score": 0.75,
+   "near": [
+    "integral"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Inverse function",
+   "about": "Mathematical concept",
+   "score": 0.75,
+   "near": [
+    "composition"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Kronecker delta",
+   "about": "Mathematical function of two variables; outputs 1 if they are equal, 0 otherwise",
+   "score": 0.75,
+   "near": [
+    "one-hot"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Laplace distribution",
+   "about": "Probability distribution",
+   "score": 0.75,
+   "near": [
+    "l1-loss"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Large language model",
+   "about": "Type of machine learning model",
+   "score": 0.75,
+   "near": [
+    "language-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Linear equation",
+   "about": "Equation that does not involve powers or products of variables",
+   "score": 0.75,
+   "near": [
+    "intercept"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Mean reversion (finance)",
+   "about": "Financial term",
+   "score": 0.75,
+   "near": [
+    "regression-to-the-mean"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Median",
+   "about": "Middle quantile of a data set or probability distribution",
+   "score": 0.75,
+   "near": [
+    "outlier"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Multidimensional analysis",
+   "about": "Data analysis process",
+   "score": 0.75,
+   "near": [
+    "vectorization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Nonparametric statistics",
+   "about": "Type of statistical analysis",
+   "score": 0.75,
+   "near": [
+    "k-nearest-neighbours"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Online machine learning",
+   "about": "Method of machine learning",
+   "score": 0.75,
+   "near": [
+    "sgd"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Overshoot (signal)",
+   "about": "When a signal or function exceeds its target",
+   "score": 0.75,
+   "near": [
+    "learning-rate"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Predictive modelling",
+   "about": "Form of modelling that uses statistics to predict outcomes",
+   "score": 0.75,
+   "near": [
+    "cross-validation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Projection matrix",
+   "about": "Concept in statistics",
+   "score": 0.75,
+   "near": [
+    "centering"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Rank–nullity theorem",
+   "about": "In linear algebra, relation between 3 dimensions",
+   "score": 0.75,
+   "near": [
+    "rank"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Recursion",
+   "about": "Process of repeating items in a self-similar way",
+   "score": 0.75,
+   "near": [
+    "iteration"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Reference counting",
+   "about": "Software resource tracking technique",
+   "score": 0.75,
+   "near": [
+    "aliasing"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Regression validation",
+   "about": "Statistics concept",
+   "score": 0.75,
+   "near": [
+    "multiple-regression"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Rotation (mathematics)",
+   "about": "Motion of a certain space that preserves at least one point",
+   "score": 0.75,
+   "near": [
+    "eigenvector"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Sampling error",
+   "about": "Statistical error",
+   "score": 0.75,
+   "near": [
+    "generalization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Scientific modelling",
+   "about": "Scientific activity that produces models",
+   "score": 0.75,
+   "near": [
+    "holding-fixed"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Scientific theory",
+   "about": "Falsifiable explanation of natural phenomena",
+   "score": 0.75,
+   "near": [
+    "hypothesis"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Tf–idf",
+   "about": "Estimate of the importance of a word in a document",
+   "score": 0.75,
+   "near": [
+    "bag-of-words"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Tuple",
+   "about": "Finite ordered list of elements",
+   "score": 0.75,
+   "near": [
+    "vectors"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Uniform convergence",
+   "about": "Mode of convergence of a function sequence",
+   "score": 0.75,
+   "near": [
+    "universal-approximation"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Bayesian probability",
+   "about": "Interpretation of probability",
+   "score": 0.67,
+   "near": [
+    "naive-bayes-assumption",
+    "naive-bayes"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Coefficient of multiple correlation",
+   "about": "Statistical concept",
+   "score": 0.67,
+   "near": [
+    "r-squared"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Conditional entropy",
+   "about": "Measure of relative information in probability theory",
+   "score": 0.67,
+   "near": [
+    "cross-entropy"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Conditional variance",
+   "about": "Variance of a random variable given value of other variables",
+   "score": 0.67,
+   "near": [
+    "class-conditional"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Constant folding",
+   "about": "Type of compiler optimization",
+   "score": 0.67,
+   "near": [
+    "aliasing"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Convolutional layer",
+   "about": "Neural network technology",
+   "score": 0.67,
+   "near": [
+    "layer"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Cramer's rule",
+   "about": "Formula for systems of linear equations",
+   "score": 0.67,
+   "near": [
+    "determinant"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Decision tree learning",
+   "about": "Machine learning algorithm",
+   "score": 0.67,
+   "near": [
+    "discriminative-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Deconvolution",
+   "about": "Reconstruction of a filtered signal",
+   "score": 0.67,
+   "near": [
+    "convolution"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Differentiable programming",
+   "about": "Programming paradigm",
+   "score": 0.67,
+   "near": [
+    "computation-graph"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Dropout (neural networks)",
+   "about": "Regularization method for artificial neural networks",
+   "score": 0.67,
+   "near": [
+    "overfitting",
+    "underfitting"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Euclidean distance",
+   "about": "Length of a line segment",
+   "score": 0.67,
+   "near": [
+    "norm"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Experiment",
+   "about": "Scientific procedure performed to validate a hypothesis",
+   "score": 0.67,
+   "near": [
+    "hypothesis"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Extreme value theory",
+   "about": "Branch of statistics focusing on large deviations",
+   "score": 0.67,
+   "near": [
+    "regression-to-the-mean"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Faà di Bruno's formula",
+   "about": "Generalized chain rule in calculus",
+   "score": 0.67,
+   "near": [
+    "chain-rule"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Finite-state machine",
+   "about": "Mathematical model of computation",
+   "score": 0.67,
+   "near": [
+    "one-hot"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Gaussian process",
+   "about": "Statistical model",
+   "score": 0.67,
+   "near": [
+    "gaussian-noise"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "General linear group",
+   "about": "Group of 𝑛 × 𝑛 invertible matrices",
+   "score": 0.67,
+   "near": [
+    "inverse"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Generalized least squares",
+   "about": "Statistical estimation technique",
+   "score": 0.67,
+   "near": [
+    "normal-equations"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Huber loss",
+   "about": "Loss function used in robust regression",
+   "score": 0.67,
+   "near": [
+    "cost-function"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Imputation (statistics)",
+   "about": "Process of replacing missing data with substituted values",
+   "score": 0.67,
+   "near": [
+    "dataset"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Inductive reasoning",
+   "about": "Method of logical reasoning",
+   "score": 0.67,
+   "near": [
+    "holding-fixed"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Kernel (linear algebra)",
+   "about": "Vectors mapped to 0 by a linear map",
+   "score": 0.67,
+   "near": [
+    "rank"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Lambda calculus",
+   "about": "Mathematical-logic system",
+   "score": 0.67,
+   "near": [
+    "composition"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Matrix addition",
+   "about": "Notions of sums for matrices in linear algebra",
+   "score": 0.67,
+   "near": [
+    "matrix"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Natural language generation",
+   "about": "Generation of text in natural languages",
+   "score": 0.67,
+   "near": [
+    "language-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Newton's method",
+   "about": "Algorithm for finding zeros of functions",
+   "score": 0.67,
+   "near": [
+    "iteration"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Normalization (statistics)",
+   "about": "Statistical procedure",
+   "score": 0.67,
+   "near": [
+    "k-nearest-neighbours"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Pattern recognition",
+   "about": "Automated recognition of patterns and regularities in data",
+   "score": 0.67,
+   "near": [
+    "feature"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Polynomial regression",
+   "about": "Statistics concept",
+   "score": 0.67,
+   "near": [
+    "multiple-regression"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Preconditioner",
+   "about": "Transforms equations for numerical solution",
+   "score": 0.67,
+   "near": [
+    "condition-number"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Principal component regression",
+   "about": "Statistical technique",
+   "score": 0.67,
+   "near": [
+    "l2-regularization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Probit model",
+   "about": "Statistical regression where the dependent variable can take only two values",
+   "score": 0.67,
+   "near": [
+    "generalized-linear-model",
+    "link-function"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Rate of convergence",
+   "about": "Speed of convergence of a mathematical sequence",
+   "score": 0.67,
+   "near": [
+    "sgd"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Residual neural network",
+   "about": "Type of artificial neural network",
+   "score": 0.67,
+   "near": [
+    "activation-function"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Riemann integral",
+   "about": "Basic integral in elementary calculus",
+   "score": 0.67,
+   "near": [
+    "integral"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Robustness (computer science)",
+   "about": "Ability of a computer system to cope with errors during execution",
+   "score": 0.67,
+   "near": [
+    "hyperparameter"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Rotations and reflections in two dimensions",
+   "about": "Mathematical concept",
+   "score": 0.67,
+   "near": [
+    "linear-transformation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Scalar processor",
+   "about": "Class of computer processors",
+   "score": 0.67,
+   "near": [
+    "vectorization"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Stability (learning theory)",
+   "about": "Notion in computational learning theory",
+   "score": 0.67,
+   "near": [
+    "generalization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Statistical hypothesis test",
+   "about": "Method of statistical inference",
+   "score": 0.67,
+   "near": [
+    "model-class"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Statistical model specification",
+   "about": "Part of the process of building a statistical model",
+   "score": 0.67,
+   "near": [
+    "missing-variable"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Steady state",
+   "about": "State in which variables of a system are unchanging in time",
+   "score": 0.67,
+   "near": [
+    "eigenvector"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Structured sparsity regularization",
+   "about": "",
+   "score": 0.67,
+   "near": [
+    "l1-regularization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Synthetic data",
+   "about": "Algorithmically generated data that have a similar distribution as sampled data",
+   "score": 0.67,
+   "near": [
+    "generative-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Threshold potential",
+   "about": "Critical potential value",
+   "score": 0.67,
+   "near": [
+    "threshold-unit"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Transformation matrix",
+   "about": "Central object in linear algebra; mapping vectors to vectors",
+   "score": 0.67,
+   "near": [
+    "column-space"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Vanishing gradient problem",
+   "about": "Machine learning model training problem",
+   "score": 0.67,
+   "near": [
+    "recurrent-network"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Variational autoencoder",
+   "about": "Deep learning generative model to encode data representation",
+   "score": 0.67,
+   "near": [
+    "autoencoder"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Vector space model",
+   "about": "Model for representing text documents",
+   "score": 0.67,
+   "near": [
+    "bag-of-words"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Wiener filter",
+   "about": "Signal processing algorithm",
+   "score": 0.67,
+   "near": [
+    "lms-rule"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Word",
+   "about": "Basic elements of language",
+   "score": 0.67,
+   "near": [
+    "n-gram"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "Language: One-Hot Word Representation",
+    "The word it never saw",
+    "Where the Word Comes From"
+   ]
+  },
+  {
+   "article": "Area",
+   "about": "Size of a two-dimensional surface",
+   "score": 0.58,
+   "near": [
+    "integral"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Basis pursuit denoising",
+   "about": "Mathematical optimization problem",
+   "score": 0.58,
+   "near": [
+    "l1-regularization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Boosting (machine learning)",
+   "about": "Ensemble learning method",
+   "score": 0.58,
+   "near": [
+    "discriminative-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Cartesian coordinate system",
+   "about": "Coordinate system using perpendicular axes",
+   "score": 0.58,
+   "near": [
+    "inner-product"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Central limit theorem",
+   "about": "Fundamental theorem in probability theory and statistics",
+   "score": 0.58,
+   "near": [
+    "multivariate-gaussian"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Computational learning theory",
+   "about": "Theory of machine learning",
+   "score": 0.58,
+   "near": [
+    "universal-approximation"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Computer vision",
+   "about": "Computerized information extraction from images",
+   "score": 0.58,
+   "near": [
+    "convolution"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Decision theory",
+   "about": "Branch of applied probability theory",
+   "score": 0.58,
+   "near": [
+    "cost-function"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Derivative (multivariable calculus)",
+   "about": "Type of derivative in mathematics",
+   "score": 0.58,
+   "near": [
+    "holding-fixed"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": [
+    "A derivative is what a curve looks like up close"
+   ]
+  },
+  {
+   "article": "Design of experiments",
+   "about": "Design of tasks",
+   "score": 0.58,
+   "near": [
+    "design-matrix"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Deviation (statistics)",
+   "about": "Difference between a variable's observed value and a reference value",
+   "score": 0.58,
+   "near": [
+    "residual"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Domain of a function",
+   "about": "Set of all things that may be the input of a mathematical function",
+   "score": 0.58,
+   "near": [
+    "composition"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Estimator",
+   "about": "Rule for calculating an estimate of a given quantity based on observed data",
+   "score": 0.58,
+   "near": [
+    "outlier"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Exponential distribution",
+   "about": "Probability distribution",
+   "score": 0.58,
+   "near": [
+    "exponential-family",
+    "natural-parameter",
+    "log-partition-function"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Function space",
+   "about": "Set of functions between two fixed sets",
+   "score": 0.58,
+   "near": [
+    "vectors"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Generalized inverse",
+   "about": "Algebraic element satisfying some of the criteria of an inverse",
+   "score": 0.58,
+   "near": [
+    "inverse"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Global optimization",
+   "about": "Branch of mathematics",
+   "score": 0.58,
+   "near": [
+    "gradient-descent"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Gradient boosting",
+   "about": "Machine learning technique",
+   "score": 0.58,
+   "near": [
+    "regularization"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Graph of a function",
+   "about": "Representation of a mathematical function",
+   "score": 0.58,
+   "near": [
+    "intercept"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Idempotent matrix",
+   "about": "Matrix that, squared, equals itself",
+   "score": 0.58,
+   "near": [
+    "centering"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Instruction scheduling",
+   "about": "Compiler optimization technique",
+   "score": 0.58,
+   "near": [
+    "aliasing"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Iterated function",
+   "about": "Result of repeatedly applying a mathematical function",
+   "score": 0.58,
+   "near": [
+    "iteration"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Joint entropy",
+   "about": "Measure of information in probability and information theory",
+   "score": 0.58,
+   "near": [
+    "cross-entropy"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "K-mer",
+   "about": "Substrings of length k contained in a biological sequence",
+   "score": 0.58,
+   "near": [
+    "n-gram"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Linear classifier",
+   "about": "Statistical classification in machine learning",
+   "score": 0.58,
+   "near": [
+    "gda"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Logarithm",
+   "about": "Mathematical function, inverse of an exponential function",
+   "score": 0.58,
+   "near": [
+    "poisson-regression"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Logic",
+   "about": "Study of correct reasoning",
+   "score": 0.58,
+   "near": [
+    "hypothesis"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Machine translation",
+   "about": "Computerized translation between natural languages",
+   "score": 0.58,
+   "near": [
+    "language-model"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Markov chain Monte Carlo",
+   "about": "Calculation of complex statistical distributions",
+   "score": 0.58,
+   "near": [
+    "bayes-rule"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Mathematical model",
+   "about": "Description of a system using mathematical concepts and language",
+   "score": 0.58,
+   "near": [
+    "target"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Moment generating function",
+   "about": "Concept in probability theory and statistics",
+   "score": 0.58,
+   "near": [
+    "poisson-distribution"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Moore–Penrose inverse",
+   "about": "Most widely known generalized inverse of a matrix",
+   "score": 0.58,
+   "near": [
+    "projection"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Multivariable calculus",
+   "about": "Calculus of functions of several variables",
+   "score": 0.58,
+   "near": [
+    "chain-rule"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Nearest neighbor search",
+   "about": "Optimization problem in computer science",
+   "score": 0.58,
+   "near": [
+    "k-nearest-neighbours"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Newton's method in optimization",
+   "about": "Method for finding stationary points of a function",
+   "score": 0.58,
+   "near": [
+    "learning-rate"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Numerical differentiation",
+   "about": "Use of numerical analysis to estimate derivatives of functions",
+   "score": 0.58,
+   "near": [
+    "computation-graph"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Pooling layer",
+   "about": "Architectural motif in neural networks for aggregating information",
+   "score": 0.58,
+   "near": [
+    "layer"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Receiver operating characteristic",
+   "about": "Diagnostic plot of binary classifier ability",
+   "score": 0.58,
+   "near": [
+    "logistic-regression"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Reinforcement learning",
+   "about": "Field of machine learning",
+   "score": 0.58,
+   "near": [
+    "sgd"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Row and column vectors",
+   "about": "Matrix consisting of a single row or column",
+   "score": 0.58,
+   "near": [
+    "column-space"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Seminorm",
+   "about": "Mathematical function",
+   "score": 0.58,
+   "near": [
+    "norm"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Shrinkage (statistics)",
+   "about": "Phenomenon in statistics",
+   "score": 0.58,
+   "near": [
+    "laplace-smoothing"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Signal-to-noise ratio",
+   "about": "Ratio of the desired signal to the background noise",
+   "score": 0.58,
+   "near": [
+    "gaussian-noise"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Similarity measure",
+   "about": "Real-valued function that quantifies similarity between two objects",
+   "score": 0.58,
+   "near": [
+    "cosine-similarity"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Singular value",
+   "about": "Square roots of the eigenvalues of the self-adjoint operator A* A",
+   "score": 0.58,
+   "near": [
+    "condition-number"
+   ],
+   "role": "basis",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Singular value decomposition",
+   "about": "Matrix decomposition",
+   "score": 0.58,
+   "near": [
+    "rank"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Time series",
+   "about": "Sequence of data points over time",
+   "score": 0.58,
+   "near": [
+    "dataset"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Uncertainty quantification",
+   "about": "Science of characterizing uncertainties",
+   "score": 0.58,
+   "near": [
+    "naive-bayes-assumption",
+    "naive-bayes"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  },
+  {
+   "article": "Word embedding",
+   "about": "Method in natural language processing",
+   "score": 0.58,
+   "near": [
+    "bag-of-words"
+   ],
+   "role": "next",
+   "questions": [],
+   "named_in": []
+  }
+ ],
+ "edges": [
+  [
+   "activation-function",
+   "autoencoder"
+  ],
+  [
+   "activation-function",
+   "bias-variance"
+  ],
+  [
+   "activation-function",
+   "deep-network"
+  ],
+  [
+   "activation-function",
+   "gda"
+  ],
+  [
+   "activation-function",
+   "generative-model"
+  ],
+  [
+   "activation-function",
+   "hidden-layer"
+  ],
+  [
+   "activation-function",
+   "k-nearest-neighbours"
+  ],
+  [
+   "activation-function",
+   "logistic-regression"
+  ],
+  [
+   "activation-function",
+   "naive-bayes"
+  ],
+  [
+   "activation-function",
+   "naive-bayes-assumption"
+  ],
+  [
+   "activation-function",
+   "neural-network"
+  ],
+  [
+   "activation-function",
+   "r-squared"
+  ],
+  [
+   "activation-function",
+   "recurrent-network"
+  ],
+  [
+   "activation-function",
+   "relu"
+  ],
+  [
+   "activation-function",
+   "threshold-unit"
+  ],
+  [
+   "activation-function",
+   "universal-approximation"
+  ],
+  [
+   "autoencoder",
+   "backpropagation"
+  ],
+  [
+   "autoencoder",
+   "bias-variance"
+  ],
+  [
+   "autoencoder",
+   "cosine-similarity"
+  ],
+  [
+   "autoencoder",
+   "deep-network"
+  ],
+  [
+   "autoencoder",
+   "feature"
+  ],
+  [
+   "autoencoder",
+   "gaussian-noise"
+  ],
+  [
+   "autoencoder",
+   "gda"
+  ],
+  [
+   "autoencoder",
+   "generative-model"
+  ],
+  [
+   "autoencoder",
+   "gradient-descent"
+  ],
+  [
+   "autoencoder",
+   "k-nearest-neighbours"
+  ],
+  [
+   "autoencoder",
+   "learning-rate"
+  ],
+  [
+   "autoencoder",
+   "logistic-regression"
+  ],
+  [
+   "autoencoder",
+   "naive-bayes"
+  ],
+  [
+   "autoencoder",
+   "naive-bayes-assumption"
+  ],
+  [
+   "autoencoder",
+   "neural-network"
+  ],
+  [
+   "autoencoder",
+   "overfitting"
+  ],
+  [
+   "autoencoder",
+   "r-squared"
+  ],
+  [
+   "autoencoder",
+   "recurrent-network"
+  ],
+  [
+   "autoencoder",
+   "relu"
+  ],
+  [
+   "autoencoder",
+   "sgd"
+  ],
+  [
+   "autoencoder",
+   "test-set"
+  ],
+  [
+   "autoencoder",
+   "training-example"
+  ],
+  [
+   "autoencoder",
+   "underfitting"
+  ],
+  [
+   "autoencoder",
+   "validation-set"
+  ],
+  [
+   "backpropagation",
+   "bias-variance"
+  ],
+  [
+   "backpropagation",
+   "chain-rule"
+  ],
+  [
+   "backpropagation",
+   "computation-graph"
+  ],
+  [
+   "backpropagation",
+   "deep-network"
+  ],
+  [
+   "backpropagation",
+   "gda"
+  ],
+  [
+   "backpropagation",
+   "generative-model"
+  ],
+  [
+   "backpropagation",
+   "gradient"
+  ],
+  [
+   "backpropagation",
+   "hidden-layer"
+  ],
+  [
+   "backpropagation",
+   "k-nearest-neighbours"
+  ],
+  [
+   "backpropagation",
+   "logistic-regression"
+  ],
+  [
+   "backpropagation",
+   "naive-bayes"
+  ],
+  [
+   "backpropagation",
+   "naive-bayes-assumption"
+  ],
+  [
+   "backpropagation",
+   "neural-network"
+  ],
+  [
+   "backpropagation",
+   "r-squared"
+  ],
+  [
+   "backpropagation",
+   "recurrent-network"
+  ],
+  [
+   "backpropagation",
+   "sgd"
+  ],
+  [
+   "backpropagation",
+   "universal-approximation"
+  ],
+  [
+   "bag-of-words",
+   "feature"
+  ],
+  [
+   "bag-of-words",
+   "language-model"
+  ],
+  [
+   "bag-of-words",
+   "laplace-smoothing"
+  ],
+  [
+   "bag-of-words",
+   "n-gram"
+  ],
+  [
+   "bag-of-words",
+   "regularization"
+  ],
+  [
+   "bayes-rule",
+   "bernoulli"
+  ],
+  [
+   "bayes-rule",
+   "class-conditional"
+  ],
+  [
+   "bayes-rule",
+   "discriminative-model"
+  ],
+  [
+   "bayes-rule",
+   "generative-model"
+  ],
+  [
+   "bayes-rule",
+   "likelihood"
+  ],
+  [
+   "bayes-rule",
+   "naive-bayes"
+  ],
+  [
+   "bayes-rule",
+   "naive-bayes-assumption"
+  ],
+  [
+   "bayes-rule",
+   "prior"
+  ],
+  [
+   "bernoulli",
+   "discriminative-model"
+  ],
+  [
+   "bernoulli",
+   "logistic-regression"
+  ],
+  [
+   "bernoulli",
+   "parameters"
+  ],
+  [
+   "bernoulli",
+   "poisson-distribution"
+  ],
+  [
+   "bernoulli",
+   "prior"
+  ],
+  [
+   "bias-variance",
+   "cosine-similarity"
+  ],
+  [
+   "bias-variance",
+   "deep-network"
+  ],
+  [
+   "bias-variance",
+   "feature"
+  ],
+  [
+   "bias-variance",
+   "gda"
+  ],
+  [
+   "bias-variance",
+   "generalization"
+  ],
+  [
+   "bias-variance",
+   "generative-model"
+  ],
+  [
+   "bias-variance",
+   "gradient-descent"
+  ],
+  [
+   "bias-variance",
+   "k-nearest-neighbours"
+  ],
+  [
+   "bias-variance",
+   "l2-regularization"
+  ],
+  [
+   "bias-variance",
+   "learning-rate"
+  ],
+  [
+   "bias-variance",
+   "logistic-regression"
+  ],
+  [
+   "bias-variance",
+   "naive-bayes"
+  ],
+  [
+   "bias-variance",
+   "naive-bayes-assumption"
+  ],
+  [
+   "bias-variance",
+   "neural-network"
+  ],
+  [
+   "bias-variance",
+   "overfitting"
+  ],
+  [
+   "bias-variance",
+   "parameters"
+  ],
+  [
+   "bias-variance",
+   "r-squared"
+  ],
+  [
+   "bias-variance",
+   "recurrent-network"
+  ],
+  [
+   "bias-variance",
+   "relu"
+  ],
+  [
+   "bias-variance",
+   "residual"
+  ],
+  [
+   "bias-variance",
+   "sgd"
+  ],
+  [
+   "bias-variance",
+   "test-set"
+  ],
+  [
+   "bias-variance",
+   "training-example"
+  ],
+  [
+   "bias-variance",
+   "underfitting"
+  ],
+  [
+   "bias-variance",
+   "validation-set"
+  ],
+  [
+   "centering",
+   "correlation"
+  ],
+  [
+   "centering",
+   "design-matrix"
+  ],
+  [
+   "centering",
+   "eigenvector"
+  ],
+  [
+   "centering",
+   "inverse"
+  ],
+  [
+   "centering",
+   "matrix"
+  ],
+  [
+   "centering",
+   "matrix-product"
+  ],
+  [
+   "centering",
+   "projection"
+  ],
+  [
+   "chain-rule",
+   "composition"
+  ],
+  [
+   "chain-rule",
+   "computation-graph"
+  ],
+  [
+   "chain-rule",
+   "derivative"
+  ],
+  [
+   "chain-rule",
+   "gradient"
+  ],
+  [
+   "chain-rule",
+   "integral"
+  ],
+  [
+   "chain-rule",
+   "target"
+  ],
+  [
+   "class-conditional",
+   "discriminative-model"
+  ],
+  [
+   "class-conditional",
+   "likelihood"
+  ],
+  [
+   "class-conditional",
+   "multivariate-gaussian"
+  ],
+  [
+   "column-space",
+   "inverse"
+  ],
+  [
+   "column-space",
+   "matrix"
+  ],
+  [
+   "column-space",
+   "projection"
+  ],
+  [
+   "column-space",
+   "rank"
+  ],
+  [
+   "column-space",
+   "span"
+  ],
+  [
+   "composition",
+   "computation-graph"
+  ],
+  [
+   "composition",
+   "linear-transformation"
+  ],
+  [
+   "composition",
+   "matrix-product"
+  ],
+  [
+   "computation-graph",
+   "derivative"
+  ],
+  [
+   "computation-graph",
+   "generalization"
+  ],
+  [
+   "computation-graph",
+   "gradient"
+  ],
+  [
+   "computation-graph",
+   "gradient-descent"
+  ],
+  [
+   "computation-graph",
+   "layer"
+  ],
+  [
+   "computation-graph",
+   "neural-network"
+  ],
+  [
+   "computation-graph",
+   "universal-approximation"
+  ],
+  [
+   "condition-number",
+   "derivative"
+  ],
+  [
+   "condition-number",
+   "eigenvector"
+  ],
+  [
+   "condition-number",
+   "inverse"
+  ],
+  [
+   "condition-number",
+   "matrix"
+  ],
+  [
+   "condition-number",
+   "norm"
+  ],
+  [
+   "condition-number",
+   "projection"
+  ],
+  [
+   "condition-number",
+   "target"
+  ],
+  [
+   "convolution",
+   "gaussian-noise"
+  ],
+  [
+   "convolution",
+   "integral"
+  ],
+  [
+   "correlation",
+   "covariance"
+  ],
+  [
+   "correlation",
+   "discriminative-model"
+  ],
+  [
+   "correlation",
+   "inverse"
+  ],
+  [
+   "correlation",
+   "linear-model"
+  ],
+  [
+   "correlation",
+   "model-class"
+  ],
+  [
+   "correlation",
+   "multiple-regression"
+  ],
+  [
+   "correlation",
+   "multivariate-gaussian"
+  ],
+  [
+   "cosine-similarity",
+   "deep-network"
+  ],
+  [
+   "cosine-similarity",
+   "gda"
+  ],
+  [
+   "cosine-similarity",
+   "generative-model"
+  ],
+  [
+   "cosine-similarity",
+   "inner-product"
+  ],
+  [
+   "cosine-similarity",
+   "k-nearest-neighbours"
+  ],
+  [
+   "cosine-similarity",
+   "logistic-regression"
+  ],
+  [
+   "cosine-similarity",
+   "naive-bayes"
+  ],
+  [
+   "cosine-similarity",
+   "naive-bayes-assumption"
+  ],
+  [
+   "cosine-similarity",
+   "neural-network"
+  ],
+  [
+   "cosine-similarity",
+   "r-squared"
+  ],
+  [
+   "cosine-similarity",
+   "recurrent-network"
+  ],
+  [
+   "cost-function",
+   "discriminative-model"
+  ],
+  [
+   "cost-function",
+   "generalization"
+  ],
+  [
+   "cost-function",
+   "learning-rate"
+  ],
+  [
+   "cost-function",
+   "linear-model"
+  ],
+  [
+   "cost-function",
+   "lms-rule"
+  ],
+  [
+   "cost-function",
+   "model-class"
+  ],
+  [
+   "cost-function",
+   "sgd"
+  ],
+  [
+   "covariance",
+   "linear-model"
+  ],
+  [
+   "covariance",
+   "missing-variable"
+  ],
+  [
+   "covariance",
+   "parameters"
+  ],
+  [
+   "covariance",
+   "target"
+  ],
+  [
+   "cross-entropy",
+   "discriminative-model"
+  ],
+  [
+   "cross-validation",
+   "discriminative-model"
+  ],
+  [
+   "cross-validation",
+   "generalization"
+  ],
+  [
+   "cross-validation",
+   "linear-model"
+  ],
+  [
+   "cross-validation",
+   "model-class"
+  ],
+  [
+   "cross-validation",
+   "overfitting"
+  ],
+  [
+   "cross-validation",
+   "test-set"
+  ],
+  [
+   "cross-validation",
+   "training-example"
+  ],
+  [
+   "cross-validation",
+   "underfitting"
+  ],
+  [
+   "cross-validation",
+   "validation-set"
+  ],
+  [
+   "dataset",
+   "k-nearest-neighbours"
+  ],
+  [
+   "dataset",
+   "language-model"
+  ],
+  [
+   "dataset",
+   "normal-equations"
+  ],
+  [
+   "dataset",
+   "outlier"
+  ],
+  [
+   "dataset",
+   "parameters"
+  ],
+  [
+   "dataset",
+   "sgd"
+  ],
+  [
+   "dataset",
+   "test-set"
+  ],
+  [
+   "dataset",
+   "training-example"
+  ],
+  [
+   "dataset",
+   "validation-set"
+  ],
+  [
+   "deep-network",
+   "feature"
+  ],
+  [
+   "deep-network",
+   "gradient-descent"
+  ],
+  [
+   "deep-network",
+   "layer"
+  ],
+  [
+   "deep-network",
+   "learning-rate"
+  ],
+  [
+   "deep-network",
+   "logistic-regression"
+  ],
+  [
+   "deep-network",
+   "neural-network"
+  ],
+  [
+   "deep-network",
+   "overfitting"
+  ],
+  [
+   "deep-network",
+   "recurrent-network"
+  ],
+  [
+   "deep-network",
+   "regularization"
+  ],
+  [
+   "deep-network",
+   "relu"
+  ],
+  [
+   "deep-network",
+   "sgd"
+  ],
+  [
+   "deep-network",
+   "test-set"
+  ],
+  [
+   "deep-network",
+   "threshold-unit"
+  ],
+  [
+   "deep-network",
+   "training-example"
+  ],
+  [
+   "deep-network",
+   "underfitting"
+  ],
+  [
+   "deep-network",
+   "universal-approximation"
+  ],
+  [
+   "deep-network",
+   "validation-set"
+  ],
+  [
+   "derivative",
+   "gradient"
+  ],
+  [
+   "derivative",
+   "integral"
+  ],
+  [
+   "derivative",
+   "linear-transformation"
+  ],
+  [
+   "derivative",
+   "matrix"
+  ],
+  [
+   "derivative",
+   "universal-approximation"
+  ],
+  [
+   "design-matrix",
+   "inverse"
+  ],
+  [
+   "design-matrix",
+   "matrix"
+  ],
+  [
+   "design-matrix",
+   "model-class"
+  ],
+  [
+   "design-matrix",
+   "target"
+  ],
+  [
+   "determinant",
+   "eigenvector"
+  ],
+  [
+   "determinant",
+   "inverse"
+  ],
+  [
+   "determinant",
+   "linear-transformation"
+  ],
+  [
+   "determinant",
+   "matrix"
+  ],
+  [
+   "determinant",
+   "projection"
+  ],
+  [
+   "determinant",
+   "rank"
+  ],
+  [
+   "determinant",
+   "span"
+  ],
+  [
+   "discriminative-model",
+   "exponential-family"
+  ],
+  [
+   "discriminative-model",
+   "gda"
+  ],
+  [
+   "discriminative-model",
+   "generalized-linear-model"
+  ],
+  [
+   "discriminative-model",
+   "generative-model"
+  ],
+  [
+   "discriminative-model",
+   "k-nearest-neighbours"
+  ],
+  [
+   "discriminative-model",
+   "likelihood"
+  ],
+  [
+   "discriminative-model",
+   "link-function"
+  ],
+  [
+   "discriminative-model",
+   "log-partition-function"
+  ],
+  [
+   "discriminative-model",
+   "logistic-regression"
+  ],
+  [
+   "discriminative-model",
+   "maximum-likelihood"
+  ],
+  [
+   "discriminative-model",
+   "multivariate-gaussian"
+  ],
+  [
+   "discriminative-model",
+   "natural-parameter"
+  ],
+  [
+   "discriminative-model",
+   "normal-equations"
+  ],
+  [
+   "discriminative-model",
+   "outlier"
+  ],
+  [
+   "discriminative-model",
+   "poisson-regression"
+  ],
+  [
+   "discriminative-model",
+   "prior"
+  ],
+  [
+   "discriminative-model",
+   "r-squared"
+  ],
+  [
+   "discriminative-model",
+   "residual"
+  ],
+  [
+   "eigenvector",
+   "inverse"
+  ],
+  [
+   "eigenvector",
+   "linear-transformation"
+  ],
+  [
+   "eigenvector",
+   "matrix"
+  ],
+  [
+   "eigenvector",
+   "projection"
+  ],
+  [
+   "eigenvector",
+   "rank"
+  ],
+  [
+   "eigenvector",
+   "span"
+  ],
+  [
+   "eigenvector",
+   "vectors"
+  ],
+  [
+   "exponential-family",
+   "linear-model"
+  ],
+  [
+   "exponential-family",
+   "logistic-regression"
+  ],
+  [
+   "exponential-family",
+   "model-class"
+  ],
+  [
+   "feature",
+   "gda"
+  ],
+  [
+   "feature",
+   "generative-model"
+  ],
+  [
+   "feature",
+   "k-nearest-neighbours"
+  ],
+  [
+   "feature",
+   "logistic-regression"
+  ],
+  [
+   "feature",
+   "naive-bayes"
+  ],
+  [
+   "feature",
+   "naive-bayes-assumption"
+  ],
+  [
+   "feature",
+   "neural-network"
+  ],
+  [
+   "feature",
+   "one-hot"
+  ],
+  [
+   "feature",
+   "r-squared"
+  ],
+  [
+   "feature",
+   "recurrent-network"
+  ],
+  [
+   "feature",
+   "target"
+  ],
+  [
+   "gda",
+   "gradient-descent"
+  ],
+  [
+   "gda",
+   "learning-rate"
+  ],
+  [
+   "gda",
+   "linear-model"
+  ],
+  [
+   "gda",
+   "logistic-regression"
+  ],
+  [
+   "gda",
+   "model-class"
+  ],
+  [
+   "gda",
+   "neural-network"
+  ],
+  [
+   "gda",
+   "overfitting"
+  ],
+  [
+   "gda",
+   "recurrent-network"
+  ],
+  [
+   "gda",
+   "relu"
+  ],
+  [
+   "gda",
+   "sgd"
+  ],
+  [
+   "gda",
+   "target"
+  ],
+  [
+   "gda",
+   "test-set"
+  ],
+  [
+   "gda",
+   "training-example"
+  ],
+  [
+   "gda",
+   "underfitting"
+  ],
+  [
+   "gda",
+   "validation-set"
+  ],
+  [
+   "generalization",
+   "overfitting"
+  ],
+  [
+   "generalization",
+   "regularization"
+  ],
+  [
+   "generalization",
+   "underfitting"
+  ],
+  [
+   "generalized-linear-model",
+   "l1-loss"
+  ],
+  [
+   "generalized-linear-model",
+   "l1-regularization"
+  ],
+  [
+   "generalized-linear-model",
+   "l2-regularization"
+  ],
+  [
+   "generalized-linear-model",
+   "linear-model"
+  ],
+  [
+   "generalized-linear-model",
+   "logistic-regression"
+  ],
+  [
+   "generalized-linear-model",
+   "maximum-likelihood"
+  ],
+  [
+   "generalized-linear-model",
+   "model-class"
+  ],
+  [
+   "generalized-linear-model",
+   "multiple-regression"
+  ],
+  [
+   "generalized-linear-model",
+   "normal-equations"
+  ],
+  [
+   "generalized-linear-model",
+   "poisson-regression"
+  ],
+  [
+   "generalized-linear-model",
+   "residual"
+  ],
+  [
+   "generative-model",
+   "gradient-descent"
+  ],
+  [
+   "generative-model",
+   "learning-rate"
+  ],
+  [
+   "generative-model",
+   "logistic-regression"
+  ],
+  [
+   "generative-model",
+   "naive-bayes"
+  ],
+  [
+   "generative-model",
+   "naive-bayes-assumption"
+  ],
+  [
+   "generative-model",
+   "neural-network"
+  ],
+  [
+   "generative-model",
+   "overfitting"
+  ],
+  [
+   "generative-model",
+   "recurrent-network"
+  ],
+  [
+   "generative-model",
+   "relu"
+  ],
+  [
+   "generative-model",
+   "sgd"
+  ],
+  [
+   "generative-model",
+   "test-set"
+  ],
+  [
+   "generative-model",
+   "training-example"
+  ],
+  [
+   "generative-model",
+   "underfitting"
+  ],
+  [
+   "generative-model",
+   "validation-set"
+  ],
+  [
+   "gradient",
+   "gradient-descent"
+  ],
+  [
+   "gradient",
+   "inner-product"
+  ],
+  [
+   "gradient",
+   "integral"
+  ],
+  [
+   "gradient",
+   "lms-rule"
+  ],
+  [
+   "gradient",
+   "vectors"
+  ],
+  [
+   "gradient-descent",
+   "k-nearest-neighbours"
+  ],
+  [
+   "gradient-descent",
+   "learning-rate"
+  ],
+  [
+   "gradient-descent",
+   "lms-rule"
+  ],
+  [
+   "gradient-descent",
+   "logistic-regression"
+  ],
+  [
+   "gradient-descent",
+   "naive-bayes"
+  ],
+  [
+   "gradient-descent",
+   "naive-bayes-assumption"
+  ],
+  [
+   "gradient-descent",
+   "neural-network"
+  ],
+  [
+   "gradient-descent",
+   "r-squared"
+  ],
+  [
+   "gradient-descent",
+   "recurrent-network"
+  ],
+  [
+   "gradient-descent",
+   "sgd"
+  ],
+  [
+   "gradient-descent",
+   "test-set"
+  ],
+  [
+   "gradient-descent",
+   "training-example"
+  ],
+  [
+   "gradient-descent",
+   "validation-set"
+  ],
+  [
+   "hidden-layer",
+   "layer"
+  ],
+  [
+   "hidden-layer",
+   "neural-network"
+  ],
+  [
+   "hidden-layer",
+   "threshold-unit"
+  ],
+  [
+   "holding-fixed",
+   "target"
+  ],
+  [
+   "hyperparameter",
+   "l1-regularization"
+  ],
+  [
+   "hyperparameter",
+   "learning-rate"
+  ],
+  [
+   "hyperparameter",
+   "neural-network"
+  ],
+  [
+   "hyperparameter",
+   "normal-equations"
+  ],
+  [
+   "hyperparameter",
+   "regularization"
+  ],
+  [
+   "hyperparameter",
+   "test-set"
+  ],
+  [
+   "hyperparameter",
+   "training-example"
+  ],
+  [
+   "hyperparameter",
+   "validation-set"
+  ],
+  [
+   "hypothesis",
+   "r-squared"
+  ],
+  [
+   "hypothesis",
+   "target"
+  ],
+  [
+   "inner-product",
+   "inverse"
+  ],
+  [
+   "inner-product",
+   "projection"
+  ],
+  [
+   "inner-product",
+   "rank"
+  ],
+  [
+   "inner-product",
+   "span"
+  ],
+  [
+   "integral",
+   "target"
+  ],
+  [
+   "inverse",
+   "learning-rate"
+  ],
+  [
+   "inverse",
+   "linear-transformation"
+  ],
+  [
+   "inverse",
+   "matrix"
+  ],
+  [
+   "inverse",
+   "matrix-product"
+  ],
+  [
+   "inverse",
+   "missing-variable"
+  ],
+  [
+   "inverse",
+   "projection"
+  ],
+  [
+   "inverse",
+   "rank"
+  ],
+  [
+   "inverse",
+   "span"
+  ],
+  [
+   "k-nearest-neighbours",
+   "learning-rate"
+  ],
+  [
+   "k-nearest-neighbours",
+   "logistic-regression"
+  ],
+  [
+   "k-nearest-neighbours",
+   "neural-network"
+  ],
+  [
+   "k-nearest-neighbours",
+   "overfitting"
+  ],
+  [
+   "k-nearest-neighbours",
+   "recurrent-network"
+  ],
+  [
+   "k-nearest-neighbours",
+   "relu"
+  ],
+  [
+   "k-nearest-neighbours",
+   "sgd"
+  ],
+  [
+   "k-nearest-neighbours",
+   "test-set"
+  ],
+  [
+   "k-nearest-neighbours",
+   "training-example"
+  ],
+  [
+   "k-nearest-neighbours",
+   "underfitting"
+  ],
+  [
+   "k-nearest-neighbours",
+   "validation-set"
+  ],
+  [
+   "l1-loss",
+   "l2-regularization"
+  ],
+  [
+   "l1-loss",
+   "link-function"
+  ],
+  [
+   "l1-loss",
+   "logistic-regression"
+  ],
+  [
+   "l1-loss",
+   "maximum-likelihood"
+  ],
+  [
+   "l1-loss",
+   "multiple-regression"
+  ],
+  [
+   "l1-loss",
+   "normal-equations"
+  ],
+  [
+   "l1-loss",
+   "poisson-regression"
+  ],
+  [
+   "l1-loss",
+   "residual"
+  ],
+  [
+   "l1-regularization",
+   "l2-regularization"
+  ],
+  [
+   "l1-regularization",
+   "link-function"
+  ],
+  [
+   "l1-regularization",
+   "model-class"
+  ],
+  [
+   "l1-regularization",
+   "regularization"
+  ],
+  [
+   "l1-regularization",
+   "target"
+  ],
+  [
+   "l2-regularization",
+   "link-function"
+  ],
+  [
+   "l2-regularization",
+   "logistic-regression"
+  ],
+  [
+   "l2-regularization",
+   "multiple-regression"
+  ],
+  [
+   "l2-regularization",
+   "normal-equations"
+  ],
+  [
+   "l2-regularization",
+   "poisson-regression"
+  ],
+  [
+   "l2-regularization",
+   "regularization"
+  ],
+  [
+   "l2-regularization",
+   "residual"
+  ],
+  [
+   "language-model",
+   "model-class"
+  ],
+  [
+   "language-model",
+   "recurrent-network"
+  ],
+  [
+   "laplace-smoothing",
+   "prior"
+  ],
+  [
+   "layer",
+   "recurrent-network"
+  ],
+  [
+   "learning-rate",
+   "lms-rule"
+  ],
+  [
+   "learning-rate",
+   "logistic-regression"
+  ],
+  [
+   "learning-rate",
+   "naive-bayes"
+  ],
+  [
+   "learning-rate",
+   "naive-bayes-assumption"
+  ],
+  [
+   "learning-rate",
+   "neural-network"
+  ],
+  [
+   "learning-rate",
+   "r-squared"
+  ],
+  [
+   "learning-rate",
+   "recurrent-network"
+  ],
+  [
+   "likelihood",
+   "linear-model"
+  ],
+  [
+   "likelihood",
+   "maximum-likelihood"
+  ],
+  [
+   "likelihood",
+   "model-class"
+  ],
+  [
+   "likelihood",
+   "prior"
+  ],
+  [
+   "linear-model",
+   "link-function"
+  ],
+  [
+   "linear-model",
+   "log-partition-function"
+  ],
+  [
+   "linear-model",
+   "logistic-regression"
+  ],
+  [
+   "linear-model",
+   "maximum-likelihood"
+  ],
+  [
+   "linear-model",
+   "missing-variable"
+  ],
+  [
+   "linear-model",
+   "multivariate-gaussian"
+  ],
+  [
+   "linear-model",
+   "natural-parameter"
+  ],
+  [
+   "linear-model",
+   "normal-equations"
+  ],
+  [
+   "linear-model",
+   "outlier"
+  ],
+  [
+   "linear-model",
+   "poisson-regression"
+  ],
+  [
+   "linear-model",
+   "prior"
+  ],
+  [
+   "linear-model",
+   "r-squared"
+  ],
+  [
+   "linear-model",
+   "residual"
+  ],
+  [
+   "linear-model",
+   "target"
+  ],
+  [
+   "linear-transformation",
+   "matrix"
+  ],
+  [
+   "linear-transformation",
+   "matrix-product"
+  ],
+  [
+   "linear-transformation",
+   "projection"
+  ],
+  [
+   "linear-transformation",
+   "rank"
+  ],
+  [
+   "linear-transformation",
+   "span"
+  ],
+  [
+   "link-function",
+   "logistic-regression"
+  ],
+  [
+   "link-function",
+   "maximum-likelihood"
+  ],
+  [
+   "link-function",
+   "model-class"
+  ],
+  [
+   "link-function",
+   "multiple-regression"
+  ],
+  [
+   "link-function",
+   "normal-equations"
+  ],
+  [
+   "link-function",
+   "poisson-regression"
+  ],
+  [
+   "link-function",
+   "residual"
+  ],
+  [
+   "lms-rule",
+   "sgd"
+  ],
+  [
+   "log-partition-function",
+   "logistic-regression"
+  ],
+  [
+   "log-partition-function",
+   "model-class"
+  ],
+  [
+   "logistic-regression",
+   "maximum-likelihood"
+  ],
+  [
+   "logistic-regression",
+   "model-class"
+  ],
+  [
+   "logistic-regression",
+   "multiple-regression"
+  ],
+  [
+   "logistic-regression",
+   "naive-bayes"
+  ],
+  [
+   "logistic-regression",
+   "naive-bayes-assumption"
+  ],
+  [
+   "logistic-regression",
+   "natural-parameter"
+  ],
+  [
+   "logistic-regression",
+   "neural-network"
+  ],
+  [
+   "logistic-regression",
+   "normal-equations"
+  ],
+  [
+   "logistic-regression",
+   "overfitting"
+  ],
+  [
+   "logistic-regression",
+   "poisson-regression"
+  ],
+  [
+   "logistic-regression",
+   "r-squared"
+  ],
+  [
+   "logistic-regression",
+   "recurrent-network"
+  ],
+  [
+   "logistic-regression",
+   "relu"
+  ],
+  [
+   "logistic-regression",
+   "residual"
+  ],
+  [
+   "logistic-regression",
+   "sgd"
+  ],
+  [
+   "logistic-regression",
+   "target"
+  ],
+  [
+   "logistic-regression",
+   "test-set"
+  ],
+  [
+   "logistic-regression",
+   "training-example"
+  ],
+  [
+   "logistic-regression",
+   "underfitting"
+  ],
+  [
+   "logistic-regression",
+   "validation-set"
+  ],
+  [
+   "matrix",
+   "matrix-product"
+  ],
+  [
+   "matrix",
+   "missing-variable"
+  ],
+  [
+   "matrix",
+   "projection"
+  ],
+  [
+   "matrix",
+   "rank"
+  ],
+  [
+   "matrix",
+   "span"
+  ],
+  [
+   "matrix",
+   "vectorization"
+  ],
+  [
+   "matrix-product",
+   "projection"
+  ],
+  [
+   "matrix-product",
+   "rank"
+  ],
+  [
+   "matrix-product",
+   "span"
+  ],
+  [
+   "maximum-likelihood",
+   "model-class"
+  ],
+  [
+   "maximum-likelihood",
+   "naive-bayes"
+  ],
+  [
+   "maximum-likelihood",
+   "naive-bayes-assumption"
+  ],
+  [
+   "maximum-likelihood",
+   "normal-equations"
+  ],
+  [
+   "maximum-likelihood",
+   "parameters"
+  ],
+  [
+   "maximum-likelihood",
+   "prior"
+  ],
+  [
+   "missing-variable",
+   "normal-equations"
+  ],
+  [
+   "missing-variable",
+   "residual"
+  ],
+  [
+   "missing-variable",
+   "target"
+  ],
+  [
+   "missing-variable",
+   "vectors"
+  ],
+  [
+   "model-class",
+   "multivariate-gaussian"
+  ],
+  [
+   "model-class",
+   "natural-parameter"
+  ],
+  [
+   "model-class",
+   "normal-equations"
+  ],
+  [
+   "model-class",
+   "outlier"
+  ],
+  [
+   "model-class",
+   "poisson-regression"
+  ],
+  [
+   "model-class",
+   "prior"
+  ],
+  [
+   "model-class",
+   "r-squared"
+  ],
+  [
+   "model-class",
+   "residual"
+  ],
+  [
+   "multiple-regression",
+   "normal-equations"
+  ],
+  [
+   "multiple-regression",
+   "poisson-regression"
+  ],
+  [
+   "multiple-regression",
+   "residual"
+  ],
+  [
+   "multiple-regression",
+   "target"
+  ],
+  [
+   "multivariate-gaussian",
+   "parameters"
+  ],
+  [
+   "naive-bayes",
+   "neural-network"
+  ],
+  [
+   "naive-bayes",
+   "overfitting"
+  ],
+  [
+   "naive-bayes",
+   "recurrent-network"
+  ],
+  [
+   "naive-bayes",
+   "relu"
+  ],
+  [
+   "naive-bayes",
+   "sgd"
+  ],
+  [
+   "naive-bayes",
+   "test-set"
+  ],
+  [
+   "naive-bayes",
+   "training-example"
+  ],
+  [
+   "naive-bayes",
+   "underfitting"
+  ],
+  [
+   "naive-bayes",
+   "validation-set"
+  ],
+  [
+   "naive-bayes-assumption",
+   "neural-network"
+  ],
+  [
+   "naive-bayes-assumption",
+   "overfitting"
+  ],
+  [
+   "naive-bayes-assumption",
+   "recurrent-network"
+  ],
+  [
+   "naive-bayes-assumption",
+   "relu"
+  ],
+  [
+   "naive-bayes-assumption",
+   "sgd"
+  ],
+  [
+   "naive-bayes-assumption",
+   "test-set"
+  ],
+  [
+   "naive-bayes-assumption",
+   "training-example"
+  ],
+  [
+   "naive-bayes-assumption",
+   "underfitting"
+  ],
+  [
+   "naive-bayes-assumption",
+   "validation-set"
+  ],
+  [
+   "neural-network",
+   "overfitting"
+  ],
+  [
+   "neural-network",
+   "r-squared"
+  ],
+  [
+   "neural-network",
+   "recurrent-network"
+  ],
+  [
+   "neural-network",
+   "relu"
+  ],
+  [
+   "neural-network",
+   "sgd"
+  ],
+  [
+   "neural-network",
+   "test-set"
+  ],
+  [
+   "neural-network",
+   "threshold-unit"
+  ],
+  [
+   "neural-network",
+   "training-example"
+  ],
+  [
+   "neural-network",
+   "underfitting"
+  ],
+  [
+   "neural-network",
+   "universal-approximation"
+  ],
+  [
+   "neural-network",
+   "validation-set"
+  ],
+  [
+   "normal-equations",
+   "parameters"
+  ],
+  [
+   "normal-equations",
+   "poisson-regression"
+  ],
+  [
+   "normal-equations",
+   "projection"
+  ],
+  [
+   "normal-equations",
+   "residual"
+  ],
+  [
+   "normal-equations",
+   "target"
+  ],
+  [
+   "overfitting",
+   "prior"
+  ],
+  [
+   "overfitting",
+   "r-squared"
+  ],
+  [
+   "overfitting",
+   "recurrent-network"
+  ],
+  [
+   "overfitting",
+   "regularization"
+  ],
+  [
+   "overfitting",
+   "test-set"
+  ],
+  [
+   "overfitting",
+   "training-example"
+  ],
+  [
+   "overfitting",
+   "validation-set"
+  ],
+  [
+   "parameters",
+   "poisson-distribution"
+  ],
+  [
+   "parameters",
+   "residual"
+  ],
+  [
+   "poisson-distribution",
+   "poisson-regression"
+  ],
+  [
+   "poisson-regression",
+   "residual"
+  ],
+  [
+   "prior",
+   "regularization"
+  ],
+  [
+   "prior",
+   "underfitting"
+  ],
+  [
+   "projection",
+   "rank"
+  ],
+  [
+   "projection",
+   "span"
+  ],
+  [
+   "r-squared",
+   "recurrent-network"
+  ],
+  [
+   "r-squared",
+   "relu"
+  ],
+  [
+   "r-squared",
+   "sgd"
+  ],
+  [
+   "r-squared",
+   "target"
+  ],
+  [
+   "r-squared",
+   "test-set"
+  ],
+  [
+   "r-squared",
+   "training-example"
+  ],
+  [
+   "r-squared",
+   "underfitting"
+  ],
+  [
+   "r-squared",
+   "validation-set"
+  ],
+  [
+   "rank",
+   "span"
+  ],
+  [
+   "recurrent-network",
+   "relu"
+  ],
+  [
+   "recurrent-network",
+   "sgd"
+  ],
+  [
+   "recurrent-network",
+   "test-set"
+  ],
+  [
+   "recurrent-network",
+   "training-example"
+  ],
+  [
+   "recurrent-network",
+   "underfitting"
+  ],
+  [
+   "recurrent-network",
+   "universal-approximation"
+  ],
+  [
+   "recurrent-network",
+   "validation-set"
+  ],
+  [
+   "regularization",
+   "sgd"
+  ],
+  [
+   "regularization",
+   "test-set"
+  ],
+  [
+   "regularization",
+   "training-example"
+  ],
+  [
+   "regularization",
+   "underfitting"
+  ],
+  [
+   "regularization",
+   "validation-set"
+  ],
+  [
+   "relu",
+   "threshold-unit"
+  ],
+  [
+   "relu",
+   "universal-approximation"
+  ],
+  [
+   "residual",
+   "target"
+  ],
+  [
+   "sgd",
+   "test-set"
+  ],
+  [
+   "sgd",
+   "training-example"
+  ],
+  [
+   "sgd",
+   "validation-set"
+  ],
+  [
+   "test-set",
+   "underfitting"
+  ],
+  [
+   "training-example",
+   "underfitting"
+  ],
+  [
+   "underfitting",
+   "validation-set"
+  ],
+  [
+   "universal-approximation",
+   "vectors"
+  ]
+ ]
+}

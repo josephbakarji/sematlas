@@ -21,6 +21,8 @@ show why each article was picked, and then write the article underneath.
 import asyncio
 import html
 import json
+import os
+from pathlib import Path
 import logging
 import re
 from urllib.parse import quote
@@ -327,6 +329,50 @@ async def write_article(provider, client, model, question, titles, abstracts, sc
     yield event("_served", **served)   # consumed by the caller, not sent
 
 
+DECK_INSTRUCTIONS = (
+    "`decks[{i}]` is a story deck: a lesson built around one question, answered on "
+    "real data. Would working through it answer `question`, or the heart of it? "
+    "Judge from the deck's question and the concepts it teaches."
+)
+DECK_CRITERIA = {
+    "true": "The deck's question is the reader's question, or the deck teaches exactly what it asks.",
+    "false": "Only the same field, or it teaches a tool the question does not need.",
+}
+DECK_MATCH = 0.55
+_bridge_cache = {"mtime": None, "data": {}}
+
+
+def bridge():
+    """data/learn_bridge.json, reread when the file changes."""
+    p = Path(os.getenv("SEMATLAS_BRIDGE", Path(__file__).resolve().parent.parent
+                       / "data" / "learn_bridge.json"))
+    try:
+        m = p.stat().st_mtime
+        if m != _bridge_cache["mtime"]:
+            _bridge_cache.update(mtime=m, data=json.loads(p.read_text()))
+    except OSError:
+        pass
+    return _bridge_cache["data"]
+
+
+async def match_decks(session, jev, asked, usage):
+    """Story decks whose question answers this one, best first."""
+    decks = bridge().get("decks") or {}
+    concepts = bridge().get("concepts") or {}
+    if not decks or not jev:
+        return []
+    items = [{"question": d["question"],
+              "teaches": [(concepts.get(k) or {}).get("wiki") or k for k in d["teaches"]]}
+             for d in decks.values()]
+    ps = await jev_rank(session, jev, asked, items, "decks", DECK_INSTRUCTIONS,
+                        DECK_CRITERIA, usage)
+    hits = [(p, i, d) for p, (i, d) in zip(ps, decks.items()) if p >= DECK_MATCH]
+    return [{"id": i, "question": d["question"], "url": d["url"], "p": round(p, 3),
+             "teaches": d["teaches"],
+             "wiki": [(concepts.get(k) or {}).get("wiki") for k in d["teaches"]]}
+            for p, i, d in sorted(hits, key=lambda x: -x[0])]
+
+
 FOLLOWUP_SYSTEM = ARTICLE_SYSTEM + (
     " This is a follow-up to an earlier question whose answer the reader has "
     "already read; it is given for context. Build on it rather than repeating "
@@ -564,8 +610,17 @@ async def explore_stream(question, prior=None, known=None, user_key=None, seeds=
                     scores[t] = max(scores.get(t, 0), lst[0][0])
             abstracts = with_passages(abstracts, best)
 
+            # ---- is there a story deck for this?
+            try:
+                decks = await match_decks(session, jev, asked, usage)
+            except Exception as e:
+                logger.warning("deck matching failed: %s", e)
+                decks = []
+
         yield models_event(*ranking, model, provider, note)
         yield event("scores", scores=scores, usage={k: v for k, v in usage.items()})
+        if decks:
+            yield event("decks", decks=decks)
 
         # ---- the article, from followed articles only; candidates wait for the reader
         followed = {t: p for t, p in scores.items() if g.nodes[t]["status"] == "followed"}

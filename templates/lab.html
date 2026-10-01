@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SemAtlas Lab: the course on the map</title>
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search).get("theme");
+      var saved = null;
+      try { saved = localStorage.getItem("sa-theme"); } catch (e) {}
+      var theme = (p === "light" || p === "dark") ? p : (saved || "dark");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/q.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lab.css') }}">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body class="lab">
+
+<header id="topbar" class="topbar">
+  <a class="wordmark" href="/lab">SemAtlas <span class="lab-tag">Lab</span></a>
+  <nav class="lab-nav">
+    <a href="/q">Ask a question</a>
+    <a href="https://learn.sematlas.com" target="_blank" rel="noopener">The course</a>
+  </nav>
+  <button id="themeBtn" class="ghost" type="button" title="Switch theme">◐</button>
+</header>
+
+<div class="lab-layout">
+  <section class="lab-map">
+    <div class="lab-intro">
+      <h1>The course on the map</h1>
+      <p>Each coloured box is a concept taught on learn.sematlas.com, placed on Wikipedia's map
+        of knowledge and grouped left to right in the order the course teaches it. Dashed boxes are
+        what lies just beyond: foundations the course rests on (to the left of the ideas that need
+        them) and where it leads (to the right). Hover to see connections; click a concept to open
+        its lesson, or anything beyond to explore it.</p>
+      <p id="stats" class="lab-stats"></p>
+    </div>
+    <svg id="tree"></svg>
+    <div class="lab-legend" id="legend"></div>
+    <div class="graph-tools">
+      <button id="fitBtn" type="button">Fit</button>
+      <label class="beyond-count">Beyond:
+        <select id="beyondN">
+          <option value="40">top 40</option>
+          <option value="80" selected>top 80</option>
+          <option value="160">top 160</option>
+          <option value="0">none</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <aside class="lab-side">
+    <h2>Beyond the course</h2>
+    <p class="side-sub">Wikipedia articles next to what the course teaches, ranked by how many taught
+      concepts point to them. The list of lessons that could be written next.</p>
+    <div class="tabs" id="tabs">
+      <button data-f="all" class="on">All</button>
+      <button data-f="basis">Foundations</button>
+      <button data-f="next">Next steps</button>
+      <button data-f="named">Named in a lesson</button>
+    </div>
+    <ol id="beyondList" class="beyond-list"></ol>
+    <p class="side-note" id="method"></p>
+  </aside>
+</div>
+
+<div id="card" class="lab-card" hidden></div>
+<div id="tip" class="tip" hidden></div>
+
+<script src="{{ url_for('static', filename='js/lab.js') }}"></script>
+</body>
+</html>

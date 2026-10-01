@@ -59,7 +59,9 @@ def add_header(response):
 
 @app.route('/')
 async def index():
-    """Render the main index page."""
+    """Render the main index page; lab.sematlas.com opens on the lab."""
+    if request.host.split(":")[0].startswith("lab."):
+        return await render_template('lab.html', version=VERSION)
     return await render_template('index.html', version=VERSION)
 
 @app.route('/version')
@@ -471,6 +473,27 @@ def _followup_context(data):
     return prior or None, known
 
 
+@app.route('/lab')
+async def lab_page():
+    """The course on the map: what learn.sematlas.com teaches and what lies beyond it."""
+    return await render_template('lab.html', version=VERSION)
+
+
+@app.route('/learn/frontier.json')
+async def learn_frontier():
+    """
+    What lies just beyond the course, ranked, plus the links between taught
+    concepts. Built by scripts/build_frontier.py from the bridge.
+    """
+    from pathlib import Path
+    p = Path(__file__).parent / "data" / "frontier.json"
+    if not p.exists():
+        return jsonify({"frontier": [], "edges": []})
+    resp = Response(p.read_text(), content_type="application/json")
+    resp.headers["Access-Control-Allow-Origin"] = "*"
+    return resp
+
+
 @app.route('/learn/bridge.json')
 async def learn_bridge():
     """
@@ -479,7 +502,7 @@ async def learn_bridge():
     concept list; data/learn_bridge_overrides.json holds human corrections.
     """
     from pathlib import Path
-    p = Path(__file__).parent / "data" / "learn_bridge.json"
+    p = Path(os.getenv("SEMATLAS_BRIDGE", Path(__file__).parent / "data" / "learn_bridge.json"))
     if not p.exists():
         return jsonify({"concepts": {}, "by_wiki": {}})
     resp = Response(p.read_text(), content_type="application/json")
