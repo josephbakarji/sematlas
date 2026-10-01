@@ -88,6 +88,7 @@
     <div class="legend-keys">
       <span>brighter = more relevant</span>
       <span class="cand-key">not followed</span>
+      <span class="learn-key"><span class="learn-dot-key"></span>taught on learn.sematlas.com</span>
       <span class="ctx-key">in the answer</span>
     </div>
   </div>
@@ -125,6 +126,7 @@
 <template id="answerTpl">
   <article class="article">
     <p class="followup-of" hidden></p>
+    <p class="from-lesson" hidden></p>
     <h1 class="article-title"></h1>
     <p class="article-from">From SemAtlas, written by AI from the Wikipedia articles cited
       below. It can make mistakes; the references are the ground truth.</p>
@@ -140,6 +142,12 @@
     <div class="article-body"></div>
     <section class="refs" hidden>
       <h2>References</h2>
+      <ol></ol>
+    </section>
+    <section class="practise" hidden>
+      <h2>Practise it on learn.sematlas.com</h2>
+      <p class="practise-sub">The ideas in this answer that the course teaches, in the order it
+        teaches them, so you can start from the basics. Each opens its lesson.</p>
       <ol></ol>
     </section>
     <section class="trace" hidden>

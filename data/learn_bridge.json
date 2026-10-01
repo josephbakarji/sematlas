@@ -1,0 +1,3682 @@
+{
+ "source": "https://learn.sematlas.com/static/data/concepts.json",
+ "built": "2026-10-02",
+ "concepts": {
+  "notation-and-code": {
+   "title": "Every Idea, Written Twice",
+   "deck": "intro_ml_03n",
+   "slide": "two-languages",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/two-languages",
+   "order": [
+    7,
+    0
+   ],
+   "wiki": null,
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Pseudocode",
+     "about": "Description of an algorithm that resembles a computer program",
+     "p": 0.26
+    },
+    {
+     "title": "Nucleic acid notation",
+     "about": "Universal notation of DNA nucleotides",
+     "p": 0.13
+    },
+    {
+     "title": "JSON",
+     "about": "Data-interchange format",
+     "p": 0.11
+    }
+   ]
+  },
+  "iteration": {
+   "title": "The loop that predicts the future",
+   "deck": "intro_ml_03n",
+   "slide": "loop-future",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/loop-future",
+   "order": [
+    7,
+    1
+   ],
+   "wiki": "Iteration",
+   "match": "jev",
+   "p": 0.94,
+   "candidates": [
+    {
+     "title": "Iteration",
+     "about": "Repetition of a process",
+     "p": 0.94
+    },
+    {
+     "title": "Iteration (disambiguation)",
+     "about": "Topics referred to by the same term",
+     "p": 0.25
+    },
+    {
+     "title": "Iterative method",
+     "about": "Numerical approximation algorithm",
+     "p": 0.24
+    }
+   ]
+  },
+  "vectors": {
+   "title": "Vectors",
+   "deck": "intro_ml_03n",
+   "slide": "vectors",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/vectors",
+   "order": [
+    7,
+    2
+   ],
+   "wiki": "Vector (mathematics and physics)",
+   "match": "jev",
+   "p": 0.81,
+   "candidates": [
+    {
+     "title": "Vector (mathematics and physics)",
+     "about": "Broad concept generalizing scalars in mathematics and physics",
+     "p": 0.81
+    },
+    {
+     "title": "Euclidean vector",
+     "about": "Geometric object that has length and direction",
+     "p": 0.53
+    },
+    {
+     "title": "Vector",
+     "about": "Topics referred to by the same term",
+     "p": 0.34
+    }
+   ]
+  },
+  "inner-product": {
+   "title": "Vector Operations",
+   "deck": "intro_ml_03n",
+   "slide": "vector-ops",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/vector-ops",
+   "order": [
+    7,
+    3
+   ],
+   "wiki": "Dot product",
+   "match": "jev",
+   "p": 0.81,
+   "candidates": [
+    {
+     "title": "Dot product",
+     "about": "Algebraic operation on coordinate vectors",
+     "p": 0.81
+    },
+    {
+     "title": "Inner product space",
+     "about": "Vector space with generalized dot product",
+     "p": 0.19
+    },
+    {
+     "title": "Frobenius inner product",
+     "about": "Binary operation, takes two matrices and returns a scalar",
+     "p": 0.15
+    }
+   ]
+  },
+  "norm": {
+   "title": "How Long, How Far, How Similar",
+   "deck": "intro_ml_03n",
+   "slide": "norms",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/norms",
+   "order": [
+    7,
+    4
+   ],
+   "wiki": "Norm (mathematics)",
+   "match": "jev",
+   "p": 0.93,
+   "candidates": [
+    {
+     "title": "Norm (mathematics)",
+     "about": "Length in a vector space",
+     "p": 0.93
+    },
+    {
+     "title": "Matrix norm",
+     "about": "Norm on a vector space of matrices",
+     "p": 0.34
+    },
+    {
+     "title": "Norm",
+     "about": "Topics referred to by the same term",
+     "p": 0.28
+    }
+   ]
+  },
+  "cosine-similarity": {
+   "title": "How Long, How Far, How Similar",
+   "deck": "intro_ml_03n",
+   "slide": "norms",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/norms",
+   "order": [
+    7,
+    5
+   ],
+   "wiki": "Cosine similarity",
+   "match": "jev",
+   "p": 0.94,
+   "candidates": [
+    {
+     "title": "Cosine similarity",
+     "about": "Similarity measure for number sequences",
+     "p": 0.94
+    },
+    {
+     "title": "Similarity measure",
+     "about": "Real-valued function that quantifies similarity between two objects",
+     "p": 0.05
+    },
+    {
+     "title": "Similarity",
+     "about": "Topics referred to by the same term",
+     "p": 0.04
+    }
+   ]
+  },
+  "matrix": {
+   "title": "Matrices",
+   "deck": "intro_ml_03n",
+   "slide": "matrices",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/matrices",
+   "order": [
+    7,
+    6
+   ],
+   "wiki": "Matrix (mathematics)",
+   "match": "jev",
+   "p": 0.97,
+   "candidates": [
+    {
+     "title": "Matrix (mathematics)",
+     "about": "Array of numbers",
+     "p": 0.97
+    },
+    {
+     "title": "Matrix",
+     "about": "Topics referred to by the same term",
+     "p": 0.12
+    },
+    {
+     "title": "Covariance matrix",
+     "about": "Measure of covariance of components of a random vector",
+     "p": 0.12
+    }
+   ]
+  },
+  "matrix-product": {
+   "title": "Matrices in NumPy",
+   "deck": "intro_ml_03n",
+   "slide": "matrix-code",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/matrix-code",
+   "order": [
+    7,
+    7
+   ],
+   "wiki": "Matrix multiplication",
+   "match": "jev",
+   "p": 0.95,
+   "candidates": [
+    {
+     "title": "Matrix multiplication",
+     "about": "Mathematical operation in linear algebra",
+     "p": 0.95
+    },
+    {
+     "title": "Dot product",
+     "about": "Algebraic operation on coordinate vectors",
+     "p": 0.09
+    },
+    {
+     "title": "Transpose",
+     "about": "Matrix operation which flips a matrix over its diagonal",
+     "p": 0.07
+    }
+   ]
+  },
+  "linear-transformation": {
+   "title": "A matrix is a machine that moves space",
+   "deck": "intro_ml_03n",
+   "slide": "matrix-machine",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/matrix-machine",
+   "order": [
+    7,
+    8
+   ],
+   "wiki": "Linear map",
+   "match": "jev",
+   "p": 0.96,
+   "candidates": [
+    {
+     "title": "Linear map",
+     "about": "Mathematical function, in linear algebra",
+     "p": 0.96
+    },
+    {
+     "title": "Transformation matrix",
+     "about": "Central object in linear algebra; mapping vectors to vectors",
+     "p": 0.17
+    },
+    {
+     "title": "Direct linear transformation",
+     "about": "Algorithm to solve systems of equations",
+     "p": 0.14
+    }
+   ]
+  },
+  "determinant": {
+   "title": "A matrix is a machine that moves space",
+   "deck": "intro_ml_03n",
+   "slide": "matrix-machine",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/matrix-machine",
+   "order": [
+    7,
+    9
+   ],
+   "wiki": "Determinant",
+   "match": "jev",
+   "p": 0.97,
+   "candidates": [
+    {
+     "title": "Determinant",
+     "about": "In mathematics, invariant of square matrices",
+     "p": 0.97
+    },
+    {
+     "title": "Moore determinant",
+     "about": "Topics referred to by the same term",
+     "p": 0.12
+    },
+    {
+     "title": "Jacobian matrix and determinant",
+     "about": "Matrix of partial derivatives of a vector-valued function",
+     "p": 0.11
+    }
+   ]
+  },
+  "eigenvector": {
+   "title": "A matrix is a machine that moves space",
+   "deck": "intro_ml_03n",
+   "slide": "matrix-machine",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/matrix-machine",
+   "order": [
+    7,
+    10
+   ],
+   "wiki": "Eigenvalues and eigenvectors",
+   "match": "jev",
+   "p": 0.8,
+   "candidates": [
+    {
+     "title": "Eigenvalues and eigenvectors",
+     "about": "Concepts from linear algebra",
+     "p": 0.8
+    },
+    {
+     "title": "Generalized eigenvector",
+     "about": "Vector satisfying some of the criteria of an eigenvector",
+     "p": 0.08
+    },
+    {
+     "title": "Eigendecomposition of a matrix",
+     "about": "Matrix decomposition",
+     "p": 0.05
+    }
+   ]
+  },
+  "composition": {
+   "title": "Two machines in a row are one machine",
+   "deck": "intro_ml_03n",
+   "slide": "composition",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/composition",
+   "order": [
+    7,
+    11
+   ],
+   "wiki": "Function composition",
+   "match": "jev",
+   "p": 0.86,
+   "candidates": [
+    {
+     "title": "Function composition",
+     "about": "Operation on mathematical functions",
+     "p": 0.86
+    },
+    {
+     "title": "Composition",
+     "about": "Topics referred to by the same term",
+     "p": 0.2
+    },
+    {
+     "title": "Composition operator",
+     "about": "Linear operator in mathematics",
+     "p": 0.19
+    }
+   ]
+  },
+  "column-space": {
+   "title": "Two Ways to Read Ax",
+   "deck": "intro_ml_03n",
+   "slide": "colpicture",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/colpicture",
+   "order": [
+    7,
+    12
+   ],
+   "wiki": "Row and column spaces",
+   "match": "jev",
+   "p": 0.81,
+   "candidates": [
+    {
+     "title": "Row and column spaces",
+     "about": "Vector spaces associated to a matrix",
+     "p": 0.81
+    },
+    {
+     "title": "Rank (linear algebra)",
+     "about": "Dimension of the column space of a matrix",
+     "p": 0.06
+    },
+    {
+     "title": "Linear subspace",
+     "about": "In mathematics, vector subspace",
+     "p": 0.05
+    }
+   ]
+  },
+  "span": {
+   "title": "Span, Independence, Rank",
+   "deck": "intro_ml_03n",
+   "slide": "span-rank",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/span-rank",
+   "order": [
+    7,
+    13
+   ],
+   "wiki": "Linear span",
+   "match": "jev",
+   "p": 0.92,
+   "candidates": [
+    {
+     "title": "Linear span",
+     "about": "In linear algebra, generated subspace",
+     "p": 0.92
+    },
+    {
+     "title": "Span",
+     "about": "Topics referred to by the same term",
+     "p": 0.23
+    },
+    {
+     "title": "Span (engineering)",
+     "about": "Distance between supports of an arch, bridge, etc.",
+     "p": 0.04
+    }
+   ]
+  },
+  "rank": {
+   "title": "Span, Independence, Rank",
+   "deck": "intro_ml_03n",
+   "slide": "span-rank",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/span-rank",
+   "order": [
+    7,
+    14
+   ],
+   "wiki": "Rank (linear algebra)",
+   "match": "override",
+   "p": 0.88,
+   "candidates": [
+    {
+     "title": "RankBrain",
+     "about": "Machine learning-based search engine algorithm",
+     "p": 0.88
+    },
+    {
+     "title": "Rank",
+     "about": "Position in a hierarchy",
+     "p": 0.14
+    },
+    {
+     "title": "Spearman's rank correlation coefficient",
+     "about": "Nonparametric measure of rank correlation",
+     "p": 0.09
+    }
+   ]
+  },
+  "inverse": {
+   "title": "Inverse, Determinant, and When Things Break",
+   "deck": "intro_ml_03n",
+   "slide": "inverse",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/inverse",
+   "order": [
+    7,
+    15
+   ],
+   "wiki": "Invertible matrix",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Inverse",
+     "about": "Topics referred to by the same term",
+     "p": 0.37
+    },
+    {
+     "title": "Invertible matrix",
+     "about": "Matrix with a multiplicative inverse",
+     "p": 0.3
+    },
+    {
+     "title": "Multiplicative inverse",
+     "about": "Number which when multiplied by x equals 1",
+     "p": 0.3
+    }
+   ]
+  },
+  "condition-number": {
+   "title": "When the Inverse Quietly Lies",
+   "deck": "intro_ml_03n",
+   "slide": "rank-real",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/rank-real",
+   "order": [
+    7,
+    16
+   ],
+   "wiki": "Condition number",
+   "match": "jev",
+   "p": 0.96,
+   "candidates": [
+    {
+     "title": "Condition number",
+     "about": "Function's sensitivity to argument change",
+     "p": 0.96
+    },
+    {
+     "title": "Condition",
+     "about": "Topics referred to by the same term",
+     "p": 0.08
+    },
+    {
+     "title": "Hilbert matrix",
+     "about": "Square matrix where a[i,j]=1/(i+j-1)",
+     "p": 0.06
+    }
+   ]
+  },
+  "derivative": {
+   "title": "A derivative is what a curve looks like up close",
+   "deck": "intro_ml_03n",
+   "slide": "derivative-zoom",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/derivative-zoom",
+   "order": [
+    7,
+    17
+   ],
+   "wiki": "Derivative",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Derivative",
+     "about": "Instantaneous rate of change (mathematics)",
+     "p": 0.98
+    },
+    {
+     "title": "Weak derivative",
+     "about": "Generalisation of the derivative of a function",
+     "p": 0.21
+    },
+    {
+     "title": "Partial derivative",
+     "about": "Derivative of a function with multiple variables",
+     "p": 0.12
+    }
+   ]
+  },
+  "integral": {
+   "title": "A rate and its total",
+   "deck": "intro_ml_03n",
+   "slide": "rain-integral",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/rain-integral",
+   "order": [
+    7,
+    18
+   ],
+   "wiki": "Integral",
+   "match": "jev",
+   "p": 0.97,
+   "candidates": [
+    {
+     "title": "Integral",
+     "about": "Operation in calculus",
+     "p": 0.97
+    },
+    {
+     "title": "Riemann integral",
+     "about": "Basic integral in elementary calculus",
+     "p": 0.51
+    },
+    {
+     "title": "Pfeffer integral",
+     "about": "Definition of mathematical integration",
+     "p": 0.32
+    }
+   ]
+  },
+  "gradient": {
+   "title": "The Calculus You Actually Need",
+   "deck": "intro_ml_03n",
+   "slide": "calculus",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/calculus",
+   "order": [
+    7,
+    19
+   ],
+   "wiki": "Gradient",
+   "match": "jev",
+   "p": 0.96,
+   "candidates": [
+    {
+     "title": "Gradient",
+     "about": "Multivariate derivative (mathematics)",
+     "p": 0.96
+    },
+    {
+     "title": "Surface gradient",
+     "about": "",
+     "p": 0.1
+    },
+    {
+     "title": "Gradient (disambiguation)",
+     "about": "Topics referred to by the same term",
+     "p": 0.1
+    }
+   ]
+  },
+  "normal-equations": {
+   "title": "The One Gradient You Will Use All Semester",
+   "deck": "intro_ml_03n",
+   "slide": "grad-worked",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/grad-worked",
+   "order": [
+    7,
+    20
+   ],
+   "wiki": "Ordinary least squares",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Ordinary least squares",
+     "about": "Method for estimating the unknown parameters in a linear regression model",
+     "p": 0.3
+    },
+    {
+     "title": "Linear least squares",
+     "about": "Least squares approximation of linear functions to data",
+     "p": 0.28
+    },
+    {
+     "title": "Numerical methods for linear least squares",
+     "about": "",
+     "p": 0.18
+    }
+   ]
+  },
+  "projection": {
+   "title": "Least Squares Is a Projection",
+   "deck": "intro_ml_03n",
+   "slide": "projection",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/projection",
+   "order": [
+    7,
+    21
+   ],
+   "wiki": "Projection (linear algebra)",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Projection",
+     "about": "Topics referred to by the same term",
+     "p": 0.39
+    },
+    {
+     "title": "Orthographic projection",
+     "about": "Means of projecting three-dimensional objects in two dimensions",
+     "p": 0.09
+    },
+    {
+     "title": "Projection pursuit",
+     "about": "Statistical technique",
+     "p": 0.07
+    }
+   ]
+  },
+  "chain-rule": {
+   "title": "The chain rule, as a picture",
+   "deck": "intro_ml_03n",
+   "slide": "chain-rule-graph",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/chain-rule-graph",
+   "order": [
+    7,
+    22
+   ],
+   "wiki": "Chain rule",
+   "match": "jev",
+   "p": 0.92,
+   "candidates": [
+    {
+     "title": "Chain rule",
+     "about": "Formula in calculus",
+     "p": 0.92
+    },
+    {
+     "title": "Chain rule (probability)",
+     "about": "Probability theory concept",
+     "p": 0.22
+    },
+    {
+     "title": "Backpropagation",
+     "about": "Optimization algorithm for artificial neural networks",
+     "p": 0.17
+    }
+   ]
+  },
+  "backpropagation": {
+   "title": "The chain rule, as a picture",
+   "deck": "intro_ml_03n",
+   "slide": "chain-rule-graph",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/chain-rule-graph",
+   "order": [
+    7,
+    23
+   ],
+   "wiki": "Backpropagation",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Backpropagation",
+     "about": "Optimization algorithm for artificial neural networks",
+     "p": 0.98
+    },
+    {
+     "title": "Neural backpropagation",
+     "about": "Neural phenomenon",
+     "p": 0.28
+    },
+    {
+     "title": "Backpropagation through time",
+     "about": "Technique for training recurrent neural networks",
+     "p": 0.13
+    }
+   ]
+  },
+  "aliasing": {
+   "title": "A variable is a label, not a box",
+   "deck": "intro_ml_03n",
+   "slide": "names-objects",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/names-objects",
+   "order": [
+    7,
+    24
+   ],
+   "wiki": "Aliasing (computing)",
+   "match": "jev",
+   "p": 0.9,
+   "candidates": [
+    {
+     "title": "Aliasing (computing)",
+     "about": "Multiple names for the same data location",
+     "p": 0.9
+    },
+    {
+     "title": "Alias",
+     "about": "Topics referred to by the same term",
+     "p": 0.13
+    },
+    {
+     "title": "Type aliasing",
+     "about": "",
+     "p": 0.11
+    }
+   ]
+  },
+  "broadcasting": {
+   "title": "Broadcasting, and the Bug It Causes",
+   "deck": "intro_ml_03n",
+   "slide": "broadcasting",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/broadcasting",
+   "order": [
+    7,
+    25
+   ],
+   "wiki": null,
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Broadcasting",
+     "about": "Distribution of audio or audiovisual content to dispersed audiences",
+     "p": 0.16
+    },
+    {
+     "title": "Broadcasting (networking)",
+     "about": "Network messaging to multiple recipients simultaneously",
+     "p": 0.11
+    },
+    {
+     "title": "Radio broadcasting",
+     "about": "Transmission of radio waves intended to reach a wide audience",
+     "p": 0.05
+    }
+   ]
+  },
+  "vectorization": {
+   "title": "Avoid Loops if You Can! Vectorize.",
+   "deck": "intro_ml_03n",
+   "slide": "vectorize",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/vectorize",
+   "order": [
+    7,
+    26
+   ],
+   "wiki": "Array programming",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Vectorization",
+     "about": "Topics referred to by the same term",
+     "p": 0.42
+    },
+    {
+     "title": "Automatic vectorization",
+     "about": "Case in parallel computing",
+     "p": 0.37
+    },
+    {
+     "title": "Vectorization (mathematics)",
+     "about": "Conversion of a matrix or a tensor to a vector",
+     "p": 0.16
+    }
+   ]
+  },
+  "dataframe": {
+   "title": "Reading and Exploring Data",
+   "deck": "intro_ml_03n",
+   "slide": "data-code",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/data-code",
+   "order": [
+    7,
+    27
+   ],
+   "wiki": "Dataframe",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Dataframe",
+     "about": "Topics referred to by the same term",
+     "p": 0.53
+    },
+    {
+     "title": "Pandas (software)",
+     "about": "Python library for data analysis",
+     "p": 0.08
+    },
+    {
+     "title": "Polars (software)",
+     "about": "Software library for data analysis",
+     "p": 0.07
+    }
+   ]
+  },
+  "design-matrix": {
+   "title": "The Design Matrix",
+   "deck": "intro_ml_03n",
+   "slide": "design-matrix",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/design-matrix",
+   "order": [
+    7,
+    28
+   ],
+   "wiki": "Design matrix",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Design matrix",
+     "about": "Matrix of values of explanatory variables",
+     "p": 0.98
+    },
+    {
+     "title": "General linear model",
+     "about": "Statistical linear model",
+     "p": 0.06
+    },
+    {
+     "title": "Matrix",
+     "about": "Topics referred to by the same term",
+     "p": 0.06
+    }
+   ]
+  },
+  "correlation": {
+   "title": "Statistics Is Linear Algebra",
+   "deck": "intro_ml_03n",
+   "slide": "penguins-real",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/penguins-real",
+   "order": [
+    7,
+    29
+   ],
+   "wiki": "Correlation",
+   "match": "jev",
+   "p": 0.91,
+   "candidates": [
+    {
+     "title": "Correlation",
+     "about": "Statistical relationship",
+     "p": 0.91
+    },
+    {
+     "title": "Correlation coefficient",
+     "about": "Numerical measure of a statistical relationship between variables",
+     "p": 0.61
+    },
+    {
+     "title": "Priesthood Correlation Program",
+     "about": "",
+     "p": 0.57
+    }
+   ]
+  },
+  "missing-variable": {
+   "title": "The Same Data, Two Answers",
+   "deck": "intro_ml_03n",
+   "slide": "simpson",
+   "deck_title": "Math and Python: Your Computational Toolkit",
+   "url": "https://learn.sematlas.com/slides/intro_ml_03n#/simpson",
+   "order": [
+    7,
+    30
+   ],
+   "wiki": "Omitted-variable bias",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Omitted-variable bias",
+     "about": "Type of statistical bias",
+     "p": 0.44
+    },
+    {
+     "title": "Missing data",
+     "about": "Statistical concept",
+     "p": 0.38
+    },
+    {
+     "title": "Confounding",
+     "about": "Bias in causal inference",
+     "p": 0.19
+    }
+   ]
+  },
+  "dataset": {
+   "title": "Data",
+   "deck": "intro_ml_04n",
+   "slide": "data",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/data",
+   "order": [
+    11,
+    31
+   ],
+   "wiki": "Data set",
+   "match": "jev",
+   "p": 0.95,
+   "candidates": [
+    {
+     "title": "Data set",
+     "about": "Collection of data",
+     "p": 0.95
+    },
+    {
+     "title": "List of datasets for machine-learning research",
+     "about": "",
+     "p": 0.08
+    },
+    {
+     "title": "MNIST database",
+     "about": "Database of handwritten digits",
+     "p": 0.07
+    }
+   ]
+  },
+  "feature": {
+   "title": "Inputs and Outputs",
+   "deck": "intro_ml_04n",
+   "slide": "inputs-outputs",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/inputs-outputs",
+   "order": [
+    11,
+    32
+   ],
+   "wiki": "Feature (machine learning)",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Feature",
+     "about": "Topics referred to by the same term",
+     "p": 0.4
+    },
+    {
+     "title": "Distinctive feature",
+     "about": "Basic unit distinguishing one sound from another in a language",
+     "p": 0.09
+    },
+    {
+     "title": "Feature engineering",
+     "about": "Extracting features from raw data for machine learning",
+     "p": 0.08
+    }
+   ]
+  },
+  "target": {
+   "title": "Inputs and Outputs",
+   "deck": "intro_ml_04n",
+   "slide": "inputs-outputs",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/inputs-outputs",
+   "order": [
+    11,
+    33
+   ],
+   "wiki": "Dependent and independent variables",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Target",
+     "about": "Topics referred to by the same term",
+     "p": 0.41
+    },
+    {
+     "title": "Targeting",
+     "about": "Topics referred to by the same term",
+     "p": 0.1
+    },
+    {
+     "title": "Target language",
+     "about": "Topics referred to by the same term",
+     "p": 0.08
+    }
+   ]
+  },
+  "training-example": {
+   "title": "Inputs and Outputs",
+   "deck": "intro_ml_04n",
+   "slide": "inputs-outputs",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/inputs-outputs",
+   "order": [
+    11,
+    34
+   ],
+   "wiki": "Training, validation, and test data sets",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Example",
+     "about": "Topics referred to by the same term",
+     "p": 0.1
+    },
+    {
+     "title": "Softmax function",
+     "about": "Smooth approximation of one-hot arg max",
+     "p": 0.05
+    },
+    {
+     "title": "Version space learning",
+     "about": "",
+     "p": 0.05
+    }
+   ]
+  },
+  "hypothesis": {
+   "title": "The Hypothesis",
+   "deck": "intro_ml_04n",
+   "slide": "hypothesis",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/hypothesis",
+   "order": [
+    11,
+    35
+   ],
+   "wiki": "Hypothesis",
+   "match": "jev",
+   "p": 0.81,
+   "candidates": [
+    {
+     "title": "Hypothesis",
+     "about": "Proposed explanation for an observation, phenomenon, or scientific problem",
+     "p": 0.81
+    },
+    {
+     "title": "Working hypothesis",
+     "about": "Provisional version pending further research",
+     "p": 0.13
+    },
+    {
+     "title": "Statistical hypothesis test",
+     "about": "Method of statistical inference",
+     "p": 0.04
+    }
+   ]
+  },
+  "parameters": {
+   "title": "The Hypothesis",
+   "deck": "intro_ml_04n",
+   "slide": "hypothesis",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/hypothesis",
+   "order": [
+    11,
+    36
+   ],
+   "wiki": "Statistical parameter",
+   "match": "jev",
+   "p": 0.73,
+   "candidates": [
+    {
+     "title": "Statistical parameter",
+     "about": "Quantity that indexes a parametrized family of probability distributions",
+     "p": 0.73
+    },
+    {
+     "title": "Parameter",
+     "about": "Variable used for specification",
+     "p": 0.63
+    },
+    {
+     "title": "Parameter (computer programming)",
+     "about": "Variable that represents an argument to a function",
+     "p": 0.07
+    }
+   ]
+  },
+  "model-class": {
+   "title": "The Hypothesis",
+   "deck": "intro_ml_04n",
+   "slide": "hypothesis",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/hypothesis",
+   "order": [
+    11,
+    37
+   ],
+   "wiki": "Statistical model",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Generative model",
+     "about": "Model for generating observable data in probability and statistics",
+     "p": 0.15
+    },
+    {
+     "title": "Latent class model",
+     "about": "Concept in statistics",
+     "p": 0.08
+    },
+    {
+     "title": "Class diagram",
+     "about": "Diagram that describes the static structure of a software system",
+     "p": 0.02
+    }
+   ]
+  },
+  "linear-model": {
+   "title": "The Linear Hypothesis",
+   "deck": "intro_ml_04n",
+   "slide": "linear-hypothesis",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/linear-hypothesis",
+   "order": [
+    11,
+    38
+   ],
+   "wiki": "Linear model",
+   "match": "jev",
+   "p": 0.91,
+   "candidates": [
+    {
+     "title": "Linear model",
+     "about": "Type of statistical model",
+     "p": 0.91
+    },
+    {
+     "title": "General linear model",
+     "about": "Statistical linear model",
+     "p": 0.46
+    },
+    {
+     "title": "Linear regression",
+     "about": "Statistical modeling method",
+     "p": 0.28
+    }
+   ]
+  },
+  "intercept": {
+   "title": "The Linear Hypothesis",
+   "deck": "intro_ml_04n",
+   "slide": "linear-hypothesis",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/linear-hypothesis",
+   "order": [
+    11,
+    39
+   ],
+   "wiki": "Y-intercept",
+   "match": "jev",
+   "p": 0.65,
+   "candidates": [
+    {
+     "title": "Y-intercept",
+     "about": "Point in function graphs",
+     "p": 0.65
+    },
+    {
+     "title": "Intercept",
+     "about": "Topics referred to by the same term",
+     "p": 0.47
+    },
+    {
+     "title": "Intercept theorem",
+     "about": "Theorem concerning ratios of line segments",
+     "p": 0.06
+    }
+   ]
+  },
+  "residual": {
+   "title": "The Cost Function",
+   "deck": "intro_ml_04n",
+   "slide": "cost-function",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/cost-function",
+   "order": [
+    11,
+    40
+   ],
+   "wiki": "Errors and residuals",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Residual",
+     "about": "Topics referred to by the same term",
+     "p": 0.53
+    },
+    {
+     "title": "Errors and residuals",
+     "about": "Statistics concept",
+     "p": 0.52
+    },
+    {
+     "title": "Residual (numerical analysis)",
+     "about": "Analysis tool used to find the approximate error in a result",
+     "p": 0.09
+    }
+   ]
+  },
+  "cost-function": {
+   "title": "The Cost Function",
+   "deck": "intro_ml_04n",
+   "slide": "cost-function",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/cost-function",
+   "order": [
+    11,
+    41
+   ],
+   "wiki": "Loss function",
+   "match": "jev",
+   "p": 0.64,
+   "candidates": [
+    {
+     "title": "Loss function",
+     "about": "Mathematical relation assigning a probability event to a cost",
+     "p": 0.64
+    },
+    {
+     "title": "Cost function",
+     "about": "Topics referred to by the same term",
+     "p": 0.6
+    },
+    {
+     "title": "Generalized Ozaki cost function",
+     "about": "",
+     "p": 0.12
+    }
+   ]
+  },
+  "loss-landscape": {
+   "title": "The Loss Landscape",
+   "deck": "intro_ml_04n",
+   "slide": "loss-landscape",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/loss-landscape",
+   "order": [
+    11,
+    42
+   ],
+   "wiki": null,
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Double descent",
+     "about": "Concept in machine learning",
+     "p": 0.04
+    },
+    {
+     "title": "Vanishing gradient problem",
+     "about": "Machine learning model training problem",
+     "p": 0.02
+    },
+    {
+     "title": "Palestinian landscape painting",
+     "about": "",
+     "p": 0.02
+    }
+   ]
+  },
+  "gradient-descent": {
+   "title": "Gradient Descent",
+   "deck": "intro_ml_04n",
+   "slide": "gradient-descent",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/gradient-descent",
+   "order": [
+    11,
+    43
+   ],
+   "wiki": "Gradient descent",
+   "match": "jev",
+   "p": 0.99,
+   "candidates": [
+    {
+     "title": "Gradient descent",
+     "about": "Optimization algorithm",
+     "p": 0.99
+    },
+    {
+     "title": "Stochastic gradient descent",
+     "about": "Optimization algorithm",
+     "p": 0.12
+    },
+    {
+     "title": "Differentially private stochastic gradient descent",
+     "about": "Machine learning technique for privacy-preserving training",
+     "p": 0.05
+    }
+   ]
+  },
+  "learning-rate": {
+   "title": "Gradient Descent",
+   "deck": "intro_ml_04n",
+   "slide": "gradient-descent",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/gradient-descent",
+   "order": [
+    11,
+    44
+   ],
+   "wiki": "Learning rate",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Learning rate",
+     "about": "Tuning parameter (hyperparameter) in optimization",
+     "p": 0.98
+    },
+    {
+     "title": "Learning rule",
+     "about": "Artificial neural network algorithm",
+     "p": 0.04
+    },
+    {
+     "title": "Stochastic gradient descent",
+     "about": "Optimization algorithm",
+     "p": 0.03
+    }
+   ]
+  },
+  "lms-rule": {
+   "title": "Computing the Gradient",
+   "deck": "intro_ml_04n",
+   "slide": "computing-the-gradient",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/computing-the-gradient",
+   "order": [
+    11,
+    45
+   ],
+   "wiki": "Least mean squares filter",
+   "match": "jev",
+   "p": 0.83,
+   "candidates": [
+    {
+     "title": "Least mean squares filter",
+     "about": "Statistical algorithm",
+     "p": 0.83
+    },
+    {
+     "title": "ADALINE",
+     "about": "Early single-layer artificial neural network",
+     "p": 0.1
+    },
+    {
+     "title": "Bernard Widrow",
+     "about": "American electrical engineer (1929–2025)",
+     "p": 0.03
+    }
+   ]
+  },
+  "sgd": {
+   "title": "Watch It Learn",
+   "deck": "intro_ml_04n",
+   "slide": "watch-it-learn",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/watch-it-learn",
+   "order": [
+    11,
+    46
+   ],
+   "wiki": "Stochastic gradient descent",
+   "match": "jev",
+   "p": 0.97,
+   "candidates": [
+    {
+     "title": "Stochastic gradient descent",
+     "about": "Optimization algorithm",
+     "p": 0.97
+    },
+    {
+     "title": "Differentially private stochastic gradient descent",
+     "about": "Machine learning technique for privacy-preserving training",
+     "p": 0.12
+    },
+    {
+     "title": "SGDS",
+     "about": "Topics referred to by the same term",
+     "p": 0.05
+    }
+   ]
+  },
+  "centering": {
+   "title": "Why we measure from the average house",
+   "deck": "intro_ml_04n",
+   "slide": "centering",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/centering",
+   "order": [
+    11,
+    47
+   ],
+   "wiki": "Centering matrix",
+   "match": "jev",
+   "p": 0.66,
+   "candidates": [
+    {
+     "title": "Centering matrix",
+     "about": "Kind of matrix",
+     "p": 0.66
+    },
+    {
+     "title": "Centring",
+     "about": "Type of falsework",
+     "p": 0.16
+    },
+    {
+     "title": "Center",
+     "about": "Topics referred to by the same term",
+     "p": 0.13
+    }
+   ]
+  },
+  "multiple-regression": {
+   "title": "What is a bedroom worth?",
+   "deck": "intro_ml_04n",
+   "slide": "bedrooms",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/bedrooms",
+   "order": [
+    11,
+    48
+   ],
+   "wiki": "Multiple linear regression",
+   "match": "jev",
+   "p": 0.94,
+   "candidates": [
+    {
+     "title": "Multiple linear regression",
+     "about": "",
+     "p": 0.94
+    },
+    {
+     "title": "Linear regression",
+     "about": "Statistical modeling method",
+     "p": 0.15
+    },
+    {
+     "title": "Regression analysis",
+     "about": "Set of statistical processes for estimating the relationships among variables",
+     "p": 0.08
+    }
+   ]
+  },
+  "holding-fixed": {
+   "title": "θj answers one question at a time",
+   "deck": "intro_ml_04n",
+   "slide": "holding-fixed",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/holding-fixed",
+   "order": [
+    11,
+    49
+   ],
+   "wiki": "Ceteris paribus",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Causal decision theory",
+     "about": "School of thought within decision theory",
+     "p": 0.04
+    },
+    {
+     "title": "Modified condition/decision coverage",
+     "about": "Code coverage criterion",
+     "p": 0.03
+    },
+    {
+     "title": "Fixed deposit",
+     "about": "High-interest-yielding term deposit account",
+     "p": 0.02
+    }
+   ]
+  },
+  "gaussian-noise": {
+   "title": "Why Least Squares? A Probabilistic View",
+   "deck": "intro_ml_04n",
+   "slide": "probabilistic-view",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/probabilistic-view",
+   "order": [
+    11,
+    50
+   ],
+   "wiki": "Gaussian noise",
+   "match": "jev",
+   "p": 0.96,
+   "candidates": [
+    {
+     "title": "Gaussian noise",
+     "about": "Type of noise in signal processing",
+     "p": 0.96
+    },
+    {
+     "title": "Additive white Gaussian noise",
+     "about": "Basic noise model used in information theory",
+     "p": 0.42
+    },
+    {
+     "title": "Gaussian process",
+     "about": "Statistical model",
+     "p": 0.06
+    }
+   ]
+  },
+  "likelihood": {
+   "title": "The Likelihood of the Data",
+   "deck": "intro_ml_04n",
+   "slide": "likelihood-setup",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/likelihood-setup",
+   "order": [
+    11,
+    51
+   ],
+   "wiki": "Likelihood function",
+   "match": "jev",
+   "p": 0.93,
+   "candidates": [
+    {
+     "title": "Likelihood function",
+     "about": "Function related to statistics and probability theory",
+     "p": 0.93
+    },
+    {
+     "title": "Likelihood principle",
+     "about": "Proposition in statistics",
+     "p": 0.13
+    },
+    {
+     "title": "Relative likelihood",
+     "about": "Statistical model tool",
+     "p": 0.09
+    }
+   ]
+  },
+  "maximum-likelihood": {
+   "title": "Least Squares Is Maximum Likelihood",
+   "deck": "intro_ml_04n",
+   "slide": "max-likelihood",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/max-likelihood",
+   "order": [
+    11,
+    52
+   ],
+   "wiki": "Maximum likelihood estimation",
+   "match": "jev",
+   "p": 0.93,
+   "candidates": [
+    {
+     "title": "Maximum likelihood estimation",
+     "about": "Method of estimating the parameters of a statistical model, given observations",
+     "p": 0.93
+    },
+    {
+     "title": "Likelihood function",
+     "about": "Function related to statistics and probability theory",
+     "p": 0.13
+    },
+    {
+     "title": "Quasi-maximum likelihood estimate",
+     "about": "",
+     "p": 0.11
+    }
+   ]
+  },
+  "outlier": {
+   "title": "Five strange sales",
+   "deck": "intro_ml_04n",
+   "slide": "five-strange-sales",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/five-strange-sales",
+   "order": [
+    11,
+    53
+   ],
+   "wiki": "Outlier",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Outlier",
+     "about": "Observation far apart from others in statistics and data science",
+     "p": 0.98
+    },
+    {
+     "title": "Local outlier factor",
+     "about": "Algorithm for anomaly detection",
+     "p": 0.14
+    },
+    {
+     "title": "Outlier (disambiguation)",
+     "about": "Topics referred to by the same term",
+     "p": 0.07
+    }
+   ]
+  },
+  "l1-loss": {
+   "title": "Five strange sales",
+   "deck": "intro_ml_04n",
+   "slide": "five-strange-sales",
+   "deck_title": "Supervised Learning & Linear Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_04n#/five-strange-sales",
+   "order": [
+    11,
+    54
+   ],
+   "wiki": "Least absolute deviations",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Lasso (statistics)",
+     "about": "Statistical method",
+     "p": 0.07
+    },
+    {
+     "title": "Huber loss",
+     "about": "Loss function used in robust regression",
+     "p": 0.04
+    },
+    {
+     "title": "L1A1 Self-Loading Rifle",
+     "about": "British version of the Belgian FN FAL battle rifle",
+     "p": 0.04
+    }
+   ]
+  },
+  "k-nearest-neighbours": {
+   "title": "Given a new input, what’s the output?",
+   "deck": "intro_ml_05",
+   "slide": "interp-knn",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/interp-knn",
+   "order": [
+    12,
+    55
+   ],
+   "wiki": "K-nearest neighbors algorithm",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "K-nearest neighbors algorithm",
+     "about": "Non-parametric classification method",
+     "p": 0.98
+    },
+    {
+     "title": "Nearest neighbor",
+     "about": "Topics referred to by the same term",
+     "p": 0.17
+    },
+    {
+     "title": "Structured kNN",
+     "about": "Machine learning algorithm",
+     "p": 0.15
+    }
+   ]
+  },
+  "hypothesis-choice": {
+   "title": "How do you choose the hypothesis?",
+   "deck": "intro_ml_05",
+   "slide": "choose-hyp",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/choose-hyp",
+   "order": [
+    12,
+    56
+   ],
+   "wiki": null,
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Statistical hypothesis test",
+     "about": "Method of statistical inference",
+     "p": 0.09
+    },
+    {
+     "title": "Sensitivity analysis",
+     "about": "Study of uncertainty in the output of a mathematical model or system",
+     "p": 0.04
+    },
+    {
+     "title": "Axiom of choice",
+     "about": "Axiom of set theory",
+     "p": 0.03
+    }
+   ]
+  },
+  "feature-map": {
+   "title": "A Feature Built in 1885",
+   "deck": "intro_ml_05",
+   "slide": "galton-feature",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/galton-feature",
+   "order": [
+    12,
+    57
+   ],
+   "wiki": null,
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Random feature",
+     "about": "Machine learning technique",
+     "p": 0.14
+    },
+    {
+     "title": "Feature data",
+     "about": "",
+     "p": 0.11
+    },
+    {
+     "title": "Self-organizing map",
+     "about": "Machine learning technique useful for dimensionality reduction",
+     "p": 0.09
+    }
+   ]
+  },
+  "regression-to-the-mean": {
+   "title": "Where the Word Comes From",
+   "deck": "intro_ml_05",
+   "slide": "galton-name",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/galton-name",
+   "order": [
+    12,
+    58
+   ],
+   "wiki": "Regression toward the mean",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Regression toward the mean",
+     "about": "Statistical phenomenon",
+     "p": 0.98
+    },
+    {
+     "title": "Mean reversion (finance)",
+     "about": "Financial term",
+     "p": 0.1
+    },
+    {
+     "title": "Decline effect",
+     "about": "",
+     "p": 0.04
+    }
+   ]
+  },
+  "r-squared": {
+   "title": "A Fifth of the Variance, and a Whole Discipline",
+   "deck": "intro_ml_05",
+   "slide": "galton-r2",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/galton-r2",
+   "order": [
+    12,
+    59
+   ],
+   "wiki": "Coefficient of determination",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Coefficient of determination",
+     "about": "Indicator for how well data points fit a line or curve",
+     "p": 0.98
+    },
+    {
+     "title": "Pseudo-R-squared",
+     "about": "Statistical measure of fit",
+     "p": 0.14
+    },
+    {
+     "title": "R (programming language)",
+     "about": "Programming language for statistics",
+     "p": 0.02
+    }
+   ]
+  },
+  "overfitting": {
+   "title": "How to choose φ(x)? How to optimize over φ(x)",
+   "deck": "intro_ml_05",
+   "slide": "under-over",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/under-over",
+   "order": [
+    12,
+    60
+   ],
+   "wiki": "Overfitting",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Overfitting",
+     "about": "Flaw in mathematical modelling",
+     "p": 0.98
+    },
+    {
+     "title": "Double descent",
+     "about": "Concept in machine learning",
+     "p": 0.08
+    },
+    {
+     "title": "Bias–variance tradeoff",
+     "about": "Property of a model",
+     "p": 0.05
+    }
+   ]
+  },
+  "underfitting": {
+   "title": "How to choose φ(x)? How to optimize over φ(x)",
+   "deck": "intro_ml_05",
+   "slide": "under-over",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/under-over",
+   "order": [
+    12,
+    61
+   ],
+   "wiki": "Overfitting",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Bias–variance tradeoff",
+     "about": "Property of a model",
+     "p": 0.1
+    },
+    {
+     "title": "Overfitting",
+     "about": "Flaw in mathematical modelling",
+     "p": 0.05
+    },
+    {
+     "title": "Learning curve (machine learning)",
+     "about": "Plot of machine learning model performance over time or experience",
+     "p": 0.04
+    }
+   ]
+  },
+  "generalization": {
+   "title": "How can we tell if φ(·) is good?",
+   "deck": "intro_ml_05",
+   "slide": "holdout",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/holdout",
+   "order": [
+    12,
+    62
+   ],
+   "wiki": "Generalization error",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Generalization (learning)",
+     "about": "Concept on humans' and animals' use of past learning in present situations",
+     "p": 0.39
+    },
+    {
+     "title": "Generalization",
+     "about": "Form of abstraction",
+     "p": 0.34
+    },
+    {
+     "title": "Generalization error",
+     "about": "Measure of algorithm accuracy",
+     "p": 0.27
+    }
+   ]
+  },
+  "test-set": {
+   "title": "How can we tell if φ(·) is good?",
+   "deck": "intro_ml_05",
+   "slide": "holdout",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/holdout",
+   "order": [
+    12,
+    63
+   ],
+   "wiki": "Training, validation, and test data sets",
+   "match": "jev",
+   "p": 0.87,
+   "candidates": [
+    {
+     "title": "Training, validation, and test data sets",
+     "about": "Tasks in machine learning",
+     "p": 0.87
+    },
+    {
+     "title": "Cross-validation (statistics)",
+     "about": "Statistical model validation technique",
+     "p": 0.06
+    },
+    {
+     "title": "Test fixture",
+     "about": "Type of testing environment",
+     "p": 0.05
+    }
+   ]
+  },
+  "bias-variance": {
+   "title": "Variance Bias Trade-off",
+   "deck": "intro_ml_05",
+   "slide": "tradeoff",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/tradeoff",
+   "order": [
+    12,
+    64
+   ],
+   "wiki": "Bias–variance tradeoff",
+   "match": "jev",
+   "p": 0.96,
+   "candidates": [
+    {
+     "title": "Bias–variance tradeoff",
+     "about": "Property of a model",
+     "p": 0.96
+    },
+    {
+     "title": "Double descent",
+     "about": "Concept in machine learning",
+     "p": 0.09
+    },
+    {
+     "title": "Bias of an estimator",
+     "about": "Statistical property",
+     "p": 0.07
+    }
+   ]
+  },
+  "hyperparameter": {
+   "title": "Other Hyperparameters",
+   "deck": "intro_ml_05",
+   "slide": "hyperparams",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/hyperparams",
+   "order": [
+    12,
+    65
+   ],
+   "wiki": "Hyperparameter (machine learning)",
+   "match": "jev",
+   "p": 0.96,
+   "candidates": [
+    {
+     "title": "Hyperparameter (machine learning)",
+     "about": "Parameter controlling the machine learning process",
+     "p": 0.96
+    },
+    {
+     "title": "Hyperparameter",
+     "about": "Topics referred to by the same term",
+     "p": 0.3
+    },
+    {
+     "title": "Learning rate",
+     "about": "Tuning parameter (hyperparameter) in optimization",
+     "p": 0.12
+    }
+   ]
+  },
+  "validation-set": {
+   "title": "Optimize over φ and other hyperparameters",
+   "deck": "intro_ml_05",
+   "slide": "three-way-split",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/three-way-split",
+   "order": [
+    12,
+    66
+   ],
+   "wiki": "Training, validation, and test data sets",
+   "match": "jev",
+   "p": 0.74,
+   "candidates": [
+    {
+     "title": "Training, validation, and test data sets",
+     "about": "Tasks in machine learning",
+     "p": 0.74
+    },
+    {
+     "title": "Cross-validation (statistics)",
+     "about": "Statistical model validation technique",
+     "p": 0.1
+    },
+    {
+     "title": "Statistical model validation",
+     "about": "Evaluating whether a chosen statistical model is appropriate or not",
+     "p": 0.07
+    }
+   ]
+  },
+  "cross-validation": {
+   "title": "Cross validation: every house takes a turn being new",
+   "deck": "intro_ml_05",
+   "slide": "kfold",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/kfold",
+   "order": [
+    12,
+    67
+   ],
+   "wiki": "Cross-validation (statistics)",
+   "match": "jev",
+   "p": 0.97,
+   "candidates": [
+    {
+     "title": "Cross-validation (statistics)",
+     "about": "Statistical model validation technique",
+     "p": 0.97
+    },
+    {
+     "title": "Cross-validation",
+     "about": "Topics referred to by the same term",
+     "p": 0.28
+    },
+    {
+     "title": "Cross-validation (analytical chemistry)",
+     "about": "",
+     "p": 0.1
+    }
+   ]
+  },
+  "regularization": {
+   "title": "Regularization",
+   "deck": "intro_ml_05",
+   "slide": "regularization",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/regularization",
+   "order": [
+    12,
+    68
+   ],
+   "wiki": "Regularization (mathematics)",
+   "match": "jev",
+   "p": 0.89,
+   "candidates": [
+    {
+     "title": "Regularization (mathematics)",
+     "about": "Technique to make a model more generalizable and transferable",
+     "p": 0.89
+    },
+    {
+     "title": "Regularization",
+     "about": "Topics referred to by the same term",
+     "p": 0.32
+    },
+    {
+     "title": "Manifold regularization",
+     "about": "Technique for shaping training datasets",
+     "p": 0.18
+    }
+   ]
+  },
+  "l2-regularization": {
+   "title": "L2 regularization",
+   "deck": "intro_ml_05",
+   "slide": "l2-ball",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/l2-ball",
+   "order": [
+    12,
+    69
+   ],
+   "wiki": "Ridge regression",
+   "match": "jev",
+   "p": 0.78,
+   "candidates": [
+    {
+     "title": "Ridge regression",
+     "about": "Regularization technique for ill-posed problems",
+     "p": 0.78
+    },
+    {
+     "title": "Regularization (mathematics)",
+     "about": "Technique to make a model more generalizable and transferable",
+     "p": 0.17
+    },
+    {
+     "title": "L2",
+     "about": "Topics referred to by the same term",
+     "p": 0.12
+    }
+   ]
+  },
+  "l1-regularization": {
+   "title": "L1 regularization",
+   "deck": "intro_ml_05",
+   "slide": "l1-ball",
+   "deck_title": "Generalization and Feature Engineering",
+   "url": "https://learn.sematlas.com/slides/intro_ml_05#/l1-ball",
+   "order": [
+    12,
+    70
+   ],
+   "wiki": "Lasso (statistics)",
+   "match": "jev",
+   "p": 0.79,
+   "candidates": [
+    {
+     "title": "Lasso (statistics)",
+     "about": "Statistical method",
+     "p": 0.79
+    },
+    {
+     "title": "Taxicab geometry",
+     "about": "Type of metric geometry",
+     "p": 0.09
+    },
+    {
+     "title": "Elastic net regularization",
+     "about": "Statistical regression method",
+     "p": 0.08
+    }
+   ]
+  },
+  "bernoulli": {
+   "title": "The Bernoulli Distribution",
+   "deck": "intro_ml_07n",
+   "slide": "bernoulli",
+   "deck_title": "MLE and Generalized Linear Models",
+   "url": "https://learn.sematlas.com/slides/intro_ml_07n#/bernoulli",
+   "order": [
+    16,
+    71
+   ],
+   "wiki": "Bernoulli distribution",
+   "match": "jev",
+   "p": 0.99,
+   "candidates": [
+    {
+     "title": "Bernoulli distribution",
+     "about": "Probability distribution modeling a coin toss which need not be fair",
+     "p": 0.99
+    },
+    {
+     "title": "Bernoulli trial",
+     "about": "Any experiment with two possible random outcomes",
+     "p": 0.1
+    },
+    {
+     "title": "Bernoulli",
+     "about": "Topics referred to by the same term",
+     "p": 0.08
+    }
+   ]
+  },
+  "exponential-family": {
+   "title": "The Exponential Family",
+   "deck": "intro_ml_07n",
+   "slide": "exp-family",
+   "deck_title": "MLE and Generalized Linear Models",
+   "url": "https://learn.sematlas.com/slides/intro_ml_07n#/exp-family",
+   "order": [
+    16,
+    72
+   ],
+   "wiki": "Exponential family",
+   "match": "jev",
+   "p": 0.96,
+   "candidates": [
+    {
+     "title": "Exponential family",
+     "about": "Family of probability distributions related to the normal distribution",
+     "p": 0.96
+    },
+    {
+     "title": "Natural exponential family",
+     "about": "Class of probability distributions",
+     "p": 0.32
+    },
+    {
+     "title": "Exponential family random graph models",
+     "about": "Statistical models for network analysis",
+     "p": 0.12
+    }
+   ]
+  },
+  "natural-parameter": {
+   "title": "The Exponential Family",
+   "deck": "intro_ml_07n",
+   "slide": "exp-family",
+   "deck_title": "MLE and Generalized Linear Models",
+   "url": "https://learn.sematlas.com/slides/intro_ml_07n#/exp-family",
+   "order": [
+    16,
+    73
+   ],
+   "wiki": "Exponential family",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Natural parameter (disambiguation)",
+     "about": "Topics referred to by the same term",
+     "p": 0.34
+    },
+    {
+     "title": "Natural exponential family",
+     "about": "Class of probability distributions",
+     "p": 0.12
+    },
+    {
+     "title": "Exponential family",
+     "about": "Family of probability distributions related to the normal distribution",
+     "p": 0.09
+    }
+   ]
+  },
+  "log-partition-function": {
+   "title": "The Exponential Family",
+   "deck": "intro_ml_07n",
+   "slide": "exp-family",
+   "deck_title": "MLE and Generalized Linear Models",
+   "url": "https://learn.sematlas.com/slides/intro_ml_07n#/exp-family",
+   "order": [
+    16,
+    74
+   ],
+   "wiki": "Exponential family",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Partition function (mathematics)",
+     "about": "Generalization of the concept from statistical mechanics",
+     "p": 0.27
+    },
+    {
+     "title": "Exponential family",
+     "about": "Family of probability distributions related to the normal distribution",
+     "p": 0.12
+    },
+    {
+     "title": "Partition coefficient",
+     "about": "Ratio of concentrations in a mixture at equilibrium",
+     "p": 0.05
+    }
+   ]
+  },
+  "poisson-distribution": {
+   "title": "Example 3: Poisson Becomes Log-Linear Regression",
+   "deck": "intro_ml_07n",
+   "slide": "ex-poisson",
+   "deck_title": "MLE and Generalized Linear Models",
+   "url": "https://learn.sematlas.com/slides/intro_ml_07n#/ex-poisson",
+   "order": [
+    16,
+    75
+   ],
+   "wiki": "Poisson distribution",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Poisson distribution",
+     "about": "Discrete probability distribution",
+     "p": 0.98
+    },
+    {
+     "title": "Poisson regression",
+     "about": "Statistical model for count data",
+     "p": 0.1
+    },
+    {
+     "title": "Zero-truncated Poisson distribution",
+     "about": "Conditional Poisson distribution restricted to positive integers",
+     "p": 0.06
+    }
+   ]
+  },
+  "poisson-regression": {
+   "title": "How many earthquakes of each size?",
+   "deck": "intro_ml_07n",
+   "slide": "quakes",
+   "deck_title": "MLE and Generalized Linear Models",
+   "url": "https://learn.sematlas.com/slides/intro_ml_07n#/quakes",
+   "order": [
+    16,
+    76
+   ],
+   "wiki": "Poisson regression",
+   "match": "jev",
+   "p": 0.99,
+   "candidates": [
+    {
+     "title": "Poisson regression",
+     "about": "Statistical model for count data",
+     "p": 0.99
+    },
+    {
+     "title": "Generalized linear model",
+     "about": "Class of statistical models",
+     "p": 0.04
+    },
+    {
+     "title": "Poisson distribution",
+     "about": "Discrete probability distribution",
+     "p": 0.03
+    }
+   ]
+  },
+  "generalized-linear-model": {
+   "title": "Same loop, three models",
+   "deck": "intro_ml_07n",
+   "slide": "same-loop",
+   "deck_title": "MLE and Generalized Linear Models",
+   "url": "https://learn.sematlas.com/slides/intro_ml_07n#/same-loop",
+   "order": [
+    16,
+    77
+   ],
+   "wiki": "Generalized linear model",
+   "match": "jev",
+   "p": 0.99,
+   "candidates": [
+    {
+     "title": "Generalized linear model",
+     "about": "Class of statistical models",
+     "p": 0.99
+    },
+    {
+     "title": "General linear model",
+     "about": "Statistical linear model",
+     "p": 0.05
+    },
+    {
+     "title": "Generalized linear mixed model",
+     "about": "Statistical model",
+     "p": 0.04
+    }
+   ]
+  },
+  "link-function": {
+   "title": "Terminology",
+   "deck": "intro_ml_07n",
+   "slide": "terminology",
+   "deck_title": "MLE and Generalized Linear Models",
+   "url": "https://learn.sematlas.com/slides/intro_ml_07n#/terminology",
+   "order": [
+    16,
+    78
+   ],
+   "wiki": "Generalized linear model",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Logit",
+     "about": "Function in statistics",
+     "p": 0.14
+    },
+    {
+     "title": "Link",
+     "about": "Topics referred to by the same term",
+     "p": 0.09
+    },
+    {
+     "title": "Generalized linear model",
+     "about": "Class of statistical models",
+     "p": 0.08
+    }
+   ]
+  },
+  "one-hot": {
+   "title": "Language: One-Hot Word Representation",
+   "deck": "intro_ml_08n",
+   "slide": "one-hot8",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/one-hot8",
+   "order": [
+    17,
+    79
+   ],
+   "wiki": "One-hot",
+   "match": "jev",
+   "p": 0.82,
+   "candidates": [
+    {
+     "title": "One-hot",
+     "about": "Bit-vector representation where only one bit can be set at a time",
+     "p": 0.82
+    },
+    {
+     "title": "List of Billboard Hot 100 chart achievements and milestones",
+     "about": "",
+     "p": 0.02
+    },
+    {
+     "title": "List of Billboard Hot 100 number-one singles of the 1970s",
+     "about": "",
+     "p": 0.02
+    }
+   ]
+  },
+  "bag-of-words": {
+   "title": "Bag of Words",
+   "deck": "intro_ml_08n",
+   "slide": "bag-of-words",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/bag-of-words",
+   "order": [
+    17,
+    80
+   ],
+   "wiki": "Bag-of-words model",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Bag-of-words model",
+     "about": "Text represented as an unordered collection of words",
+     "p": 0.98
+    },
+    {
+     "title": "Bag-of-words model in computer vision",
+     "about": "Image classification model",
+     "p": 0.09
+    },
+    {
+     "title": "Vector space model",
+     "about": "Model for representing text documents",
+     "p": 0.07
+    }
+   ]
+  },
+  "class-conditional": {
+   "title": "What Are the Relevant Probabilities?",
+   "deck": "intro_ml_08n",
+   "slide": "relevant-probs",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/relevant-probs",
+   "order": [
+    17,
+    81
+   ],
+   "wiki": "Conditional probability distribution",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Conditional probability",
+     "about": "Probability of an event occurring, given that another event has already occurred",
+     "p": 0.57
+    },
+    {
+     "title": "Generative model",
+     "about": "Model for generating observable data in probability and statistics",
+     "p": 0.12
+    },
+    {
+     "title": "Naive Bayes classifier",
+     "about": "Probabilistic classification algorithm",
+     "p": 0.11
+    }
+   ]
+  },
+  "naive-bayes-assumption": {
+   "title": "The Naive Assumption",
+   "deck": "intro_ml_08n",
+   "slide": "naive-assumption",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/naive-assumption",
+   "order": [
+    17,
+    82
+   ],
+   "wiki": "Naive Bayes classifier",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Naive Bayes classifier",
+     "about": "Probabilistic classification algorithm",
+     "p": 0.44
+    },
+    {
+     "title": "Binary independence model",
+     "about": "",
+     "p": 0.34
+    },
+    {
+     "title": "Inductive bias",
+     "about": "Assumptions for inference in machine learning",
+     "p": 0.09
+    }
+   ]
+  },
+  "bayes-rule": {
+   "title": "Bayes Rule Turns It Around",
+   "deck": "intro_ml_08n",
+   "slide": "bayes-rule",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/bayes-rule",
+   "order": [
+    17,
+    83
+   ],
+   "wiki": "Bayes' theorem",
+   "match": "jev",
+   "p": 0.96,
+   "candidates": [
+    {
+     "title": "Bayes' theorem",
+     "about": "Mathematical rule for inverting probabilities",
+     "p": 0.96
+    },
+    {
+     "title": "Bayesian inference",
+     "about": "Method of statistical inference",
+     "p": 0.07
+    },
+    {
+     "title": "Bayesian probability",
+     "about": "Interpretation of probability",
+     "p": 0.07
+    }
+   ]
+  },
+  "prior": {
+   "title": "Bayes Rule Turns It Around",
+   "deck": "intro_ml_08n",
+   "slide": "bayes-rule",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/bayes-rule",
+   "order": [
+    17,
+    84
+   ],
+   "wiki": "Prior probability",
+   "match": "jev",
+   "p": 0.87,
+   "candidates": [
+    {
+     "title": "Prior probability",
+     "about": "Distribution of an uncertain quantity",
+     "p": 0.87
+    },
+    {
+     "title": "Prior",
+     "about": "Topics referred to by the same term",
+     "p": 0.3
+    },
+    {
+     "title": "Prior art",
+     "about": "Concept in patent law",
+     "p": 0.03
+    }
+   ]
+  },
+  "naive-bayes": {
+   "title": "For a Given Dataset",
+   "deck": "intro_ml_08n",
+   "slide": "estimating",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/estimating",
+   "order": [
+    17,
+    85
+   ],
+   "wiki": "Naive Bayes classifier",
+   "match": "jev",
+   "p": 0.97,
+   "candidates": [
+    {
+     "title": "Naive Bayes classifier",
+     "about": "Probabilistic classification algorithm",
+     "p": 0.97
+    },
+    {
+     "title": "Bayes classifier",
+     "about": "Classification algorithm in statistics",
+     "p": 0.13
+    },
+    {
+     "title": "Bayesian network",
+     "about": "Probabilistic graphical representation of causal relationships",
+     "p": 0.04
+    }
+   ]
+  },
+  "laplace-smoothing": {
+   "title": "The word it never saw",
+   "deck": "intro_ml_08n",
+   "slide": "laplace",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/laplace",
+   "order": [
+    17,
+    86
+   ],
+   "wiki": "Additive smoothing",
+   "match": "jev",
+   "p": 0.91,
+   "candidates": [
+    {
+     "title": "Additive smoothing",
+     "about": "Statistical technique for smoothing categorical data",
+     "p": 0.91
+    },
+    {
+     "title": "Laplace's law",
+     "about": "Topics referred to by the same term",
+     "p": 0.13
+    },
+    {
+     "title": "Sunrise problem",
+     "about": "Problem asking the probability that the sun will rise tomorrow",
+     "p": 0.08
+    }
+   ]
+  },
+  "event-model": {
+   "title": "Two ways to generate an email",
+   "deck": "intro_ml_08n",
+   "slide": "event-models",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/event-models",
+   "order": [
+    17,
+    87
+   ],
+   "wiki": null,
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Event perception",
+     "about": "Cognitive parsing of time into event categories",
+     "p": 0.25
+    },
+    {
+     "title": "Event (computing)",
+     "about": "Computing state associated with a point in time",
+     "p": 0.15
+    },
+    {
+     "title": "Conceptual model",
+     "about": "Theoretical framework",
+     "p": 0.12
+    }
+   ]
+  },
+  "generative-model": {
+   "title": "Generative and Discriminative",
+   "deck": "intro_ml_08n",
+   "slide": "generative-vs",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/generative-vs",
+   "order": [
+    17,
+    88
+   ],
+   "wiki": "Generative model",
+   "match": "jev",
+   "p": 0.96,
+   "candidates": [
+    {
+     "title": "Generative model",
+     "about": "Model for generating observable data in probability and statistics",
+     "p": 0.96
+    },
+    {
+     "title": "Generative model (disambiguation)",
+     "about": "Topics referred to by the same term",
+     "p": 0.16
+    },
+    {
+     "title": "Flow-based generative model",
+     "about": "Statistical model used in machine learning",
+     "p": 0.1
+    }
+   ]
+  },
+  "discriminative-model": {
+   "title": "Generative and Discriminative",
+   "deck": "intro_ml_08n",
+   "slide": "generative-vs",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/generative-vs",
+   "order": [
+    17,
+    89
+   ],
+   "wiki": "Discriminative model",
+   "match": "jev",
+   "p": 0.97,
+   "candidates": [
+    {
+     "title": "Discriminative model",
+     "about": "Mathematical model used for classification or regression",
+     "p": 0.97
+    },
+    {
+     "title": "Linear classifier",
+     "about": "Statistical classification in machine learning",
+     "p": 0.08
+    },
+    {
+     "title": "Conditional random field",
+     "about": "Class of statistical modeling methods",
+     "p": 0.07
+    }
+   ]
+  },
+  "multivariate-gaussian": {
+   "title": "A Gaussian in two dimensions",
+   "deck": "intro_ml_08n",
+   "slide": "gauss-2d",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/gauss-2d",
+   "order": [
+    17,
+    90
+   ],
+   "wiki": "Multivariate normal distribution",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Multivariate normal distribution",
+     "about": "Generalization of the one-dimensional normal distribution to higher dimensions",
+     "p": 0.98
+    },
+    {
+     "title": "Empirical Bayes method",
+     "about": "Bayesian statistical inference method",
+     "p": 0.15
+    },
+    {
+     "title": "Gaussian random field",
+     "about": "Concept in statistics",
+     "p": 0.04
+    }
+   ]
+  },
+  "covariance": {
+   "title": "A Gaussian in two dimensions",
+   "deck": "intro_ml_08n",
+   "slide": "gauss-2d",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/gauss-2d",
+   "order": [
+    17,
+    91
+   ],
+   "wiki": "Covariance",
+   "match": "jev",
+   "p": 0.94,
+   "candidates": [
+    {
+     "title": "Covariance",
+     "about": "Measure of the joint variability",
+     "p": 0.94
+    },
+    {
+     "title": "Covariance matrix",
+     "about": "Measure of covariance of components of a random vector",
+     "p": 0.43
+    },
+    {
+     "title": "Covariance operator",
+     "about": "Operator in probability theory",
+     "p": 0.3
+    }
+   ]
+  },
+  "gda": {
+   "title": "Gaussian discriminant analysis, on penguins",
+   "deck": "intro_ml_08n",
+   "slide": "gda-penguins",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/gda-penguins",
+   "order": [
+    17,
+    92
+   ],
+   "wiki": "Linear discriminant analysis",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "GDA",
+     "about": "Topics referred to by the same term",
+     "p": 0.37
+    },
+    {
+     "title": "Live in Gdańsk",
+     "about": "2008 live album by David Gilmour",
+     "p": 0.04
+    },
+    {
+     "title": "36th Golden Disc Awards",
+     "about": "2022 South Korean music awards ceremony",
+     "p": 0.02
+    }
+   ]
+  },
+  "language-model": {
+   "title": "Auto-Regressive Language Models",
+   "deck": "intro_ml_08n",
+   "slide": "autoregressive",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/autoregressive",
+   "order": [
+    17,
+    93
+   ],
+   "wiki": "Language model",
+   "match": "jev",
+   "p": 0.94,
+   "candidates": [
+    {
+     "title": "Language model",
+     "about": "Statistical model of language",
+     "p": 0.94
+    },
+    {
+     "title": "Large language model",
+     "about": "Type of machine learning model",
+     "p": 0.21
+    },
+    {
+     "title": "BERT (language model)",
+     "about": "Series of language models developed by Google AI",
+     "p": 0.1
+    }
+   ]
+  },
+  "n-gram": {
+   "title": "Auto-Regressive Language Models",
+   "deck": "intro_ml_08n",
+   "slide": "autoregressive",
+   "deck_title": "Generative Learning and Language",
+   "url": "https://learn.sematlas.com/slides/intro_ml_08n#/autoregressive",
+   "order": [
+    17,
+    94
+   ],
+   "wiki": "N-gram",
+   "match": "jev",
+   "p": 0.97,
+   "candidates": [
+    {
+     "title": "N-gram",
+     "about": "Item sequences in computational linguistics",
+     "p": 0.97
+    },
+    {
+     "title": "Word n-gram language model",
+     "about": "Purely statistical model of language",
+     "p": 0.23
+    },
+    {
+     "title": "N-gram (disambiguation)",
+     "about": "Topics referred to by the same term",
+     "p": 0.16
+    }
+   ]
+  },
+  "threshold-unit": {
+   "title": "The McCulloch-Pitts neuron (1943)",
+   "deck": "intro_ml_10n",
+   "slide": "mp-neuron",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/mp-neuron",
+   "order": [
+    18,
+    95
+   ],
+   "wiki": "Artificial neuron",
+   "match": "jev",
+   "p": 0.77,
+   "candidates": [
+    {
+     "title": "Artificial neuron",
+     "about": "Mathematical function conceived as a crude model",
+     "p": 0.77
+    },
+    {
+     "title": "TC0",
+     "about": "Complexity class used in circuit complexity",
+     "p": 0.1
+    },
+    {
+     "title": "Absolute threshold",
+     "about": "Neuroscience principle",
+     "p": 0.07
+    }
+   ]
+  },
+  "layer": {
+   "title": "Two Outputs Make a Matrix",
+   "deck": "intro_ml_10n",
+   "slide": "sec-nd-matrix",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/sec-nd-matrix",
+   "order": [
+    18,
+    96
+   ],
+   "wiki": "Layer (deep learning)",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Layer",
+     "about": "Topics referred to by the same term",
+     "p": 0.37
+    },
+    {
+     "title": "Abstraction layer",
+     "about": "Way of hiding details of a computing subsystem",
+     "p": 0.07
+    },
+    {
+     "title": "Network layer",
+     "about": "OSI model layer for packet routing",
+     "p": 0.06
+    }
+   ]
+  },
+  "activation-function": {
+   "title": "The Nonlinear Predictor",
+   "deck": "intro_ml_10n",
+   "slide": "sec-nd-sigma",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/sec-nd-sigma",
+   "order": [
+    18,
+    97
+   ],
+   "wiki": "Activation function",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Activation function",
+     "about": "Artificial neural network node function",
+     "p": 0.98
+    },
+    {
+     "title": "Activating function",
+     "about": "Approximation of the effect of an electric field on neurons",
+     "p": 0.14
+    },
+    {
+     "title": "Swish function",
+     "about": "Mathematical activation function in data analysis",
+     "p": 0.12
+    }
+   ]
+  },
+  "relu": {
+   "title": "The Activation Menu",
+   "deck": "intro_ml_10n",
+   "slide": "activations",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/activations",
+   "order": [
+    18,
+    98
+   ],
+   "wiki": "Rectified linear unit",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Rectified linear unit",
+     "about": "Type of activation function",
+     "p": 0.98
+    },
+    {
+     "title": "Activation function",
+     "about": "Artificial neural network node function",
+     "p": 0.06
+    },
+    {
+     "title": "Relu",
+     "about": "Spanish footballer",
+     "p": 0.04
+    }
+   ]
+  },
+  "neural-network": {
+   "title": "Neural Network",
+   "deck": "intro_ml_10n",
+   "slide": "sec-nd-deep",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/sec-nd-deep",
+   "order": [
+    18,
+    99
+   ],
+   "wiki": "Neural network (machine learning)",
+   "match": "jev",
+   "p": 0.92,
+   "candidates": [
+    {
+     "title": "Neural network (machine learning)",
+     "about": "Computational model used in machine learning",
+     "p": 0.92
+    },
+    {
+     "title": "Neural network",
+     "about": "Structure in biology and artificial intelligence",
+     "p": 0.54
+    },
+    {
+     "title": "Quantum neural network",
+     "about": "Quantum Mechanics in Neural Networks",
+     "p": 0.14
+    }
+   ]
+  },
+  "hidden-layer": {
+   "title": "Neural Network",
+   "deck": "intro_ml_10n",
+   "slide": "sec-nd-deep",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/sec-nd-deep",
+   "order": [
+    18,
+    100
+   ],
+   "wiki": "Hidden layer",
+   "match": "jev",
+   "p": 0.96,
+   "candidates": [
+    {
+     "title": "Hidden layer",
+     "about": "Type of layer in artificial neural networks",
+     "p": 0.96
+    },
+    {
+     "title": "Layer (deep learning)",
+     "about": "Deep learning model structure",
+     "p": 0.15
+    },
+    {
+     "title": "Types of artificial neural networks",
+     "about": "Classification of Artificial Neural Networks (ANNs)",
+     "p": 0.04
+    }
+   ]
+  },
+  "deep-network": {
+   "title": "Going deep",
+   "deck": "intro_ml_10n",
+   "slide": "going-deep",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/going-deep",
+   "order": [
+    18,
+    101
+   ],
+   "wiki": "Deep learning",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Deep network",
+     "about": "Topics referred to by the same term",
+     "p": 0.34
+    },
+    {
+     "title": "Neural network (machine learning)",
+     "about": "Computational model used in machine learning",
+     "p": 0.27
+    },
+    {
+     "title": "Deep belief network",
+     "about": "Type of artificial neural network",
+     "p": 0.23
+    }
+   ]
+  },
+  "universal-approximation": {
+   "title": "How Expressive Is One Hidden Layer?",
+   "deck": "intro_ml_10n",
+   "slide": "universal",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/universal",
+   "order": [
+    18,
+    102
+   ],
+   "wiki": "Universal approximation theorem",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Universal approximation theorem",
+     "about": "Property of artificial neural networks",
+     "p": 0.98
+    },
+    {
+     "title": "UAT",
+     "about": "Topics referred to by the same term",
+     "p": 0.1
+    },
+    {
+     "title": "Barron space",
+     "about": "",
+     "p": 0.04
+    }
+   ]
+  },
+  "convolution": {
+   "title": "Convolutional networks",
+   "deck": "intro_ml_10n",
+   "slide": "cnn",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/cnn",
+   "order": [
+    18,
+    103
+   ],
+   "wiki": "Convolution",
+   "match": "jev",
+   "p": 0.88,
+   "candidates": [
+    {
+     "title": "Convolution",
+     "about": "Integral expressing the amount of overlap of one function as it is shifted over another",
+     "p": 0.88
+    },
+    {
+     "title": "Multidimensional discrete convolution",
+     "about": "Mathematical operation in signal processing",
+     "p": 0.41
+    },
+    {
+     "title": "Convolutional layer",
+     "about": "Neural network technology",
+     "p": 0.2
+    }
+   ]
+  },
+  "autoencoder": {
+   "title": "Auto-encoders",
+   "deck": "intro_ml_10n",
+   "slide": "autoencoder",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/autoencoder",
+   "order": [
+    18,
+    104
+   ],
+   "wiki": "Autoencoder",
+   "match": "jev",
+   "p": 0.99,
+   "candidates": [
+    {
+     "title": "Autoencoder",
+     "about": "Neural network that learns efficient data encoding in an unsupervised manner",
+     "p": 0.99
+    },
+    {
+     "title": "Variational autoencoder",
+     "about": "Deep learning generative model to encode data representation",
+     "p": 0.11
+    },
+    {
+     "title": "Unsupervised learning",
+     "about": "Paradigm in machine learning that uses no classification labels",
+     "p": 0.03
+    }
+   ]
+  },
+  "recurrent-network": {
+   "title": "Recurrent networks",
+   "deck": "intro_ml_10n",
+   "slide": "rnn",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/rnn",
+   "order": [
+    18,
+    105
+   ],
+   "wiki": "Recurrent neural network",
+   "match": "jev",
+   "p": 0.97,
+   "candidates": [
+    {
+     "title": "Recurrent neural network",
+     "about": "Class of artificial neural network",
+     "p": 0.97
+    },
+    {
+     "title": "Bidirectional recurrent neural networks",
+     "about": "Type of artificial neural network",
+     "p": 0.18
+    },
+    {
+     "title": "Gated recurrent unit",
+     "about": "Memory unit used in neural networks",
+     "p": 0.11
+    }
+   ]
+  },
+  "computation-graph": {
+   "title": "Computation graphs",
+   "deck": "intro_ml_10n",
+   "slide": "comp-graphs",
+   "deck_title": "Introduction to Neural Networks",
+   "url": "https://learn.sematlas.com/slides/intro_ml_10n#/comp-graphs",
+   "order": [
+    18,
+    106
+   ],
+   "wiki": "Automatic differentiation",
+   "match": "override",
+   "p": null,
+   "candidates": [
+    {
+     "title": "Directed acyclic graph",
+     "about": "Directed graph with no directed cycles",
+     "p": 0.2
+    },
+    {
+     "title": "Factor graph",
+     "about": "Function graph representing factorization",
+     "p": 0.12
+    },
+    {
+     "title": "Graph edit distance",
+     "about": "Measure of similarity between two graphs",
+     "p": 0.05
+    }
+   ]
+  },
+  "cross-entropy": {
+   "title": "Binary Cross-Entropy",
+   "deck": "intro_ml_06n",
+   "slide": "cross-entropy",
+   "deck_title": "Classification & Logistic Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_06n#/cross-entropy",
+   "order": [
+    15,
+    107
+   ],
+   "wiki": "Cross-entropy",
+   "match": "jev",
+   "p": 0.98,
+   "candidates": [
+    {
+     "title": "Cross-entropy",
+     "about": "Information-theoretic measure",
+     "p": 0.98
+    },
+    {
+     "title": "Kullback–Leibler divergence",
+     "about": "Mathematical statistics distance measure",
+     "p": 0.16
+    },
+    {
+     "title": "Loss function",
+     "about": "Mathematical relation assigning a probability event to a cost",
+     "p": 0.04
+    }
+   ]
+  },
+  "logistic-regression": {
+   "title": "What if y is a label?",
+   "deck": "intro_ml_06n",
+   "slide": "logistic-1d",
+   "deck_title": "Classification & Logistic Regression",
+   "url": "https://learn.sematlas.com/slides/intro_ml_06n#/logistic-1d",
+   "order": [
+    15,
+    108
+   ],
+   "wiki": "Logistic regression",
+   "match": "jev",
+   "p": 0.99,
+   "candidates": [
+    {
+     "title": "Logistic regression",
+     "about": "Statistical model for a binary dependent variable",
+     "p": 0.99
+    },
+    {
+     "title": "Multinomial logistic regression",
+     "about": "Regression for more than two discrete outcomes",
+     "p": 0.09
+    },
+    {
+     "title": "Conditional logistic regression",
+     "about": "Statistical technique",
+     "p": 0.06
+    }
+   ]
+  }
+ },
+ "by_wiki": {
+  "Iteration": [
+   "iteration"
+  ],
+  "Vector (mathematics and physics)": [
+   "vectors"
+  ],
+  "Dot product": [
+   "inner-product"
+  ],
+  "Norm (mathematics)": [
+   "norm"
+  ],
+  "Cosine similarity": [
+   "cosine-similarity"
+  ],
+  "Matrix (mathematics)": [
+   "matrix"
+  ],
+  "Matrix multiplication": [
+   "matrix-product"
+  ],
+  "Linear map": [
+   "linear-transformation"
+  ],
+  "Determinant": [
+   "determinant"
+  ],
+  "Eigenvalues and eigenvectors": [
+   "eigenvector"
+  ],
+  "Function composition": [
+   "composition"
+  ],
+  "Row and column spaces": [
+   "column-space"
+  ],
+  "Linear span": [
+   "span"
+  ],
+  "Rank (linear algebra)": [
+   "rank"
+  ],
+  "Invertible matrix": [
+   "inverse"
+  ],
+  "Condition number": [
+   "condition-number"
+  ],
+  "Derivative": [
+   "derivative"
+  ],
+  "Integral": [
+   "integral"
+  ],
+  "Gradient": [
+   "gradient"
+  ],
+  "Ordinary least squares": [
+   "normal-equations"
+  ],
+  "Projection (linear algebra)": [
+   "projection"
+  ],
+  "Chain rule": [
+   "chain-rule"
+  ],
+  "Backpropagation": [
+   "backpropagation"
+  ],
+  "Aliasing (computing)": [
+   "aliasing"
+  ],
+  "Array programming": [
+   "vectorization"
+  ],
+  "Dataframe": [
+   "dataframe"
+  ],
+  "Design matrix": [
+   "design-matrix"
+  ],
+  "Correlation": [
+   "correlation"
+  ],
+  "Omitted-variable bias": [
+   "missing-variable"
+  ],
+  "Data set": [
+   "dataset"
+  ],
+  "Feature (machine learning)": [
+   "feature"
+  ],
+  "Dependent and independent variables": [
+   "target"
+  ],
+  "Training, validation, and test data sets": [
+   "training-example",
+   "test-set",
+   "validation-set"
+  ],
+  "Hypothesis": [
+   "hypothesis"
+  ],
+  "Statistical parameter": [
+   "parameters"
+  ],
+  "Statistical model": [
+   "model-class"
+  ],
+  "Linear model": [
+   "linear-model"
+  ],
+  "Y-intercept": [
+   "intercept"
+  ],
+  "Errors and residuals": [
+   "residual"
+  ],
+  "Loss function": [
+   "cost-function"
+  ],
+  "Gradient descent": [
+   "gradient-descent"
+  ],
+  "Learning rate": [
+   "learning-rate"
+  ],
+  "Least mean squares filter": [
+   "lms-rule"
+  ],
+  "Stochastic gradient descent": [
+   "sgd"
+  ],
+  "Centering matrix": [
+   "centering"
+  ],
+  "Multiple linear regression": [
+   "multiple-regression"
+  ],
+  "Ceteris paribus": [
+   "holding-fixed"
+  ],
+  "Gaussian noise": [
+   "gaussian-noise"
+  ],
+  "Likelihood function": [
+   "likelihood"
+  ],
+  "Maximum likelihood estimation": [
+   "maximum-likelihood"
+  ],
+  "Outlier": [
+   "outlier"
+  ],
+  "Least absolute deviations": [
+   "l1-loss"
+  ],
+  "K-nearest neighbors algorithm": [
+   "k-nearest-neighbours"
+  ],
+  "Regression toward the mean": [
+   "regression-to-the-mean"
+  ],
+  "Coefficient of determination": [
+   "r-squared"
+  ],
+  "Overfitting": [
+   "overfitting",
+   "underfitting"
+  ],
+  "Generalization error": [
+   "generalization"
+  ],
+  "Bias–variance tradeoff": [
+   "bias-variance"
+  ],
+  "Hyperparameter (machine learning)": [
+   "hyperparameter"
+  ],
+  "Cross-validation (statistics)": [
+   "cross-validation"
+  ],
+  "Regularization (mathematics)": [
+   "regularization"
+  ],
+  "Ridge regression": [
+   "l2-regularization"
+  ],
+  "Lasso (statistics)": [
+   "l1-regularization"
+  ],
+  "Bernoulli distribution": [
+   "bernoulli"
+  ],
+  "Exponential family": [
+   "exponential-family",
+   "natural-parameter",
+   "log-partition-function"
+  ],
+  "Poisson distribution": [
+   "poisson-distribution"
+  ],
+  "Poisson regression": [
+   "poisson-regression"
+  ],
+  "Generalized linear model": [
+   "generalized-linear-model",
+   "link-function"
+  ],
+  "One-hot": [
+   "one-hot"
+  ],
+  "Bag-of-words model": [
+   "bag-of-words"
+  ],
+  "Conditional probability distribution": [
+   "class-conditional"
+  ],
+  "Naive Bayes classifier": [
+   "naive-bayes-assumption",
+   "naive-bayes"
+  ],
+  "Bayes' theorem": [
+   "bayes-rule"
+  ],
+  "Prior probability": [
+   "prior"
+  ],
+  "Additive smoothing": [
+   "laplace-smoothing"
+  ],
+  "Generative model": [
+   "generative-model"
+  ],
+  "Discriminative model": [
+   "discriminative-model"
+  ],
+  "Multivariate normal distribution": [
+   "multivariate-gaussian"
+  ],
+  "Covariance": [
+   "covariance"
+  ],
+  "Linear discriminant analysis": [
+   "gda"
+  ],
+  "Language model": [
+   "language-model"
+  ],
+  "N-gram": [
+   "n-gram"
+  ],
+  "Artificial neuron": [
+   "threshold-unit"
+  ],
+  "Layer (deep learning)": [
+   "layer"
+  ],
+  "Activation function": [
+   "activation-function"
+  ],
+  "Rectified linear unit": [
+   "relu"
+  ],
+  "Neural network (machine learning)": [
+   "neural-network"
+  ],
+  "Hidden layer": [
+   "hidden-layer"
+  ],
+  "Deep learning": [
+   "deep-network"
+  ],
+  "Universal approximation theorem": [
+   "universal-approximation"
+  ],
+  "Convolution": [
+   "convolution"
+  ],
+  "Autoencoder": [
+   "autoencoder"
+  ],
+  "Recurrent neural network": [
+   "recurrent-network"
+  ],
+  "Automatic differentiation": [
+   "computation-graph"
+  ],
+  "Cross-entropy": [
+   "cross-entropy"
+  ],
+  "Logistic regression": [
+   "logistic-regression"
+  ]
+ }
+}

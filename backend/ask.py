@@ -158,6 +158,21 @@ def answer_provider(user_key=None):
 
 # ---------------------------------------------------------------- abstracts
 
+async def wiki_get(session, params, tries=4):
+    """GET the Wikipedia API, backing off when it asks us to slow down (429/503)."""
+    for attempt in range(tries):
+        async with session.get(WIKI_API, params=params, timeout=TIMEOUT, headers=HEADERS) as r:
+            if r.status in (429, 503) and attempt < tries - 1:
+                wait = float(r.headers.get("Retry-After") or 0) or 1.5 * 2 ** attempt
+                await asyncio.sleep(min(wait, 10))
+                continue
+            if r.status != 200:
+                logger.warning("Wikipedia returned HTTP %s for %s", r.status, params.get("action"))
+                return {}
+            return await r.json(content_type=None)
+    return {}
+
+
 async def fetch_abstracts(session, titles, max_chars=ABSTRACT_CHARS):
     """Return {requested title: intro text} for every title Wikipedia knows."""
     out = {}
@@ -168,12 +183,9 @@ async def fetch_abstracts(session, titles, max_chars=ABSTRACT_CHARS):
             "exintro": "1", "explaintext": "1", "exlimit": "20",
             "redirects": "1", "titles": "|".join(chunk),
         }
-        async with session.get(WIKI_API, params=params, timeout=TIMEOUT,
-                               headers=HEADERS) as resp:
-            if resp.status != 200:
-                logger.warning("abstract batch failed: HTTP %s", resp.status)
-                return
-            data = (await resp.json()).get("query", {})
+        data = (await wiki_get(session, params)).get("query", {})
+        if not data:
+            return
         # follow normalisation and redirects back to the title we were given
         alias = {t: t for t in chunk}
         for step in ("normalized", "redirects"):

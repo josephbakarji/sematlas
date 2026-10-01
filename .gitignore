@@ -3,6 +3,8 @@ archive/
 .DS_Store
 .env
 docs/
-data/
+data/*
+!data/learn_bridge.json
+!data/learn_bridge_overrides.json
 frontend/node_modules/
 frontend/build/

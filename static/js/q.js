@@ -42,6 +42,36 @@ function score(d) {
   return state.evidence ? (state.evidence[d.id] ?? 0) : null;
 }
 
+// ------------------------------------------------------------------ the course
+//
+// learn.sematlas.com teaches concepts; /learn/bridge.json says which Wikipedia
+// article each one is (scripts/build_learn_bridge.py). An article on the map
+// that the course teaches is marked, shift-click opens its lesson, and every
+// answer ends with the taught concepts it touched, in course order.
+
+const learn = { concepts: {}, byWiki: {}, ready: null };
+learn.ready = fetch("/learn/bridge.json").then((r) => r.json()).then((d) => {
+  learn.concepts = d.concepts || {};
+  learn.byWiki = d.by_wiki || {};
+  if (state.nodes.size) restyle();
+}).catch(() => {});
+
+function lessonsFor(id) {
+  return (learn.byWiki[id] || []).map((key) => ({ key, ...learn.concepts[key] }));
+}
+
+function conceptName(c) {
+  // the article's name reads best ("Stochastic gradient descent", not "Sgd")
+  const wiki = c.wiki || learn.concepts[c.key]?.wiki;
+  if (wiki) return wiki.replace(/ \(.*\)$/, "");
+  return c.key.replace(/-/g, " ").replace(/^./, (x) => x.toUpperCase());
+}
+
+function openLesson(c) {
+  track("open_lesson");
+  window.open(c.url, "_blank", "noopener");
+}
+
 // ------------------------------------------------------------------ colour
 
 // Branch hues, in a fixed order: the first starting article is always blue,
@@ -193,10 +223,15 @@ function draw() {
       e.append("rect").attr("rx", 5);
       e.append("text").attr("text-anchor", "middle").attr("dy", "0.35em")
         .text((d) => d.id);
+      e.append("circle").attr("class", "learn-dot").attr("r", 6);
       e.on("mouseenter", (ev, d) => showTip(ev, nodeTip(d)))
         .on("mousemove", moveTip)
         .on("mouseleave", hideTip)
-        .on("click", (ev, d) => toggleContext(ev, d))
+        .on("click", (ev, d) => {
+          const lessons = lessonsFor(d.id);
+          if (ev.shiftKey && lessons.length) openLesson(lessons[0]);
+          else toggleContext(ev, d);
+        })
         .on("dblclick", (ev, d) => { track("open_wikipedia"); window.open(d.url, "_blank", "noopener"); })
         .call(d3.drag()
           .on("start", (ev, d) => { if (!ev.active) sim.alphaTarget(0.2).restart(); d.fx = d.x; d.fy = d.y; })
@@ -211,6 +246,7 @@ function draw() {
 function restyle() {
   const g = nodeLayer.selectAll("g.g-node");
   g.classed("seed", (d) => d.seed)
+    .classed("learnable", (d) => lessonsFor(d.id).length > 0)
     .classed("candidate", (d) => d.status === "candidate")
     .classed("in-context", (d) => state.context.has(d.id));
   g.select("text")
@@ -228,6 +264,9 @@ function restyle() {
     .style("fill", fill)
     .style("stroke", (d) => (state.context.has(d.id) ? null
       : d.status === "candidate" ? hueOf(d) : "none"));
+  g.select(".learn-dot")
+    .attr("cx", (d) => d.w / 2 - 1).attr("cy", (d) => -d.h / 2 + 1)
+    .attr("display", (d) => (lessonsFor(d.id).length ? null : "none"));
   linkLayer.selectAll("line").classed("faded", (l) => {
     if (!state.evidence) return false;
     const a = state.evidence[l.source.id] ?? 0, b = state.evidence[l.target.id] ?? 0;
@@ -355,6 +394,12 @@ function nodeTip(d) {
   lines.push(state.context.has(d.id)
     ? "In the answer's sources. Click to remove."
     : "Click to add to the answer's sources.");
+  const lessons = lessonsFor(d.id);
+  if (lessons.length) {
+    lines.push(`<span class="tip-learn">● Taught on learn.sematlas.com: ` +
+      lessons.map((c) => `<b>${esc(c.title)}</b> (${esc(c.deck_title)})`).join(", ") +
+      `. Shift-click to open the lesson.</span>`);
+  }
   lines.push("Double-click to open on Wikipedia.");
   return lines.join("<br>");
 }
@@ -422,6 +467,7 @@ function newAnswer(question, followupOf) {
     title: q(".article-title"), rank: q(".m-rank"), gen: q(".m-gen"),
     cost: q(".cost-line"), status: q(".status"), body: q(".article-body"),
     refsWrap: q(".refs"), refs: q(".refs ol"), traceWrap: q(".trace"), trace: q(".trace ol"),
+    practiseWrap: q(".practise"), practise: q(".practise ol"),
   };
   a.title.textContent = question;
   if (followupOf) {
@@ -433,6 +479,39 @@ function newAnswer(question, followupOf) {
   $("answers").appendChild(el);
   state.answers.push(a);
   return a;
+}
+
+// The taught concepts this answer touched: articles in its references, or on
+// the map with real evidence for this question, listed in the order the
+// course teaches them so the path runs from basics forward.
+function renderPractise(a) {
+  const cited = new Set(a.sources.map((s) => s.name));
+  const seen = new Map();
+  state.nodes.forEach((n) => {
+    const ev = state.evidence?.[n.id] ?? 0;
+    if (!cited.has(n.id) && ev < 0.35) return;
+    lessonsFor(n.id).forEach((c) => {
+      if (!seen.has(c.key)) seen.set(c.key, { ...c, cited: cited.has(n.id), ev });
+    });
+  });
+  const items = [...seen.values()]
+    .sort((x, y) => x.order[0] - y.order[0] || x.order[1] - y.order[1])
+    .slice(0, 10);
+  a.practise.innerHTML = items.map((c) => `
+    <li>
+      <a href="${esc(c.url)}" target="_blank" rel="noopener" data-key="${esc(c.key)}">${esc(conceptName(c))}</a>
+      <span class="lesson">${esc(c.title)}</span>
+      <span class="deck">${esc(c.deck_title)}</span>
+      ${c.cited ? '<span class="cited-tag">cited above</span>' : ""}
+    </li>`).join("");
+  a.practise.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => track("open_lesson"));
+    link.addEventListener("mouseenter", () => {
+      const c = learn.concepts[link.dataset.key];
+      if (c && c.wiki) pulseNode(c.wiki);
+    });
+  });
+  a.practiseWrap.hidden = !items.length;
 }
 
 function sourceIndex(a, name) {
@@ -708,7 +787,7 @@ function handleArticleEvent(a, ev, costLabel) {
       renderBody(a);
       break;
     case "cost": setCost(a, ev, costLabel); break;
-    case "done": a.done = true; break;
+    case "done": a.done = true; learn.ready.then(() => renderPractise(a)); break;
     case "error": setStatus(ev.message); a.done = true; break;
   }
 }
@@ -736,19 +815,41 @@ function resetAll() {
   onScroll();
 }
 
-async function run(question) {
+async function run(question, opts = {}) {
   question = question.trim();
   if (!question) return;
   $("qInput").value = question;
   const url = new URL(location);
-  url.searchParams.set("q", question);
+  url.search = "";
+  if (opts.concept) url.searchParams.set("concept", opts.concept);
+  else url.searchParams.set("q", question);
   history.replaceState(null, "", url);
   document.title = question + " · SemAtlas";
   resetAll();
   const a = newAnswer(question);
+  if (opts.from) {
+    const p = a.el.querySelector(".from-lesson");
+    p.innerHTML = `Opened from the lesson <a href="${esc(opts.from.url)}" target="_blank" rel="noopener">` +
+      `${esc(opts.from.title)}</a> (${esc(opts.from.deck_title)}) on learn.sematlas.com. ` +
+      `This map shows where the idea comes from and where it leads.`;
+    p.hidden = false;
+  }
   pending = { kind: "question", question };
   setStatus("Starting");
-  await stream("/explore", { question }, exploreHandler(a, "This answer cost"));
+  const body = { question };
+  if (opts.seeds) body.seeds = opts.seeds;
+  await stream("/explore", body, exploreHandler(a, "This answer cost"));
+}
+
+// /q?concept=<key>: a concept from the course opens its place on the map,
+// starting from its Wikipedia article and asking about its origin and frontier.
+async function runConcept(key) {
+  await learn.ready;
+  const c = learn.concepts[key];
+  if (!c) return run(key.replace(/-/g, " "));
+  const name = c.wiki ? c.wiki.replace(/ \(.*\)$/, "") : conceptName({ key });
+  const question = `${name}: where does it come from, and where does it lead?`;
+  return run(question, { concept: key, seeds: c.wiki ? [c.wiki] : null, from: c });
 }
 
 function graphPayload() {
@@ -873,6 +974,7 @@ onScroll();
   let resume = null;
   if (params.get("code")) resume = await finishConnect(params.get("code"));
   refreshAccount();
-  const initial = resume?.question || new URLSearchParams(location.search).get("q");
+  const initial = resume?.question || params.get("q");
   if (initial) run(initial);
+  else if (params.get("concept")) runConcept(params.get("concept"));
 })();

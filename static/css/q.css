@@ -313,3 +313,32 @@ details summary { cursor: pointer; font-size: 13px; color: var(--ink-dim); }
 }
 .footer a { color: var(--ink-dim); }
 @media (max-width: 640px) { .acct { padding: 5px 8px; font-size: 11px; } }
+
+/* ---------------------------------------------------------------- the course */
+:root { --learn: #0f9b83; }
+html[data-theme="dark"] { --learn: #4fd8bd; }
+.learn-dot { fill: var(--ink); stroke: var(--bg); stroke-width: 1.5; pointer-events: none; }
+.learn-key { display: inline-flex; align-items: center; gap: 5px; }
+.learn-dot-key { width: 9px; height: 9px; border-radius: 50%; background: var(--ink); }
+.tip-learn { color: var(--learn); }
+.from-lesson {
+  font-size: 13.5px; margin: 0 0 10px; padding: 8px 12px; border-radius: 8px;
+  border-left: 3px solid var(--learn); background: var(--panel); color: var(--ink-dim);
+}
+.from-lesson a { color: var(--ink); }
+.practise { margin-top: 40px; }
+.practise h2 {
+  font-family: var(--serif); font-weight: 600; font-size: 21px;
+  margin: 0 0 6px; padding-bottom: 4px; border-bottom: 1px solid var(--rule);
+}
+.practise-sub { font-size: 13px; color: var(--ink-dim); margin: 0 0 12px; }
+.practise ol { padding-left: 24px; margin: 0; }
+.practise li { margin: 0 0 10px; font-size: 14.5px; }
+.practise li::marker { color: var(--learn); }
+.practise a { color: var(--ink); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--learn); }
+.practise .lesson { font-family: var(--serif); font-style: italic; color: var(--ink-dim); margin-left: 6px; }
+.practise .deck { display: block; font-size: 12px; color: var(--ink-dim); }
+.practise .cited-tag {
+  font-size: 11px; color: var(--learn); border: 1px solid var(--learn);
+  border-radius: 10px; padding: 0 6px; margin-left: 6px;
+}

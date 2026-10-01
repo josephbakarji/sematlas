@@ -471,6 +471,22 @@ def _followup_context(data):
     return prior or None, known
 
 
+@app.route('/learn/bridge.json')
+async def learn_bridge():
+    """
+    Which Wikipedia articles are concepts taught on learn.sematlas.com, and
+    where. Built by scripts/build_learn_bridge.py from the course's public
+    concept list; data/learn_bridge_overrides.json holds human corrections.
+    """
+    from pathlib import Path
+    p = Path(__file__).parent / "data" / "learn_bridge.json"
+    if not p.exists():
+        return jsonify({"concepts": {}, "by_wiki": {}})
+    resp = Response(p.read_text(), content_type="application/json")
+    resp.headers["Access-Control-Allow-Origin"] = "*"   # the course site may read it
+    return resp
+
+
 @app.route('/q/quota')
 async def quota():
     return jsonify(_quota())
@@ -484,12 +500,14 @@ async def explore():
     if not question or len(question) > 500:
         return jsonify({"error": "Ask a question of up to 500 characters"}), 400
     prior, known = _followup_context(data)
+    seeds = [t.strip() for t in (data or {}).get("seeds", [])
+             if isinstance(t, str) and 0 < len(t.strip()) < 200][:3] or None
     key = _user_key()
     if (refusal := _admit(key)):
         return _refused(*refusal)
-    _count("followup" if prior else "question", key)
+    _count("concept" if seeds else "followup" if prior else "question", key)
     logger.info(f"Explore: {question!r}" + (f" (follow-up, {len(known['nodes'])} nodes)" if prior else ""))
-    return Response(_metered(explore_stream(question, prior, known, key), not key),
+    return Response(_metered(explore_stream(question, prior, known, key, seeds), not key),
                     content_type='application/x-ndjson')
 
 
@@ -541,7 +559,7 @@ async def ask():
 # Anonymous counts of what people do on /q, so we can tell whether the graph
 # is used at all: no question text, no identifiers, just event names.
 
-EVENTS = {"node_add", "node_remove", "open_wikipedia", "cite_click", "fullview",
+EVENTS = {"node_add", "node_remove", "open_wikipedia", "cite_click", "fullview", "open_lesson",
           "zoom", "hide_graph", "connect_start", "connected", "paste_key", "disconnect"}
 _counts = Counter()
 

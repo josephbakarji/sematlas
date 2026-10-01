@@ -30,7 +30,7 @@ import anthropic
 import openai
 
 from backend.ask import (
-    JEV_CRITERIA, VIA, _low_reasoning, failure, answer_anthropic, answer_chat, answer_provider, event, fetch_abstracts, jev_endpoint,
+    JEV_CRITERIA, VIA, _low_reasoning, failure, wiki_get, answer_anthropic, answer_chat, answer_provider, event, fetch_abstracts, jev_endpoint,
     jev_rank, jev_via, models_event, pick_sources, score_with_jev, score_with_llm,
 )
 from backend.wikipedia.bfs import API_URL, HEADERS, TIMEOUT, get_page_links
@@ -102,10 +102,10 @@ def clean_snippet(s):
 async def search(session, question):
     params = {"action": "query", "list": "search", "srsearch": question,
               "srlimit": str(SEARCH_RESULTS), "srprop": "snippet", "format": "json"}
-    async with session.get(API_URL, params=params, timeout=TIMEOUT, headers=HEADERS) as r:
-        data = await r.json()
+    data = await wiki_get(session, params)
     return [{"title": h["title"], "snippet": clean_snippet(h.get("snippet"))}
-            for h in data.get("query", {}).get("search", [])]
+            for h in data.get("query", {}).get("search", [])
+            if not is_plumbing(h["title"])]
 
 
 async def lead_links(session, title):
@@ -117,8 +117,7 @@ async def lead_links(session, title):
     params = {"action": "parse", "page": title, "prop": "links", "section": "0",
               "format": "json", "redirects": "1"}
     try:
-        async with session.get(API_URL, params=params, timeout=TIMEOUT, headers=HEADERS) as r:
-            data = await r.json()
+        data = await wiki_get(session, params)
         links = [l["*"] for l in data.get("parse", {}).get("links", [])
                  if l.get("ns") == 0 and "exists" in l and ":" not in l["*"]]
     except Exception as e:
@@ -137,8 +136,7 @@ async def canonical(session, titles):
               "format": "json"}
     out = {t: t for t in titles}
     try:
-        async with session.get(API_URL, params=params, timeout=TIMEOUT, headers=HEADERS) as r:
-            data = (await r.json()).get("query", {})
+        data = (await wiki_get(session, params)).get("query", {})
         for step in ("normalized", "redirects"):
             for m in data.get(step, []):
                 for t, cur in out.items():
@@ -176,9 +174,7 @@ async def describe(session, titles):
         params = {"action": "query", "prop": "description", "titles": "|".join(chunk),
                   "redirects": "1", "format": "json"}
         try:
-            async with session.get(API_URL, params=params, timeout=TIMEOUT,
-                                   headers=HEADERS) as r:
-                data = (await r.json()).get("query", {})
+            data = (await wiki_get(session, params)).get("query", {})
         except Exception as e:
             logger.warning("descriptions failed: %s", e)
             return
@@ -211,8 +207,7 @@ async def full_text(session, title):
     params = {"action": "query", "prop": "extracts", "explaintext": "1",
               "titles": title, "redirects": "1", "format": "json"}
     try:
-        async with session.get(API_URL, params=params, timeout=TIMEOUT, headers=HEADERS) as r:
-            pages = (await r.json()).get("query", {}).get("pages", {})
+        pages = (await wiki_get(session, params)).get("query", {}).get("pages", {})
         return next(iter(pages.values()), {}).get("extract", "") or ""
     except Exception as e:
         logger.warning("full text failed for %s: %s", title, e)
@@ -388,10 +383,12 @@ def restore(known):
     return g
 
 
-async def explore_stream(question, prior=None, known=None, user_key=None):
+async def explore_stream(question, prior=None, known=None, user_key=None, seeds=None):
     """
     prior: [{"question": str, "answer": str}] for a follow-up, oldest first.
     known: {"nodes": [...], "links": [...]} the graph already on the page.
+    seeds: Wikipedia titles to start from regardless of the search, as when a
+           concept on learn.sematlas.com opens its place on the map.
     """
     try:
         provider, client, model = answer_provider(user_key)
@@ -413,7 +410,9 @@ async def explore_stream(question, prior=None, known=None, user_key=None):
         async with aiohttp.ClientSession() as session:
             # ---- where to start
             yield event("status", message="Searching Wikipedia")
-            results = await search(session, asked)
+            # starting from a known article, search around it, not around the
+            # wording of the question ("where does it lead" finds cycling stages)
+            results = await search(session, seeds[0] if seeds and not followup else asked)
             if followup:
                 # the reader's own wording too, in case the rephrasing drifted
                 more = await search(session, question)
@@ -431,8 +430,17 @@ async def explore_stream(question, prior=None, known=None, user_key=None):
                 ps = [1.0 - i / max(1, len(results)) for i in range(len(results))]
             ranked = sorted(zip(ps, results), key=lambda x: -x[0])
             seed_p = {r["title"]: p for p, r in ranked}
-            new = [r for p, r in ranked if p >= SEED_THRESHOLD and r["title"] not in g.nodes]
-            new = new[:2 if followup else MAX_SEEDS]
+            forced = []
+            if seeds and not followup:
+                canon = await canonical(session, seeds[:MAX_SEEDS])
+                forced = [{"title": canon.get(t, t)} for t in seeds[:MAX_SEEDS]]
+                for r in forced:
+                    seed_p[r["title"]] = 1.0
+            bar = 0.6 if forced else SEED_THRESHOLD    # with a given start, only strong extras
+            new = [r for p, r in ranked if p >= bar and r["title"] not in g.nodes
+                   and r["title"] not in {f["title"] for f in forced}]
+            room = (2 if followup else MAX_SEEDS) - len(forced) - (1 if forced else 0)
+            new = forced + new[:max(0, room)]
             if not new and not g.nodes and ranked:
                 new = [ranked[0][1]]
             for r in new:
