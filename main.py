@@ -510,6 +510,16 @@ async def learn_graph():
     return resp
 
 
+@app.route('/learn/lab_layout.json')
+async def lab_layout():
+    """/lab's three layouts, computed offline by scripts/bake_lab_layout.py."""
+    from pathlib import Path
+    p = Path(__file__).parent / "data" / "lab_layout.json"
+    if not p.exists():
+        return jsonify({}), 404
+    return Response(p.read_text(), content_type="application/json")
+
+
 @app.route('/learn/bridge.json')
 async def learn_bridge():
     """

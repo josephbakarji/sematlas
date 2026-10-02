@@ -9,5 +9,6 @@ data/*
 !data/frontier.json
 !data/course_graph.json
 !data/graph.json
+!data/lab_layout.json
 frontend/node_modules/
 frontend/build/

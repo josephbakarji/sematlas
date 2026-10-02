@@ -30,6 +30,7 @@ import time
 from pathlib import Path
 
 import aiohttp
+import openai
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -100,6 +101,65 @@ async def load_decks(session):
         return None
 
 
+REVIEW_MODEL = os.getenv("SEMATLAS_REVIEW_MODEL", "anthropic/claude-sonnet-5.5")
+REVIEW_SYSTEM = (
+    "You match a concept from a university course to its Wikipedia article. Given the "
+    "concept (name, one-line definition, lesson) and numbered candidate articles (title and "
+    "one-line description), choose: 'exact' if one article is about this concept itself, "
+    "under its name or a standard synonym; otherwise 'closest' if one article covers the "
+    "concept as a clearly identifiable part of a broader topic (for example 'DeepONet' "
+    "within 'Neural operators'); otherwise 'none'. Never choose a different meaning of the "
+    "same word, a person, a product or a company. Give the candidate's number, or null."
+)
+REVIEW_SCHEMA = {"type": "object", "properties": {
+    "kind": {"type": "string", "enum": ["exact", "closest", "none"]},
+    "choice": {"type": ["integer", "null"]}},
+    "required": ["kind", "choice"], "additionalProperties": False}
+
+
+async def review(session, client, key, c, sem, cost):
+    """
+    A second look, by a stronger model, at a concept Jev would not match.
+    Returns (title or None, "review" | "review-closest" | "review-none").
+    """
+    term = (c.get("name") or key.replace("-", " "))
+    async with sem:
+        found = {}
+        for q in (term, f"{term} {c.get('title') or ''}", f"{term} {c.get('lecture') or ''}"):
+            for r in await search(session, q.strip()):
+                found.setdefault(r["title"], r)
+        cands = list(found.values())[:16]
+        info = await describe(session, [r["title"] for r in cands])
+        items = [{"title": r["title"], "about": info.get(r["title"], {}).get("about", "")} for r in cands]
+        if not items:
+            return None, "review-none"
+        listing = "\n".join(f"{i}. {it['title']}: {it['about']}" for i, it in enumerate(items))
+        user = (f"Concept: {term}\nDefinition: {c.get('definition') or '(none given)'}\n"
+                f"Lesson: {c.get('lecture') or c.get('title') or ''}\n\nCandidates:\n{listing}")
+        for attempt in range(3):
+            try:
+                r = await client.chat.completions.create(
+                    model=REVIEW_MODEL, max_tokens=300,
+                    messages=[{"role": "system", "content": REVIEW_SYSTEM},
+                              {"role": "user", "content": user}],
+                    response_format={"type": "json_schema", "json_schema": {
+                        "name": "match", "strict": True, "schema": REVIEW_SCHEMA}},
+                    extra_body={"usage": {"include": True}})
+                cost[0] += (getattr(r.usage, "model_extra", None) or {}).get("cost") or 0
+                text = (r.choices[0].message.content or "").strip().removeprefix("```json").removesuffix("```").strip()
+                out = json.loads(text)
+                break
+            except Exception as e:
+                if attempt == 2:
+                    print(f"  review failed for {key}: {str(e)[:80]}")
+                    return None, None          # ask again next build
+                await asyncio.sleep(2)
+    i = out.get("choice")
+    if out.get("kind") in ("exact", "closest") and isinstance(i, int) and 0 <= i < len(items):
+        return items[i]["title"], "review" if out["kind"] == "exact" else "review-closest"
+    return None, "review-none"
+
+
 async def main():
     jev = jev_endpoint()
     if not jev:
@@ -142,23 +202,49 @@ async def main():
             if k in known and known[k].get("match") == "jev":
                 prev = known[k]
                 return k, {"title": prev["wiki"], "p": prev["p"]}, prev.get("candidates", [])
-            if k in known and known[k].get("match") is None and known[k].get("candidates"):
+            if k in known and (known[k].get("match") or "").startswith("review"):
+                prev = known[k]
+                return k, ({"title": prev["wiki"], "p": None, "how": prev["match"]} if prev["wiki"]
+                           else {"title": None, "p": None, "how": prev["match"]}), prev.get("candidates", [])
+            if k in known and known[k].get("match") is None and known[k].get("candidates") \
+                    and "--review" not in sys.argv:
                 return k, None, known[k]["candidates"]
             return await match(session, jev, sem, k, c, usage)
 
         results = await asyncio.gather(*(one(k, c) for k, c in concepts.items()))
+
+        # what Jev would not match, a stronger model looks at again
+        review_cost = [0.0]
+        if "--review" in sys.argv:
+            client = openai.AsyncOpenAI(api_key=os.getenv("OPENROUTER_API_KEY"),
+                                        base_url="https://openrouter.ai/api/v1")
+            todo = [i for i, (k, best, top) in enumerate(results)
+                    if best is None and k not in overrides]
+            rsem = asyncio.Semaphore(6)
+            got = await asyncio.gather(*(review(session, client, results[i][0],
+                                                concepts[results[i][0]], rsem, review_cost)
+                                         for i in todo))
+            for i, (title, how) in zip(todo, got):
+                k, _, top = results[i]
+                if how:
+                    results[i] = (k, {"title": title, "p": None, "how": how}, top)
+            print(f"reviewed {len(todo)} by {REVIEW_MODEL}: "
+                  f"{sum(1 for t, h in got if h == 'review')} exact, "
+                  f"{sum(1 for t, h in got if h == 'review-closest')} closest, "
+                  f"{sum(1 for t, h in got if h == 'review-none')} none; ${review_cost[0]:.4f}")
     deck_order = {d: i for i, d in enumerate(course.get("order", []))}
     out, by_wiki, unmatched = {}, {}, []
     for pos, (key, best, top) in enumerate(results):
         c = concepts[key]
         wiki = overrides[key] if key in overrides else (best["title"] if best else None)
-        how = "override" if key in overrides else ("jev" if best else None)
+        how = "override" if key in overrides else ((best.get("how") or "jev") if best else None)
         out[key] = {
             "title": c.get("title"), "deck": c["deck"], "slide": c["slide"],
             "deck_title": course.get("titles", {}).get(c["deck"], c.get("lecture")),
             "url": c.get("external") or f"{LEARN}/slides/{c['deck']}#/{c['slide']}",
             "order": [deck_order.get(c["deck"], 999), pos],
             "wiki": wiki, "match": how, "p": best["p"] if best else None,
+            "closest": how == "review-closest",
             "candidates": top,
         }
         if wiki:

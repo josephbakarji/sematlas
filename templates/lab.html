@@ -16,81 +16,68 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/q.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/lab.css') }}">
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
-<body class="lab">
+<body>
 
-<header id="topbar" class="topbar">
+<header class="bar">
   <a class="wordmark" href="/lab">SemAtlas <span class="lab-tag">Lab</span></a>
-  <nav class="lab-nav">
+  <div class="seg" role="tablist" aria-label="Layout">
+    <button data-l="web" class="on" title="Lectures that share many concepts sit close; each concept settles around its lecture">Web</button>
+    <button data-l="time" title="Left to right in course order">Timeline</button>
+    <button data-l="depth" title="Basics at the centre, the frontier at the edge: radius is the longest prerequisite chain">Depth</button>
+  </div>
+  <input type="search" id="find" placeholder="Find a concept" aria-label="Find a concept">
+  <label class="tg"><input type="checkbox" id="showBeyond"> beyond the course</label>
+  <label class="tg"><input type="checkbox" id="showStories" checked> story decks</label>
+  <button id="planBtn" class="pill-btn" type="button" title="Mark what you know and see what is ready to learn">Plan my path</button>
+  <button id="beyondBtn" class="pill-btn" type="button" title="Wikipedia articles just beyond what the courses teach">What lies beyond</button>
+  <nav class="nav">
     <a href="/q">Ask a question</a>
     <a href="https://learn.sematlas.com" target="_blank" rel="noopener">The course</a>
+    <button id="themeBtn" class="ghost" type="button" title="Switch theme">◐</button>
   </nav>
-  <button id="themeBtn" class="ghost" type="button" title="Switch theme">◐</button>
 </header>
 
-<div class="lab-layout">
-  <section class="lab-map">
-    <div class="lab-intro" id="intro">
-      <button class="modal-x" id="introX" type="button" aria-label="Hide">×</button>
-      <h1>The course as a tree</h1>
-      <p>Each coloured box is a concept taught on learn.sematlas.com. Arrows run from what a
-        concept needs to the concept, so the basics sit on the left and each column builds on the
-        ones before it; rows are the parts of the course. Dashed boxes are Wikipedia articles just
-        beyond the course. Hover to trace a concept back to its basics and forward to where it
-        leads; click for its lesson and its place on the map.</p>
-      <p id="stats" class="lab-stats"></p>
-    </div>
-    <svg id="tree"></svg>
-    <div class="lab-legend" id="legend"></div>
-    <div class="graph-tools">
-      <button id="planBtn" type="button" title="Mark what you know and see what is ready to learn">Plan my path</button>
-      <button id="fitBtn" type="button">Fit</button>
-      <label class="beyond-count">Beyond:
-        <select id="beyondN">
-          <option value="40">top 40</option>
-          <option value="80" selected>top 80</option>
-          <option value="160">top 160</option>
-          <option value="0">none</option>
-        </select>
-      </label>
-    </div>
-  </section>
+<svg id="map" role="img" aria-label="The concepts taught in both courses and their prerequisites"></svg>
+<ul class="legend" id="legend"></ul>
 
-  <aside class="lab-side">
-    <section id="planSide" hidden>
-      <h2>Your path</h2>
-      <p class="side-sub">Tell it how far you have come, or click the concepts you already
-        know. Ready means everything it needs is known. Saved in this browser only.</p>
-      <label class="upto">I have done everything up to
-        <select id="upTo"><option value="">choose a lesson…</option></select></label>
-      <p id="planStats" class="plan-stats"></p>
-      <h3>Ready to learn next</h3>
-      <ol id="readyList" class="beyond-list"></ol>
-      <h3>Beyond the course, within reach</h3>
-      <ol id="reachList" class="beyond-list"></ol>
-      <button id="clearKnown" class="link-btn" type="button">Clear what I marked</button>
-    </section>
-    <section id="beyondSide">
-    <h2>Beyond the course</h2>
-    <p class="side-sub">Wikipedia articles next to what the course teaches, ranked by how many taught
-      concepts point to them. The list of lessons that could be written next.</p>
-    <div class="tabs" id="tabs">
-      <button data-f="all" class="on">All</button>
-      <button data-f="basis">Foundations</button>
-      <button data-f="next">Next steps</button>
-      <button data-f="named">Named in a lesson</button>
-    </div>
-    <ol id="beyondList" class="beyond-list"></ol>
-    <p class="side-note" id="method"></p>
-    </section>
-  </aside>
-</div>
+<aside id="panel" class="card" aria-live="polite"></aside>
 
-<div id="card" class="lab-card" hidden></div>
-<div id="tip" class="tip" hidden></div>
+<aside id="planPanel" class="side" hidden>
+  <button class="x" data-close="planPanel" aria-label="Close">×</button>
+  <h2>Your path</h2>
+  <p class="sub">Tell it how far you have come, or click the concepts you already know.
+    Ready means everything it needs is known. Saved in this browser only.</p>
+  <label class="upto">I have done everything up to
+    <select id="upTo"><option value="">choose a lesson…</option></select></label>
+  <p id="planStats" class="stats"></p>
+  <h3>Ready to learn next</h3>
+  <ol id="readyList" class="list"></ol>
+  <h3>Beyond the course, within reach</h3>
+  <ol id="reachList" class="list"></ol>
+  <button id="clearKnown" class="link" type="button">Clear what I marked</button>
+</aside>
+
+<aside id="beyondPanel" class="side" hidden>
+  <button class="x" data-close="beyondPanel" aria-label="Close">×</button>
+  <h2>What lies beyond</h2>
+  <p class="sub">Wikipedia articles next to what the courses teach, ranked by how many taught
+    concepts point to them: the lessons that could be written next.</p>
+  <div class="tabs" id="tabs">
+    <button data-f="all" class="on">All</button>
+    <button data-f="basis">Foundations</button>
+    <button data-f="next">Next steps</button>
+    <button data-f="named">Named in a lesson</button>
+  </div>
+  <ol id="beyondList" class="list"></ol>
+  <p class="note-small" id="method"></p>
+</aside>
+
+<p class="hint" id="hint">Zoomed out, the best-connected concepts carry the labels; zoom in to see
+  every one. Hover a concept to trace it back to its basics (gold) and forward to what it
+  unlocks (teal); click to pin it.</p>
 
 <script src="{{ url_for('static', filename='js/lab.js') }}"></script>
 </body>

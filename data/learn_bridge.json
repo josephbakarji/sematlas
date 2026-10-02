@@ -16,6 +16,7 @@
    "wiki": "Model",
    "match": "jev",
    "p": 0.86,
+   "closest": false,
    "candidates": [
     {
      "title": "Model",
@@ -45,23 +46,24 @@
     1
    ],
    "wiki": null,
-   "match": null,
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Representation",
      "about": "Topics referred to by the same term",
-     "p": 0.45
+     "p": 0.46
     },
     {
      "title": "Representation (arts)",
      "about": "Signs that stand in for and take the place of something else",
-     "p": 0.22
+     "p": 0.25
     },
     {
-     "title": "Matrix representation",
-     "about": "Storage method in computer memory",
-     "p": 0.13
+     "title": "No taxation without representation",
+     "about": "Political movement originating in the American Revolution",
+     "p": 0.24
     }
    ]
   },
@@ -78,6 +80,7 @@
    "wiki": "Cluster analysis",
    "match": "jev",
    "p": 0.89,
+   "closest": false,
    "candidates": [
     {
      "title": "Cluster analysis",
@@ -109,6 +112,7 @@
    "wiki": "Abstraction",
    "match": "jev",
    "p": 0.86,
+   "closest": false,
    "candidates": [
     {
      "title": "Abstraction",
@@ -140,6 +144,7 @@
    "wiki": "Extrapolation",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Extrapolation",
@@ -171,6 +176,7 @@
    "wiki": "Inductive reasoning",
    "match": "jev",
    "p": 0.9,
+   "closest": false,
    "candidates": [
     {
      "title": "Inductive reasoning",
@@ -200,23 +206,24 @@
     6
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Validity (statistics)",
      "about": "Extent to which a measurement corresponds to reality",
-     "p": 0.18
+     "p": 0.2
     },
     {
      "title": "Domain Name System",
      "about": "System to identify resources on a network",
-     "p": 0.05
+     "p": 0.04
     },
     {
-     "title": "Psychopolitical validity",
-     "about": "",
-     "p": 0.05
+     "title": "Validity (logic)",
+     "about": "Argument whose conclusion must be true if its premises are",
+     "p": 0.04
     }
    ]
   },
@@ -230,19 +237,20 @@
     0,
     7
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Falsifiability",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Falsification",
      "about": "Topics referred to by the same term",
-     "p": 0.47
+     "p": 0.46
     },
     {
      "title": "Falsifiability",
      "about": "Property of a statement that can be logically contradicted",
-     "p": 0.35
+     "p": 0.32
     },
     {
      "title": "Knowledge falsification",
@@ -262,8 +270,9 @@
     8
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Refinement (computing)",
@@ -273,12 +282,12 @@
     {
      "title": "Counterexample-guided abstraction refinement",
      "about": "Technique for symbolic model checking and logic calculi",
-     "p": 0.12
+     "p": 0.11
     },
     {
-     "title": "Decision model",
-     "about": "",
-     "p": 0.03
+     "title": "Model checking",
+     "about": "Computer science field",
+     "p": 0.05
     }
    ]
   },
@@ -295,6 +304,7 @@
    "wiki": "Function approximation",
    "match": "jev",
    "p": 0.87,
+   "closest": false,
    "candidates": [
     {
      "title": "Function approximation",
@@ -326,6 +336,7 @@
    "wiki": "Supervised learning",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Supervised learning",
@@ -357,6 +368,7 @@
    "wiki": "Unsupervised learning",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Unsupervised learning",
@@ -388,6 +400,7 @@
    "wiki": "Computer program",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Computer program",
@@ -419,6 +432,7 @@
    "wiki": "Programming language",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Programming language",
@@ -448,13 +462,14 @@
     14
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Operators in C and C++",
      "about": "",
-     "p": 0.18
+     "p": 0.17
     },
     {
      "title": "Modulo",
@@ -462,8 +477,8 @@
      "p": 0.09
     },
     {
-     "title": "Arithmetic",
-     "about": "Branch of elementary mathematics",
+     "title": "Glossary of mathematical symbols",
+     "about": "",
      "p": 0.06
     }
    ]
@@ -481,6 +496,7 @@
    "wiki": "Variable (high-level programming language)",
    "match": "jev",
    "p": 0.92,
+   "closest": false,
    "candidates": [
     {
      "title": "Variable (high-level programming language)",
@@ -509,24 +525,25 @@
     1,
     16
    ],
-   "wiki": null,
-   "match": null,
-   "p": null,
+   "wiki": "Assignment (computer science)",
+   "match": "jev",
+   "p": 0.96,
+   "closest": false,
    "candidates": [
     {
-     "title": "Assignment",
-     "about": "Topics referred to by the same term",
-     "p": 0.45
+     "title": "Assignment (computer science)",
+     "about": "Setting or re-setting the value associated with a variable name",
+     "p": 0.96
     },
     {
      "title": "Assignment operator (C++)",
      "about": "Operator (=) used for assigning values in C++",
-     "p": 0.3
+     "p": 0.25
     },
     {
-     "title": "Assignment problem",
-     "about": "Combinatorial optimization problem",
-     "p": 0.03
+     "title": "Assignment",
+     "about": "Topics referred to by the same term",
+     "p": 0.22
     }
    ]
   },
@@ -543,6 +560,7 @@
    "wiki": "Data type",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Data type",
@@ -574,6 +592,7 @@
    "wiki": "List",
    "match": "jev",
    "p": 0.72,
+   "closest": false,
    "candidates": [
     {
      "title": "List",
@@ -603,23 +622,24 @@
     19
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Index",
      "about": "Topics referred to by the same term",
-     "p": 0.23
+     "p": 0.27
     },
     {
-     "title": "Indexing software",
-     "about": "Application softwares used to build a book index",
+     "title": "Indexing head",
+     "about": "Dividing head",
      "p": 0.06
     },
     {
      "title": "Term indexing",
      "about": "",
-     "p": 0.06
+     "p": 0.05
     }
    ]
   },
@@ -636,6 +656,7 @@
    "wiki": "Christian conditionalism",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Christian conditionalism",
@@ -667,6 +688,7 @@
    "wiki": "Loop (statement)",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Loop (statement)",
@@ -695,14 +717,15 @@
     1,
     22
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Debugging",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Trace",
      "about": "Topics referred to by the same term",
-     "p": 0.19
+     "p": 0.18
     },
     {
      "title": "Trace-based simulation",
@@ -710,9 +733,9 @@
      "p": 0.13
     },
     {
-     "title": "CPU cache",
-     "about": "Hardware cache of a central processing unit",
-     "p": 0.11
+     "title": "Fagin's theorem",
+     "about": "Existential second order logic captures NP",
+     "p": 0.09
     }
    ]
   },
@@ -729,6 +752,7 @@
    "wiki": "Function (mathematics)",
    "match": "jev",
    "p": 0.66,
+   "closest": false,
    "candidates": [
     {
      "title": "Function (mathematics)",
@@ -758,23 +782,24 @@
     24
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Dictionary",
      "about": "Collection of words and their meanings",
-     "p": 0.17
+     "p": 0.18
     },
     {
      "title": "Oxford dictionary",
      "about": "Topics referred to by the same term",
-     "p": 0.07
+     "p": 0.06
     },
     {
-     "title": "Dictionary.com",
-     "about": "Online dictionary",
-     "p": 0.03
+     "title": "Pigafetta's dictionary",
+     "about": "Italian–Malay vocabulary (16th century)",
+     "p": 0.05
     }
    ]
   },
@@ -791,6 +816,7 @@
    "wiki": "Debugging",
    "match": "jev",
    "p": 0.84,
+   "closest": false,
    "candidates": [
     {
      "title": "Debugging",
@@ -822,6 +848,7 @@
    "wiki": "Symbolic artificial intelligence",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Symbolic artificial intelligence",
@@ -853,6 +880,7 @@
    "wiki": "Machine learning",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Machine learning",
@@ -884,6 +912,7 @@
    "wiki": "Moore's law",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Moore's law",
@@ -915,6 +944,7 @@
    "wiki": "Neural scaling law",
    "match": "jev",
    "p": 0.69,
+   "closest": false,
    "candidates": [
     {
      "title": "Neural scaling law",
@@ -946,6 +976,7 @@
    "wiki": "Logarithmic scale",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Logarithmic scale",
@@ -977,6 +1008,7 @@
    "wiki": "Curve fitting",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Curve fitting",
@@ -1008,6 +1040,7 @@
    "wiki": "Graph (discrete mathematics)",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Graph (discrete mathematics)",
@@ -1036,24 +1069,25 @@
     5,
     33
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Digital data",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Digital data",
      "about": "Discrete, discontinuous representation of information",
-     "p": 0.28
+     "p": 0.33
     },
     {
      "title": "Representation learning",
      "about": "Set of learning techniques in machine learning",
-     "p": 0.24
+     "p": 0.23
     },
     {
      "title": "Common Data Representation",
      "about": "",
-     "p": 0.19
+     "p": 0.18
     }
    ]
   },
@@ -1067,9 +1101,10 @@
     5,
     34
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Table (format)",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Table (format)",
@@ -1079,12 +1114,12 @@
     {
      "title": "Wide and narrow data",
      "about": "Two different methods for presenting tabular data",
-     "p": 0.2
+     "p": 0.18
     },
     {
      "title": "Data orientation",
      "about": "Tabular data representation in memory",
-     "p": 0.18
+     "p": 0.17
     }
    ]
   },
@@ -1101,6 +1136,7 @@
    "wiki": "Time series",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Time series",
@@ -1132,6 +1168,7 @@
    "wiki": "Audio signal",
    "match": "jev",
    "p": 0.91,
+   "closest": false,
    "candidates": [
     {
      "title": "Audio signal",
@@ -1163,6 +1200,7 @@
    "wiki": "Spectrogram",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Spectrogram",
@@ -1194,6 +1232,7 @@
    "wiki": "Fourier transform",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Fourier transform",
@@ -1222,19 +1261,20 @@
     5,
     39
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Digital image",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Digital image",
      "about": "Pictures encoded as binary data",
-     "p": 0.57
+     "p": 0.51
     },
     {
      "title": "Image",
      "about": "Visual artifact that depicts or records perception",
-     "p": 0.13
+     "p": 0.11
     },
     {
      "title": "Image segmentation",
@@ -1256,6 +1296,7 @@
    "wiki": "Channel (digital image)",
    "match": "jev",
    "p": 0.92,
+   "closest": false,
    "candidates": [
     {
      "title": "Channel (digital image)",
@@ -1287,6 +1328,7 @@
    "wiki": "Tensor (machine learning)",
    "match": "jev",
    "p": 0.88,
+   "closest": false,
    "candidates": [
     {
      "title": "Tensor (machine learning)",
@@ -1318,6 +1360,7 @@
    "wiki": "Word embedding",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Word embedding",
@@ -1349,6 +1392,7 @@
    "wiki": "Adjacency matrix",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Adjacency matrix",
@@ -1377,9 +1421,10 @@
     5,
     44
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Machine learning",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Machine learning",
@@ -1394,7 +1439,7 @@
     {
      "title": "Statistical inference",
      "about": "Process of using data analysis for predicting population data from sample data",
-     "p": 0.1
+     "p": 0.11
     }
    ]
   },
@@ -1408,9 +1453,10 @@
     5,
     45
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Statistical classification",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Classification",
@@ -1420,7 +1466,7 @@
     {
      "title": "Document classification",
      "about": "Process of categorizing documents",
-     "p": 0.08
+     "p": 0.07
     },
     {
      "title": "Classification theorem",
@@ -1439,24 +1485,25 @@
     5,
     46
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Regression analysis",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Regression analysis",
      "about": "Set of statistical processes for estimating the relationships among variables",
-     "p": 0.4
+     "p": 0.39
     },
     {
      "title": "Regression",
      "about": "Topics referred to by the same term",
-     "p": 0.33
+     "p": 0.34
     },
     {
      "title": "Linear regression",
      "about": "Statistical modeling method",
-     "p": 0.31
+     "p": 0.32
     }
    ]
   },
@@ -1473,6 +1520,7 @@
    "wiki": "Structured prediction",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Structured prediction",
@@ -1504,6 +1552,7 @@
    "wiki": "Histogram",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Histogram",
@@ -1535,6 +1584,7 @@
    "wiki": "Probability density function",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Probability density function",
@@ -1566,6 +1616,7 @@
    "wiki": null,
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Pseudocode",
@@ -1597,6 +1648,7 @@
    "wiki": "Iteration",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Iteration",
@@ -1628,6 +1680,7 @@
    "wiki": "Vector (mathematics and physics)",
    "match": "jev",
    "p": 0.81,
+   "closest": false,
    "candidates": [
     {
      "title": "Vector (mathematics and physics)",
@@ -1659,6 +1712,7 @@
    "wiki": "Dot product",
    "match": "jev",
    "p": 0.81,
+   "closest": false,
    "candidates": [
     {
      "title": "Dot product",
@@ -1690,6 +1744,7 @@
    "wiki": "Norm (mathematics)",
    "match": "jev",
    "p": 0.93,
+   "closest": false,
    "candidates": [
     {
      "title": "Norm (mathematics)",
@@ -1721,6 +1776,7 @@
    "wiki": "Cosine similarity",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Cosine similarity",
@@ -1752,6 +1808,7 @@
    "wiki": "Matrix (mathematics)",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Matrix (mathematics)",
@@ -1783,6 +1840,7 @@
    "wiki": "Matrix multiplication",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Matrix multiplication",
@@ -1814,6 +1872,7 @@
    "wiki": "Linear map",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Linear map",
@@ -1845,6 +1904,7 @@
    "wiki": "Determinant",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Determinant",
@@ -1876,6 +1936,7 @@
    "wiki": "Eigenvalues and eigenvectors",
    "match": "jev",
    "p": 0.8,
+   "closest": false,
    "candidates": [
     {
      "title": "Eigenvalues and eigenvectors",
@@ -1907,6 +1968,7 @@
    "wiki": "Function composition",
    "match": "jev",
    "p": 0.86,
+   "closest": false,
    "candidates": [
     {
      "title": "Function composition",
@@ -1938,6 +2000,7 @@
    "wiki": "Row and column spaces",
    "match": "jev",
    "p": 0.81,
+   "closest": false,
    "candidates": [
     {
      "title": "Row and column spaces",
@@ -1969,6 +2032,7 @@
    "wiki": "Linear span",
    "match": "jev",
    "p": 0.92,
+   "closest": false,
    "candidates": [
     {
      "title": "Linear span",
@@ -2000,6 +2064,7 @@
    "wiki": "Rank (linear algebra)",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "RankBrain",
@@ -2031,6 +2096,7 @@
    "wiki": "Invertible matrix",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Inverse",
@@ -2062,6 +2128,7 @@
    "wiki": "Condition number",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Condition number",
@@ -2093,6 +2160,7 @@
    "wiki": "Derivative",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Derivative",
@@ -2124,6 +2192,7 @@
    "wiki": "Integral",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Integral",
@@ -2155,6 +2224,7 @@
    "wiki": "Gradient",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Gradient",
@@ -2186,6 +2256,7 @@
    "wiki": "Ordinary least squares",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Ordinary least squares",
@@ -2217,6 +2288,7 @@
    "wiki": "Projection (linear algebra)",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Projection",
@@ -2248,6 +2320,7 @@
    "wiki": "Chain rule",
    "match": "jev",
    "p": 0.92,
+   "closest": false,
    "candidates": [
     {
      "title": "Chain rule",
@@ -2279,6 +2352,7 @@
    "wiki": "Backpropagation",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Backpropagation",
@@ -2310,6 +2384,7 @@
    "wiki": "Aliasing (computing)",
    "match": "jev",
    "p": 0.9,
+   "closest": false,
    "candidates": [
     {
      "title": "Aliasing (computing)",
@@ -2341,6 +2416,7 @@
    "wiki": null,
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Broadcasting",
@@ -2372,6 +2448,7 @@
    "wiki": "Array programming",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Vectorization",
@@ -2403,6 +2480,7 @@
    "wiki": "Dataframe",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Dataframe",
@@ -2434,6 +2512,7 @@
    "wiki": "Design matrix",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Design matrix",
@@ -2465,6 +2544,7 @@
    "wiki": "Correlation",
    "match": "jev",
    "p": 0.91,
+   "closest": false,
    "candidates": [
     {
      "title": "Correlation",
@@ -2496,6 +2576,7 @@
    "wiki": "Omitted-variable bias",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Omitted-variable bias",
@@ -2527,6 +2608,7 @@
    "wiki": "Data set",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Data set",
@@ -2558,6 +2640,7 @@
    "wiki": "Feature (machine learning)",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Feature",
@@ -2589,6 +2672,7 @@
    "wiki": "Dependent and independent variables",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Target",
@@ -2620,6 +2704,7 @@
    "wiki": "Training, validation, and test data sets",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Example",
@@ -2651,6 +2736,7 @@
    "wiki": "Hypothesis",
    "match": "jev",
    "p": 0.81,
+   "closest": false,
    "candidates": [
     {
      "title": "Hypothesis",
@@ -2682,6 +2768,7 @@
    "wiki": "Statistical parameter",
    "match": "jev",
    "p": 0.73,
+   "closest": false,
    "candidates": [
     {
      "title": "Statistical parameter",
@@ -2713,6 +2800,7 @@
    "wiki": "Statistical model",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Generative model",
@@ -2744,6 +2832,7 @@
    "wiki": "Linear model",
    "match": "jev",
    "p": 0.91,
+   "closest": false,
    "candidates": [
     {
      "title": "Linear model",
@@ -2775,6 +2864,7 @@
    "wiki": "Y-intercept",
    "match": "jev",
    "p": 0.65,
+   "closest": false,
    "candidates": [
     {
      "title": "Y-intercept",
@@ -2806,6 +2896,7 @@
    "wiki": "Errors and residuals",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Residual",
@@ -2837,6 +2928,7 @@
    "wiki": "Loss function",
    "match": "jev",
    "p": 0.64,
+   "closest": false,
    "candidates": [
     {
      "title": "Loss function",
@@ -2868,6 +2960,7 @@
    "wiki": null,
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Double descent",
@@ -2899,6 +2992,7 @@
    "wiki": "Gradient descent",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Gradient descent",
@@ -2930,6 +3024,7 @@
    "wiki": "Learning rate",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Learning rate",
@@ -2961,6 +3056,7 @@
    "wiki": "Least mean squares filter",
    "match": "jev",
    "p": 0.83,
+   "closest": false,
    "candidates": [
     {
      "title": "Least mean squares filter",
@@ -2992,6 +3088,7 @@
    "wiki": "Stochastic gradient descent",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Stochastic gradient descent",
@@ -3023,6 +3120,7 @@
    "wiki": "Centering matrix",
    "match": "jev",
    "p": 0.66,
+   "closest": false,
    "candidates": [
     {
      "title": "Centering matrix",
@@ -3054,6 +3152,7 @@
    "wiki": "Multiple linear regression",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Multiple linear regression",
@@ -3085,6 +3184,7 @@
    "wiki": "Ceteris paribus",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Causal decision theory",
@@ -3116,6 +3216,7 @@
    "wiki": "Gaussian noise",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Gaussian noise",
@@ -3147,6 +3248,7 @@
    "wiki": "Likelihood function",
    "match": "jev",
    "p": 0.93,
+   "closest": false,
    "candidates": [
     {
      "title": "Likelihood function",
@@ -3178,6 +3280,7 @@
    "wiki": "Maximum likelihood estimation",
    "match": "jev",
    "p": 0.93,
+   "closest": false,
    "candidates": [
     {
      "title": "Maximum likelihood estimation",
@@ -3209,6 +3312,7 @@
    "wiki": "Outlier",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Outlier",
@@ -3240,6 +3344,7 @@
    "wiki": "Least absolute deviations",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Lasso (statistics)",
@@ -3271,6 +3376,7 @@
    "wiki": "K-nearest neighbors algorithm",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "K-nearest neighbors algorithm",
@@ -3302,6 +3408,7 @@
    "wiki": null,
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Statistical hypothesis test",
@@ -3333,6 +3440,7 @@
    "wiki": null,
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Random feature",
@@ -3364,6 +3472,7 @@
    "wiki": "Regression toward the mean",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Regression toward the mean",
@@ -3395,6 +3504,7 @@
    "wiki": "Coefficient of determination",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Coefficient of determination",
@@ -3426,6 +3536,7 @@
    "wiki": "Overfitting",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Overfitting",
@@ -3457,6 +3568,7 @@
    "wiki": "Overfitting",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Bias–variance tradeoff",
@@ -3488,6 +3600,7 @@
    "wiki": "Generalization error",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Generalization (learning)",
@@ -3519,6 +3632,7 @@
    "wiki": "Training, validation, and test data sets",
    "match": "jev",
    "p": 0.87,
+   "closest": false,
    "candidates": [
     {
      "title": "Training, validation, and test data sets",
@@ -3550,6 +3664,7 @@
    "wiki": "Bias–variance tradeoff",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Bias–variance tradeoff",
@@ -3581,6 +3696,7 @@
    "wiki": "Hyperparameter (machine learning)",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Hyperparameter (machine learning)",
@@ -3612,6 +3728,7 @@
    "wiki": "Training, validation, and test data sets",
    "match": "jev",
    "p": 0.74,
+   "closest": false,
    "candidates": [
     {
      "title": "Training, validation, and test data sets",
@@ -3643,6 +3760,7 @@
    "wiki": "Cross-validation (statistics)",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Cross-validation (statistics)",
@@ -3674,6 +3792,7 @@
    "wiki": "Regularization (mathematics)",
    "match": "jev",
    "p": 0.89,
+   "closest": false,
    "candidates": [
     {
      "title": "Regularization (mathematics)",
@@ -3705,6 +3824,7 @@
    "wiki": "Ridge regression",
    "match": "jev",
    "p": 0.78,
+   "closest": false,
    "candidates": [
     {
      "title": "Ridge regression",
@@ -3736,6 +3856,7 @@
    "wiki": "Lasso (statistics)",
    "match": "jev",
    "p": 0.79,
+   "closest": false,
    "candidates": [
     {
      "title": "Lasso (statistics)",
@@ -3767,6 +3888,7 @@
    "wiki": "Volvulus",
    "match": "jev",
    "p": 0.91,
+   "closest": false,
    "candidates": [
     {
      "title": "Volvulus",
@@ -3798,6 +3920,7 @@
    "wiki": "Logistic regression",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Logistic regression",
@@ -3826,14 +3949,15 @@
     15,
     123
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Likelihood function",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Log probability",
      "about": "Logarithm of probabilities, useful for calculations",
-     "p": 0.1
+     "p": 0.08
     },
     {
      "title": "Likelihood function",
@@ -3860,6 +3984,7 @@
    "wiki": "Convex function",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Convex function",
@@ -3891,6 +4016,7 @@
    "wiki": "Cross-entropy",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Cross-entropy",
@@ -3922,6 +4048,7 @@
    "wiki": "Decision boundary",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Decision boundary",
@@ -3950,24 +4077,25 @@
     15,
     127
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Margin classifier",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Margin",
      "about": "Topics referred to by the same term",
-     "p": 0.28
+     "p": 0.3
     },
     {
      "title": "Margin of error",
      "about": "Statistic expressing the amount of random sampling error in a survey's results",
-     "p": 0.04
+     "p": 0.06
     },
     {
-     "title": "Margin (finance)",
-     "about": "Type of financial collateral used to cover credit risk",
-     "p": 0.03
+     "title": "Portfolio margin",
+     "about": "",
+     "p": 0.05
     }
    ]
   },
@@ -3984,6 +4112,7 @@
    "wiki": "Confusion matrix",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Confusion matrix",
@@ -4015,6 +4144,7 @@
    "wiki": "Precision and recall",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Precision and recall",
@@ -4043,24 +4173,25 @@
     15,
     130
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Evaluation of binary classifiers",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Accuracy and precision",
      "about": "Measures of observational error",
-     "p": 0.4
+     "p": 0.47
     },
     {
      "title": "Accuracy paradox",
      "about": "Flaw of binary classification",
-     "p": 0.25
+     "p": 0.22
     },
     {
-     "title": "Mean directional accuracy",
-     "about": "Metric to evaluate a forecasting method",
-     "p": 0.06
+     "title": "Accuracy class",
+     "about": "",
+     "p": 0.1
     }
    ]
   },
@@ -4077,6 +4208,7 @@
    "wiki": "F-score",
    "match": "jev",
    "p": 0.82,
+   "closest": false,
    "candidates": [
     {
      "title": "F-score",
@@ -4105,19 +4237,20 @@
     15,
     132
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Accuracy paradox",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Accuracy paradox",
      "about": "Flaw of binary classification",
-     "p": 0.47
+     "p": 0.42
     },
     {
      "title": "Oversampling and undersampling in data analysis",
      "about": "Statistical sampling techniques",
-     "p": 0.1
+     "p": 0.09
     },
     {
      "title": "Precision and recall",
@@ -4136,24 +4269,25 @@
     15,
     133
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Receiver operating characteristic",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Prevalence threshold",
      "about": "Bayesian diagnostic threshold derived from the geometry of screening curves",
-     "p": 0.14
+     "p": 0.12
     },
     {
      "title": "Receiver operating characteristic",
      "about": "Diagnostic plot of binary classifier ability",
-     "p": 0.1
+     "p": 0.11
     },
     {
-     "title": "Linear classifier",
-     "about": "Statistical classification in machine learning",
-     "p": 0.06
+     "title": "Classification of personality disorders",
+     "about": "",
+     "p": 0.05
     }
    ]
   },
@@ -4170,6 +4304,7 @@
    "wiki": "Multiclass classification",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Multiclass classification",
@@ -4198,9 +4333,10 @@
     15,
     135
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Multiclass classification",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Multiclass classification",
@@ -4232,6 +4368,7 @@
    "wiki": "Softmax function",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Softmax function",
@@ -4263,6 +4400,7 @@
    "wiki": "Multinomial logistic regression",
    "match": "jev",
    "p": 0.93,
+   "closest": false,
    "candidates": [
     {
      "title": "Multinomial logistic regression",
@@ -4294,6 +4432,7 @@
    "wiki": "Logit",
    "match": "jev",
    "p": 0.76,
+   "closest": false,
    "candidates": [
     {
      "title": "Logit",
@@ -4325,6 +4464,7 @@
    "wiki": "Bernoulli distribution",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Bernoulli distribution",
@@ -4356,6 +4496,7 @@
    "wiki": "Exponential family",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Exponential family",
@@ -4387,6 +4528,7 @@
    "wiki": "Exponential family",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Natural parameter (disambiguation)",
@@ -4418,6 +4560,7 @@
    "wiki": "Exponential family",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Partition function (mathematics)",
@@ -4449,6 +4592,7 @@
    "wiki": "Poisson distribution",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Poisson distribution",
@@ -4480,6 +4624,7 @@
    "wiki": "Poisson regression",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Poisson regression",
@@ -4511,6 +4656,7 @@
    "wiki": "Generalized linear model",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Generalized linear model",
@@ -4542,6 +4688,7 @@
    "wiki": "Generalized linear model",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Logit",
@@ -4573,6 +4720,7 @@
    "wiki": "One-hot",
    "match": "jev",
    "p": 0.82,
+   "closest": false,
    "candidates": [
     {
      "title": "One-hot",
@@ -4604,6 +4752,7 @@
    "wiki": "Bag-of-words model",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Bag-of-words model",
@@ -4635,6 +4784,7 @@
    "wiki": "Conditional probability distribution",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Conditional probability",
@@ -4666,6 +4816,7 @@
    "wiki": "Naive Bayes classifier",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Naive Bayes classifier",
@@ -4697,6 +4848,7 @@
    "wiki": "Bayes' theorem",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Bayes' theorem",
@@ -4728,6 +4880,7 @@
    "wiki": "Prior probability",
    "match": "jev",
    "p": 0.87,
+   "closest": false,
    "candidates": [
     {
      "title": "Prior probability",
@@ -4759,6 +4912,7 @@
    "wiki": "Naive Bayes classifier",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Naive Bayes classifier",
@@ -4790,6 +4944,7 @@
    "wiki": "Additive smoothing",
    "match": "jev",
    "p": 0.91,
+   "closest": false,
    "candidates": [
     {
      "title": "Additive smoothing",
@@ -4821,6 +4976,7 @@
    "wiki": null,
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Event perception",
@@ -4852,6 +5008,7 @@
    "wiki": "Generative model",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Generative model",
@@ -4883,6 +5040,7 @@
    "wiki": "Discriminative model",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Discriminative model",
@@ -4914,6 +5072,7 @@
    "wiki": "Multivariate normal distribution",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Multivariate normal distribution",
@@ -4945,6 +5104,7 @@
    "wiki": "Covariance",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Covariance",
@@ -4976,6 +5136,7 @@
    "wiki": "Linear discriminant analysis",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "GDA",
@@ -5007,6 +5168,7 @@
    "wiki": "Language model",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Language model",
@@ -5038,6 +5200,7 @@
    "wiki": "N-gram",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "N-gram",
@@ -5069,6 +5232,7 @@
    "wiki": "Artificial neuron",
    "match": "jev",
    "p": 0.77,
+   "closest": false,
    "candidates": [
     {
      "title": "Artificial neuron",
@@ -5100,6 +5264,7 @@
    "wiki": "Layer (deep learning)",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Layer",
@@ -5131,6 +5296,7 @@
    "wiki": "Activation function",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Activation function",
@@ -5162,6 +5328,7 @@
    "wiki": "Rectified linear unit",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Rectified linear unit",
@@ -5193,6 +5360,7 @@
    "wiki": "Neural network (machine learning)",
    "match": "jev",
    "p": 0.92,
+   "closest": false,
    "candidates": [
     {
      "title": "Neural network (machine learning)",
@@ -5224,6 +5392,7 @@
    "wiki": "Hidden layer",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Hidden layer",
@@ -5255,6 +5424,7 @@
    "wiki": "Deep learning",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Deep network",
@@ -5286,6 +5456,7 @@
    "wiki": "Universal approximation theorem",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Universal approximation theorem",
@@ -5317,6 +5488,7 @@
    "wiki": "Convolution",
    "match": "jev",
    "p": 0.88,
+   "closest": false,
    "candidates": [
     {
      "title": "Convolution",
@@ -5348,6 +5520,7 @@
    "wiki": "Autoencoder",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Autoencoder",
@@ -5379,6 +5552,7 @@
    "wiki": "Recurrent neural network",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Recurrent neural network",
@@ -5410,6 +5584,7 @@
    "wiki": "Automatic differentiation",
    "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Directed acyclic graph",
@@ -5441,6 +5616,7 @@
    "wiki": "Superposition principle",
    "match": "jev",
    "p": 0.9,
+   "closest": false,
    "candidates": [
     {
      "title": "Superposition principle",
@@ -5472,6 +5648,7 @@
    "wiki": "Nonlinear system",
    "match": "jev",
    "p": 0.92,
+   "closest": false,
    "candidates": [
     {
      "title": "Nonlinear system",
@@ -5500,24 +5677,25 @@
     20,
     177
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Computer simulation",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Computer simulation",
      "about": "Process of mathematical modelling, performed on a computer",
-     "p": 0.44
+     "p": 0.42
     },
     {
      "title": "Numerical analysis",
      "about": "Methods for numerical approximations",
-     "p": 0.18
+     "p": 0.17
     },
     {
-     "title": "Numerical relativity",
-     "about": "Sub-area of scientific computing for solving General Relativity equations",
-     "p": 0.12
+     "title": "Simulation",
+     "about": "Imitation of the operation of a real-world process or system over time",
+     "p": 0.17
     }
    ]
   },
@@ -5531,14 +5709,15 @@
     20,
     178
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Scientific modelling",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Scientific modelling",
      "about": "Scientific activity that produces models",
-     "p": 0.31
+     "p": 0.33
     },
     {
      "title": "Scientific method",
@@ -5548,7 +5727,7 @@
     {
      "title": "PDCA",
      "about": "Iterative design and management method",
-     "p": 0.07
+     "p": 0.08
     }
    ]
   },
@@ -5562,24 +5741,25 @@
     20,
     179
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Scientific law",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Scientific law",
      "about": "Statement based on repeated empirical observations that describes some natural phenomenon",
-     "p": 0.3
+     "p": 0.29
     },
     {
      "title": "Empirical statistical laws",
      "about": "Statistical behavior found in a wide variety of datasets",
-     "p": 0.23
+     "p": 0.27
     },
     {
      "title": "Hooke's law",
      "about": "Force needed to pull a spring grows linearly with distance",
-     "p": 0.17
+     "p": 0.21
     }
    ]
   },
@@ -5596,6 +5776,7 @@
    "wiki": "Least squares",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Least squares",
@@ -5625,23 +5806,24 @@
     181
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
+    {
+     "title": "Block Truncation Coding",
+     "about": "",
+     "p": 0.18
+    },
     {
      "title": "Lossless compression",
      "about": "Data compression approach allowing perfect reconstruction of the original data",
-     "p": 0.13
+     "p": 0.12
     },
     {
-     "title": "Cold compression therapy",
-     "about": "Therapy to reduce pain and swelling",
-     "p": 0.07
-    },
-    {
-     "title": "Wavelet transform",
-     "about": "Mathematical technique used in data compression and analysis",
-     "p": 0.04
+     "title": "Compressed sensing",
+     "about": "Signal processing technique",
+     "p": 0.05
     }
    ]
   },
@@ -5656,8 +5838,9 @@
     182
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "History of Maxwell's equations",
@@ -5686,24 +5869,25 @@
     21,
     183
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Pipeline (computing)",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Pipeline (computing)",
      "about": "Data processing chain",
-     "p": 0.49
+     "p": 0.5
     },
     {
      "title": "Extract, load, transform",
      "about": "Data-integration process",
-     "p": 0.34
+     "p": 0.35
     },
     {
      "title": "Pipelining",
      "about": "Topics referred to by the same term",
-     "p": 0.11
+     "p": 0.12
     }
    ]
   },
@@ -5720,6 +5904,7 @@
    "wiki": "Nyquist frequency",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Nyquist frequency",
@@ -5751,6 +5936,7 @@
    "wiki": "Generative adversarial network",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Generative adversarial network",
@@ -5782,6 +5968,7 @@
    "wiki": "Combinatorial explosion",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Combinatorial explosion",
@@ -5810,24 +5997,25 @@
     21,
     187
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Covariance matrix",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Correlation",
      "about": "Statistical relationship",
-     "p": 0.11
-    },
-    {
-     "title": "Covariance and correlation",
-     "about": "Concepts in probability and statistics",
-     "p": 0.1
+     "p": 0.12
     },
     {
      "title": "Covariance matrix",
      "about": "Measure of covariance of components of a random vector",
      "p": 0.09
+    },
+    {
+     "title": "Covariance and correlation",
+     "about": "Concepts in probability and statistics",
+     "p": 0.08
     }
    ]
   },
@@ -5844,6 +6032,7 @@
    "wiki": "Simpson's paradox",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Simpson's paradox",
@@ -5875,6 +6064,7 @@
    "wiki": "Box plot",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Box plot",
@@ -5903,24 +6093,25 @@
     22,
     190
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "First principle",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "First principle",
      "about": "Basic proposition or assumption",
-     "p": 0.16
+     "p": 0.18
     },
     {
-     "title": "Permittivity",
-     "about": "Measure of the electric polarizability of a dielectric material",
+     "title": "Solid modeling",
+     "about": "Set of principles for modeling solid geometry",
      "p": 0.06
     },
     {
-     "title": "Neural differential equation",
-     "about": "Equation in machine learning",
-     "p": 0.04
+     "title": "Conceptual model",
+     "about": "Theoretical framework",
+     "p": 0.05
     }
    ]
   },
@@ -5937,6 +6128,7 @@
    "wiki": "Inductive bias",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Inductive bias",
@@ -5968,6 +6160,7 @@
    "wiki": "Field (physics)",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Field (physics)",
@@ -5999,6 +6192,7 @@
    "wiki": "Unit of measurement",
    "match": "jev",
    "p": 0.81,
+   "closest": false,
    "candidates": [
     {
      "title": "Unit of measurement",
@@ -6030,6 +6224,7 @@
    "wiki": "Finite difference",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Finite difference",
@@ -6061,6 +6256,7 @@
    "wiki": "Differential equation",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Differential equation",
@@ -6092,6 +6288,7 @@
    "wiki": "Closed-form expression",
    "match": "jev",
    "p": 0.65,
+   "closest": false,
    "candidates": [
     {
      "title": "Closed-form expression",
@@ -6123,6 +6320,7 @@
    "wiki": "Ordinary differential equation",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Ordinary differential equation",
@@ -6154,6 +6352,7 @@
    "wiki": "Dynamical system",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Dynamical system",
@@ -6185,6 +6384,7 @@
    "wiki": "Conservation law",
    "match": "jev",
    "p": 0.93,
+   "closest": false,
    "candidates": [
     {
      "title": "Conservation law",
@@ -6216,6 +6416,7 @@
    "wiki": "Flux",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Flux",
@@ -6247,6 +6448,7 @@
    "wiki": "Continuity equation",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Continuity equation",
@@ -6278,6 +6480,7 @@
    "wiki": "Divergence",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Divergence",
@@ -6309,6 +6512,7 @@
    "wiki": "Linearization",
    "match": "jev",
    "p": 0.82,
+   "closest": false,
    "candidates": [
     {
      "title": "Linearization",
@@ -6340,6 +6544,7 @@
    "wiki": "Navier–Stokes equations",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Navier–Stokes equations",
@@ -6371,6 +6576,7 @@
    "wiki": "Material derivative",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Material derivative",
@@ -6402,6 +6608,7 @@
    "wiki": "Turbulence",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Turbulence",
@@ -6433,6 +6640,7 @@
    "wiki": "Partial differential equation",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Partial differential equation",
@@ -6461,23 +6669,24 @@
     22,
     208
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Advection",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Advection",
      "about": "Transport of a substance by bulk motion",
-     "p": 0.14
-    },
-    {
-     "title": "First-order partial differential equation",
-     "about": "",
-     "p": 0.06
+     "p": 0.12
     },
     {
      "title": "Continuity equation",
      "about": "Equation describing the transport of some quantity",
+     "p": 0.05
+    },
+    {
+     "title": "First-order partial differential equation",
+     "about": "",
      "p": 0.05
     }
    ]
@@ -6495,6 +6704,7 @@
    "wiki": "Diffusion equation",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Diffusion equation",
@@ -6526,6 +6736,7 @@
    "wiki": "Wave equation",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Wave equation",
@@ -6557,6 +6768,7 @@
    "wiki": "Convection–diffusion equation",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Convection–diffusion equation",
@@ -6588,6 +6800,7 @@
    "wiki": "Reaction–diffusion system",
    "match": "jev",
    "p": 0.63,
+   "closest": false,
    "candidates": [
     {
      "title": "Reaction–diffusion system",
@@ -6619,6 +6832,7 @@
    "wiki": "Pattern formation",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Pattern formation",
@@ -6647,14 +6861,15 @@
     22,
     214
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Harmonic oscillator",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Harmonic oscillator",
      "about": "Physical system that responds to a restoring force proportional to displacement",
-     "p": 0.13
+     "p": 0.15
     },
     {
      "title": "Damping",
@@ -6681,6 +6896,7 @@
    "wiki": "Inverse problem",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Inverse problem",
@@ -6712,6 +6928,7 @@
    "wiki": "Dimensional analysis",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Dimensional analysis",
@@ -6743,6 +6960,7 @@
    "wiki": "Autoregressive model",
    "match": "jev",
    "p": 0.8,
+   "closest": false,
    "candidates": [
     {
      "title": "Autoregressive model",
@@ -6774,6 +6992,7 @@
    "wiki": "Initial value problem",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Initial value problem",
@@ -6803,23 +7022,24 @@
     219
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
-     "title": "Conceptual model",
-     "about": "Theoretical framework",
-     "p": 0.13
-    },
-    {
-     "title": "Complete mixing",
-     "about": "",
+     "title": "Regression analysis",
+     "about": "Set of statistical processes for estimating the relationships among variables",
      "p": 0.11
     },
     {
      "title": "Statistical model",
      "about": "Type of mathematical model",
      "p": 0.1
+    },
+    {
+     "title": "Complete mixing",
+     "about": "",
+     "p": 0.08
     }
    ]
   },
@@ -6836,6 +7056,7 @@
    "wiki": "Recursion",
    "match": "jev",
    "p": 0.85,
+   "closest": false,
    "candidates": [
     {
      "title": "Recursion",
@@ -6867,6 +7088,7 @@
    "wiki": "Recurrence relation",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Recurrence relation",
@@ -6898,6 +7120,7 @@
    "wiki": "Cellular automaton",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Cellular automaton",
@@ -6929,6 +7152,7 @@
    "wiki": "Emergence",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Emergence",
@@ -6960,6 +7184,7 @@
    "wiki": "Discretization",
    "match": "jev",
    "p": 0.79,
+   "closest": false,
    "candidates": [
     {
      "title": "Discretization",
@@ -6991,6 +7216,7 @@
    "wiki": "Euler method",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Euler method",
@@ -7019,9 +7245,10 @@
     23,
     226
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Numerical methods for ordinary differential equations",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Time Step",
@@ -7029,14 +7256,14 @@
      "p": 0.49
     },
     {
-     "title": "Multi-time-step integration",
-     "about": "Numerical time-integration method",
-     "p": 0.08
+     "title": "AIXI",
+     "about": "Mathematical formalism for artificial general intelligence",
+     "p": 0.07
     },
     {
-     "title": "Courant–Friedrichs–Lewy condition",
-     "about": "Mathematical condition for convergence",
-     "p": 0.08
+     "title": "Multi-time-step integration",
+     "about": "Numerical time-integration method",
+     "p": 0.07
     }
    ]
   },
@@ -7053,6 +7280,7 @@
    "wiki": "Lotka–Volterra equations",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Lotka–Volterra equations",
@@ -7081,24 +7309,25 @@
     23,
     228
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Estimation theory",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Point estimation",
      "about": "Parameter estimation via sample statistics",
-     "p": 0.56
+     "p": 0.53
     },
     {
      "title": "Structural estimation",
      "about": "",
-     "p": 0.25
+     "p": 0.21
     },
     {
-     "title": "Maximum likelihood estimation",
-     "about": "Method of estimating the parameters of a statistical model, given observations",
-     "p": 0.21
+     "title": "Estimation theory",
+     "about": "Branch of statistics to estimate models based on measured data",
+     "p": 0.19
     }
    ]
   },
@@ -7115,6 +7344,7 @@
    "wiki": "Pendulum (mechanics)",
    "match": "jev",
    "p": 0.89,
+   "closest": false,
    "candidates": [
     {
      "title": "Pendulum (mechanics)",
@@ -7146,6 +7376,7 @@
    "wiki": "Phase space",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Phase space",
@@ -7177,6 +7408,7 @@
    "wiki": "Truncation error",
    "match": "jev",
    "p": 0.86,
+   "closest": false,
    "candidates": [
     {
      "title": "Truncation error",
@@ -7208,6 +7440,7 @@
    "wiki": "Taylor series",
    "match": "jev",
    "p": 0.9,
+   "closest": false,
    "candidates": [
     {
      "title": "Taylor series",
@@ -7239,6 +7472,7 @@
    "wiki": "Order of accuracy",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Order of accuracy",
@@ -7267,24 +7501,25 @@
     23,
     234
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Mesh generation",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
-    {
-     "title": "Mesh generation",
-     "about": "Subdivision of space into cells",
-     "p": 0.17
-    },
     {
      "title": "Arakawa grids",
      "about": "Method of representing orthogonal quantities",
      "p": 0.15
     },
     {
+     "title": "Mesh generation",
+     "about": "Subdivision of space into cells",
+     "p": 0.14
+    },
+    {
      "title": "Adaptive mesh refinement",
      "about": "Concept in numerical analysis",
-     "p": 0.06
+     "p": 0.07
     }
    ]
   },
@@ -7301,6 +7536,7 @@
    "wiki": "Stencil (numerical analysis)",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Stencil (numerical analysis)",
@@ -7329,24 +7565,25 @@
     23,
     236
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Explicit and implicit methods",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Compact finite difference",
      "about": "",
-     "p": 0.05
+     "p": 0.04
     },
     {
      "title": "Radioss",
      "about": "",
-     "p": 0.02
+     "p": 0.03
     },
     {
      "title": "Futures and promises",
      "about": "Computer science constructs",
-     "p": 0.02
+     "p": 0.03
     }
    ]
   },
@@ -7363,6 +7600,7 @@
    "wiki": "Crank–Nicolson method",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Crank–Nicolson method",
@@ -7394,6 +7632,7 @@
    "wiki": "Numerical stability",
    "match": "jev",
    "p": 0.86,
+   "closest": false,
    "candidates": [
     {
      "title": "Numerical stability",
@@ -7425,6 +7664,7 @@
    "wiki": "Courant–Friedrichs–Lewy condition",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Courant–Friedrichs–Lewy condition",
@@ -7456,6 +7696,7 @@
    "wiki": "Runge–Kutta methods",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Runge–Kutta methods",
@@ -7487,6 +7728,7 @@
    "wiki": "Adaptive step size",
    "match": "jev",
    "p": 0.93,
+   "closest": false,
    "candidates": [
     {
      "title": "Adaptive step size",
@@ -7518,6 +7760,7 @@
    "wiki": "Finite volume method",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Finite volume method",
@@ -7549,6 +7792,7 @@
    "wiki": "Upwind scheme",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Upwind scheme",
@@ -7577,24 +7821,25 @@
     23,
     244
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Strang splitting",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Strang splitting",
      "about": "Numerical method for solving differential equations",
-     "p": 0.47
-    },
-    {
-     "title": "Projection method (fluid dynamics)",
-     "about": "Method for numerically solving time-dependent incompressible fluid-flow problems",
-     "p": 0.11
+     "p": 0.49
     },
     {
      "title": "PISO algorithm",
      "about": "Algorithm in computational fluid dynamics",
-     "p": 0.1
+     "p": 0.09
+    },
+    {
+     "title": "Projection method (fluid dynamics)",
+     "about": "Method for numerically solving time-dependent incompressible fluid-flow problems",
+     "p": 0.09
     }
    ]
   },
@@ -7611,6 +7856,7 @@
    "wiki": "Semi-Lagrangian scheme",
    "match": "jev",
    "p": 0.88,
+   "closest": false,
    "candidates": [
     {
      "title": "Semi-Lagrangian scheme",
@@ -7642,6 +7888,7 @@
    "wiki": "Projection method (fluid dynamics)",
    "match": "jev",
    "p": 0.79,
+   "closest": false,
    "candidates": [
     {
      "title": "Projection method (fluid dynamics)",
@@ -7673,6 +7920,7 @@
    "wiki": "Rayleigh–Bénard convection",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Rayleigh–Bénard convection",
@@ -7704,6 +7952,7 @@
    "wiki": "Model order reduction",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Model order reduction",
@@ -7735,6 +7984,7 @@
    "wiki": "Lorenz system",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Lorenz system",
@@ -7763,24 +8013,25 @@
     23,
     250
    ],
-   "wiki": null,
-   "match": null,
-   "p": null,
+   "wiki": "Strange Attractor",
+   "match": "jev",
+   "p": 0.67,
+   "closest": false,
    "candidates": [
     {
      "title": "Strange Attractor",
      "about": "Topics referred to by the same term",
-     "p": 0.58
+     "p": 0.67
     },
     {
      "title": "Multiscroll attractor",
      "about": "Strange attractor connected by two 2-dimensional rings",
-     "p": 0.24
+     "p": 0.14
     },
     {
      "title": "Thomas' cyclically symmetric attractor",
      "about": "Attractor in dynamical systems theory",
-     "p": 0.17
+     "p": 0.12
     }
    ]
   },
@@ -7794,14 +8045,15 @@
     23,
     251
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Butterfly effect",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Butterfly effect",
      "about": "Idea that small causes can have large effects",
-     "p": 0.51
+     "p": 0.47
     },
     {
      "title": "Chaos theory",
@@ -7825,9 +8077,10 @@
     23,
     252
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Chaos theory",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Chaos",
@@ -7835,14 +8088,14 @@
      "p": 0.38
     },
     {
+     "title": "Chaos chaos",
+     "about": "Topics referred to by the same term",
+     "p": 0.25
+    },
+    {
      "title": "Chaos theory",
      "about": "Field of mathematics and science based on non-linear systems and initial conditions",
      "p": 0.22
-    },
-    {
-     "title": "Chaos chaos",
-     "about": "Topics referred to by the same term",
-     "p": 0.19
     }
    ]
   },
@@ -7859,6 +8112,7 @@
    "wiki": "Complex system",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Complex system",
@@ -7887,24 +8141,25 @@
     24,
     254
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Ensemble learning",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Ensemble learning",
      "about": "Statistics and machine learning technique",
-     "p": 0.2
+     "p": 0.23
     },
     {
      "title": "Ensemble",
      "about": "Topics referred to by the same term",
-     "p": 0.18
+     "p": 0.17
     },
     {
      "title": "Circular ensemble",
      "about": "",
-     "p": 0.05
+     "p": 0.04
     }
    ]
   },
@@ -7921,6 +8176,7 @@
    "wiki": "Probability mass function",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Probability mass function",
@@ -7952,6 +8208,7 @@
    "wiki": "Kernel density estimation",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Kernel density estimation",
@@ -7983,6 +8240,7 @@
    "wiki": "Random variable",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Random variable",
@@ -8014,6 +8272,7 @@
    "wiki": "Expected value",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Expected value",
@@ -8045,6 +8304,7 @@
    "wiki": "Variance",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Variance",
@@ -8076,6 +8336,7 @@
    "wiki": "Joint probability distribution",
    "match": "jev",
    "p": 0.62,
+   "closest": false,
    "candidates": [
     {
      "title": "Joint probability distribution",
@@ -8107,6 +8368,7 @@
    "wiki": "Conditional probability",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Conditional probability",
@@ -8135,9 +8397,10 @@
     24,
     262
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Independence (probability theory)",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Independence",
@@ -8150,9 +8413,9 @@
      "p": 0.03
     },
     {
-     "title": "Independence Day: Resurgence",
-     "about": "2016 film by Roland Emmerich",
-     "p": 0.03
+     "title": "Energy independence",
+     "about": "Freedom from others regarding energy",
+     "p": 0.02
     }
    ]
   },
@@ -8169,6 +8432,7 @@
    "wiki": "Central limit theorem",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Central limit theorem",
@@ -8200,6 +8464,7 @@
    "wiki": "Brownian motion",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Brownian motion",
@@ -8231,6 +8496,7 @@
    "wiki": "Random walk",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Random walk",
@@ -8262,6 +8528,7 @@
    "wiki": "Master equation",
    "match": "jev",
    "p": 0.79,
+   "closest": false,
    "candidates": [
     {
      "title": "Master equation",
@@ -8293,6 +8560,7 @@
    "wiki": "Continuum limit",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Continuum limit",
@@ -8324,6 +8592,7 @@
    "wiki": "Stochastic differential equation",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Stochastic differential equation",
@@ -8355,6 +8624,7 @@
    "wiki": "Coarse-grained modeling",
    "match": "jev",
    "p": 0.68,
+   "closest": false,
    "candidates": [
     {
      "title": "Coarse-grained modeling",
@@ -8384,23 +8654,24 @@
     270
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Network",
      "about": "Topics referred to by the same term",
-     "p": 0.45
-    },
-    {
-     "title": "Wireless network",
-     "about": "Computer network not fully connected by cables",
-     "p": 0.15
+     "p": 0.42
     },
     {
      "title": "Telecommunications network",
      "about": "Network for communications over distance",
-     "p": 0.13
+     "p": 0.1
+    },
+    {
+     "title": "Computer network",
+     "about": "Network that allows computers to share resources and communicate with each other",
+     "p": 0.09
     }
    ]
   },
@@ -8417,6 +8688,7 @@
    "wiki": "FitzHugh–Nagumo model",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "FitzHugh–Nagumo model",
@@ -8445,24 +8717,25 @@
     24,
     272
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Kuramoto model",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
-    {
-     "title": "Kuramoto model",
-     "about": "Exactly solvable model of coupled oscillators",
-     "p": 0.21
-    },
     {
      "title": "Synchronization network",
      "about": "Network of coupled dynamical systems",
-     "p": 0.21
+     "p": 0.22
     },
     {
-     "title": "Oscillatory neural network",
-     "about": "Type of artificial neural network",
-     "p": 0.1
+     "title": "Kuramoto model",
+     "about": "Exactly solvable model of coupled oscillators",
+     "p": 0.19
+    },
+    {
+     "title": "Yoshiki Kuramoto",
+     "about": "Japanese physicist (born 1940)",
+     "p": 0.09
     }
    ]
   },
@@ -8479,6 +8752,7 @@
    "wiki": "Synchronization",
    "match": "jev",
    "p": 0.63,
+   "closest": false,
    "candidates": [
     {
      "title": "Synchronization",
@@ -8510,6 +8784,7 @@
    "wiki": "Stationary process",
    "match": "jev",
    "p": 0.92,
+   "closest": false,
    "candidates": [
     {
      "title": "Stationary process",
@@ -8541,6 +8816,7 @@
    "wiki": "Fourier series",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Fourier series",
@@ -8572,6 +8848,7 @@
    "wiki": "Seasonality",
    "match": "jev",
    "p": 0.82,
+   "closest": false,
    "candidates": [
     {
      "title": "Seasonality",
@@ -8603,6 +8880,7 @@
    "wiki": "Short-time Fourier transform",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Short-time Fourier transform",
@@ -8634,6 +8912,7 @@
    "wiki": "Basis function",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Basis function",
@@ -8665,6 +8944,7 @@
    "wiki": "Separation of variables",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Separation of variables",
@@ -8696,6 +8976,7 @@
    "wiki": "Normal mode",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Normal mode",
@@ -8727,6 +9008,7 @@
    "wiki": "Fermi–Pasta–Ulam–Tsingou problem",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Fermi–Pasta–Ulam–Tsingou problem",
@@ -8758,6 +9040,7 @@
    "wiki": "Autoregressive integrated moving average",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Autoregressive integrated moving average",
@@ -8786,19 +9069,20 @@
     25,
     283
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Nonlinear autoregressive exogenous model",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "STAR model",
      "about": "",
-     "p": 0.26
+     "p": 0.3
     },
     {
      "title": "SETAR (model)",
      "about": "Statistical model for time series data",
-     "p": 0.21
+     "p": 0.2
     },
     {
      "title": "Nonlinear autoregressive exogenous model",
@@ -8820,6 +9104,7 @@
    "wiki": "Logistic map",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Logistic map",
@@ -8851,6 +9136,7 @@
    "wiki": "System identification",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "System identification",
@@ -8882,6 +9168,7 @@
    "wiki": "Numerical differentiation",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Numerical differentiation",
@@ -8910,24 +9197,25 @@
     25,
     287
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Feature engineering",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Feature engineering",
      "about": "Extracting features from raw data for machine learning",
-     "p": 0.07
+     "p": 0.09
+    },
+    {
+     "title": "Feature recognition",
+     "about": "",
+     "p": 0.05
     },
     {
      "title": "Library (computing)",
      "about": "Collection of resources used to develop a computer program",
-     "p": 0.05
-    },
-    {
-     "title": "Library cat",
-     "about": "Domestic cats that live in public libraries",
-     "p": 0.02
+     "p": 0.04
     }
    ]
   },
@@ -8944,6 +9232,7 @@
    "wiki": "Dimensionality reduction",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Dimensionality reduction",
@@ -8975,6 +9264,7 @@
    "wiki": "Curse of dimensionality",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Curse of dimensionality",
@@ -9006,6 +9296,7 @@
    "wiki": "Principal component analysis",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Principal component analysis",
@@ -9034,19 +9325,20 @@
     26,
     291
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Standard score",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Standard score",
      "about": "How many standard deviations apart from the mean an observed datum is",
-     "p": 0.31
+     "p": 0.32
     },
     {
      "title": "Standardization",
      "about": "Implementation of technical standards based on the consensus of different parties",
-     "p": 0.13
+     "p": 0.15
     },
     {
      "title": "National Standardization Agency",
@@ -9065,9 +9357,10 @@
     26,
     292
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Autoencoder",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Autoencoder",
@@ -9099,6 +9392,7 @@
    "wiki": "Lagrange multiplier",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Lagrange multiplier",
@@ -9130,6 +9424,7 @@
    "wiki": "Explained variation",
    "match": "jev",
    "p": 0.72,
+   "closest": false,
    "candidates": [
     {
      "title": "Explained variation",
@@ -9161,6 +9456,7 @@
    "wiki": "Singular value decomposition",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Singular value decomposition",
@@ -9192,6 +9488,7 @@
    "wiki": "Low-rank approximation",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Low-rank approximation",
@@ -9223,6 +9520,7 @@
    "wiki": "Eigenface",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Eigenface",
@@ -9254,6 +9552,7 @@
    "wiki": "Scree plot",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Scree plot",
@@ -9285,6 +9584,7 @@
    "wiki": "Linear dynamical system",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Linear dynamical system",
@@ -9316,6 +9616,7 @@
    "wiki": "Eigendecomposition of a matrix",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Eigendecomposition of a matrix",
@@ -9345,13 +9646,14 @@
     301
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Dynamic substructuring",
      "about": "Modelling technique in mechanical engineering",
-     "p": 0.08
+     "p": 0.09
     },
     {
      "title": "Latent space",
@@ -9378,6 +9680,7 @@
    "wiki": "Linear stability",
    "match": "jev",
    "p": 0.71,
+   "closest": false,
    "candidates": [
     {
      "title": "Linear stability",
@@ -9409,6 +9712,7 @@
    "wiki": "Vortex shedding",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Vortex shedding",
@@ -9437,9 +9741,10 @@
     27,
     304
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Dynamic mode decomposition",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Dynamic mode decomposition",
@@ -9454,7 +9759,7 @@
     {
      "title": "Shared snapshot objects",
      "about": "Data structure in distributed computing",
-     "p": 0.06
+     "p": 0.05
     }
    ]
   },
@@ -9471,6 +9776,7 @@
    "wiki": "Proper orthogonal decomposition",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Proper orthogonal decomposition",
@@ -9502,6 +9808,7 @@
    "wiki": "Moore–Penrose inverse",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Moore–Penrose inverse",
@@ -9533,6 +9840,7 @@
    "wiki": "Dynamic mode decomposition",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Dynamic mode decomposition",
@@ -9561,24 +9869,25 @@
     27,
     308
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Composition operator",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Transfer operator",
      "about": "Operator encoding information about iterated map",
-     "p": 0.3
-    },
-    {
-     "title": "Unilateral shift operator",
-     "about": "Operator on a Hilbert space that shifts basis vectors",
-     "p": 0.21
+     "p": 0.4
     },
     {
      "title": "Composition operator",
      "about": "Linear operator in mathematics",
-     "p": 0.19
+     "p": 0.21
+    },
+    {
+     "title": "Koopman–von Neumann classical mechanics",
+     "about": "Formulation of classical mechanics in terms of Hilbert spaces",
+     "p": 0.1
     }
    ]
   },
@@ -9595,6 +9904,7 @@
    "wiki": "Savitzky–Golay filter",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Savitzky–Golay filter",
@@ -9626,6 +9936,7 @@
    "wiki": "Lasso (statistics)",
    "match": "jev",
    "p": 0.6,
+   "closest": false,
    "candidates": [
     {
      "title": "Lasso (statistics)",
@@ -9654,9 +9965,10 @@
     28,
     311
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Sparse identification of non-linear dynamics",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Spearman's rank correlation coefficient",
@@ -9669,8 +9981,8 @@
      "p": 0.02
     },
     {
-     "title": "D'Hondt method",
-     "about": "Method for allocating seats in parliaments",
+     "title": "Square root algorithms",
+     "about": "Algorithms for calculating square roots",
      "p": 0.02
     }
    ]
@@ -9688,6 +10000,7 @@
    "wiki": "Sparse identification of non-linear dynamics",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Sparse identification of non-linear dynamics",
@@ -9717,13 +10030,14 @@
     313
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Abess",
      "about": "Machine learning algorithm",
-     "p": 0.09
+     "p": 0.07
     },
     {
      "title": "Physics-informed neural networks",
@@ -9731,8 +10045,8 @@
      "p": 0.04
     },
     {
-     "title": "Courant–Friedrichs–Lewy condition",
-     "about": "Mathematical condition for convergence",
+     "title": "Black–Scholes model",
+     "about": "Mathematical model of financial markets",
      "p": 0.02
     }
    ]
@@ -9750,6 +10064,7 @@
    "wiki": "Self-organization",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Self-organization",
@@ -9781,6 +10096,7 @@
    "wiki": "Rule-based system",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Rule-based system",
@@ -9812,6 +10128,7 @@
    "wiki": "Voltage clamp",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Voltage clamp",
@@ -9843,6 +10160,7 @@
    "wiki": "Hodgkin–Huxley model",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Hodgkin–Huxley model",
@@ -9874,6 +10192,7 @@
    "wiki": "Representation learning",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Representation learning",
@@ -9902,9 +10221,10 @@
     29,
     319
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Stochastic gradient descent",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Stochastic gradient descent",
@@ -9917,8 +10237,8 @@
      "p": 0.02
     },
     {
-     "title": "Deep backward stochastic differential equation method",
-     "about": "",
+     "title": "Robotic sensing",
+     "about": "Subarea of robotics",
      "p": 0.02
     }
    ]
@@ -9936,6 +10256,7 @@
    "wiki": "PyTorch",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "PyTorch",
@@ -9964,23 +10285,24 @@
     29,
     321
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Dropout (neural networks)",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Dropout",
      "about": "Topics referred to by the same term",
-     "p": 0.22
+     "p": 0.2
     },
     {
-     "title": "Dropout (communications)",
-     "about": "Momentary loss of signal",
-     "p": 0.03
+     "title": "Dropout (streaming service)",
+     "about": "American subscription streaming service",
+     "p": 0.02
     },
     {
-     "title": "The Dropout",
-     "about": "2022 American drama television miniseries",
+     "title": "Dropout Boogie",
+     "about": "2022 studio album by the Black Keys",
      "p": 0.02
     }
    ]
@@ -9998,6 +10320,7 @@
    "wiki": "Early stopping",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Early stopping",
@@ -10029,6 +10352,7 @@
    "wiki": "Ising model",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Ising model",
@@ -10060,6 +10384,7 @@
    "wiki": "Metropolis–Hastings algorithm",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Metropolis–Hastings algorithm",
@@ -10091,6 +10416,7 @@
    "wiki": "Hopfield network",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Hopfield network",
@@ -10122,6 +10448,7 @@
    "wiki": "Energy-based model",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Energy-based model",
@@ -10153,6 +10480,7 @@
    "wiki": "Content-addressable memory",
    "match": "jev",
    "p": 0.67,
+   "closest": false,
    "candidates": [
     {
      "title": "Content-addressable memory",
@@ -10184,6 +10512,7 @@
    "wiki": "Attention (machine learning)",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Attention (machine learning)",
@@ -10215,6 +10544,7 @@
    "wiki": "Boltzmann machine",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Boltzmann machine",
@@ -10246,6 +10576,7 @@
    "wiki": "Boltzmann distribution",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Boltzmann distribution",
@@ -10274,24 +10605,25 @@
     30,
     331
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Recurrent neural network",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Recurrent neural network",
      "about": "Class of artificial neural network",
-     "p": 0.12
+     "p": 0.11
     },
     {
      "title": "Hidden Markov model",
      "about": "Statistical Markov model",
-     "p": 0.09
+     "p": 0.08
     },
     {
      "title": "Gated recurrent unit",
      "about": "Memory unit used in neural networks",
-     "p": 0.08
+     "p": 0.06
     }
    ]
   },
@@ -10308,6 +10640,7 @@
    "wiki": "State-space representation",
    "match": "jev",
    "p": 0.74,
+   "closest": false,
    "candidates": [
     {
      "title": "State-space representation",
@@ -10339,6 +10672,7 @@
    "wiki": "Backpropagation through time",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Backpropagation through time",
@@ -10370,6 +10704,7 @@
    "wiki": "Vanishing gradient problem",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Vanishing gradient problem",
@@ -10401,6 +10736,7 @@
    "wiki": "Spectral radius",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Spectral radius",
@@ -10432,6 +10768,7 @@
    "wiki": "Long short-term memory",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Long short-term memory",
@@ -10463,6 +10800,7 @@
    "wiki": "Reservoir computing",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Reservoir computing",
@@ -10491,14 +10829,15 @@
     30,
     338
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Echo state network",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Echo state network",
      "about": "Type of reservoir computer",
-     "p": 0.26
+     "p": 0.24
     },
     {
      "title": "Reservoir computing",
@@ -10522,23 +10861,24 @@
     30,
     339
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Reservoir computing",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Reservoir computing",
      "about": "Type of recurrent neural network with random and non-trainable internal structure",
-     "p": 0.3
+     "p": 0.28
     },
     {
      "title": "Echo state network",
      "about": "Type of reservoir computer",
-     "p": 0.16
+     "p": 0.13
     },
     {
-     "title": "Receptron",
-     "about": "Neuromorphic data-processing model",
+     "title": "Liquid marbles",
+     "about": "Non-stick droplets",
      "p": 0.06
     }
    ]
@@ -10556,6 +10896,7 @@
    "wiki": "Kuramoto–Sivashinsky equation",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Kuramoto–Sivashinsky equation",
@@ -10584,9 +10925,10 @@
     30,
     341
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Chaos theory",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Kuramoto–Sivashinsky equation",
@@ -10596,12 +10938,12 @@
     {
      "title": "Coupled map lattice",
      "about": "Dynamical system",
-     "p": 0.07
+     "p": 0.08
     },
     {
      "title": "Chaos theory",
      "about": "Field of mathematics and science based on non-linear systems and initial conditions",
-     "p": 0.05
+     "p": 0.06
     }
    ]
   },
@@ -10618,6 +10960,7 @@
    "wiki": "Lyapunov time",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Lyapunov time",
@@ -10649,6 +10992,7 @@
    "wiki": "Symbolic regression",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Symbolic regression",
@@ -10680,6 +11024,7 @@
    "wiki": "Binary expression tree",
    "match": "jev",
    "p": 0.77,
+   "closest": false,
    "candidates": [
     {
      "title": "Binary expression tree",
@@ -10711,6 +11056,7 @@
    "wiki": "Genetic programming",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Genetic programming",
@@ -10742,6 +11088,7 @@
    "wiki": "Fitness function",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Fitness function",
@@ -10770,14 +11117,15 @@
     31,
     347
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Selection (evolutionary algorithm)",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Selection",
      "about": "Topics referred to by the same term",
-     "p": 0.25
+     "p": 0.26
     },
     {
      "title": "Natural selection",
@@ -10787,7 +11135,7 @@
     {
      "title": "Negative selection",
      "about": "Topics referred to by the same term",
-     "p": 0.11
+     "p": 0.1
     }
    ]
   },
@@ -10801,14 +11149,15 @@
     31,
     348
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Crossover (evolutionary algorithm)",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Crossover",
      "about": "Topics referred to by the same term",
-     "p": 0.45
+     "p": 0.46
     },
     {
      "title": "Crossover value",
@@ -10818,7 +11167,7 @@
     {
      "title": "Crossover voting",
      "about": "Term in United States primary elections",
-     "p": 0.11
+     "p": 0.09
     }
    ]
   },
@@ -10832,14 +11181,15 @@
     31,
     349
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Mutation (evolutionary algorithm)",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Mutation",
      "about": "Alteration in the nucleotide sequence of a genome",
-     "p": 0.21
+     "p": 0.2
     },
     {
      "title": "Point mutation",
@@ -10847,8 +11197,8 @@
      "p": 0.07
     },
     {
-     "title": "Neutral mutation",
-     "about": "Changes to DNA with no overall impact",
+     "title": "Mutationism",
+     "about": "One of several alternatives to evolution by natural selection",
      "p": 0.07
     }
    ]
@@ -10863,19 +11213,20 @@
     31,
     350
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Kepler's laws of planetary motion",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Kepler's laws of planetary motion",
      "about": "Laws describing planetary orbits",
-     "p": 0.32
+     "p": 0.31
     },
     {
      "title": "Third law",
      "about": "Topics referred to by the same term",
-     "p": 0.12
+     "p": 0.1
     },
     {
      "title": "Power law",
@@ -10897,6 +11248,7 @@
    "wiki": "Power law",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Power law",
@@ -10928,6 +11280,7 @@
    "wiki": "Pareto frontier",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Pareto frontier",
@@ -10956,14 +11309,15 @@
     31,
     353
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Symbolic regression",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Symbolic regression",
      "about": "Type of regression analysis",
-     "p": 0.31
+     "p": 0.26
     },
     {
      "title": "Theory of functional connections",
@@ -10982,14 +11336,15 @@
     31,
     354
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Code bloat",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Bloat",
      "about": "Topics referred to by the same term",
-     "p": 0.18
+     "p": 0.16
     },
     {
      "title": "Code bloat",
@@ -10999,7 +11354,7 @@
     {
      "title": "Software bloat",
      "about": "Situation of degraded computer performance",
-     "p": 0.06
+     "p": 0.07
     }
    ]
   },
@@ -11013,9 +11368,10 @@
     32,
     355
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Boundary value problem",
+   "match": "review",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Boundary conditions in fluid dynamics",
@@ -11025,12 +11381,12 @@
     {
      "title": "Mixed boundary condition",
      "about": "Mathematical problem",
-     "p": 0.27
+     "p": 0.26
     },
     {
      "title": "Free boundary condition",
      "about": "",
-     "p": 0.27
+     "p": 0.25
     }
    ]
   },
@@ -11044,14 +11400,15 @@
     32,
     356
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Basis function",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Basis function",
      "about": "Element of a basis for a function space",
-     "p": 0.26
+     "p": 0.25
     },
     {
      "title": "Basis expansion time-frequency analysis",
@@ -11059,8 +11416,8 @@
      "p": 0.11
     },
     {
-     "title": "Pseudo-spectral method",
-     "about": "Class of analytical partial differential equation-solving processes",
+     "title": "Steam engine",
+     "about": "Engine that uses steam to perform mechanical work",
      "p": 0.11
     }
    ]
@@ -11078,6 +11435,7 @@
    "wiki": "Residual (numerical analysis)",
    "match": "jev",
    "p": 0.65,
+   "closest": false,
    "candidates": [
     {
      "title": "Residual (numerical analysis)",
@@ -11109,6 +11467,7 @@
    "wiki": "Collocation method",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Collocation method",
@@ -11140,6 +11499,7 @@
    "wiki": "Physics-informed neural networks",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Physics-informed neural networks",
@@ -11171,6 +11531,7 @@
    "wiki": "Automatic differentiation",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Automatic differentiation",
@@ -11199,14 +11560,15 @@
     32,
     361
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Physics-informed neural networks",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Physics-informed neural networks",
      "about": "Technique to solve partial differential equations",
-     "p": 0.25
+     "p": 0.23
     },
     {
      "title": "Loss functions for classification",
@@ -11214,9 +11576,9 @@
      "p": 0.03
     },
     {
-     "title": "Learning curve (machine learning)",
-     "about": "Plot of machine learning model performance over time or experience",
-     "p": 0.03
+     "title": "Neural field",
+     "about": "Type of artificial neural network",
+     "p": 0.02
     }
    ]
   },
@@ -11233,6 +11595,7 @@
    "wiki": "Meshfree methods",
    "match": "jev",
    "p": 0.88,
+   "closest": false,
    "candidates": [
     {
      "title": "Meshfree methods",
@@ -11261,14 +11624,15 @@
     32,
     363
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Inverse problem",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Forward problem of electrocardiology",
      "about": "",
-     "p": 0.25
+     "p": 0.21
     },
     {
      "title": "Inverse problem",
@@ -11293,8 +11657,9 @@
     364
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Load balancing (computing)",
@@ -11326,6 +11691,7 @@
    "wiki": "Frequency principle/spectral bias",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Frequency principle/spectral bias",
@@ -11354,24 +11720,25 @@
     32,
     366
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Random feature",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Random feature",
      "about": "Machine learning technique",
-     "p": 0.4
+     "p": 0.29
     },
     {
-     "title": "Discrete Fourier transform",
-     "about": "Function in discrete mathematics",
+     "title": "Neural field",
+     "about": "Type of artificial neural network",
+     "p": 0.1
+    },
+    {
+     "title": "Neural radiance field",
+     "about": "3D reconstruction technique",
      "p": 0.07
-    },
-    {
-     "title": "Fourier transform",
-     "about": "Mathematical transform that expresses a function of time as a function of frequency",
-     "p": 0.05
     }
    ]
   },
@@ -11388,6 +11755,7 @@
    "wiki": "Operator (mathematics)",
    "match": "jev",
    "p": 0.89,
+   "closest": false,
    "candidates": [
     {
      "title": "Operator (mathematics)",
@@ -11416,9 +11784,10 @@
     33,
     368
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Neural operators",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Neural operators",
@@ -11426,14 +11795,14 @@
      "p": 0.11
     },
     {
-     "title": "Scale invariance",
-     "about": "Features that do not change if length or energy scales are multiplied by a common factor",
-     "p": 0.07
+     "title": "Invariant (physics)",
+     "about": "Type of observable in a physical system",
+     "p": 0.06
     },
     {
-     "title": "Invariant (mathematics)",
-     "about": "Property that is not changed by mathematical transformations",
-     "p": 0.07
+     "title": "Scale invariance",
+     "about": "Features that do not change if length or energy scales are multiplied by a common factor",
+     "p": 0.05
     }
    ]
   },
@@ -11447,14 +11816,15 @@
     33,
     369
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Neural operators",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Neural operators",
      "about": "Machine learning framework",
-     "p": 0.33
+     "p": 0.31
     },
     {
      "title": "Approximation property",
@@ -11462,8 +11832,8 @@
      "p": 0.11
     },
     {
-     "title": "Physics-informed neural networks",
-     "about": "Technique to solve partial differential equations",
+     "title": "Singular value decomposition",
+     "about": "Matrix decomposition",
      "p": 0.05
     }
    ]
@@ -11481,6 +11851,7 @@
    "wiki": "Neural operators",
    "match": "jev",
    "p": 0.92,
+   "closest": false,
    "candidates": [
     {
      "title": "Neural operators",
@@ -11509,24 +11880,25 @@
     33,
     371
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Neural operators",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Poincaré–Steklov operator",
      "about": "",
-     "p": 0.19
+     "p": 0.16
     },
     {
      "title": "Neural operators",
      "about": "Machine learning framework",
-     "p": 0.11
+     "p": 0.1
     },
     {
      "title": "Fundamental solution",
      "about": "Concept in the solution of linear partial differential equations",
-     "p": 0.1
+     "p": 0.09
     }
    ]
   },
@@ -11540,14 +11912,15 @@
     33,
     372
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Normal mode",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Operational modal analysis",
      "about": "",
-     "p": 0.18
+     "p": 0.2
     },
     {
      "title": "Singular value decomposition",
@@ -11555,9 +11928,9 @@
      "p": 0.14
     },
     {
-     "title": "Dynamic substructuring",
-     "about": "Modelling technique in mechanical engineering",
-     "p": 0.13
+     "title": "Surface metrology",
+     "about": "Measurement of small-scale features on surfaces",
+     "p": 0.14
     }
    ]
   },
@@ -11571,14 +11944,15 @@
     33,
     373
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Neural operators",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Neural operators",
      "about": "Machine learning framework",
-     "p": 0.13
+     "p": 0.12
     },
     {
      "title": "Types of artificial neural networks",
@@ -11600,6 +11974,7 @@
    "wiki": "Green's function",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Green's function",
@@ -11628,19 +12003,20 @@
     33,
     375
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Neural operators",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
-    {
-     "title": "Thermal boundary layer thickness and shape",
-     "about": "Properties of a thermal boundary layer",
-     "p": 0.21
-    },
     {
      "title": "Neural operators",
      "about": "Machine learning framework",
-     "p": 0.18
+     "p": 0.15
+    },
+    {
+     "title": "Volterra series",
+     "about": "Model for approximating non-linear effects, similar to a Taylor series",
+     "p": 0.05
     },
     {
      "title": "Random feature",
@@ -11659,9 +12035,10 @@
     33,
     376
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Neural operators",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Neural operators",
@@ -11669,13 +12046,13 @@
      "p": 0.11
     },
     {
-     "title": "Types of artificial neural networks",
-     "about": "Classification of Artificial Neural Networks (ANNs)",
-     "p": 0.05
-    },
-    {
      "title": "Neural field",
      "about": "Type of artificial neural network",
+     "p": 0.03
+    },
+    {
+     "title": "Types of artificial neural networks",
+     "about": "Classification of Artificial Neural Networks (ANNs)",
      "p": 0.03
     }
    ]
@@ -11693,6 +12070,7 @@
    "wiki": "Self-supervised learning",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Self-supervised learning",
@@ -11721,15 +12099,11 @@
     34,
     378
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Large language model",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
-    {
-     "title": "Transformer (deep learning)",
-     "about": "Algorithm for modelling sequential data",
-     "p": 0.06
-    },
     {
      "title": "Seq2seq",
      "about": "Family of machine learning approaches",
@@ -11738,6 +12112,11 @@
     {
      "title": "Large language model",
      "about": "Type of machine learning model",
+     "p": 0.05
+    },
+    {
+     "title": "Transformer (deep learning)",
+     "about": "Algorithm for modelling sequential data",
      "p": 0.05
     }
    ]
@@ -11752,14 +12131,15 @@
     34,
     379
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Generative pre-trained transformer",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Contrastive Language–Image Pre-training",
      "about": "Technique in neural networks for learning joint representations of text and images",
-     "p": 0.15
+     "p": 0.14
     },
     {
      "title": "Generative pre-trained transformer",
@@ -11767,8 +12147,8 @@
      "p": 0.08
     },
     {
-     "title": "BERT (language model)",
-     "about": "Series of language models developed by Google AI",
+     "title": "ELMo",
+     "about": "Word embedding method",
      "p": 0.07
     }
    ]
@@ -11786,6 +12166,7 @@
    "wiki": "Foundation model",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Foundation model",
@@ -11817,6 +12198,7 @@
    "wiki": "Transformer (deep learning)",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Transformer (deep learning)",
@@ -11848,6 +12230,7 @@
    "wiki": "Neural scaling law",
    "match": "jev",
    "p": 0.94,
+   "closest": false,
    "candidates": [
     {
      "title": "Neural scaling law",
@@ -11879,6 +12262,7 @@
    "wiki": "Fine-tuning (deep learning)",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Fine-tuning (deep learning)",
@@ -11910,6 +12294,7 @@
    "wiki": "Reinforcement learning from human feedback",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Reinforcement learning from human feedback",
@@ -11938,23 +12323,24 @@
     34,
     385
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Prompt engineering",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Prompt engineering",
      "about": "Structuring text as input to generative artificial intelligence",
-     "p": 0.1
+     "p": 0.11
     },
     {
      "title": "Context-based learning",
      "about": "Teaching method",
-     "p": 0.05
+     "p": 0.07
     },
     {
-     "title": "Transformer (deep learning)",
-     "about": "Algorithm for modelling sequential data",
+     "title": "Fine-tuning (deep learning)",
+     "about": "Machine learning technique",
      "p": 0.04
     }
    ]
@@ -11970,23 +12356,24 @@
     386
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
-     "title": "Organization",
-     "about": "Social entity established to meet needs or pursue goals",
-     "p": 0.04
+     "title": "Leadership",
+     "about": "Quality of an individual or group influencing or guiding others",
+     "p": 0.06
+    },
+    {
+     "title": "Tactical nuclear weapon",
+     "about": "Nuclear weapon designed for use on a battlefield",
+     "p": 0.05
     },
     {
      "title": "Emerging technologies",
      "about": "Technology still to be fully developed",
-     "p": 0.03
-    },
-    {
-     "title": "AI alignment",
-     "about": "Conformance of AI to intended objectives",
-     "p": 0.02
+     "p": 0.04
     }
    ]
   },
@@ -12003,6 +12390,7 @@
    "wiki": "Protein structure prediction",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Protein structure prediction",
@@ -12031,24 +12419,25 @@
     34,
     388
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Large language model",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Large language model",
      "about": "Type of machine learning model",
-     "p": 0.05
+     "p": 0.06
     },
     {
      "title": "AlphaFold",
      "about": "Artificial intelligence program by DeepMind",
-     "p": 0.05
+     "p": 0.06
     },
     {
-     "title": "Macromolecular docking",
-     "about": "Computational modeling of molecular interaction",
-     "p": 0.04
+     "title": "Protein subcellular localization prediction",
+     "about": "Prediction of where a protein resides in a cell",
+     "p": 0.03
     }
    ]
   },
@@ -12062,14 +12451,15 @@
     34,
     389
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Weather forecasting",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Weather forecasting",
      "about": "Application of science and technology",
-     "p": 0.09
+     "p": 0.1
     },
     {
      "title": "Tomorrow.io",
@@ -12077,8 +12467,8 @@
      "p": 0.04
     },
     {
-     "title": "European Centre for Medium-Range Weather Forecasts",
-     "about": "European intergovernmental weather computation organisation based in the UK",
+     "title": "The Weather Company",
+     "about": "Weather forecasting and information technology company",
      "p": 0.03
     }
    ]
@@ -12096,6 +12486,7 @@
    "wiki": "Genetic algorithm",
    "match": "jev",
    "p": 0.66,
+   "closest": false,
    "candidates": [
     {
      "title": "Genetic algorithm",
@@ -12127,6 +12518,7 @@
    "wiki": "AI agent",
    "match": "jev",
    "p": 0.93,
+   "closest": false,
    "candidates": [
     {
      "title": "AI agent",
@@ -12155,9 +12547,10 @@
     34,
     392
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "AI agent",
+   "match": "override",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Tool",
@@ -12172,7 +12565,7 @@
     {
      "title": "Tool use in primates",
      "about": "",
-     "p": 0.04
+     "p": 0.05
     }
    ]
   },
@@ -12186,9 +12579,10 @@
     34,
     393
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Agent harness",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "OODA loop",
@@ -12198,7 +12592,7 @@
     {
      "title": "Event loop",
      "about": "Software loop that processes events",
-     "p": 0.04
+     "p": 0.05
     },
     {
      "title": "Feedback",
@@ -12217,24 +12611,25 @@
     34,
     394
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "AI-assisted software development",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "OpenHands",
      "about": "Open-source artificial intelligence coding agent",
-     "p": 0.49
+     "p": 0.52
     },
     {
      "title": "OpenCode",
      "about": "Artificial intelligence coding agent",
-     "p": 0.37
+     "p": 0.3
     },
     {
-     "title": "OpenAI Codex (AI agent)",
-     "about": "Software engineering agent developed by OpenAI",
-     "p": 0.3
+     "title": "Codex CLI",
+     "about": "Open-source AI coding agent by OpenAI",
+     "p": 0.29
     }
    ]
   },
@@ -12251,6 +12646,7 @@
    "wiki": "Prompt engineering",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Prompt engineering",
@@ -12279,19 +12675,20 @@
     34,
     396
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Intelligent agent",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Intelligent agent",
      "about": "Software agent which acts autonomously",
-     "p": 0.28
+     "p": 0.22
     },
     {
      "title": "Software agent",
      "about": "Computer program acting for a user",
-     "p": 0.14
+     "p": 0.16
     },
     {
      "title": "Rational agent",
@@ -12311,8 +12708,9 @@
     397
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Artificial intelligence",
@@ -12320,13 +12718,13 @@
      "p": 0.04
     },
     {
-     "title": "Exploration",
-     "about": "Investigating an unfamiliar area",
-     "p": 0.04
+     "title": "Agentic commerce",
+     "about": "Form of automated electronic commerce involving AI",
+     "p": 0.03
     },
     {
-     "title": "Jian Ma (computational biologist)",
-     "about": "American computer scientist",
+     "title": "Robotics",
+     "about": "Design, construction, use, and application of robots",
      "p": 0.03
     }
    ]
@@ -12344,6 +12742,7 @@
    "wiki": "Multi-agent system",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Multi-agent system",
@@ -12375,6 +12774,7 @@
    "wiki": "Scientific method",
    "match": "jev",
    "p": 0.99,
+   "closest": false,
    "candidates": [
     {
      "title": "Scientific method",
@@ -12406,6 +12806,7 @@
    "wiki": "Hallucination (artificial intelligence)",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Hallucination (artificial intelligence)",
@@ -12437,6 +12838,7 @@
    "wiki": "Mechanistic interpretability",
    "match": "jev",
    "p": 0.96,
+   "closest": false,
    "candidates": [
     {
      "title": "Mechanistic interpretability",
@@ -12468,6 +12870,7 @@
    "wiki": "Reward hacking",
    "match": "jev",
    "p": 0.95,
+   "closest": false,
    "candidates": [
     {
      "title": "Reward hacking",
@@ -12497,22 +12900,23 @@
     403
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Aesthetic taste",
      "about": "Personal and cultural pattern of choice and preference",
-     "p": 0.19
+     "p": 0.17
+    },
+    {
+     "title": "Distinction (book)",
+     "about": "1979 book by Pierre Bourdieu",
+     "p": 0.06
     },
     {
      "title": "Acquired taste",
      "about": "Appreciation of something initially unpleasant",
-     "p": 0.07
-    },
-    {
-     "title": "Ageusia",
-     "about": "Total loss of the sense of taste",
      "p": 0.04
     }
    ]
@@ -12527,14 +12931,15 @@
     35,
     404
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Professional responsibility",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Professional responsibility",
      "about": "Set of duties within professional ethics",
-     "p": 0.46
+     "p": 0.43
     },
     {
      "title": "Social responsibility",
@@ -12542,9 +12947,9 @@
      "p": 0.1
     },
     {
-     "title": "Iron Ring",
-     "about": "Ring worn by Canadian engineers",
-     "p": 0.07
+     "title": "Diffusion of responsibility",
+     "about": "Sociopsychological phenomenon",
+     "p": 0.08
     }
    ]
   },
@@ -12558,9 +12963,10 @@
     35,
     405
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Ethics of artificial intelligence",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Ethics of artificial intelligence",
@@ -12570,7 +12976,7 @@
     {
      "title": "Existential risk from artificial intelligence",
      "about": "Hypothesized risk to human existence",
-     "p": 0.06
+     "p": 0.07
     },
     {
      "title": "Recursive self-improvement",
@@ -12590,21 +12996,22 @@
     406
    ],
    "wiki": null,
-   "match": null,
+   "match": "review-none",
    "p": null,
+   "closest": false,
    "candidates": [
     {
      "title": "Normal distribution",
      "about": "Probability distribution",
-     "p": 0.07
-    },
-    {
-     "title": "Beta distribution",
-     "about": "Probability distribution",
-     "p": 0.06
+     "p": 0.08
     },
     {
      "title": "Binomial distribution",
+     "about": "Probability distribution",
+     "p": 0.05
+    },
+    {
+     "title": "Beta distribution",
      "about": "Probability distribution",
      "p": 0.05
     }
@@ -12623,6 +13030,7 @@
    "wiki": "AI safety",
    "match": "jev",
    "p": 0.93,
+   "closest": false,
    "candidates": [
     {
      "title": "AI safety",
@@ -12651,24 +13059,25 @@
     35,
     408
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Usability testing",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Usability testing",
      "about": "Technique in user-centered interaction design",
-     "p": 0.43
+     "p": 0.49
+    },
+    {
+     "title": "Human-centered design",
+     "about": "Approach to design that considers human needs at every step of development",
+     "p": 0.16
     },
     {
      "title": "User-centered design",
      "about": "Framework of processes with focus on users, uses, and tasks",
      "p": 0.16
-    },
-    {
-     "title": "Human-centered design",
-     "about": "Approach to design that considers human needs at every step of development",
-     "p": 0.15
     }
    ]
   },
@@ -12685,6 +13094,7 @@
    "wiki": "Applied ethics",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Applied ethics",
@@ -12716,6 +13126,7 @@
    "wiki": "Normative ethics",
    "match": "jev",
    "p": 0.98,
+   "closest": false,
    "candidates": [
     {
      "title": "Normative ethics",
@@ -12747,6 +13158,7 @@
    "wiki": "Metaethics",
    "match": "jev",
    "p": 0.97,
+   "closest": false,
    "candidates": [
     {
      "title": "Metaethics",
@@ -12778,6 +13190,7 @@
    "wiki": "Epistemic humility",
    "match": "jev",
    "p": 0.86,
+   "closest": false,
    "candidates": [
     {
      "title": "Epistemic humility",
@@ -12809,6 +13222,7 @@
    "wiki": "Action bias",
    "match": "jev",
    "p": 0.76,
+   "closest": false,
    "candidates": [
     {
      "title": "Action bias",
@@ -12837,14 +13251,15 @@
     35,
     414
    ],
-   "wiki": null,
-   "match": null,
+   "wiki": "Problem finding",
+   "match": "review-closest",
    "p": null,
+   "closest": true,
    "candidates": [
     {
      "title": "Problem finding",
      "about": "Problem discovery",
-     "p": 0.39
+     "p": 0.35
     },
     {
      "title": "Clinical formulation",
@@ -12852,9 +13267,9 @@
      "p": 0.08
     },
     {
-     "title": "Transportation theory (mathematics)",
-     "about": "Study of optimal transportation and allocation of resources",
-     "p": 0.05
+     "title": "Approximate string matching",
+     "about": "Finding strings that approximately match a pattern",
+     "p": 0.07
     }
    ]
   }
@@ -12875,6 +13290,9 @@
   "Inductive reasoning": [
    "induction"
   ],
+  "Falsifiability": [
+   "falsification"
+  ],
   "Function approximation": [
    "function-approximation"
   ],
@@ -12893,6 +13311,9 @@
   "Variable (high-level programming language)": [
    "variable"
   ],
+  "Assignment (computer science)": [
+   "assignment"
+  ],
   "Data type": [
    "data-type"
   ],
@@ -12905,17 +13326,19 @@
   "Loop (statement)": [
    "loop"
   ],
+  "Debugging": [
+   "execution-trace",
+   "debugging"
+  ],
   "Function (mathematics)": [
    "function"
-  ],
-  "Debugging": [
-   "debugging"
   ],
   "Symbolic artificial intelligence": [
    "symbolic-ai"
   ],
   "Machine learning": [
-   "machine-learning"
+   "machine-learning",
+   "modeling-learning-inference"
   ],
   "Moore's law": [
    "moores-law"
@@ -12933,6 +13356,12 @@
   "Graph (discrete mathematics)": [
    "graph"
   ],
+  "Digital data": [
+   "data-representation"
+  ],
+  "Table (format)": [
+   "tabular-data"
+  ],
   "Time series": [
    "time-series"
   ],
@@ -12945,6 +13374,9 @@
   "Fourier transform": [
    "fourier-transform"
   ],
+  "Digital image": [
+   "image-representation"
+  ],
   "Channel (digital image)": [
    "color-channel"
   ],
@@ -12956,6 +13388,12 @@
   ],
   "Adjacency matrix": [
    "adjacency-matrix"
+  ],
+  "Statistical classification": [
+   "classification"
+  ],
+  "Regression analysis": [
+   "regression"
   ],
   "Structured prediction": [
    "structured-prediction"
@@ -13098,7 +13536,8 @@
    "lms-rule"
   ],
   "Stochastic gradient descent": [
-   "sgd"
+   "sgd",
+   "adam-optimizer"
   ],
   "Centering matrix": [
    "centering"
@@ -13113,7 +13552,8 @@
    "gaussian-noise"
   ],
   "Likelihood function": [
-   "likelihood"
+   "likelihood",
+   "negative-log-likelihood"
   ],
   "Maximum likelihood estimation": [
    "maximum-likelihood"
@@ -13174,17 +13614,30 @@
   "Decision boundary": [
    "decision-boundary"
   ],
+  "Margin classifier": [
+   "margin"
+  ],
   "Confusion matrix": [
    "confusion-matrix"
   ],
   "Precision and recall": [
    "precision-and-recall"
   ],
+  "Evaluation of binary classifiers": [
+   "accuracy"
+  ],
   "F-score": [
    "f1-score"
   ],
+  "Accuracy paradox": [
+   "class-imbalance"
+  ],
+  "Receiver operating characteristic": [
+   "classification-threshold"
+  ],
   "Multiclass classification": [
-   "multiclass-classification"
+   "multiclass-classification",
+   "one-vs-all"
   ],
   "Softmax function": [
    "softmax"
@@ -13284,10 +13737,12 @@
    "convolution"
   ],
   "Autoencoder": [
-   "autoencoder"
+   "autoencoder",
+   "reconstruction-error"
   ],
   "Recurrent neural network": [
-   "recurrent-network"
+   "recurrent-network",
+   "hidden-state"
   ],
   "Automatic differentiation": [
    "computation-graph",
@@ -13299,8 +13754,20 @@
   "Nonlinear system": [
    "nonlinearity"
   ],
+  "Computer simulation": [
+   "numerical-simulation"
+  ],
+  "Scientific modelling": [
+   "scientific-modeling-cycle"
+  ],
+  "Scientific law": [
+   "empirical-law"
+  ],
   "Least squares": [
    "least-squares"
+  ],
+  "Pipeline (computing)": [
+   "data-pipeline"
   ],
   "Nyquist frequency": [
    "nyquist-frequency"
@@ -13311,11 +13778,17 @@
   "Combinatorial explosion": [
    "combinatorial-explosion"
   ],
+  "Covariance matrix": [
+   "correlation-matrix"
+  ],
   "Simpson's paradox": [
    "simpsons-paradox"
   ],
   "Box plot": [
    "box-plot"
+  ],
+  "First principle": [
+   "first-principles-model"
   ],
   "Inductive bias": [
    "inductive-bias"
@@ -13368,6 +13841,9 @@
   "Partial differential equation": [
    "partial-differential-equation"
   ],
+  "Advection": [
+   "advection-equation"
+  ],
   "Diffusion equation": [
    "diffusion-equation"
   ],
@@ -13383,8 +13859,12 @@
   "Pattern formation": [
    "pattern-formation"
   ],
+  "Harmonic oscillator": [
+   "damped-oscillator"
+  ],
   "Inverse problem": [
-   "inverse-problem"
+   "inverse-problem",
+   "forward-problem"
   ],
   "Dimensional analysis": [
    "dimensional-analysis"
@@ -13413,8 +13893,14 @@
   "Euler method": [
    "euler-method"
   ],
+  "Numerical methods for ordinary differential equations": [
+   "time-step"
+  ],
   "Lotka–Volterra equations": [
    "lotka-volterra-model"
+  ],
+  "Estimation theory": [
+   "parameter-estimation"
   ],
   "Pendulum (mechanics)": [
    "pendulum"
@@ -13431,8 +13917,14 @@
   "Order of accuracy": [
    "order-of-accuracy"
   ],
+  "Mesh generation": [
+   "computational-grid"
+  ],
   "Stencil (numerical analysis)": [
    "stencil"
+  ],
+  "Explicit and implicit methods": [
+   "explicit-vs-implicit-scheme"
   ],
   "Crank–Nicolson method": [
    "crank-nicolson"
@@ -13455,6 +13947,9 @@
   "Upwind scheme": [
    "upwind-scheme"
   ],
+  "Strang splitting": [
+   "operator-splitting"
+  ],
   "Semi-Lagrangian scheme": [
    "semi-lagrangian-advection"
   ],
@@ -13470,8 +13965,21 @@
   "Lorenz system": [
    "lorenz-system"
   ],
+  "Strange Attractor": [
+   "strange-attractor"
+  ],
+  "Butterfly effect": [
+   "sensitivity-to-initial-conditions"
+  ],
+  "Chaos theory": [
+   "chaos",
+   "spatiotemporal-chaos"
+  ],
   "Complex system": [
    "complex-system"
+  ],
+  "Ensemble learning": [
+   "ensemble"
   ],
   "Probability mass function": [
    "probability-mass-function"
@@ -13493,6 +14001,9 @@
   ],
   "Conditional probability": [
    "conditional-probability"
+  ],
+  "Independence (probability theory)": [
+   "independence"
   ],
   "Central limit theorem": [
    "central-limit-theorem"
@@ -13518,6 +14029,9 @@
   "FitzHugh–Nagumo model": [
    "fitzhugh-nagumo-model"
   ],
+  "Kuramoto model": [
+   "coupled-oscillators"
+  ],
   "Synchronization": [
    "synchronization"
   ],
@@ -13534,19 +14048,24 @@
    "short-time-fourier-transform"
   ],
   "Basis function": [
-   "basis-function"
+   "basis-function",
+   "basis-expansion"
   ],
   "Separation of variables": [
    "separation-of-variables"
   ],
   "Normal mode": [
-   "normal-mode"
+   "normal-mode",
+   "modal-decomposition"
   ],
   "Fermi–Pasta–Ulam–Tsingou problem": [
    "fermi-pasta-ulam-tsingou-problem"
   ],
   "Autoregressive integrated moving average": [
    "arima"
+  ],
+  "Nonlinear autoregressive exogenous model": [
+   "nonlinear-autoregressive-model"
   ],
   "Logistic map": [
    "logistic-map"
@@ -13557,6 +14076,9 @@
   "Numerical differentiation": [
    "numerical-differentiation"
   ],
+  "Feature engineering": [
+   "feature-library"
+  ],
   "Dimensionality reduction": [
    "dimensionality-reduction"
   ],
@@ -13565,6 +14087,9 @@
   ],
   "Principal component analysis": [
    "principal-component-analysis"
+  ],
+  "Standard score": [
+   "standardization"
   ],
   "Lagrange multiplier": [
    "lagrange-multiplier"
@@ -13596,19 +14121,24 @@
   "Vortex shedding": [
    "vortex-shedding"
   ],
+  "Dynamic mode decomposition": [
+   "snapshot-matrix",
+   "dynamic-mode-decomposition"
+  ],
   "Proper orthogonal decomposition": [
    "proper-orthogonal-decomposition"
   ],
   "Moore–Penrose inverse": [
    "pseudo-inverse"
   ],
-  "Dynamic mode decomposition": [
-   "dynamic-mode-decomposition"
+  "Composition operator": [
+   "koopman-operator"
   ],
   "Savitzky–Golay filter": [
    "savitzky-golay-filter"
   ],
   "Sparse identification of non-linear dynamics": [
+   "sequential-thresholded-least-squares",
    "sindy"
   ],
   "Self-organization": [
@@ -13628,6 +14158,9 @@
   ],
   "PyTorch": [
    "pytorch"
+  ],
+  "Dropout (neural networks)": [
+   "dropout"
   ],
   "Early stopping": [
    "early-stopping"
@@ -13672,7 +14205,11 @@
    "lstm"
   ],
   "Reservoir computing": [
-   "reservoir-computing"
+   "reservoir-computing",
+   "physical-reservoir-computing"
+  ],
+  "Echo state network": [
+   "echo-state-property"
   ],
   "Kuramoto–Sivashinsky equation": [
    "kuramoto-sivashinsky-equation"
@@ -13681,7 +14218,8 @@
    "lyapunov-time"
   ],
   "Symbolic regression": [
-   "symbolic-regression"
+   "symbolic-regression",
+   "pysr"
   ],
   "Binary expression tree": [
    "expression-tree"
@@ -13692,11 +14230,29 @@
   "Fitness function": [
    "fitness-function"
   ],
+  "Selection (evolutionary algorithm)": [
+   "selection"
+  ],
+  "Crossover (evolutionary algorithm)": [
+   "crossover"
+  ],
+  "Mutation (evolutionary algorithm)": [
+   "mutation"
+  ],
+  "Kepler's laws of planetary motion": [
+   "keplers-third-law"
+  ],
   "Power law": [
    "power-law"
   ],
   "Pareto frontier": [
    "pareto-front"
+  ],
+  "Code bloat": [
+   "bloat"
+  ],
+  "Boundary value problem": [
+   "boundary-condition"
   ],
   "Residual (numerical analysis)": [
    "pde-residual"
@@ -13705,7 +14261,8 @@
    "collocation-method"
   ],
   "Physics-informed neural networks": [
-   "physics-informed-neural-network"
+   "physics-informed-neural-network",
+   "physics-informed-loss"
   ],
   "Meshfree methods": [
    "mesh-free-method"
@@ -13713,17 +14270,33 @@
   "Frequency principle/spectral bias": [
    "spectral-bias"
   ],
+  "Random feature": [
+   "fourier-features"
+  ],
   "Operator (mathematics)": [
    "operator"
   ],
   "Neural operators": [
-   "neural-operator"
+   "discretization-invariance",
+   "operator-universal-approximation",
+   "neural-operator",
+   "solution-operator",
+   "deeponet",
+   "integral-kernel-layer",
+   "fourier-neural-operator"
   ],
   "Green's function": [
    "greens-function"
   ],
   "Self-supervised learning": [
    "self-supervised-learning"
+  ],
+  "Large language model": [
+   "next-token-prediction",
+   "protein-language-model"
+  ],
+  "Generative pre-trained transformer": [
+   "pretraining"
   ],
   "Foundation model": [
    "foundation-model"
@@ -13737,17 +14310,31 @@
   "Reinforcement learning from human feedback": [
    "rlhf"
   ],
+  "Prompt engineering": [
+   "in-context-learning",
+   "prompt-engineering"
+  ],
   "Protein structure prediction": [
    "protein-structure-prediction"
+  ],
+  "Weather forecasting": [
+   "ai-weather-forecasting"
   ],
   "Genetic algorithm": [
    "evolutionary-search"
   ],
   "AI agent": [
-   "ai-agent"
+   "ai-agent",
+   "tool-use"
   ],
-  "Prompt engineering": [
-   "prompt-engineering"
+  "Agent harness": [
+   "react-loop"
+  ],
+  "AI-assisted software development": [
+   "coding-agent"
+  ],
+  "Intelligent agent": [
+   "science-agent"
   ],
   "Multi-agent system": [
    "multi-agent-system"
@@ -13764,8 +14351,17 @@
   "Reward hacking": [
    "reward-hacking"
   ],
+  "Professional responsibility": [
+   "engineering-responsibility"
+  ],
+  "Ethics of artificial intelligence": [
+   "ai-unpredictability"
+  ],
   "AI safety": [
    "ai-safety"
+  ],
+  "Usability testing": [
+   "human-centered-testing"
   ],
   "Applied ethics": [
    "applied-ethics"
@@ -13781,6 +14377,9 @@
   ],
   "Action bias": [
    "bias-to-action"
+  ],
+  "Problem finding": [
+   "problem-formulation"
   ]
  },
  "decks": {},

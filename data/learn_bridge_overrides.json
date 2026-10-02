@@ -29,5 +29,17 @@
  "loss-landscape": null,
  "hypothesis-choice": null,
  "feature-map": null,
- "event-model": null
+ "event-model": null,
+ "representation": null,
+ "selection": "Selection (evolutionary algorithm)",
+ "crossover": "Crossover (evolutionary algorithm)",
+ "mutation": "Mutation (evolutionary algorithm)",
+ "classification": "Statistical classification",
+ "accuracy": "Evaluation of binary classifiers",
+ "ensemble": "Ensemble learning",
+ "independence": "Independence (probability theory)",
+ "margin": "Margin classifier",
+ "sequential-thresholded-least-squares": "Sparse identification of non-linear dynamics",
+ "reconstruction-error": "Autoencoder",
+ "tool-use": "AI agent"
 }

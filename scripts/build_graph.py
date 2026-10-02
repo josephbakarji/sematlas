@@ -94,7 +94,7 @@ def main():
             "id": f"c:{key}", "type": "concept", "key": key,
             "name": c.get("name") or short(b.get("wiki")) or key.replace("-", " ").capitalize(),
             "definition": c.get("definition"),
-            "wiki": b.get("wiki"),
+            "wiki": b.get("wiki"), "wiki_closest": bool(b.get("closest")),
             "lesson": {"title": c.get("title") or c.get("name"),
                        "url": b.get("url") or absolute(c.get("url")),
                        "deck": c.get("deck"), "deck_title": b.get("deck_title")},
