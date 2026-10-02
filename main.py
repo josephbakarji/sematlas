@@ -502,7 +502,7 @@ async def learn_graph():
     and story decks. Built by scripts/build_graph.py; see its docstring.
     """
     from pathlib import Path
-    p = Path(__file__).parent / "data" / "graph.json"
+    p = Path(os.getenv("SEMATLAS_GRAPH", Path(__file__).parent / "data" / "graph.json"))
     if not p.exists():
         return jsonify({"nodes": [], "edges": []})
     resp = Response(p.read_text(), content_type="application/json")

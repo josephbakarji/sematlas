@@ -128,3 +128,12 @@ body.planning .t-node.beyond:not(.reach) { opacity: 0.2; }
 .beyond-list li.empty { color: var(--ink-dim); font-size: 12.5px; cursor: default; }
 .beyond-list a.b-score { color: var(--accent); text-decoration: none; }
 #planBtn { border-color: var(--accent) !important; color: var(--ink) !important; }
+
+.t-link.preview { stroke: var(--accent); stroke-opacity: 0.45; stroke-dasharray: 1 4; stroke-width: 1.6; }
+.lab-legend .dot-key { width: 18px; height: 0; border-top: 2px dotted var(--accent); border-radius: 0; }
+.card-def { font-family: var(--serif); }
+.upto { display: block; font-size: 13px; color: var(--ink-dim); margin: 0 0 10px; }
+.upto select {
+  display: block; width: 100%; margin-top: 4px; padding: 6px; border-radius: 8px;
+  background: var(--panel); color: var(--ink); border: 1px solid var(--rule);
+}

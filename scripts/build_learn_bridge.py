@@ -77,8 +77,8 @@ async def match(session, jev, sem, key, c, usage):
         ps = await jev_rank(
             session, jev, f"Which Wikipedia article is the concept '{term}'?",
             items, "candidates", INSTRUCTIONS, CRITERIA, usage,
-            extra={"concept": {"name": term, "slide_title": c.get("title"),
-                               "lesson": c.get("lecture")}})
+            extra={"concept": {"name": c.get("name") or term, "definition": c.get("definition"),
+                               "slide_title": c.get("title"), "lesson": c.get("lecture")}})
     ranked = sorted(zip(ps, items), key=lambda x: -x[0])
     top = [{"title": it["title"], "about": it["about"], "p": round(p, 3)} for p, it in ranked[:3]]
     best = top[0] if top and top[0]["p"] >= MATCH else None
@@ -109,6 +109,17 @@ async def main():
         async with session.get(f"{LEARN}/static/data/concepts.json") as r:
             course = await r.json(content_type=None)
         concepts = dict(course["concepts"])
+        # the published concept graph carries a name and one-line definition per
+        # concept, which make Jev's matching sharper; use them when they exist
+        try:
+            async with session.get(f"{LEARN}/static/data/concept_graph.json") as r:
+                if r.status == 200:
+                    graph = await r.json(content_type=None)
+                    for k, g in (graph.get("concepts") or {}).items():
+                        concepts[k] = {**g, **concepts.get(k, {}),
+                                       "name": g.get("name"), "definition": g.get("definition")}
+        except Exception as e:
+            print(f"concept_graph.json not available ({e}); matching without definitions")
         index = await load_decks(session)
         decks = (index or {}).get("decks", [])
         moves = (index or {}).get("moves", {})

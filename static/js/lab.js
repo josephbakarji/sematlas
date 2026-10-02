@@ -78,6 +78,16 @@ function rectCollide(padding = 5) {
 }
 
 const deckColor = (i) => { const h = HUES[isDark() ? "dark" : "light"]; return h[i % h.length]; };
+const COURSES = { intro_ml: "Introduction to Machine Learning", ml4science: "Machine Learning for Science",
+                  other: "Other lessons" };
+// a concept's colour: its deck's hue when there are few decks; with many, its
+// course's hue, lighter early in the course and darker late
+function nodeColor(n) {
+  if (!S.many) return deckColor(n.row);
+  const base = d3.hsl(deckColor(S.courses.indexOf(n.course)));
+  base.l = (isDark() ? 0.68 : 0.62) - 0.3 * n.progress;
+  return base.formatHex();
+}
 
 // ------------------------------------------------------------------ data
 
@@ -112,12 +122,21 @@ async function load() {
   };
   concepts.forEach((n) => dfs(n.id));
   const deckOrder = g.course_order.filter((d) => concepts.some((n) => n.lesson.deck === d));
-  S.decks = deckOrder.map((d) => ({ id: d, title: (g.deck_titles || {})[d] || d }));
+  S.decks = deckOrder.map((d) => ({ id: d, title: (g.deck_titles || {})[d] || d,
+    course: concepts.find((n) => n.lesson.deck === d).course }));
+  // with many decks (both courses tagged), rows are courses, not decks
+  S.many = S.decks.length > 10;
+  S.courses = [...new Set(S.decks.map((d) => d.course))];
+  const inCourse = (n) => S.decks.filter((d) => d.course === n.course);
+  concepts.forEach((n) => {
+    const ds = inCourse(n);
+    n.progress = ds.length > 1 ? ds.findIndex((d) => d.id === n.lesson.deck) / (ds.length - 1) : 0;
+  });
   concepts.forEach((n) => {
     n.depth = depth.get(n.id);
     n.row = deckOrder.indexOf(n.lesson.deck);
     n.tx = n.depth * COL;
-    n.ty = n.row * ROW;
+    n.ty = S.many ? S.courses.indexOf(n.course) * 900 + (n.progress - 0.5) * 520 : n.row * ROW;
   });
   S.concepts = concepts;
   S.beyond = g.nodes.filter((n) => n.type === "beyond");
@@ -126,7 +145,8 @@ async function load() {
   S.beyond.forEach((b) => { b.near = near[b.id] || []; });
 
   const c = (t) => g.edges.filter((e) => e.type === t).length;
-  $("stats").textContent = `${concepts.length} concepts in ${S.decks.length} parts of the course · ` +
+  $("stats").textContent = `${concepts.length} concepts in ${S.decks.length} decks` +
+    (S.many ? ` across ${S.courses.length} courses · ` : " · ") +
     `${c("prereq")} prerequisite links (arrows) · ${c("wiki")} Wikipedia links · ` +
     `${S.beyond.length} articles just beyond · built ${g.built}`;
   $("method").textContent = `Prerequisites come from the course's slide tags; articles beyond ` +
@@ -160,7 +180,7 @@ function build(nBeyond) {
   byId = new Map(nodes.map((n) => [n.id, n]));
   links = S.graph.edges
     .filter((e) => byId.has(e.source) && byId.has(e.target) &&
-      (e.type === "prereq" || e.type === "wiki" || e.type === "beyond"))
+      (e.type === "prereq" || e.type === "wiki" || e.type === "beyond" || e.type === "preview"))
     .map((e) => ({ ...e }));
   draw();
   sim.nodes(nodes);
@@ -220,7 +240,7 @@ function restyle() {
     .style("font-size", (d) => (d.type === "concept" ? 15 : 12) + "px")
     .style("fill", (d) => {
       if (d.type !== "concept") return css("--ink-dim");
-      return d3.lab(deckColor(d.row)).l > 60 ? "#12151b" : "#f4f6f9";
+      return d3.lab(nodeColor(d)).l > 60 ? "#12151b" : "#f4f6f9";
     });
   g.each(function (d) {
     const b = d3.select(this).select("text").node().getBBox();
@@ -229,7 +249,7 @@ function restyle() {
   g.select("rect")
     .attr("x", (d) => -d.w / 2).attr("y", (d) => -d.h / 2)
     .attr("width", (d) => d.w).attr("height", (d) => d.h)
-    .style("fill", (d) => (d.type === "concept" ? deckColor(d.row) : css("--bg")))
+    .style("fill", (d) => (d.type === "concept" ? nodeColor(d) : css("--bg")))
     .style("stroke", (d) => (d.type === "concept" ? null : css("--ink-dim")));
 }
 
@@ -299,6 +319,14 @@ function zoomTo(d) {
 }
 
 function legend() {
+  if (S.many) {
+    $("legend").innerHTML = S.courses.map((c, i) =>
+      `<span><i style="background:linear-gradient(90deg, ${nodeColor({ course: c, progress: 0 })}, ` +
+      `${nodeColor({ course: c, progress: 1 })})"></i>${esc(COURSES[c] || c)} (lighter = earlier)</span>`).join("") +
+      `<span><i class="arrow-key"></i>needed first</span><span><i class="dot-key"></i>glimpsed earlier</span>` +
+      `<span><i class="dash"></i>beyond the course</span>`;
+    return;
+  }
   $("legend").innerHTML = S.decks.map((d, i) =>
     `<span data-deck="${esc(d.id)}" title="${S.plan ? "Mark this part as known" : ""}">` +
     `<i style="background:${deckColor(i)}"></i>${esc(d.title)}</span>`).join("") +
@@ -339,6 +367,9 @@ function showCard(d) {
       <p class="card-about">${esc(d.lesson.title)}</p>
       <p>${ps.length ? `Needs ${ps.map(link).join(", ")}.` : "Needs nothing earlier in the course."}
          ${ls.length ? `Leads to ${ls.map(link).join(", ")}.` : ""}</p>
+      ${d.definition ? `<p class="card-def">${esc(d.definition)}</p>` : ""}
+      ${(d.previewed_in || []).length ? `<p class="card-about">First glimpsed in ${esc(d.previewed_in.join(", "))},
+        before it is taught.</p>` : ""}
       <div class="card-actions">
         <a class="primary" href="${esc(d.lesson.url)}" target="_blank" rel="noopener">Open the lesson</a>
         <a href="/q?concept=${encodeURIComponent(d.key)}" target="_blank" rel="noopener">Where it comes from, on the map</a>
@@ -403,7 +434,29 @@ function toggleKnown(d) {
   saveKnown();
 }
 
+function renderUpTo() {
+  const sel = $("upTo");
+  if (!sel || sel.options.length > 1) return;
+  S.decks.forEach((d, i) => {
+    const o = document.createElement("option");
+    o.value = i;
+    o.textContent = (S.many ? (COURSES[d.course] || d.course).split(" ").slice(-2).join(" ") + ": " : "") + d.title;
+    sel.appendChild(o);
+  });
+  sel.addEventListener("change", () => {
+    const upto = +sel.value;
+    if (Number.isNaN(upto)) return;
+    const target = S.decks[upto];
+    // everything taught in that course up to and including that deck
+    S.decks.slice(0, upto + 1).filter((d) => !S.many || d.course === target.course).forEach((d) =>
+      S.concepts.filter((n) => n.lesson.deck === d.id).forEach((n) => S.known.add(n.id)));
+    sel.value = "";
+    saveKnown();
+  });
+}
+
 function renderPlan() {
+  renderUpTo();
   const ready = S.concepts.filter((n) => status(n) === "ready")
     .sort((a, b) => a.depth - b.depth || a.row - b.row);
   $("planStats").textContent = `${S.known.size} of ${S.concepts.length} concepts known · ` +
