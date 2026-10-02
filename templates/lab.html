@@ -42,6 +42,7 @@
 
 <svg id="map" role="img" aria-label="The concepts taught in both courses and their prerequisites"></svg>
 <ul class="legend" id="legend"></ul>
+<button class="legend-tab" id="legendTab" type="button" hidden>Lectures</button>
 
 <aside id="panel" class="card" aria-live="polite"></aside>
 
@@ -75,9 +76,8 @@
   <p class="note-small" id="method"></p>
 </aside>
 
-<p class="hint" id="hint">Zoomed out, the best-connected concepts carry the labels; zoom in to see
-  every one. Hover a concept to trace it back to its basics (gold) and forward to what it
-  unlocks (teal); click to pin it.</p>
+<p class="hint" id="hint">Scroll to zoom, drag to pan. Hover a concept to trace it back to its
+  basics (gold) and forward to what it unlocks (teal); click to pin it.</p>
 
 <script src="{{ url_for('static', filename='js/lab.js') }}"></script>
 </body>

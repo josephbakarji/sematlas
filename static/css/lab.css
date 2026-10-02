@@ -5,13 +5,13 @@
  */
 :root {
   --bg: #fbfaf7; --panel: #ffffff; --ink: #1d1f23; --ink-dim: #5f6570; --rule: #e4e1da;
-  --link: #c9c4ba; --learn: #0f9b83; --accent: #b7791f; --back: #c2410c;
+  --link: #b9b3a6; --learn: #0f9b83; --accent: #b7791f; --back: #c2410c;
   --serif: "Source Serif 4", Georgia, serif; --sans: Inter, -apple-system, "Segoe UI", sans-serif;
   color-scheme: light;
 }
 html[data-theme="dark"] {
   --bg: #0d1117; --panel: #141a23; --ink: #e2e6ec; --ink-dim: #8e99a8; --rule: #253041;
-  --link: #2c3647; --learn: #4fd8bd; --accent: #e0ab52; --back: #f0835a;
+  --link: #3e4b60; --learn: #4fd8bd; --accent: #e0ab52; --back: #f0835a;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -59,18 +59,19 @@ input[type=search] {
 /* ---------------------------------------------------------------- map */
 svg#map { display: block; width: 100vw; height: 100vh; cursor: grab; }
 .hull { stroke-width: 1.5; stroke-linejoin: round; pointer-events: none; }
-.edge { fill: none; stroke: var(--link); stroke-width: 1; }
-.edge.back { stroke: var(--back); stroke-width: 1.6; }
-.edge.up { stroke: var(--accent); stroke-width: 2.2; }
-.edge.down { stroke: var(--learn); stroke-width: 2.2; }
-.edge.preview { stroke: var(--accent); stroke-dasharray: 1 4; stroke-width: 1.4; }
+.edge, .qedge, .bedge, .hull, .ring { vector-effect: non-scaling-stroke; }
+.edge { fill: none; stroke: var(--link); stroke-width: 1.1; marker-end: url(#m-link); }
+.edge.back { stroke: var(--back); stroke-width: 1.6; marker-end: url(#m-back); }
+.edge.up { stroke: var(--accent); stroke-width: 2.4; marker-end: url(#m-up); }
+.edge.down { stroke: var(--learn); stroke-width: 2.4; marker-end: url(#m-down); }
+.edge.preview { stroke: var(--accent); stroke-dasharray: 1 4; stroke-width: 1.4; marker-end: none; }
 .qedge { fill: none; stroke: var(--accent); stroke-dasharray: 3 4; stroke-width: 1.2; }
 .bedge { fill: none; stroke: var(--ink-dim); stroke-opacity: 0.35; stroke-dasharray: 2 4; stroke-width: 1; }
 .node { cursor: pointer; }
+.node .lbl, .q .lbl { transform: scale(var(--s, 1)); }
 .node rect { stroke-width: 1.3; }
 .node text { font: 500 12px var(--sans); fill: var(--ink); pointer-events: none; dominant-baseline: central; }
 .node.big text { font-weight: 600; font-size: 13px; }
-.node.dot text { display: none; }
 .node.pin rect, .node:hover rect { stroke-width: 2.4; }
 .node.beyond rect { fill: var(--bg); stroke: var(--ink-dim); stroke-dasharray: 3 3; }
 .node.beyond text { fill: var(--ink-dim); font-style: italic; }
@@ -78,6 +79,9 @@ svg#map { display: block; width: 100vw; height: 100vh; cursor: grab; }
 .q rect { fill: var(--accent); }
 .q text { font: italic 600 13.5px var(--serif); fill: var(--bg); dominant-baseline: central; pointer-events: none; }
 .faded { opacity: 0.1; }
+/* hover: everything off the lit chain steps back; one class per element on the chain */
+.focusing .node:not(.lit), .focusing .q:not(.lit) { opacity: 0.16; }
+.focusing .edge:not(.lit), .focusing .bedge:not(.lit), .focusing .qedge:not(.lit) { opacity: 0.06; }
 .ring { fill: none; stroke: var(--ink-dim); stroke-opacity: 0.3; stroke-dasharray: 2 5; }
 .axis text { font: 600 13px var(--sans); fill: var(--ink-dim); }
 
@@ -101,6 +105,13 @@ body.planning .node.beyond.reach rect { stroke: var(--learn); stroke-dasharray: 
 .legend .n { color: var(--ink-dim); margin-left: auto; font-variant-numeric: tabular-nums; }
 .legend .cap { font-size: 11px; color: var(--ink-dim); text-transform: uppercase; letter-spacing: 0.08em; padding: 6px 4px 4px; cursor: default; }
 .legend .cap:hover { background: none; }
+.legend li.head { position: sticky; top: -10px; background: var(--panel); cursor: default; font-weight: 600; font-size: 12.5px; padding: 2px 4px 6px; }
+.legend li.head:hover { background: var(--panel); }
+.legend li.head .x { position: static; margin-left: auto; font-size: 18px; line-height: 1; padding: 0 2px; }
+.legend-tab {
+  position: absolute; left: 20px; bottom: 18px; z-index: 2; font: 500 12.5px var(--sans); cursor: pointer;
+  background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px; padding: 6px 12px;
+}
 .hint {
   position: absolute; right: 20px; bottom: 18px; z-index: 2; margin: 0; max-width: 380px;
   font-size: 12px; color: var(--ink-dim); text-align: right;

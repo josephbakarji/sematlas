@@ -5,9 +5,11 @@
  * layouts are computed once, offline (scripts/bake_lab_layout.py opens this
  * page with ?bake=1 and saves window.__layout to data/lab_layout.json), so the
  * page never runs a simulation; it draws stored positions and glides between
- * three layouts. Concepts are pills tinted by course; zoomed out, only the
- * best-connected keep their labels, the rest become dots. Hover traces a
- * concept back to its basics (gold) and forward to what it unlocks (teal).
+ * three layouts. Concepts are pills tinted by course, every one labelled.
+ * Zooming out, labels grow on screen up to GROW times their size, then shrink
+ * with the map; layouts are spaced for the largest size, so no two labels
+ * overlap at any zoom. Zooming writes one CSS variable, nothing per node. Hover traces a concept back to its basics (gold) and
+ * forward to what it unlocks (teal), by toggling one class on the lit chain.
  *
  * SemAtlas adds three layers on the same data (/learn/graph.json): the
  * Wikipedia articles just beyond the courses, a "plan my path" mode, and links
@@ -94,8 +96,9 @@
   const tint = (c) => d3.interpolateRgb(css("--bg"), c)(isDark() ? 0.24 : 0.16);
   const node = nodeG.selectAll("g").data(N.concat(B)).join("g")
     .attr("class", (d) => "node" + (d.beyond ? " beyond" : d.deg >= 6 ? " big" : ""));
-  node.append("rect");
-  node.append("text").attr("text-anchor", "middle").text((d) => d.name);
+  const lbl = node.append("g").attr("class", "lbl");
+  lbl.append("rect");
+  lbl.append("text").attr("text-anchor", "middle").text((d) => d.name);
   node.each(function (d) {
     d.w = this.querySelector("text").getComputedTextLength() + 18;
     d.h = d.beyond ? 20 : d.deg >= 6 ? 26 : 22;
@@ -105,10 +108,11 @@
   paint();
   const qn = qG.selectAll("g").data(Q).join("g").attr("class", "q")
     .on("click", (e, d) => open(d.url, "_blank", "noopener"));
-  qn.append("rect");
-  qn.append("text").attr("text-anchor", "middle").text((d) => "★  " + d.question);
-  qn.each(function (d) { d.w = this.querySelector("text").getComputedTextLength() + 26; d.h = 30; })
-    .select("rect").attr("x", (d) => -d.w / 2).attr("y", (d) => -d.h / 2)
+  const qlbl = qn.append("g").attr("class", "lbl");   // story decks scale with the labels too
+  qlbl.append("rect");
+  qlbl.append("text").attr("text-anchor", "middle").text((d) => "★  " + d.question);
+  qn.each(function (d) { d.w = this.querySelector("text").getComputedTextLength() + 26; d.h = 30; });
+  qlbl.select("rect").attr("x", (d) => -d.w / 2).attr("y", (d) => -d.h / 2)
     .attr("width", (d) => d.w).attr("height", (d) => d.h).attr("rx", 8);
 
   // ---------------------------------------------------------------- layouts (baked offline)
@@ -134,9 +138,41 @@
     force.initialize = (ns) => { nodes = ns; };
     return force;
   }
-  const SPAN = Math.sqrt(N.length) * 120;
+  const GROW = 1.9, SPAN = Math.sqrt(N.length) * 160, GAP = 10;
+  const COLW = Math.round(GROW * d3.quantile(N.map((d) => d.w).sort(d3.ascending), 0.9) + 60);
+  const overlaps = (ns) => {
+    let c = 0;
+    const qt = d3.quadtree(ns, (d) => d.x, (d) => d.y), mw = d3.max(ns, (d) => d.w), mh = d3.max(ns, (d) => d.h);
+    for (const a of ns) qt.visit((q, x0, y0, x1, y1) => {
+      const b = q.data;
+      if (b && a.id < b.id && Math.abs(a.x - b.x) < (a.w + b.w) / 2 + 2 && Math.abs(a.y - b.y) < (a.h + b.h) / 2 + 2) c++;
+      return x0 > a.x + (a.w + mw) / 2 || x1 < a.x - (a.w + mw) / 2 || y0 > a.y + (a.h + mh) / 2 || y1 < a.y - (a.h + mh) / 2;
+    });
+    return c;
+  };
   const mean = (xs) => xs.reduce((s, x) => s + x, 0) / Math.max(1, xs.length);
+  // depth rings: each band's area is sized to hold its labels at their largest
+  const ringOf = (d) => d.beyond
+    ? (d.role === "basis" ? Math.max(0, d3.min(d.near, (k) => byId.get(k)._depth) - 0.5)
+                          : d3.max(d.near, (k) => byId.get(k)._depth) + 0.6)
+    : d._depth;
+  const RING = (() => {
+    const need = [];
+    N.concat(B).forEach((d) => { const j = Math.max(0, Math.round(ringOf(d))); need[j] = (need[j] || 0) + (GROW * d.w + GAP) * (GROW * d.h + GAP); });
+    let r = 120; const mid = [];
+    for (let j = 0; j < need.length; j++) {
+      const r2 = Math.sqrt(r * r + 1.6 * (need[j] || 0) / Math.PI);
+      mid.push(Math.sqrt((r * r + r2 * r2) / 2)); r = Math.max(r2, r + 60);
+    }
+    const at = (x) => { const i = Math.floor(x), f = x - i; return i + 1 >= mid.length ? mid[mid.length - 1] : mid[i] + (mid[i + 1] - mid[i]) * f; };
+    return { mid, at, outer: r };
+  })();
+  // layouts are made for labels at their largest, GROW times their size
   function compute(mode) {
+    ALL.forEach((d) => { d.w0 = d.w; d.h0 = d.h; d.w *= GROW; d.h *= GROW; });
+    try { return layoutFor(mode); } finally { ALL.forEach((d) => { d.w = d.w0; d.h = d.h0; }); }
+  }
+  function layoutFor(mode) {
     if (mode === "web") {   // first the lectures, as a graph weighted by the links between them
       const w = {};
       E.forEach((e) => { const a = e.source.deck, b = e.target.deck; if (a !== b) { const k = a < b ? a + "|" + b : b + "|" + a; w[k] = (w[k] || 0) + 1; } });
@@ -144,42 +180,46 @@
         x: (d.course === "intro_ml" ? -1 : 1) * SPAN * 0.4 + (Math.random() - 0.5) * 50, y: (Math.random() - 0.5) * SPAN * 0.4 }));
       const dm = new Map(DN.map((d) => [d.id, d]));
       const DL = Object.entries(w).map(([k, v]) => ({ source: dm.get(k.split("|")[0]), target: dm.get(k.split("|")[1]), w: v }));
-      d3.forceSimulation(DN).stop().force("link", d3.forceLink(DL).distance((d) => 420 / Math.sqrt(d.w)).strength((d) => Math.min(1, d.w / 12)))
-        .force("charge", d3.forceManyBody().strength((d) => -1800 - 260 * d.n)).force("collide", d3.forceCollide((d) => 60 + 22 * Math.sqrt(d.n)))
+      d3.forceSimulation(DN).stop().force("link", d3.forceLink(DL).distance((d) => 760 / Math.sqrt(d.w)).strength((d) => Math.min(1, d.w / 12)))
+        .force("charge", d3.forceManyBody().strength((d) => -4000 - 600 * d.n)).force("collide", d3.forceCollide((d) => 120 + 46 * Math.sqrt(d.n)))
         .force("x", d3.forceX(0).strength(0.06)).force("y", d3.forceY(0).strength(0.08)).tick(600);
       const centre = (d) => d.q ? { x: 0, y: -SPAN * 0.6 } : d.beyond
         ? { x: mean(d.near.map((k) => dm.get(byId.get(k).deck).x)), y: mean(d.near.map((k) => dm.get(byId.get(k).deck).y)) }
         : dm.get(d.deck);
-      ALL.forEach((d) => { const c = centre(d); d.x = c.x + (Math.random() - 0.5) * 80; d.y = c.y + (Math.random() - 0.5) * 80; });
+      ALL.forEach((d) => { const c = centre(d); d.x = c.x + (Math.random() - 0.5) * 160; d.y = c.y + (Math.random() - 0.5) * 160; });
       d3.forceSimulation(ALL).stop()
-        .force("link", d3.forceLink(E.concat(QE, BE)).distance((l) => l.source.beyond ? 80 : 60).strength((l) => l.source.beyond ? 0.08 : 0.02))
-        .force("charge", d3.forceManyBody().strength(-40).distanceMax(400))
-        .force("x", d3.forceX((d) => centre(d).x).strength((d) => d.beyond ? 0.04 : 0.12))
-        .force("y", d3.forceY((d) => centre(d).y).strength((d) => d.beyond ? 0.04 : 0.12))
-        .force("collide", rectCollide(6, false)).tick(500);
+        .force("link", d3.forceLink(E.concat(QE, BE)).distance((l) => l.source.beyond ? 160 : 130).strength((l) => l.source.beyond ? 0.06 : 0.015))
+        .force("charge", d3.forceManyBody().strength(-110).distanceMax(700))
+        .force("x", d3.forceX((d) => centre(d).x).strength((d) => d.beyond ? 0.03 : 0.07))
+        .force("y", d3.forceY((d) => centre(d).y).strength((d) => d.beyond ? 0.03 : 0.07))
+        .force("collide", rectCollide(GAP, false)).tick(600);
     } else if (mode === "time") {   // a column per lecture, in course order
-      const x = d3.scalePoint().domain(decks.map((d) => d.id)).range([0, decks.length * 230]);
+      const x = d3.scalePoint().domain(decks.map((d) => d.id)).range([0, decks.length * COLW]);
       const tx = (d) => d.q ? x.range()[1] / 2 : d.beyond ? mean(d.near.map((k) => x(byId.get(k).deck))) + 60 : x(d.deck);
-      ALL.forEach((d) => { d.x = tx(d); d.y = (Math.random() - 0.5) * 300; });
+      ALL.forEach((d) => { d.x = tx(d); d.y = (Math.random() - 0.5) * 600; });
       d3.forceSimulation(ALL).stop().force("link", d3.forceLink(E.concat(QE)).strength(0.01))
         .force("x", d3.forceX(tx).strength((d) => d.beyond ? 0.6 : 1.5)).force("y", d3.forceY((d) => d.q ? -420 : 0).strength(0.04))
-        .force("collide", rectCollide(4, true)).tick(400);
+        .force("collide", rectCollide(GAP, true)).tick(500);
     } else {   // rings of prerequisite depth, each lecture in its own sector
-      const maxD = d3.max(N, (d) => d._depth), R = SPAN * 0.9;
       const ang = d3.scaleLinear().domain([0, decks.length]).range([0, 2 * Math.PI]);
-      const ringOf = (d) => d.beyond
-        ? (d.role === "basis" ? Math.max(0, d3.min(d.near, (k) => byId.get(k)._depth) - 0.5)
-                              : d3.max(d.near, (k) => byId.get(k)._depth) + 0.6)
-        : d._depth;
-      const rr = (d) => d.q ? R * 1.12 : 80 + (R - 80) * ringOf(d) / (maxD + 0.6);
+      const rr = (d) => d.q ? RING.outer + 160 : RING.at(ringOf(d));
       const angle = (d) => d.q ? -Math.PI / 2 : d.beyond ? mean(d.near.map((k) => ang(di[byId.get(k).deck] + 0.5))) : ang(di[d.deck] + 0.5);
       ALL.forEach((d) => { const a = angle(d); d.x = Math.cos(a) * rr(d); d.y = Math.sin(a) * rr(d); });
-      d3.forceSimulation(ALL).stop().force("r", d3.forceRadial(rr, 0, 0).strength(0.8)).force("collide", rectCollide(5, false)).tick(400);
+      d3.forceSimulation(ALL).stop().force("r", d3.forceRadial(rr, 0, 0).strength(0.35)).force("collide", rectCollide(GAP, false)).tick(500);
     }
+    // then only the collision, until no two labels touch at the layout's own scale
+    const sep = rectCollide(GAP, false); sep.initialize(ALL);
+    for (let i = 0; i < 400 && overlaps(ALL) > 0; i++) sep();
     return Object.fromEntries(ALL.map((d) => [d.id, [Math.round(d.x), Math.round(d.y)]]));
   }
   if (BAKE) {
-    window.__layout = { built: new Date().toISOString(), web: compute("web"), time: compute("time"), depth: compute("depth") };
+    const out = { built: new Date().toISOString() }, left = {};
+    for (const m of ["web", "time", "depth"]) {
+      out[m] = compute(m);
+      ALL.forEach((d) => { d.w *= GROW; d.h *= GROW; }); left[m] = overlaps(ALL); ALL.forEach((d) => { d.w /= GROW; d.h /= GROW; });
+    }
+    out.overlaps = left;
+    window.__layout = out;
     return;
   }
   if (!L || !L.web || N.some((d) => !L.web[d.id])) {   // nothing baked for this graph yet
@@ -187,72 +227,57 @@
   }
 
   // ---------------------------------------------------------------- geometry
-  let mode = "web", k = 1, pinned = null, hovered = null, lit = new Set(), hullDeck = null;
-  let showBeyond = false, planning = false;
+  let mode = "web", pinned = null, lit = new Set(), hullDeck = null;
+  let showBeyond = false, planning = false, moving = false;
   const off = new Set();
   const KNOWN = "sa-known";
   let known = new Set();
   try { known = new Set(JSON.parse(localStorage.getItem(KNOWN) || "[]").map(keyOf)); } catch (e) {}
 
   const edge = edgeG.selectAll("path").data(E.concat(PE)).join("path")
-    .attr("class", (e) => "edge" + (e.preview ? " preview" : e.back ? " back" : ""))
-    .attr("marker-end", (e) => e.preview ? null : `url(#m-${e.back ? "back" : "link"})`);
+    .attr("class", (e) => "edge" + (e.preview ? " preview" : e.back ? " back" : ""));
   const qedge = qeG.selectAll("path").data(QE).join("path").attr("class", "qedge");
   const bedge = beG.selectAll("path").data(BE).join("path").attr("class", "bedge");
   const visible = (d) => !d.beyond || showBeyond;
-  const box = (d) => d.dot ? [12 / k, 12 / k] : [d.w * (d.s || 1), d.h * (d.s || 1)];
+  let S = 1;   // the labels' scale: 1 zoomed in, up to GROW zoomed out
+  const box = (d) => [d.w * S, d.h * S];
   const edgeOf = (t, dx, dy) => {
     const [w, h] = box(t), s = Math.min((w / 2 + 3) / Math.abs(dx || 1e-9), (h / 2 + 3) / Math.abs(dy || 1e-9));
     return [t.x - dx * s, t.y - dy * s];
   };
   const arc = (e) => {
-    const s = e.source, t = e.target, dx = t.x - s.x, dy = t.y - s.y, [tx, ty] = edgeOf(t, dx, dy), b = mode === "time" ? 0.2 : 0.1;
+    const s = e.source, t = e.target, dx = t.x - s.x, dy = t.y - s.y, [tx, ty] = edgeOf(t, dx, dy), b = mode === "time" ? 0.2 : 0.08;
     return `M${s.x},${s.y}Q${(s.x + tx) / 2 - dy * b},${(s.y + ty) / 2 + dx * b} ${tx},${ty}`;
   };
-  function shape() {
-    node.select("rect")
-      .attr("x", (d) => -box(d)[0] / 2 / (d.s || 1)).attr("y", (d) => -box(d)[1] / 2 / (d.s || 1))
-      .attr("width", (d) => box(d)[0] / (d.s || 1)).attr("height", (d) => box(d)[1] / (d.s || 1))
-      .attr("rx", (d) => box(d)[1] / 2 / (d.s || 1));
-  }
+  lbl.select("rect").attr("x", (d) => -d.w / 2).attr("y", (d) => -d.h / 2)
+    .attr("width", (d) => d.w).attr("height", (d) => d.h).attr("rx", (d) => d.h / 2);
   function draw() {
-    node.attr("transform", (d) => `translate(${d.x},${d.y}) scale(${d.s || 1})`);
-    qn.attr("transform", (d) => `translate(${d.x},${d.y}) scale(${Math.max(1, 1 / k)})`);
+    node.attr("transform", (d) => `translate(${d.x},${d.y})`);
+    qn.attr("transform", (d) => `translate(${d.x},${d.y})`);
     edge.attr("d", arc);
     qedge.attr("d", (e) => `M${e.source.x},${e.source.y}L${e.target.x},${e.target.y}`);
     if (showBeyond) bedge.attr("d", (e) => `M${e.source.x},${e.source.y}L${e.target.x},${e.target.y}`);
     hulls();
   }
-  // semantic zoom: far away, only the best-connected keep their labels, at map size
+  // the beyond layer is shown or hidden as a whole; nothing else is ever hidden
   function lod() {
-    node.style("display", (d) => visible(d) ? null : "none");
+    node.filter((d) => d.beyond).style("display", showBeyond ? null : "none");
     beG.style("display", showBeyond ? null : "none");
-    if (k >= 1.05) ALL.forEach((d) => { d.dot = false; d.s = 1; });
-    else {
-      const placed = [], pad = 4;
-      const must = (d) => d === pinned || d === hovered, first = (d) => must(d) ? 2 : lit.has(d) ? 1 : 0;
-      N.concat(showBeyond ? B : []).sort((a, b) => first(b) - first(a) || a.rank - b.rank).forEach((d) => {
-        const w = d.w + pad * 2, h = d.h + pad * 2, x = d.x * k, y = d.y * k;
-        const free = !placed.some((p) => Math.abs(p.x - x) < (p.w + w) / 2 && Math.abs(p.y - y) < (p.h + h) / 2);
-        d.dot = !(free || must(d));
-        d.s = d.dot ? 1 : 1 / k;
-        if (!d.dot) placed.push({ x, y, w, h });
-      });
-    }
-    node.classed("dot", (d) => d.dot);
-    node.filter((d) => !d.dot).raise();
-    shape(); draw();
+    draw();
   }
-  const zoom = d3.zoom().scaleExtent([0.06, 3]).on("zoom", (e) => {
-    root.attr("transform", e.transform);
-    if (Math.abs(e.transform.k - k) > 0.03) { k = e.transform.k; lod(); }
-  });
+  const zoom = d3.zoom().scaleExtent([0.06, 4])
+    .on("zoom", (e) => {
+      root.attr("transform", e.transform);
+      const s = Math.min(GROW, Math.max(1, 0.9 / e.transform.k));
+      if (Math.abs(s - S) > 0.01) { S = s; svg.style("--s", S); }
+    })
+    .on("end", () => { hullCache.clear(); hullShown = undefined; draw(); });   // edge ends follow the label size
   svg.call(zoom).on("dblclick.zoom", null);
   const fit = (dur = 700) => {
     const pts = ALL.filter(visible).map((d) => L[mode][d.id]).filter(Boolean);
     const x0 = d3.min(pts, (p) => p[0]) - 80, x1 = d3.max(pts, (p) => p[0]) + 80;
     const y0 = d3.min(pts, (p) => p[1]) - 60, y1 = d3.max(pts, (p) => p[1]) + 60;
-    const s = Math.min(1.2, 0.95 * Math.min(W / (x1 - x0), (H - 120) / (y1 - y0)));
+    const s = Math.min(1.2, 0.97 * Math.min(W / (x1 - x0), (H - 90) / (y1 - y0)));
     svg.transition().duration(dur).call(zoom.transform,
       d3.zoomIdentity.translate(W / 2 - s * (x0 + x1) / 2, (H + 30) / 2 - s * (y0 + y1) / 2).scale(s));
   };
@@ -260,12 +285,12 @@
     mode = m;
     d3.selectAll(".seg button").classed("on", function () { return this.dataset.l === m; });
     ALL.forEach((d) => { d.x0 = d.x; d.y0 = d.y; [d.x1, d.y1] = L[m][d.id] || [d.x || 0, d.y || 0]; });
-    axes();
+    axes(); hullCache.clear();
     if (!dur) { ALL.forEach((d) => { d.x = d.x1; d.y = d.y1; }); draw(); fit(0); return; }
     const t = d3.timer((el) => {
       const u = Math.min(1, el / dur), e = d3.easeCubicInOut(u);
       ALL.forEach((d) => { d.x = d.x0 + (d.x1 - d.x0) * e; d.y = d.y0 + (d.y1 - d.y0) * e; });
-      draw();
+      moving = u < 1; hullCache.clear(); draw();
       if (u >= 1) t.stop();
     });
     fit(dur);
@@ -273,7 +298,7 @@
   function axes() {
     axisG.selectAll("*").remove();
     if (mode === "time") {
-      const x = d3.scalePoint().domain(decks.map((d) => d.id)).range([0, decks.length * 230]);
+      const x = d3.scalePoint().domain(decks.map((d) => d.id)).range([0, decks.length * COLW]);
       decks.forEach((d) => {
         const ys = N.filter((n) => n.deck === d.id).map((n) => (L.time[n.id] || [0, 0])[1]);
         axisG.append("text").attr("x", x(d.id)).attr("y", (d3.max(ys) || 0) + 48).attr("text-anchor", "middle")
@@ -281,9 +306,9 @@
       });
     }
     if (mode === "depth") {
-      const maxD = d3.max(N, (d) => d._depth), R = SPAN * 0.9;
+      const maxD = d3.max(N, (d) => d._depth);
       d3.range(0, maxD + 1).forEach((j) => {
-        const r = 80 + (R - 80) * j / (maxD + 0.6);
+        const r = RING.mid[j];
         axisG.append("circle").attr("class", "ring").attr("r", r);
         axisG.append("text").attr("x", 6).attr("y", -r - 6).text(j === 0 ? "starting points" : `${j} step${j > 1 ? "s" : ""} in`);
       });
@@ -291,16 +316,23 @@
   }
   // one lecture's area at a time: the lecture in focus
   const hullLine = d3.line().curve(d3.curveCatmullRomClosed.alpha(0.6));
-  function hulls() {
-    const data = hullDeck && mode === "web" ? [hullDeck].map((id) => {
-      const pts = N.filter((n) => n.deck === id).flatMap((n) => {
-        const [w, h] = box(n);
+  const hullCache = new Map(), members = d3.group(N, (n) => n.deck);
+  const hullPath = (id) => {
+    if (!hullCache.has(id)) {
+      const pts = (members.get(id) || []).flatMap((n) => { const [w, h] = box(n);
         return [[n.x - w / 2 - 10, n.y - h / 2 - 8], [n.x + w / 2 + 10, n.y - h / 2 - 8],
-                [n.x - w / 2 - 10, n.y + h / 2 + 8], [n.x + w / 2 + 10, n.y + h / 2 + 8]];
-      });
-      return { id, h: pts.length >= 3 ? d3.polygonHull(pts) : null };
-    }).filter((o) => o.h) : [];
-    hullG.selectAll("path").data(data, (o) => o.id).join("path").attr("class", "hull").attr("d", (o) => hullLine(o.h))
+                [n.x - w / 2 - 10, n.y + h / 2 + 8], [n.x + w / 2 + 10, n.y + h / 2 + 8]]; });
+      hullCache.set(id, pts.length >= 3 ? hullLine(d3.polygonHull(pts)) : null);
+    }
+    return hullCache.get(id);
+  };
+  let hullShown = undefined;
+  function hulls() {
+    const id = hullDeck && mode === "web" ? hullDeck : null;
+    if (id === hullShown && !moving) return;
+    hullShown = id;
+    const data = id && hullPath(id) ? [{ id, d: hullPath(id) }] : [];
+    hullG.selectAll("path").data(data, (o) => o.id).join("path").attr("class", "hull").attr("d", (o) => o.d)
       .attr("fill", (o) => col(o.id)).attr("fill-opacity", 0.08).attr("stroke", (o) => col(o.id)).attr("stroke-opacity", 0.5);
   }
 
@@ -310,33 +342,50 @@
     while (st.length) for (const x of st.pop()[key] || []) if (!s.has(x)) { s.add(x); st.push(x); }
     return s;
   };
+  // each concept's edges, so a hover touches only the elements on its chain
+  const edgeEls = edge.nodes(), bedgeEls = bedge.nodes(), qedgeEls = qedge.nodes();
+  const nodeEl = new Map(node.nodes().map((el) => [el.__data__, el]));
+  const qEl = new Map(qn.nodes().map((el) => [el.__data__, el]));
+  const chains = new Map();
+  function chain(d) {
+    if (chains.has(d)) return chains.get(d);
+    let up, down;
+    if (d.beyond) { up = new Set(d.near.map((k) => byId.get(k))); down = new Set(); }
+    else { up = walk(d, "pre"); down = walk(d, "post"); }
+    const set = new Set([d, ...up, ...down]);
+    if (!d.beyond) B.forEach((b) => { if (b.near.includes(d.id)) set.add(b); });
+    const els = [], cls = [];
+    set.forEach((n) => els.push(nodeEl.get(n)));
+    edgeEls.forEach((el) => {
+      const e = el.__data__;
+      if (!(set.has(e.source) && set.has(e.target))) return;
+      els.push(el);
+      if (up.has(e.source) && (e.target === d || up.has(e.target))) cls.push([el, "up"]);
+      else if ((e.source === d || down.has(e.source)) && down.has(e.target)) cls.push([el, "down"]);
+    });
+    bedgeEls.forEach((el) => { const e = el.__data__; if (set.has(e.source) && set.has(e.target)) els.push(el); });
+    qedgeEls.forEach((el) => { if (set.has(el.__data__.target)) els.push(el); });
+    Q.forEach((q) => { if (q.teaches.some((c) => set.has(byId.get(c)))) els.push(qEl.get(q)); });
+    const c = { set, els: els.filter(Boolean), cls };
+    chains.set(d, c);
+    return c;
+  }
+  // a pinned concept's chain stays lit while another is hovered: the two show together
+  let shown = [];
   function focus(d) {
     hullDeck = d && !d.beyond ? d.deck : null;
-    if (!d) {
-      lit = new Set();
-      node.classed("faded", (n) => !n.beyond && off.has(n.deck));
-      edge.classed("faded", (e) => off.has(e.source.deck) || off.has(e.target.deck)).classed("up", false).classed("down", false)
-        .attr("marker-end", (e) => e.preview ? null : `url(#m-${e.back ? "back" : "link"})`);
-      qn.classed("faded", false); qedge.classed("faded", false); bedge.classed("faded", false);
-      lod(); hulls(); plan(); return;
-    }
-    let up = new Set(), down = new Set();
-    if (d.beyond) up = new Set(d.near.map((k) => byId.get(k)));
-    else { up = walk(d, "pre"); down = walk(d, "post"); }
-    lit = new Set([d, ...up, ...down]);
-    if (!d.beyond) B.forEach((b) => { if (b.near.includes(d.id)) lit.add(b); });
-    node.classed("faded", (n) => !lit.has(n));
-    edge.classed("up", (e) => up.has(e.source) && (e.target === d || up.has(e.target)))
-      .classed("down", (e) => (e.source === d || down.has(e.source)) && down.has(e.target))
-      .classed("faded", (e) => !(lit.has(e.source) && lit.has(e.target)))
-      .attr("marker-end", function (e) {
-        if (e.preview) return null;
-        return `url(#m-${this.classList.contains("up") ? "up" : this.classList.contains("down") ? "down" : e.back ? "back" : "link"})`;
-      });
-    qn.classed("faded", (q) => !q.teaches.some((c) => lit.has(byId.get(c))));
-    qedge.classed("faded", (e) => !lit.has(e.target));
-    bedge.classed("faded", (e) => !(lit.has(e.source) && lit.has(e.target)));
-    lod(); hulls();
+    shown.forEach((c) => { c.els.forEach((el) => el.classList.remove("lit")); c.cls.forEach(([el, k]) => el.classList.remove(k)); });
+    shown = [pinned, d].filter((x, i, a) => x && a.indexOf(x) === i).map(chain);
+    lit = new Set(shown.flatMap((c) => [...c.set]));
+    shown.forEach((c) => { c.els.forEach((el) => el.classList.add("lit")); c.cls.forEach(([el, k]) => el.classList.add(k)); });
+    root.classed("focusing", shown.length > 0);
+    hulls();
+    if (!d) plan();
+  }
+  // lectures switched off in the legend: rare, so a full pass is fine
+  function dimOff() {
+    node.classed("faded", (n) => !n.beyond && off.has(n.deck));
+    edge.classed("faded", (e) => off.has(e.source.deck) || off.has(e.target.deck));
   }
   const conceptLink = (x) => `<b data-k="${esc(x.id)}">${esc(x.name)}</b>`;
   function panel(d) {
@@ -377,18 +426,28 @@
     const s = 1.1;
     svg.transition().duration(600).call(zoom.transform, d3.zoomIdentity.translate(W / 2 - s * d.x, H / 2 - s * d.y).scale(s));
   }
-  node.on("mouseenter", (e, d) => { hovered = d; focus(d); }).on("mouseleave", () => { hovered = null; focus(pinned); })
+  node.on("mouseenter", (e, d) => focus(d)).on("mouseleave", () => focus(pinned))
     .on("click", (e, d) => {
       if (planning && !d.beyond) { known.has(d.id) ? known.delete(d.id) : known.add(d.id); saveKnown(); return; }
       pinned = pinned === d ? null : d; node.classed("pin", (n) => n === pinned); focus(pinned); panel(pinned);
     })
     .on("dblclick", (e, d) => open(d.beyond ? `https://en.wikipedia.org/wiki/${encodeURIComponent(d.article.replace(/ /g, "_"))}` : d.url, "_blank", "noopener"));
-  node.call(d3.drag().on("drag", (e, d) => { d.x = e.x; d.y = e.y; draw(); }));
+  node.call(d3.drag().on("drag", (e, d) => { d.x = e.x; d.y = e.y; hullCache.delete(d.deck); moving = true; draw(); moving = false; }));
 
   // ---------------------------------------------------------------- legend: hover a lecture to see its area, click to hide it
   const COURSES = { intro_ml: "Introduction to Machine Learning", ml4science: "ML for Science", other: "Other lessons" };
+  const LEG = "sa-legend";
+  let legOpen = true;
+  try { legOpen = localStorage.getItem(LEG) !== "closed"; } catch (e) {}
+  const setLegend = (on) => {
+    legOpen = on; $("legend").hidden = !on; $("legendTab").hidden = on;
+    try { localStorage.setItem(LEG, on ? "open" : "closed"); } catch (e) {}
+  };
+  $("legendTab").addEventListener("click", () => setLegend(true));
   function legend() {
     const leg = d3.select("#legend").html("");
+    leg.append("li").attr("class", "head").html(`<span>Lectures</span><button class="x" type="button" aria-label="Hide the lectures">×</button>`)
+      .select("button").on("click", () => setLegend(false));
     Object.keys(inCourse).forEach((c) => {
       leg.append("li").attr("class", "cap").text(COURSES[c] || c);
       inCourse[c].forEach((id) => {
@@ -399,12 +458,12 @@
           .on("mouseleave", () => { if (!pinned) { hullDeck = null; hulls(); } })
           .on("click keydown", function (e) {
             if (e.type === "keydown" && e.key !== "Enter") return;
-            off.has(id) ? off.delete(id) : off.add(id); this.classList.toggle("off"); focus(pinned);
+            off.has(id) ? off.delete(id) : off.add(id); this.classList.toggle("off"); dimOff();
           });
       });
     });
   }
-  legend();
+  legend(); setLegend(legOpen);
 
   // ---------------------------------------------------------------- plan my path
   function status(d) {
@@ -509,7 +568,7 @@
     const next = isDark() ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
     try { localStorage.setItem("sa-theme", next); } catch (e) {}
-    markers(); paint(); legend(); hulls(); axes();
+    markers(); paint(); legend(); hullShown = undefined; hulls(); axes();
   });
   addEventListener("keydown", (e) => { if (e.key === "Escape") { pinned = null; node.classed("pin", false); focus(null); panel(null); } });
   addEventListener("resize", () => { W = innerWidth; H = innerHeight; fit(0); });
@@ -517,6 +576,6 @@
   addEventListener("hashchange", fromHash);
 
   ALL.forEach((d) => { [d.x, d.y] = L.web[d.id] || [0, 0]; });
-  layout("web", 0); lod();
+  layout("web", 0); lod(); focus(null);
   setTimeout(fromHash, 300);
 })();
